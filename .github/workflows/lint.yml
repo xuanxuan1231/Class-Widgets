@@ -31,7 +31,6 @@ jobs:
         env:
           # To report GitHub Actions status checks
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          FIX_CHECKOV: false
           FIX_JSCPD: false
           FIX_JSON_PRETTIER: false
           FIX_MARKDOWN: false
