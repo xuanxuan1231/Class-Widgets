@@ -26,8 +26,8 @@ jobs:
           # list of files that changed across commits
           fetch-depth: 0
 
-      - name: Super-linter
-        uses: super-linter/super-linter@v7.1.0 # x-release-please-version
+      - name: GitHub Action for pylint
+        uses: cclauss/GitHub-Action-for-pylint@0.7.0
         env:
           # To report GitHub Actions status checks
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
