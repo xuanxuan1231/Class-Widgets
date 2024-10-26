@@ -1,0 +1,1 @@
+--disable=bare-except,invalid-name,missing-function-docstring,too-few-public-methods,missing-class-docstring,broad-exception-caught,inconsistent-return-statements,consider-using-enumerate
