@@ -43,5 +43,5 @@ jobs:
           VALIDATE_PYTHON_PYINK: false
           VALIDATE_PYTHON_RUFF: false
           VALIDATE_PYTHON_YAML_PRETTIER: false
-          PYTHON_PYLINT_CONFIG_FILE: .pylintrc
+          PYTHON_PYLINT_CONFIG_FILE: ./.pylintrc
           
