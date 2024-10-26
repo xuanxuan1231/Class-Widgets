@@ -197,9 +197,21 @@ class desktop_widget(FluentWindow):
         web_layout.addWidget(help_docu)
 
     def setup_sound_interface(self):
-        switch_enable_toast = self.findChild(SwitchButton, 'switch_enable_toast')
-        switch_enable_toast.setChecked(int(conf.read_conf('General', 'enable_toast')))
-        switch_enable_toast.checkedChanged.connect(self.switch_enable_toast)  # 通知开关
+        switch_enable_toast = self.findChild(SwitchButton, 'switch_enable_attend')
+        switch_enable_toast.setChecked(int(conf.read_conf('Toast', 'attend_class')))
+        switch_enable_toast.checkedChanged.connect(self.switch_enable_attend)  # 上课提醒开关
+
+        switch_enable_finish = self.findChild(SwitchButton, 'switch_enable_finish')
+        switch_enable_finish.setChecked(int(conf.read_conf('Toast', 'finish_class')))
+        switch_enable_finish.checkedChanged.connect(self.switch_enable_finish)  # 下课提醒开关
+
+        switch_enable_prepare = self.findChild(SwitchButton, 'switch_enable_prepare')
+        switch_enable_prepare.setChecked(int(conf.read_conf('Toast', 'prepare_class')))
+        switch_enable_prepare.checkedChanged.connect(self.switch_enable_prepare)  # 预备铃开关
+
+        switch_enable_pin_toast = self.findChild(SwitchButton, 'switch_enable_pin_toast')
+        switch_enable_pin_toast.setChecked(int(conf.read_conf('Toast', 'pin_on_top')))
+        switch_enable_pin_toast.checkedChanged.connect(self.switch_enable_pin_toast)  # 置顶开关
 
         slider_volume = self.findChild(Slider, 'slider_volume')
         slider_volume.setValue(int(conf.read_conf('Audio', 'volume')))
@@ -255,7 +267,8 @@ class desktop_widget(FluentWindow):
         select_theme_combo = self.findChild(ComboBox, 'combo_theme_select')  # 主题选择
         select_theme_combo.addItems(list.theme_names)
         select_theme_combo.setCurrentIndex(list.get_current_theme_num())
-        select_theme_combo.currentIndexChanged.connect(self.ct_change_theme)
+        select_theme_combo.currentIndexChanged.connect(
+            lambda: conf.write_conf('General', 'theme', list.get_theme_ui_path(select_theme_combo.currentText())))
 
         color_mode_combo = self.findChild(ComboBox, 'combo_color_mode')  # 颜色模式选择
         color_mode_combo.addItems(list.color_mode)
@@ -570,12 +583,33 @@ class desktop_widget(FluentWindow):
             conf.write_conf('General', 'auto_startup', '0')
             conf.remove_from_startup()
 
-    def switch_enable_toast(self):
-        switch_enable_toast = self.findChild(SwitchButton, 'switch_enable_toast')
+    def switch_enable_attend(self):
+        switch_enable_toast = self.findChild(SwitchButton, 'switch_enable_attend')
         if switch_enable_toast.isChecked():
-            conf.write_conf('General', 'enable_toast', '1')
+            conf.write_conf('Toast', 'attend_class', '1')
         else:
-            conf.write_conf('General', 'enable_toast', '0')
+            conf.write_conf('Toast', 'attend_class', '0')
+
+    def switch_enable_finish(self):
+        switch_enable_toast = self.findChild(SwitchButton, 'switch_enable_finish')
+        if switch_enable_toast.isChecked():
+            conf.write_conf('Toast', 'finish_class', '1')
+        else:
+            conf.write_conf('Toast', 'finish_class', '0')
+
+    def switch_enable_prepare(self):
+        switch_enable_toast = self.findChild(SwitchButton, 'switch_enable_prepare')
+        if switch_enable_toast.isChecked():
+            conf.write_conf('Toast', 'prepare_class', '1')
+        else:
+            conf.write_conf('Toast', 'prepare_class', '0')
+
+    def switch_enable_pin_toast(self):
+        switch_enable_toast = self.findChild(SwitchButton, 'switch_enable_pin_toast')
+        if switch_enable_toast.isChecked():
+            conf.write_conf('Toast', 'pin_on_top', '1')
+        else:
+            conf.write_conf('Toast', 'pin_on_top', '0')
 
     def switch_enable_alt_schedule(self):
         switch_enable_alt_schedule = self.findChild(SwitchButton, 'switch_enable_alt_schedule')
@@ -649,17 +683,6 @@ class desktop_widget(FluentWindow):
             w.cancelButton.hide()  # 隐藏取消按钮
             w.buttonLayout.insertStretch(0, 1)
             w.exec()
-
-    def ct_change_theme(self):
-        select_theme_combo = self.findChild(ComboBox, 'combo_theme_select')
-        alert = MessageBox('您已切换主题',
-                           '软件将在您确认后关闭，\n'
-                           '您需重新启动以应用您切换的主题。', self)
-        alert.cancelButton.hide()  # 隐藏取消按钮，必须重启
-        alert.buttonLayout.insertStretch(0, 1)
-        if alert.exec():
-            conf.write_conf('General', 'theme', list.get_theme_ui_path(select_theme_combo.currentText()))
-            sys.exit()
 
     def ct_set_ac_color(self):
         current_color = QColor(f'#{conf.read_conf("Color", "attend_class")}')

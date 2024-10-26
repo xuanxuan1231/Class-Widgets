@@ -1,3 +1,4 @@
+import ctypes
 import os
 from shutil import copy
 import pygetwindow
@@ -27,6 +28,7 @@ filename = conf.read_conf('General', 'schedule')
 
 # 存储窗口对象
 windows = []
+w_menu = None
 
 current_lesson_name = '课程表未加载'
 current_state = 0  # 0：课间 1：上课
@@ -44,6 +46,7 @@ weather_icon = 0
 city = 101010100  # 默认城市
 
 time_offset = 0  # 时差偏移
+first_start = True
 
 if conf.read_conf('Other', 'do_not_log') != '1':
     logger.add("log/ClassWidgets_main_{time}.log", rotation="1 MB", encoding="utf-8", retention="1 minute")
@@ -64,24 +67,49 @@ def get_timeline_data():
 
 # 获取Part开始时间
 def get_start_time():
-    global parts_start_time, timeline_data, loaded_data
+    global parts_start_time, timeline_data, loaded_data, order
     loaded_data = conf.load_from_json(filename)
     timeline = get_timeline_data()
     part = loaded_data['part']
     parts_start_time = []
     timeline_data = {}
+    order = []
 
-    for item_name, _ in part.items():
+    for item_name, item_value in part.items():
         try:
-            h, m = part[item_name]
+            h, m = item_value
             parts_start_time.append(dt.datetime.combine(today, dt.time(h, m)))
+            order.append(item_name)
         except Exception as e:
             logger.error(f'加载课程表文件[起始时间]出错：{e}')
+
+    paired = zip(parts_start_time, order)
+    paired_sorted = sorted(paired, key=lambda x: x[0])  # 按时间大小排序
+    if paired_sorted:
+        parts_start_time, order = zip(*paired_sorted)
+
     for item_name, item_time in timeline.items():
         try:
             timeline_data[item_name] = item_time
         except Exception as e:
             logger.error(f'加载课程表文件[课程数据]出错：{e}')
+
+
+def get_part():
+    current_dt = dt.datetime.now()
+    for i in range(len(parts_start_time)):  # 遍历每个Part
+        if i == len(parts_start_time) - 1:
+            if parts_start_time[i] - dt.timedelta(minutes=30) <= current_dt or current_dt > parts_start_time[i]:
+                c_time = parts_start_time[i] + dt.timedelta(seconds=time_offset)
+                if any(f'a{int(order[i])}' in key or f'f{int(order[i])}' in key for key in timeline_data.keys()):
+                    return c_time, int(order[i])
+        else:
+            if (parts_start_time[i] - dt.timedelta(minutes=30) <= current_dt < parts_start_time[i + 1]
+                    - dt.timedelta(minutes=30)):
+                c_time = parts_start_time[i] + dt.timedelta(seconds=time_offset)
+                if any(f'a{int(order[i])}' in key or f'f{int(order[i])}' in key for key in timeline_data.keys()):
+                    return c_time, int(order[i])
+    return parts_start_time[0] + dt.timedelta(seconds=time_offset), 0
 
 
 # 获取当前活动
@@ -124,20 +152,9 @@ def get_countdown(toast=False):  # 重构好累aaaa
     current_dt = dt.datetime.combine(today, dt.datetime.strptime(current_time, '%H:%M:%S').time())  # 当前时间
     return_text = []
     got_return_data = False
-    part = 0
+
     if parts_start_time:
-        c_time = parts_start_time[0] + dt.timedelta(seconds=time_offset)
-        for i in range(len(parts_start_time)):  # 遍历每个Part
-            if i == len(parts_start_time) - 1:
-                if parts_start_time[i] - dt.timedelta(minutes=30) <= current_dt or current_dt > parts_start_time[i]:
-                    c_time = parts_start_time[i] + dt.timedelta(seconds=time_offset)
-                    part = i
-            else:
-                if (parts_start_time[i] - dt.timedelta(minutes=30) <= current_dt < parts_start_time[i + 1]
-                        - dt.timedelta(minutes=30)):
-                    c_time = parts_start_time[i] + dt.timedelta(seconds=time_offset)
-                    part = i
-                    break
+        c_time, part = get_part()
 
         if current_dt >= c_time:
             for item_name, item_time in timeline_data.items():
@@ -198,20 +215,9 @@ def get_next_lessons():
     next_lessons = []
     part = 0
     current_dt = dt.datetime.combine(today, dt.datetime.strptime(current_time, '%H:%M:%S').time())  # 当前时间
+
     if parts_start_time:
-        c_time = parts_start_time[0] + dt.timedelta(seconds=time_offset)
-        if current_dt >= parts_start_time[0]:
-            for i in range(len(parts_start_time)):
-                if i == len(parts_start_time) - 1:
-                    if parts_start_time[i] - dt.timedelta(minutes=30) <= current_dt or current_dt > parts_start_time[i]:
-                        c_time = parts_start_time[i] + dt.timedelta(seconds=time_offset)
-                        part = i
-                else:
-                    if (parts_start_time[i] - dt.timedelta(minutes=30) <= current_dt < parts_start_time[i + 1]
-                            - dt.timedelta(minutes=30)):
-                        c_time = parts_start_time[i] + dt.timedelta(seconds=time_offset)
-                        part = i
-                        break
+        c_time, part = get_part()
 
         def before_class():
             if part == 0:
@@ -262,20 +268,9 @@ def get_current_lesson_name():
     current_state = 0
 
     part = 0
+
     if parts_start_time:
-        c_time = parts_start_time[0] + dt.timedelta(seconds=time_offset)
-        if current_dt >= parts_start_time[0]:
-            for i in range(len(parts_start_time)):
-                if i == len(parts_start_time) - 1:
-                    if parts_start_time[i] - dt.timedelta(minutes=30) <= current_dt or current_dt > parts_start_time[i]:
-                        c_time = parts_start_time[i] + dt.timedelta(seconds=time_offset)
-                        part = i
-                else:
-                    if (parts_start_time[i] - dt.timedelta(minutes=30) <= current_dt < parts_start_time[i + 1]
-                            - dt.timedelta(minutes=30)):
-                        c_time = parts_start_time[i] + dt.timedelta(seconds=time_offset)
-                        part = i
-                        break
+        c_time, part = get_part()
 
         if current_dt >= c_time:
             for item_name, item_time in timeline_data.items():
@@ -290,6 +285,38 @@ def get_current_lesson_name():
                             current_lesson_name = '课间'
                             current_state = 0
                         break
+
+
+# 定义 RECT 结构体
+class RECT(ctypes.Structure):
+    _fields_ = [("left", ctypes.c_long),
+                ("top", ctypes.c_long),
+                ("right", ctypes.c_long),
+                ("bottom", ctypes.c_long)]
+
+
+def check_fullscreen():  # 检查是否全屏
+    user32 = ctypes.windll.user32
+    hwnd = user32.GetForegroundWindow()
+    # 获取桌面窗口的矩形
+    desktop_rect = RECT()
+    user32.GetWindowRect(user32.GetDesktopWindow(), ctypes.byref(desktop_rect))
+    # 获取当前窗口的矩形
+    app_rect = RECT()
+    user32.GetWindowRect(hwnd, ctypes.byref(app_rect))
+    if hwnd == user32.GetDesktopWindow():
+        return False
+    if user32.GetForegroundWindow() == 0:  # 聚焦桌面则判断否
+        return False
+    if hwnd != user32.GetDesktopWindow() and hwnd != user32.GetShellWindow():
+        if (app_rect.left <= desktop_rect.left and
+                app_rect.top <= desktop_rect.top and
+                app_rect.right >= desktop_rect.right and
+                app_rect.bottom >= desktop_rect.bottom):
+            return True
+    if fw.focusing:  # 拖动浮窗时返回t
+        return True
+    return False
 
 
 class weatherReportThread(QThread):  # 获取最新天气信息
@@ -345,11 +372,18 @@ class WidgetsManager:
             widget.animate_hide(True)
 
     def show_windows(self):
+        if fw.animating:  # 避免动画Bug
+            return
         if fw.isVisible():
             fw.close()
         self.state = 1
         for widget in self.widgets:
             widget.animate_show()
+
+    def clear_widgets(self):
+        for widget in self.widgets:
+            widget.animate_hide_opacity()
+        init()
 
     def update_widgets(self):
         for widget in self.widgets:
@@ -361,8 +395,9 @@ class WidgetsManager:
         elif conf.read_conf('General', 'hide_method') == '1':  # 单击即完全隐藏
             self.full_hide_windows()
         elif conf.read_conf('General', 'hide_method') == '2':  # 最小化为浮窗
-            self.full_hide_windows()
-            fw.show()
+            if not fw.animating:
+                self.full_hide_windows()
+                fw.show()
         else:
             self.hide_windows()
 
@@ -374,10 +409,13 @@ class FloatingWidget(QWidget):  # 浮窗
         self.init_font()
         self.position = None
         self.animating = False
+        self.focusing = False
 
         self.current_lesson_name_text = self.findChild(QLabel, 'subject')
         self.activity_countdown = self.findChild(QLabel, 'activity_countdown')
         self.countdown_progress_bar = self.findChild(ProgressRing, 'progressBar')
+
+        self.setFocusPolicy(Qt.FocusPolicy.StrongFocus)  # 检查焦点
 
         self.update_data()
         timer = QTimer(self)
@@ -408,8 +446,7 @@ class FloatingWidget(QWidget):  # 浮窗
         self.setAttribute(Qt.WidgetAttribute.WA_TranslucentBackground)
 
         self.setWindowFlags(
-            Qt.WindowType.FramelessWindowHint | Qt.WindowType.WindowStaysOnTopHint | Qt.WindowType.Tool |
-            Qt.WindowType.WindowDoesNotAcceptFocus
+            Qt.WindowType.FramelessWindowHint | Qt.WindowType.WindowStaysOnTopHint | Qt.WindowType.Tool
         )
 
         self.setWindowOpacity(int(conf.read_conf('General', 'opacity')) / 100)
@@ -445,7 +482,7 @@ class FloatingWidget(QWidget):  # 浮窗
 
         if cd_list:  # 模糊倒计时
             if cd_list[1] == '00:00':
-                self.activity_countdown.setText(f"< - 分钟")
+                self.activity_countdown.setText(f"< - 分钟")
             else:
                 self.activity_countdown.setText(f"< {int(cd_list[1].split(':')[0]) + 1} 分钟")
             self.countdown_progress_bar.setValue(cd_list[2])
@@ -455,6 +492,7 @@ class FloatingWidget(QWidget):  # 浮窗
         self.update()
 
     def showEvent(self, event):  # 窗口显示
+        logger.info('显示浮窗')
         self.zoom = 2
         self.move((screen_width - self.width()) // 2, 50)
         self.setMinimumSize(QSize(self.width() // self.zoom, self.height() // self.zoom))
@@ -469,13 +507,14 @@ class FloatingWidget(QWidget):  # 浮窗
         self.animation_rect = QPropertyAnimation(self, b'geometry')
         self.animation_rect.setDuration(500)
         self.animation_rect.setStartValue(
-            QRect((screen_width - self.width() // self.zoom) // 2, -50, self.width() // self.zoom, self.height() // self.zoom))
+            QRect((screen_width - self.width() // self.zoom) // 2, -50, self.width() // self.zoom,
+                  self.height() // self.zoom))
         self.animation_rect.setEndValue(self.geometry())
         self.animation_rect.setEasingCurve(QEasingCurve.Type.InOutCirc)
 
+        self.animating = True
         self.animation.start()
         self.animation_rect.start()
-        self.animating = True
         self.animation_rect.finished.connect(self.animation_done)
 
     def animation_done(self):
@@ -493,15 +532,17 @@ class FloatingWidget(QWidget):  # 浮窗
         self.animation_rect = QPropertyAnimation(self, b'geometry')
         self.animation_rect.setDuration(400)
         self.animation_rect.setEndValue(
-            QRect((screen_width - self.width() // self.zoom) // 2, -50, self.width() // self.zoom, self.height() // self.zoom))
+            QRect((screen_width - self.width() // self.zoom) // 2, -50, self.width() // self.zoom,
+                  self.height() // self.zoom))
         self.animation_rect.setEasingCurve(QEasingCurve.Type.InOutCirc)
 
+        self.animating = True
         self.animation.start()
         self.animation_rect.start()
-        self.animating = True
         self.animation_rect.finished.connect(self.hide)
 
     def hideEvent(self, event):
+        logger.info('隐藏浮窗')
         self.animating = False
         self.setMinimumSize(QSize(self.width() * self.zoom, self.height() * self.zoom))
 
@@ -514,11 +555,13 @@ class FloatingWidget(QWidget):  # 浮窗
         offset = label_width - current_geometry.width()
         target_geometry = current_geometry.adjusted(0, 0, offset, 0)
         self.animation = QPropertyAnimation(self, b'geometry')
-        self.animation.setDuration(450)  # 动画持续时间为1秒
+        self.animation.setDuration(450)
         self.animation.setStartValue(current_geometry)
         self.animation.setEndValue(target_geometry)
         self.animation.setEasingCurve(QEasingCurve.Type.InOutCirc)
+        self.animating = True  # 避免动画Bug x114514
         self.animation.start()
+        self.animation.finished.connect(self.animation_done)
 
     def mousePressEvent(self, event):
         if event.button() == Qt.MouseButton.LeftButton:
@@ -535,19 +578,26 @@ class FloatingWidget(QWidget):  # 浮窗
     def mouseReleaseEvent(self, event):
         self.r_Position = event.globalPosition().toPoint()  # 获取鼠标相对窗口的位置
         self.m_flag = False
-        if self.r_Position == self.p_Position:  # 鼠标左键单击
+        if self.r_Position == self.p_Position and not self.animating:  # 鼠标左键单击
             mgr.show_windows()
             self.close()
+
+    def focusInEvent(self, event):
+        self.focusing = True
+
+    def focusOutEvent(self, event):
+        self.focusing = False
 
 
 class DesktopWidget(QWidget):  # 主要小组件
     def __init__(self, path='widget-time.ui', pos=(100, 50), enable_tray=False):
         super().__init__()
 
-        self.menu = None
         self.exmenu = None
         self.path = path
         self.last_code = 101010100
+        self.last_theme = conf.read_conf('General', 'theme')
+        self.last_color_mode = conf.read_conf('General', 'color_mode')
 
         init_config()
         self.init_ui(path)
@@ -574,6 +624,11 @@ class DesktopWidget(QWidget):  # 主要小组件
             button = self.findChild(QPushButton, 'subject')
             button.clicked.connect(self.open_exact_menu)
 
+            self.d_t_timer = QTimer(self)
+            self.d_t_timer.setInterval(500)
+            self.d_t_timer.timeout.connect(self.detect_theme_changed)
+            self.d_t_timer.start()
+
         if path == 'widget-next-activity.ui':  # 接下来的活动
             self.nl_text = self.findChild(QLabel, 'next_lesson_text')
 
@@ -599,7 +654,11 @@ class DesktopWidget(QWidget):  # 主要小组件
             img.setGraphicsEffect(opacity)
 
         # 设置窗口位置
-        self.animate_window(pos)
+        if first_start:
+            self.animate_window(pos)
+        else:
+            self.animate_show_opacity()
+            self.move(pos[0], pos[1])
 
         self.update_data('')
         self.timer = QTimer(self)
@@ -701,13 +760,13 @@ class DesktopWidget(QWidget):  # 主要小组件
         time_offset = conf.get_time_offset()
         filename = conf.read_conf('General', 'schedule')
 
-        if conf.read_conf('General', 'hide') == '1':  # 自动隐藏
+        if conf.read_conf('General', 'hide') == '1':  # 上课自动隐藏
             if current_state:
                 mgr.decide_to_hide()
             else:
                 mgr.show_windows()
-        elif conf.read_conf('General', 'hide') == '2':  # 自动最小化
-            if check_windows_maximize():
+        elif conf.read_conf('General', 'hide') == '2':  # 最大化/全屏自动隐藏
+            if check_windows_maximize() or check_fullscreen():
                 mgr.decide_to_hide()
             else:
                 mgr.show_windows()
@@ -771,7 +830,6 @@ class DesktopWidget(QWidget):  # 主要小组件
             self.custom_title.setText(f'距离 {conf.read_conf("Date", "cd_text_custom")} 还有')
             self.custom_countdown.setText(conf.get_custom_countdown())
 
-
     def get_weather_data(self):
         logger.info('获取天气数据')
         self.weather_thread = weatherReportThread()
@@ -783,6 +841,15 @@ class DesktopWidget(QWidget):  # 主要小组件
         if current_code != self.last_code:
             self.last_code = current_code
             self.get_weather_data()
+
+    def detect_theme_changed(self):
+        theme = conf.read_conf('General', 'theme')
+        color_mode = conf.read_conf('General', 'color_mode')
+        if theme != self.last_theme or color_mode != self.last_color_mode:
+            self.last_theme = theme
+            self.last_color_mode = color_mode
+            print(f'切换主题：{theme}，颜色模式{color_mode}')
+            mgr.clear_widgets()
 
     def update_weather_data(self, weather_data):  # 更新天气数据(已兼容多api)
         if type(weather_data) is dict and hasattr(self, 'weather_icon'):
@@ -805,13 +872,14 @@ class DesktopWidget(QWidget):  # 主要小组件
             logger.error(f'获取天气数据出错：{weather_data}')
 
     def open_settings(self):
-        if self.menu is None or not self.menu.isVisible():  # 防多开
-            self.menu = menu.desktop_widget()
-            self.menu.show()
+        global w_menu
+        if w_menu is None or not w_menu.isVisible():  # 防多开
+            w_menu = menu.desktop_widget()
+            w_menu.show()
             logger.info('打开“设置”')
         else:
-            self.menu.raise_()
-            self.menu.activateWindow()
+            w_menu.raise_()
+            w_menu.activateWindow()
 
     def open_exact_menu(self):
         if mgr.state:  # 如果没有隐藏
@@ -859,6 +927,23 @@ class DesktopWidget(QWidget):  # 主要小组件
         self.animation.setEasingCurve(QEasingCurve.Type.InOutCirc)  # 设置动画效果
         self.animation.start()
 
+    def animate_hide_opacity(self):  # 隐藏窗口透明度
+        self.animation = QPropertyAnimation(self, b"windowOpacity")
+        self.animation.setDuration(300)  # 持续时间
+        self.animation.setStartValue(int(conf.read_conf('General', 'opacity')) / 100)
+        self.animation.setEndValue(0)
+        self.animation.setEasingCurve(QEasingCurve.Type.InOutCirc)  # 设置动画效果
+        self.animation.start()
+        self.animation.finished.connect(self.close)
+
+    def animate_show_opacity(self):  # 显示窗口透明度
+        self.animation = QPropertyAnimation(self, b"windowOpacity")
+        self.animation.setDuration(350)  # 持续时间
+        self.animation.setStartValue(0)
+        self.animation.setEndValue(int(conf.read_conf('General', 'opacity')) / 100)
+        self.animation.setEasingCurve(QEasingCurve.Type.InOutCirc)  # 设置动画效果
+        self.animation.start()
+
     def animate_show(self):  # 显示窗口
         self.animation = QPropertyAnimation(self, b"geometry")
         self.animation.setDuration(625)  # 持续时间
@@ -881,6 +966,15 @@ class DesktopWidget(QWidget):  # 主要小组件
         else:
             event.ignore()
 
+    def closeEvent(self, event):
+        try:
+            self.tray_icon.hide()
+            self.tray_icon = None
+        except:
+            pass
+        self.deleteLater()  # 销毁内存
+        event.accept()
+
 
 def check_windows_maximize():  # 检查窗口是否最大化
     for window in pygetwindow.getAllWindows():
@@ -901,6 +995,40 @@ def show_window(path, pos, enable_tray=False):
     mgr.add_widget(application)  # 将窗口对象添加到列表
 
 
+def init():
+    global theme, radius, mgr, screen_width, first_start
+    mgr = WidgetsManager()
+
+    theme = conf.read_conf('General', 'theme')  # 主题
+    # 获取屏幕横向分辨率
+    screen_geometry = app.primaryScreen().availableGeometry()
+    screen_width = screen_geometry.width()
+
+    widgets = list.get_widget_config()
+
+    # 所有组件窗口的宽度
+    spacing = conf.load_theme_config(theme)['spacing']
+    radius = conf.load_theme_config(theme)['radius']
+    total_width = sum(conf.load_theme_width(theme)[key] for key in widgets) + spacing * (len(widgets) - 1)
+
+    start_x = (screen_width - total_width) // 2
+    start_y = int(conf.read_conf('General', 'margin'))
+
+    def cal_start_width(num):
+        return int(start_x + spacing * num + sum(conf.load_theme_width(theme)[widgets[i]] for i in range(num)))
+
+    for w in range(len(widgets)):
+        show_window(widgets[w], (cal_start_width(w), start_y), w == 0)
+
+    for application in mgr.widgets:  # 显示所有窗口
+        logger.info(f'显示窗口：{application.windowTitle()}')
+        application.show()
+    logger.info(f'Class Widgets 启动。版本: {conf.read_conf("Other", "version")}')
+
+    first_start = False
+
+
+
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     share = QSharedMemory('ClassWidgets')
@@ -918,31 +1046,6 @@ if __name__ == '__main__':
         msg_box.exec()
         sys.exit(-1)
     else:
-        theme = conf.read_conf('General', 'theme')  # 主题
-        fw = FloatingWidget()
-
-        # 获取屏幕横向分辨率
-        screen_geometry = app.primaryScreen().availableGeometry()
-        screen_width = screen_geometry.width()
-
-        widgets = list.get_widget_config()
-
-        # 所有组件窗口的宽度
-        spacing = conf.load_theme_config(theme)['spacing']
-        radius = conf.load_theme_config(theme)['radius']
-        total_width = sum((conf.load_theme_width(theme)[key] for key in widgets), spacing * (len(widgets) - 1))
-
-        start_x = int((screen_width - total_width) / 2)
-        start_y = int(conf.read_conf('General', 'margin'))
-
-
-        def cal_start_width(num):
-            width = 0
-            for i in range(num):
-                width += conf.load_theme_width(theme)[widgets[i]]
-            return int(start_x + spacing * num + width)
-
-
         if conf.read_conf('Other', 'initialstartup') == '1':  # 首次启动
             try:
                 conf.add_shortcut('ClassWidgets.exe', 'img/favicon.ico')
@@ -950,22 +1053,14 @@ if __name__ == '__main__':
                 conf.write_conf('Other', 'initialstartup', '')
             except Exception as e:
                 logger.error(f'添加快捷方式失败：{e}')
+        theme = conf.read_conf('General', 'theme')  # 主题
+        fw = FloatingWidget()
 
-        for w in range(len(widgets)):
-            if w == 0:
-                show_window(widgets[w], (cal_start_width(w), start_y), True)
-            else:
-                show_window(widgets[w], (cal_start_width(w), start_y))
-
+        init()
         get_start_time()
         get_current_lessons()
         get_current_lesson_name()
         get_next_lessons()
-
-        for application in mgr.widgets:  # 显示所有窗口
-            logger.info(f'显示窗口：{application.windowTitle()}')
-            application.show()
-        logger.info(f'Class Widgets 启动。版本: {conf.read_conf("Other", "version")}')
 
         if current_state:
             setThemeColor(f"#{conf.read_conf('Color', 'attend_class')}")
