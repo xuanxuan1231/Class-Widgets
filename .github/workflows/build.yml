@@ -41,5 +41,5 @@ jobs:
       - name: 存到构建输出
         uses: actions/upload-artifact@v4.4.2
         with:
-          name: Windows-${GITHUB_SHA::7}
+          name: Windows-${{ github.sha::7 }}
           path: ./dist/ClassWidgets/
