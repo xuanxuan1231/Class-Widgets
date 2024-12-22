@@ -80,8 +80,7 @@ jobs:
 
       - name: 创建虚拟环境
         run: |
-          /home/actions/.pyenv/bin/pyenv global 3.8.10
-          python -m venv venv
+          /home/actions/.pyenv/versions/3.8.10/bin/python -m venv venv
           source ./venv/bin/activate
           pip install -r requirements.linux.txt
           pip install pyinstaller
