@@ -58,7 +58,7 @@ class ExactMenu(FluentWindow):
 
     def open_settings(self):
         if self.menu is None or not self.menu.isVisible():  # 防多开
-            self.menu = menu.desktop_widget()
+            self.menu = menu.SettingsMenu()
             self.menu.show()
         else:
             self.menu.raise_()
