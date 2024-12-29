@@ -1760,7 +1760,7 @@ class SettingsMenu(FluentWindow):
         self.resize(width, height)
 
         self.setWindowTitle('Class Widgets - 设置')
-        self.setWindowIcon(QIcon('img/favicon-settings.ico'))
+        self.setWindowIcon(QIcon('img/logo/favicon-settings.ico'))
 
         self.init_font()  # 设置字体
 

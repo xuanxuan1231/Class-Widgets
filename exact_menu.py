@@ -158,7 +158,7 @@ class ExactMenu(FluentWindow):
         self.resize(width, height)
 
         self.setWindowTitle('Class Widgets - 更多功能')
-        self.setWindowIcon(QIcon('img/favicon-exmenu.ico'))
+        self.setWindowIcon(QIcon('img/logo/favicon-exmenu.ico'))
 
         self.addSubInterface(self.interface, fIcon.INFO, '更多设置')
 

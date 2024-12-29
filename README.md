@@ -73,7 +73,7 @@ Copyright © 2024 RinLit.
 
 ### 资源
 
-- [SF Symbols](https://developer.apple.com/sf-symbols/) （部分图标已做修改）
+- [SF Symbols](https://developer.apple.com/cn/sf-symbols/) （部分图标已做修改）
 - [和风天气图标](https://icons.qweather.com/)（部分图标已做修改）
 - [HarmonyOS Sans](https://developer.huawei.com/consumer/cn/design/resource/)
 
