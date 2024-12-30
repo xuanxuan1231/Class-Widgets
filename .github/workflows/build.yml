@@ -15,9 +15,11 @@ jobs:
       fail-fast: false
       matrix:
         arch: [x86, x64]
-        os: [ubuntu-20.04, windows-latest]
+        os: [ubuntu-20.04, windows-latest, macos-latest]
         exclude:
           - os: ubuntu-20.04
+            arch: x86
+          - os: macos-latest
             arch: x86
     runs-on: ${{ matrix.os }}
     steps:
@@ -30,7 +32,7 @@ jobs:
           architecture: ${{ matrix.arch }}
       - name: Setup uv
         uses: astral-sh/setup-uv@v4
-      - name: Run windows build
+      - name: Run Windows build
         if: ${{ matrix.os == 'windows-latest' }}
         run: |
           uv venv
@@ -50,7 +52,7 @@ jobs:
             --add-data *.ui:. `
             --add-data LICENSE:. `
             --add-data plugins:plugins
-      - name: Run linux build
+      - name: Run Linux/macOS build
         if: ${{ matrix.os != 'windows-latest' }}
         run: |
           uv venv
