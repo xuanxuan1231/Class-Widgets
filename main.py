@@ -1493,7 +1493,6 @@ def update_time():
 
 
 if __name__ == '__main__':
-    print(os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir)))
     app = QApplication(sys.argv)
     share = QSharedMemory('ClassWidgets')
     share.create(1)  # 创建共享内存
