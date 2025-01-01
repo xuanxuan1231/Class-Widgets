@@ -106,7 +106,7 @@ try:  # 加载课程/主题配置文件
     subject_info = json.load(open(f'{base_directory}/config/data/subject.json', 'r', encoding='utf-8'))
     subject_icon = subject_info['subject_icon']
     subject_abbreviation = subject_info['subject_abbreviation']
-    theme_folder = [f for f in os.listdir('ui/') if os.path.isdir(os.path.join('ui/', f))]
+    theme_folder = [f for f in os.listdir(f'{base_directory}/ui/') if os.path.isdir(os.path.join(f'{base_directory}/ui/', f))]
     theme_names = []
 except Exception as e:
     logger.error(f'加载课程/主题配置文件发生错误，使用默认配置：{e}')
