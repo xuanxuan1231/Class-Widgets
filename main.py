@@ -78,7 +78,7 @@ settings = None
 ex_menu = None
 
 if conf.read_conf('Other', 'do_not_log') != '1':
-    logger.add("log/ClassWidgets_main_{time}.log", rotation="1 MB", encoding="utf-8", retention="1 minute")
+    logger.add(f"{base_directory}/log/ClassWidgets_main_{time}.log", rotation="1 MB", encoding="utf-8", retention="1 minute")
     logger.info('未禁用日志输出')
 else:
     logger.info('已禁用日志输出功能，若需保存日志，请在“设置”->“高级选项”中关闭禁用日志功能')
