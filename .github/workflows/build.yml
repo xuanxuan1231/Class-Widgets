@@ -83,6 +83,7 @@ jobs:
           uv pip install pyinstaller
           pyinstaller main.py \
             -w \
+            -i ./img/favicon.icns
             -n ClassWidgets \
             --contents-directory . \
             --add-data config:config \
