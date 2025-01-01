@@ -11,10 +11,14 @@ from loguru import logger
 import conf
 
 headers = {"User-Agent": "Mozilla/5.0"}
-proxies = {"http": "http://127.0.0.1:10809", "https": "http://127.0.0.1:10809"}  # 加速访问
-# proxies = {"http": None, "https": None}
+# proxies = {"http": "http://127.0.0.1:10809", "https": "http://127.0.0.1:10809"}  # 加速访问
+proxies = {"http": None, "https": None}
 
-MIRROR_PATH = "config/mirror.json"
+base_directory = os.path.dirname(os.path.abspath(__file__))
+if base_directory.endswith('app'):
+    base_directory = f'{base_directory}/Contents/Resources'
+
+MIRROR_PATH = f"{base_directory}/config/mirror.json"
 PLAZA_REPO_URL = "https://raw.githubusercontent.com/Class-Widgets/plugin-plaza/"
 PLAZA_REPO_DIR = "https://api.github.com/repos/Class-Widgets/plugin-plaza/contents/"
 
@@ -156,7 +160,7 @@ class getImg(QThread):  # 获取图片
             if banner_data is not None:
                 self.repo_signal.emit(banner_data)
             else:
-                with open("img/plaza/banner_pre.png", 'rb') as default_img:  # 读取默认图片
+                with open(f"{base_directory}/img/plaza/banner_pre.png", 'rb') as default_img:  # 读取默认图片
                     self.repo_signal.emit(default_img.read())
         except Exception as e:
             logger.error(f"触发图片失败: {e}")

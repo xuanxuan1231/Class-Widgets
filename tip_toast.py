@@ -1,3 +1,4 @@
+import os.path
 import sys
 
 import sounddevice
@@ -19,6 +20,10 @@ QApplication.setHighDpiScaleFactorRoundingPolicy(
 QApplication.setAttribute(Qt.AA_EnableHighDpiScaling)
 QApplication.setAttribute(Qt.AA_UseHighDpiPixmaps)
 
+base_directory = os.path.dirname(os.path.abspath(__file__))
+if base_directory.endswith('app'):
+    base_directory = f'{base_directory}/Contents/Resources'
+
 prepare_class = conf.read_conf('Audio', 'prepare_class')
 attend_class = conf.read_conf('Audio', 'attend_class')
 finish_class = conf.read_conf('Audio', 'finish_class')
@@ -36,7 +41,7 @@ window_list = []  # 窗口列表
 class tip_toast(QWidget):
     def __init__(self, pos, width, state=1, lesson_name=None, title=None, subtitle=None, content=None, icon=None):
         super().__init__()
-        uic.loadUi("widget-toast-bar.ui", self)
+        uic.loadUi(f"{base_directory}/widget-toast-bar.ui", self)
 
         # 窗口位置
         if conf.read_conf('Toast', 'pin_on_top') == '1':
@@ -295,7 +300,7 @@ class wave_Effect(QWidget):
 
 def playsound(filename):
     try:
-        data, samplerate = soundfile.read(f'audio/{filename}')
+        data, samplerate = soundfile.read(f'{base_directory}/audio/{filename}')
         volume = int(conf.read_conf('Audio', 'volume')) / 100
         data *= volume
         sounddevice.play(data, samplerate)

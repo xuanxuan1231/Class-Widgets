@@ -1,17 +1,22 @@
 import datetime
+import os.path
 import sqlite3
 import json
 from loguru import logger
 
 import conf
 
-path = 'config/data/xiaomi_weather.db'
-api_config = json.load(open('config/data/weather_api.json', encoding='utf-8'))
+base_directory = os.path.dirname(os.path.abspath(__file__))
+if base_directory.endswith('app'):
+    base_directory = f'{base_directory}/Contents/Resources'
+
+path = f'{base_directory}/config/data/xiaomi_weather.db'
+api_config = json.load(open(f'{base_directory}/config/data/weather_api.json', encoding='utf-8'))
 
 
 def update_path():
     global path
-    path = f"config/data/{api_config['weather_api_parameters'][conf.read_conf('Weather', 'api')]['database']}"
+    path = f"{base_directory}/config/data/{api_config['weather_api_parameters'][conf.read_conf('Weather', 'api')]['database']}"
 
 
 def search_by_name(search_term):
@@ -65,7 +70,7 @@ def search_by_num(search_term):
 
 
 def get_weather_by_code(code):  # 用代码获取天气描述
-    weather_status = json.load(open(f"config/data/{conf.read_conf('Weather', 'api')}_status.json", encoding="utf-8"))
+    weather_status = json.load(open(f"{base_directory}/config/data/{conf.read_conf('Weather', 'api')}_status.json", encoding="utf-8"))
     for weather in weather_status['weatherinfo']:
         if str(weather['code']) == code:
             return weather['wea']
@@ -73,7 +78,7 @@ def get_weather_by_code(code):  # 用代码获取天气描述
 
 
 def get_weather_icon_by_code(code):  # 用代码获取天气图标
-    weather_status = json.load(open(f"config/data/{conf.read_conf('Weather', 'api')}_status.json", encoding="utf-8"))
+    weather_status = json.load(open(f"{base_directory}/config/data/{conf.read_conf('Weather', 'api')}_status.json", encoding="utf-8"))
     weather_code = None
     current_time = datetime.datetime.now()
     # 遍历获取天气代码
@@ -87,17 +92,17 @@ def get_weather_icon_by_code(code):  # 用代码获取天气图标
             break
     if not weather_code:
         logger.error(f'未找到天气代码 {code}')
-        return 'img/weather/99.svg'
+        return f'{base_directory}/img/weather/99.svg'
     # 根据天气和时间获取天气图标
     if weather_code in ('0', '1', '3', '13'):  # 晴、多云、阵雨、阵雪
         if current_time.hour < 6 or current_time.hour >= 18:  # 如果是夜间
-            return f'img/weather/{weather_code}d.svg'
-    return f'img/weather/{weather_code}.svg'
+            return f'{base_directory}/img/weather/{weather_code}d.svg'
+    return f'{base_directory}/img/weather/{weather_code}.svg'
 
 
 def get_weather_stylesheet(code):  # 天气背景样式
     current_time = datetime.datetime.now()
-    weather_status = json.load(open(f"config/data/{conf.read_conf('Weather', 'api')}_status.json", encoding="utf-8"))
+    weather_status = json.load(open(f"{base_directory}/config/data/{conf.read_conf('Weather', 'api')}_status.json", encoding="utf-8"))
     weather_code = '99'
     for weather in weather_status['weatherinfo']:
         if str(weather['code']) == code:
@@ -121,7 +126,7 @@ def get_weather_url():
 
 
 def get_weather_code_by_description(value):
-    weather_status = json.load(open(f"config/data/{conf.read_conf('Weather', 'api')}_status.json", encoding="utf-8"))
+    weather_status = json.load(open(f"{base_directory}/config/data/{conf.read_conf('Weather', 'api')}_status.json", encoding="utf-8"))
     for weather in weather_status['weatherinfo']:
         if str(weather['wea']) == value:
             return str(weather['code'])

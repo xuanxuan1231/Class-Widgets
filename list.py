@@ -39,7 +39,10 @@ subject = {
 }
 
 # 获取当前根目录路径
-schedule_dir = os.path.join(os.getcwd(), 'config', 'schedule')
+base_directory = os.path.dirname(os.path.abspath(__file__))
+if base_directory.endswith('app'):
+    base_directory = f'{base_directory}/Contents/Resources'
+schedule_dir = os.path.join(base_directory, 'config', 'schedule')
 
 class_activity = ['课程', '课间']
 time = ['上午', '下午', '晚修']
@@ -100,7 +103,7 @@ widget_name = {
 }
 
 try:  # 加载课程/主题配置文件
-    subject_info = json.load(open('config/data/subject.json', 'r', encoding='utf-8'))
+    subject_info = json.load(open(f'{base_directory}/config/data/subject.json', 'r', encoding='utf-8'))
     subject_icon = subject_info['subject_icon']
     subject_abbreviation = subject_info['subject_abbreviation']
     theme_folder = [f for f in os.listdir('ui/') if os.path.isdir(os.path.join('ui/', f))]
@@ -139,7 +142,7 @@ except Exception as e:
 
 for folder in theme_folder:
     try:
-        json_file = json.load(open(f'ui/{folder}/theme.json', 'r', encoding='utf-8'))
+        json_file = json.load(open(f'{base_directory}/ui/{folder}/theme.json', 'r', encoding='utf-8'))
         theme_names.append(json_file['name'])
     except Exception as e:
         logger.error(f'加载主题文件 theme.json {folder} 发生错误，跳过：{e}')
@@ -182,9 +185,9 @@ def get_subject_abbreviation(key):
 # 学科图标
 def get_subject_icon(key):
     if key in subject_icon:
-        return f'img/subject/{subject_icon[key]}.svg'
+        return f'{base_directory}/img/subject/{subject_icon[key]}.svg'
     else:
-        return f'img/subject/self_study.svg'
+        return f'{base_directory}/img/subject/self_study.svg'
 
 
 # 学科主题色
@@ -217,7 +220,7 @@ def return_default_schedule_number():
 
 
 def create_new_profile(filename):
-    copy('config/default.json', f'config/schedule/{filename}')
+    copy(f'{base_directory}/config/default.json', f'{base_directory}/config/schedule/{filename}')
 
 
 def import_schedule(filepath, filename):  # 导入课表
@@ -268,7 +271,7 @@ def import_schedule(filepath, filename):  # 导入课表
     # 保存文件
     try:
         print(check_data)
-        copy(filepath, f'config/schedule/{filename}')
+        copy(filepath, f'{base_directory}/config/schedule/{filename}')
         conf.save_data_to_json(check_data, filename)
         conf.write_conf('General', 'schedule', filename)
         return True
@@ -279,7 +282,7 @@ def import_schedule(filepath, filename):  # 导入课表
 
 def export_schedule(filepath, filename):  # 导出课表
     try:
-        copy(f'config/schedule/{filename}', filepath)
+        copy(f'{base_directory}/config/schedule/{filename}', filepath)
         return True
     except Exception as e:
         logger.error(f"导出文件时出错: {e}")
@@ -288,11 +291,11 @@ def export_schedule(filepath, filename):  # 导出课表
 
 def get_widget_config():
     try:
-        if os.path.exists(f'config/widget.json'):
-            with open(f'config/widget.json', 'r', encoding='utf-8') as file:
+        if os.path.exists(f'{base_directory}/config/widget.json'):
+            with open(f'{base_directory}/config/widget.json', 'r', encoding='utf-8') as file:
                 data = json.load(file)
         else:
-            with open(f'config/widget.json', 'w', encoding='utf-8') as file:
+            with open(f'{base_directory}/config/widget.json', 'w', encoding='utf-8') as file:
                 data = {'widgets': [
                     'widget-weather.ui', 'widget-countdown.ui', 'widget-current-activity.ui', 'widget-next-activity.ui'
                 ]}

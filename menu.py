@@ -23,6 +23,7 @@ from qfluentwidgets import (
     TransparentDropDownToolButton, Dialog, SmoothScrollArea
 )
 from copy import deepcopy
+
 from network_thread import VersionThread
 from loguru import logger
 import datetime as dt
@@ -38,6 +39,10 @@ QApplication.setHighDpiScaleFactorRoundingPolicy(
         Qt.HighDpiScaleFactorRoundingPolicy.PassThrough)
 QApplication.setAttribute(Qt.AA_EnableHighDpiScaling)
 QApplication.setAttribute(Qt.AA_UseHighDpiPixmaps)
+
+base_directory = os.path.dirname(os.path.abspath(__file__))
+if base_directory.endswith('app'):
+    base_directory = f'{base_directory}/Contents/Resources'
 
 today = dt.date.today()
 plugin_plaza = None
@@ -300,10 +305,10 @@ class PluginCard(CardWidget):  # 插件卡片
                 enabled_plugins['enabled_plugins'].remove(self.plugin_dir)
                 conf.save_plugin_config(enabled_plugins)
             try:
-                with open("plugins/plugins_from_pp.json", 'r', encoding='utf-8') as f:  # 移除插件广场安装记录
+                with open(f"{base_directory}/plugins/plugins_from_pp.json", 'r', encoding='utf-8') as f:  # 移除插件广场安装记录
                     installed_plugins = json.load(f).get('plugins')
                     installed_plugins.remove(self.plugin_dir)
-                with open("plugins/plugins_from_pp.json", 'w', encoding='utf-8') as f2:  # 移除插件广场安装记录
+                with open(f"{base_directory}/plugins/plugins_from_pp.json", 'w', encoding='utf-8') as f2:  # 移除插件广场安装记录
                     json.dump({"plugins": installed_plugins}, f2, ensure_ascii=False, indent=4)
             except Exception as e:
                 logger.error(f"保存已安装插件失败：{e}")
@@ -403,9 +408,9 @@ class SettingsMenu(FluentWindow):
                 logger.error(f"加载插件失败：{e}")
 
             if (Path(conf.PLUGINS_DIR) / plugin / 'icon.png').exists():  # 若插件目录存在icon.png
-                icon_path = f'plugins/{plugin}/icon.png'
+                icon_path = f'{base_directory}/plugins/{plugin}/icon.png'
             else:
-                icon_path = 'img/settings/plugin-icon.png'
+                icon_path = f'{base_directory}/img/settings/plugin-icon.png'
             card = PluginCard(
                 icon=icon_path,
                 title=plugin_dict[plugin]['name'],
@@ -490,7 +495,7 @@ class SettingsMenu(FluentWindow):
         cf_export_schedule = self.findChild(PushButton, 'ex_schedule')
         cf_export_schedule.clicked.connect(self.cf_export_schedule)  # 导出课程表
         cf_open_schedule_folder = self.findChild(PushButton, 'open_schedule_folder')  # 打开课程表文件夹
-        cf_open_schedule_folder.clicked.connect(lambda: open_dir(os.path.join(os.getcwd(), 'config/schedule')))
+        cf_open_schedule_folder.clicked.connect(lambda: open_dir(os.path.join(os.path.abspath('.'), 'config/schedule')))
 
     def setup_customization_interface(self):
         ct_scroll = self.findChild(SmoothScrollArea, 'ct_scroll')  # 触摸屏适配
@@ -859,7 +864,7 @@ class SettingsMenu(FluentWindow):
         switch_startup = self.findChild(SwitchButton, 'switch_startup')
         if switch_startup.isChecked():
             conf.write_conf('General', 'auto_startup', '1')
-            conf.add_to_startup('ClassWidgets.exe', 'img/favicon.ico')
+            conf.add_to_startup(f'{base_directory}/ClassWidgets.exe', f'{base_directory}/img/favicon.ico')
         else:
             conf.write_conf('General', 'auto_startup', '0')
             conf.remove_from_startup()
@@ -1091,9 +1096,9 @@ class SettingsMenu(FluentWindow):
             for i in range(len(widget_config)):
                 widget_name = widget_config[i]
                 if isDarkTheme() and conf.load_theme_config(conf.read_conf("General", "theme"))['support_dark_mode']:
-                    path = f'ui/{conf.read_conf("General", "theme")}/dark/preview/{widget_name[:-3]}.png'
+                    path = f'{base_directory}/ui/{conf.read_conf("General", "theme")}/dark/preview/{widget_name[:-3]}.png'
                 else:
-                    path = f'ui/{conf.read_conf("General", "theme")}/preview/{widget_name[:-3]}.png'
+                    path = f'{base_directory}/ui/{conf.read_conf("General", "theme")}/preview/{widget_name[:-3]}.png'
                 label = QLabel()
                 label.setPixmap(QPixmap(path))
                 widgets_preview.addWidget(label)
@@ -1110,7 +1115,7 @@ class SettingsMenu(FluentWindow):
             conf_name = self.findChild(LineEdit, 'conf_name')
             old_name = filename
             new_name = conf_name.text()
-            os.rename(f'config/schedule/{old_name}', f'config/schedule/{new_name}.json')  # 重命名
+            os.rename(f'{base_directory}/config/schedule/{old_name}', f'{base_directory}/config/schedule/{new_name}.json')  # 重命名
             conf.write_conf('General', 'schedule', f'{new_name}.json')
             filename = new_name + '.json'
             conf_combo = self.findChild(ComboBox, 'conf_combo')
@@ -1767,7 +1772,7 @@ class SettingsMenu(FluentWindow):
         self.resize(width, height)
 
         self.setWindowTitle('Class Widgets - 设置')
-        self.setWindowIcon(QIcon('img/logo/favicon-settings.ico'))
+        self.setWindowIcon(QIcon(f'{base_directory}/img/logo/favicon-settings.ico'))
 
         self.init_font()  # 设置字体
 

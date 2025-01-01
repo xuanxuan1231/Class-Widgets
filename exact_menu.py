@@ -1,5 +1,6 @@
 import datetime as dt
 import sys
+import os
 from shutil import copy
 
 from PyQt5 import uic
@@ -20,6 +21,10 @@ QApplication.setHighDpiScaleFactorRoundingPolicy(
 QApplication.setAttribute(Qt.AA_EnableHighDpiScaling)
 QApplication.setAttribute(Qt.AA_UseHighDpiPixmaps)
 
+base_directory = os.path.dirname(os.path.abspath(__file__))
+if base_directory.endswith('app'):
+    base_directory = f'{base_directory}/Contents/Resources'
+
 filename = conf.read_conf('General', 'schedule')
 current_week = dt.datetime.today().weekday()
 temp_schedule = {'schedule': {}, 'schedule_even': {}}
@@ -29,7 +34,7 @@ class ExactMenu(FluentWindow):
     def __init__(self):
         super().__init__()
         self.menu = None
-        self.interface = uic.loadUi('exact_menu.ui')
+        self.interface = uic.loadUi(f'{base_directory}/exact_menu.ui')
         self.initUI()
         self.init_interface()
 
@@ -77,7 +82,7 @@ class ExactMenu(FluentWindow):
             temp_week = self.findChild(ComboBox, 'select_temp_week')
             if temp_schedule != {'schedule': {}, 'schedule_even': {}}:
                 if conf.read_conf('Temp', 'temp_schedule') == '':  # 备份检测
-                    copy(f'config/schedule/{filename}', f'config/schedule/backup.json')  # 备份课表配置
+                    copy(f'{base_directory}/config/schedule/{filename}', f'{base_directory}/config/schedule/backup.json')  # 备份课表配置
                     logger.info(f'备份课表配置成功：已将 {filename} -备份至-> backup.json')
                     conf.write_conf('Temp', 'temp_schedule', filename)
                 conf.save_data_to_json(temp_schedule, filename)
