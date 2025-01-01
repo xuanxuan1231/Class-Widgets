@@ -21,8 +21,8 @@ QApplication.setAttribute(Qt.AA_EnableHighDpiScaling)
 QApplication.setAttribute(Qt.AA_UseHighDpiPixmaps)
 
 base_directory = os.path.dirname(os.path.abspath(__file__))
-if base_directory.endswith('app'):
-    base_directory = f'{base_directory}/Contents/Resources'
+if base_directory.endswith('MacOS'):
+    base_directory = os.path.join(os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir)), 'Resources')
 
 prepare_class = conf.read_conf('Audio', 'prepare_class')
 attend_class = conf.read_conf('Audio', 'attend_class')

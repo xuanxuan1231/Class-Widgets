@@ -40,8 +40,8 @@ subject = {
 
 # 获取当前根目录路径
 base_directory = os.path.dirname(os.path.abspath(__file__))
-if base_directory.endswith('app'):
-    base_directory = f'{base_directory}/Contents/Resources'
+if base_directory.endswith('MacOS'):
+    base_directory = os.path.join(os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir)), 'Resources')
 schedule_dir = os.path.join(base_directory, 'config', 'schedule')
 
 class_activity = ['课程', '课间']
