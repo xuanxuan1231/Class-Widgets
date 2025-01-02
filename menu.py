@@ -316,6 +316,13 @@ class PluginCard(CardWidget):  # 插件卡片
 
 
 class SettingsMenu(FluentWindow):
+    _instance = None
+
+    def __new__(cls, *args, **kwargs):
+        if not cls._instance:
+            cls._instance = super(SettingsMenu, cls).__new__(cls)
+        return cls._instance
+
     def __init__(self):
         super().__init__()
         self.plugins_settings = {}
@@ -1766,7 +1773,7 @@ class SettingsMenu(FluentWindow):
 
     def closeEvent(self, event):
         event.ignore()
-        self.deleteLater()
+        # self.deleteLater()
         self.hide()
 
 

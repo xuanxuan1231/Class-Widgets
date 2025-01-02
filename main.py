@@ -1281,7 +1281,6 @@ class DesktopWidget(QWidget):  # 主要小组件
                 settings.raise_()
                 settings.activateWindow()
         except Exception as e:
-            settings = SettingsMenu()
             settings.show()
             logger.info('打开“设置”')
 
@@ -1296,7 +1295,6 @@ class DesktopWidget(QWidget):  # 主要小组件
                 ex_menu.raise_()
                 ex_menu.activateWindow()
         except Exception as e:
-            ex_menu = ExactMenu()
             ex_menu.show()
             logger.info('打开“额外选项”')
 

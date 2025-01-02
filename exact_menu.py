@@ -164,7 +164,7 @@ class ExactMenu(FluentWindow):
 
     def closeEvent(self, event):
         event.ignore()
-        self.deleteLater()
+        # self.deleteLater()
         self.hide()
 
 

@@ -11,8 +11,8 @@ from loguru import logger
 import conf
 
 headers = {"User-Agent": "Mozilla/5.0"}
-proxies = {"http": "http://127.0.0.1:10809", "https": "http://127.0.0.1:10809"}  # 加速访问
-# proxies = {"http": None, "https": None}
+# proxies = {"http": "http://127.0.0.1:10809", "https": "http://127.0.0.1:10809"}  # 加速访问
+proxies = {"http": None, "https": None}
 
 MIRROR_PATH = "config/mirror.json"
 PLAZA_REPO_URL = "https://raw.githubusercontent.com/Class-Widgets/plugin-plaza/"

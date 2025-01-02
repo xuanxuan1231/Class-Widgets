@@ -65,6 +65,9 @@ class tip_toast(QWidget):
             pixmap = pixmap.scaled(48, 48)
             icon_label.setPixmap(pixmap)
 
+        # if conf.read_conf('General', 'color_mode') == '2':
+        #     setTheme(Theme.AUTO)
+
         if state == 1:
             logger.info('上课铃声显示')
             title_label.setText('活动开始')  # 修正文本，以适应不同场景
@@ -200,9 +203,10 @@ class tip_toast(QWidget):
 
     def closeEvent(self, event):
         global window_list
-        window_list.remove(self)
+        # window_list.remove(self)
+        self.hide()
         self.deleteLater()
-        event.accept()
+        event.ignore()
 
 
 class wave_Effect(QWidget):
@@ -285,9 +289,10 @@ class wave_Effect(QWidget):
 
     def closeEvent(self, event):
         global window_list
-        window_list.remove(self)
+        # window_list.remove(self)
         self.deleteLater()
-        event.accept()
+        self.hide()
+        event.ignore()
 
 
 def playsound(filename):
@@ -409,10 +414,10 @@ def push_notification(state=1, lesson_name='', title=None, subtitle=None,
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     main(
-        state=2,
-        # title='测试通知喵',
-        # subtitle='By Rin.',
-        # content='欢迎使用 ClassWidgets',
-        # icon='img/favicon.png'
+        state=4,
+        title='测试通知喵',
+        subtitle='By Rin.',
+        content='欢迎使用 ClassWidgets',
+        icon='img/favicon.ico'
     )
     sys.exit(app.exec())
