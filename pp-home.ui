@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>688</width>
-    <height>713</height>
+    <height>777</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -52,7 +52,7 @@
         <x>0</x>
         <y>0</y>
         <width>688</width>
-        <height>778</height>
+        <height>818</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_9">
@@ -157,6 +157,11 @@
            <item/>
            <item/>
            <item/>
+           <item/>
+           <item/>
+           <item/>
+           <item/>
+           <item/>
           </widget>
          </item>
         </layout>
@@ -201,12 +206,15 @@
         </layout>
        </item>
        <item>
-        <widget class="BodyLabel" name="BodyLabel">
+        <widget class="BodyLabel" name="tips">
          <property name="text">
           <string>这就到底了吗……(っ °Д °;)っ</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
+         </property>
+         <property name="wordWrap">
+          <bool>true</bool>
          </property>
          <property name="lightColor" stdset="0">
           <color>

@@ -10,7 +10,7 @@ from qfluentwidgets import MSFluentWindow, FluentIcon as fIcon, NavigationItemPo
     ImageLabel, StrongBodyLabel, HyperlinkLabel, CaptionLabel, PrimaryPushButton, HorizontalFlipView, \
     InfoBar, InfoBarPosition, SplashScreen, MessageBoxBase, TransparentToolButton, BodyLabel, \
     PrimarySplitPushButton, RoundMenu, Action, PipsPager, TextBrowser, CardWidget, \
-    IndeterminateProgressRing, ComboBox, ProgressBar, SmoothScrollArea, SearchLineEdit, HyperlinkButton
+    IndeterminateProgressRing, ComboBox, ProgressBar, SmoothScrollArea, SearchLineEdit, HyperlinkButton, SubtitleLabel
 
 from loguru import logger
 from datetime import datetime
@@ -41,7 +41,7 @@ restart_tips_flag = False  # 重启提示
 plugins_data = []  # 仓库插件信息
 download_progress = []  # 下载线程
 
-installed_plugins = []  # 已安装插件（通过PluginPlaza获取）
+installed_plugins = {}  # 已安装插件（通过PluginPlaza获取）
 tags = ['示例', '信息展示', '学习', '测试', '工具', '自动化']  # 测试用TAG
 search_items = []
 SEARCH_FIELDS = ["name", "description", "tag", "author"]  # 搜索字段
@@ -97,7 +97,7 @@ class downloadProgressBar(InfoBar):  # 下载进度条(创建下载进程)
     def download(self, url):  # 接受下载连接并开始任务
         self.download_thread = nt.DownloadAndExtract(url, self.p_name)
         # self.download_thread = nt.DownloadAndExtract(TEST_DOWNLOAD_LINK, self.p_name)
-        self.download_thread.progress_signal.connect(lambda progress: self.bar.setValue(int(progress)))  # 下载
+        self.download_thread.progress_signal.connect(lambda progress: self.bar.setValue(int(progress)))  # 下载进度
         self.download_thread.status_signal.connect(self.detect_status)  # 判断状态
         self.download_thread.start()
 
@@ -553,10 +553,16 @@ class PluginPlaza(MSFluentWindow):
 
         def get_banner(data):
             try:
-                self.banner_pager.setPageNumber(len(data))
-                self.banners = [f"{base_directory}/img/plaza/banner_pre.png" for _ in range(len(data))]
-                if data:
+                if data and data[0] != 'ERROR':  # 返回data值有效
+                    self.banner_pager.setPageNumber(len(data))
+                    self.banners = ["img/plaza/banner_pre.png" for _ in range(len(data))]
                     self.banner_view.addImages(self.banners)
+                else:
+                    self.findChild(BodyLabel, 'tips').setText(f'错误原因：{data[1]}')
+                    self.banner_view.addImage("img/plaza/banner_network-failed.png")
+                    self.splashScreen.hide()
+                    self.homeInterface.findChild(SubtitleLabel, 'SubtitleLabel_3').hide()  # 隐藏副标题
+                    return
 
                 # 定义一个内部函数来启动下一个线程
                 def start_next_banner(index):

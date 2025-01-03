@@ -397,7 +397,7 @@
    <item>
     <widget class="CaptionLabel" name="CaptionLabel_2">
      <property name="text">
-      <string>Copyright © 2024 RinLit, All Rights Reversed.</string>
+      <string>Copyright © 2025 RinLit, All Rights Reversed.</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>

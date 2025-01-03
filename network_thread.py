@@ -68,7 +68,7 @@ class getRepoFileList(QThread):  # 获取仓库文件目录
 
                 if not json_files:
                     logger.warning(f"插件广场内{self.path}的目录为空")
-                    return []
+                    return ['ERROR', '插件目录为空']
                 else:
                     logger.success(f"获取{self.path}目录成功")
                     return json_files
@@ -77,10 +77,10 @@ class getRepoFileList(QThread):  # 获取仓库文件目录
                 return ['banner_1.png']
             else:
                 logger.error(f"获取{self.path}目录失败：{response.status_code}")
-                return []
+                return ['ERROR', response.status_code]
         except Exception as e:
             logger.error(f"获取{self.path}目录错误: {e}")
-            return []
+            return ['ERROR', e]
 
 
 class getPluginInfo(QThread):  # 获取插件信息(json)
