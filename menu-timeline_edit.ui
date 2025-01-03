@@ -176,6 +176,29 @@ FluentLabelBase{color:#7d000000}</string>
            </property>
           </widget>
          </item>
+         <item>
+          <widget class="BodyLabel" name="BodyLabel_6">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>类型</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="ComboBox" name="part_type">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+          </widget>
+         </item>
         </layout>
        </item>
        <item>

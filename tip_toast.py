@@ -9,7 +9,7 @@ from PyQt5.QtCore import Qt, QPropertyAnimation, QRect, QEasingCurve, QTimer, QP
 from PyQt5.QtGui import QColor, QPainter, QBrush, QPixmap
 from PyQt5.QtWidgets import QWidget, QApplication, QLabel, QFrame, QGraphicsDropShadowEffect, QGraphicsBlurEffect
 from loguru import logger
-from qfluentwidgets import setThemeColor, Theme, setTheme
+from qfluentwidgets import setThemeColor
 
 import conf
 import list
@@ -51,8 +51,7 @@ class tip_toast(QWidget):
             )
         else:
             self.setWindowFlags(
-                Qt.WindowType.WindowStaysOnBottomHint | Qt.WindowType.FramelessWindowHint |
-                Qt.X11BypassWindowManagerHint
+                Qt.WindowType.WindowStaysOnBottomHint | Qt.WindowType.FramelessWindowHint
             )
         self.setAttribute(Qt.WidgetAttribute.WA_TranslucentBackground)
         self.move(pos[0], pos[1])
@@ -83,7 +82,10 @@ class tip_toast(QWidget):
         elif state == 0:
             logger.info('下课铃声显示')
             title_label.setText('下课')
-            subtitle_label.setText('下一节')
+            if lesson_name:
+                subtitle_label.setText('即将进行')
+            else:
+                subtitle_label.hide()
             lesson.setText(lesson_name)  # 课程名
             playsound(finish_class)
             setThemeColor(f"#{conf.read_conf('Color', 'finish_class')}")
@@ -419,7 +421,7 @@ def push_notification(state=1, lesson_name='', title=None, subtitle=None,
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     main(
-        state=4,
+        state=0,
         title='测试通知喵',
         subtitle='By Rin.',
         content='欢迎使用 ClassWidgets',

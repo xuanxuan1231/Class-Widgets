@@ -39,6 +39,7 @@ TEST_DOWNLOAD_LINK = "https://dldir1.qq.com/qqfile/qq/PCQQ9.7.17/QQ9.7.17.29225.
 
 restart_tips_flag = False  # 重启提示
 plugins_data = []  # 仓库插件信息
+local_plugins_version = {}  # 本地插件版本
 download_progress = []  # 下载线程
 
 installed_plugins = {}  # 已安装插件（通过PluginPlaza获取）
@@ -206,6 +207,13 @@ class PluginDetailPage(MessageBoxBase):  # 插件详情页面
             self.installButton.setText("  已安装  ")
             self.installButton.setEnabled(False)
 
+        if self.p_name in local_plugins_version:  # 如果本地版本低于仓库版本
+            print(local_plugins_version[self.p_name], version)
+            if local_plugins_version[self.p_name] < version:
+                self.installButton.setText("更新")
+                self.installButton.setIcon(fIcon.SYNC)
+                self.installButton.setEnabled(True)
+
         menu = RoundMenu(parent=self.installButton)
         menu.addActions([
             Action(fIcon.DOWNLOAD, "为 Class Widgets 安装", triggered=self.install),
@@ -308,9 +316,17 @@ class PluginCard_Horizontal(CardWidget):  # 插件卡片（横向）
         self.installButton.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Fixed)
         self.installButton.setIcon(fIcon.DOWNLOAD)
         self.installButton.clicked.connect(self.install)
+
         if self.p_name in installed_plugins:  # 如果已安装
             self.installButton.setText("已安装")
             self.installButton.setEnabled(False)
+
+        if self.p_name in local_plugins_version:  # 如果本地版本低于仓库版本
+            print(local_plugins_version[self.p_name], version)
+            if local_plugins_version[self.p_name] < version:
+                self.installButton.setText("更新")
+                self.installButton.setIcon(fIcon.SYNC)
+                self.installButton.setEnabled(True)
 
         self.hBoxLayout.setContentsMargins(20, 11, 11, 11)
         self.hBoxLayout.setSpacing(15)
@@ -381,6 +397,7 @@ class PluginPlaza(MSFluentWindow):
             self.searchInterface = uic.loadUi(f'{base_directory}/pp-search.ui')  # 搜索
             self.searchInterface.setObjectName("searchInterface")
 
+            load_local_plugins_version()  # 加载本地插件版本
             self.init_nav()
             self.init_window()
             self.get_pp_data()
@@ -667,8 +684,11 @@ def add2save_plugin(p_name):  # 保存已安装插件
     global installed_plugins
     installed_plugins.append(p_name)
     try:
-        with open(CONF_PATH, 'w', encoding='utf-8') as f:
-            json.dump({"plugins": installed_plugins}, f, ensure_ascii=False, indent=4)
+        with open(CONF_PATH, 'r+', encoding='utf-8') as f:
+            if p_name not in json.load(f)['plugins']:
+                f.seek(0)  # 指针指向开头
+                json.dump({"plugins": installed_plugins}, f, ensure_ascii=False, indent=4)
+                f.truncate()  # 截断文件
     except Exception as e:
         logger.error(f"保存已安装插件失败：{e}")
 
@@ -676,6 +696,18 @@ def add2save_plugin(p_name):  # 保存已安装插件
 def replace_to_file_server(url, branch='main'):
     return (f'{url.replace("https://github.com/", "https://raw.githubusercontent.com/")}'
             f'/{branch}')
+
+
+def load_local_plugins_version():
+    global local_plugins_version
+    for plugin in installed_plugins:
+        try:
+            with open(f"plugins/{plugin}/plugin.json", 'r', encoding='utf-8') as f:
+                data = json.load(f)
+                local_plugins_version[plugin] = data['version']
+        except Exception as e:
+            logger.error(f"加载本地插件版本失败：{e}")
+    print(local_plugins_version)
 
 
 if __name__ == '__main__':

@@ -9,6 +9,7 @@ import conf
 
 week = ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
 week_type = ['单周', '双周']
+part_type = ['节点', '休息段']
 color_mode = ['浅色', '深色', '跟随系统']
 hide_mode = ['无', '上课时自动隐藏', '窗口最大化时隐藏']
 non_nt_hide_mode = ['无', '上课时自动隐藏']
@@ -230,6 +231,21 @@ def import_schedule(filepath, filename):  # 导入课表
     except Exception as e:
         logger.error(f"加载数据时出错: {e}")
         return False
+
+    checked_data = convert_schedule(check_data)
+    # 保存文件
+    try:
+        print(check_data)
+        copy(filepath, f'{base_directory}/config/schedule/{filename}')
+        conf.save_data_to_json(check_data, filename)
+        conf.write_conf('General', 'schedule', filename)
+        return True
+    except Exception as e:
+        logger.error(f"保存数据时出错: {e}")
+        return e
+
+
+def convert_schedule(check_data):  # 转换课表
     # 校验课程表
     if check_data is None:
         logger.warning('此文件为空')
@@ -242,11 +258,16 @@ def import_schedule(filepath, filename):  # 导入课表
         logger.warning('此课程表格式不支持单双周')
         check_data['schedule_even'] = {str(i): [] for i in range(0, 6)}
 
+    if len(check_data.get('part').get('0')) == 2:
+        logger.warning('此课程表格式不支持休息段')
+        for i in range(len(check_data.get('part'))):
+            check_data['part'][str(i)].append('节点')
+
     if not check_data.get('part') or not check_data.get('part_name'):  # 兼容旧版本
-        logger.warning('此课程表格式不支持分段，为旧版本')
+        logger.warning('此课程表格式不支持节点')
         try:
-            check_data['part'] = {  # 兼容旧版本
-                "0": check_data['timeline']['start_time_m'], "1": check_data['timeline']['start_time_a']
+            check_data['part'] = {  # 转换旧版本时间线为新版
+                "0": check_data['timeline']['start_time_m']['part'], "1": check_data['timeline']['start_time_a']['part']
             }
             check_data['part_name'] = {"0": "上午", "1": "下午"}
             del check_data['timeline']['start_time_m']
@@ -268,16 +289,8 @@ def import_schedule(filepath, filename):  # 导入课表
         except Exception as e:
             logger.error(f"转换数据时出错: {e}")
             return False
-    # 保存文件
-    try:
-        print(check_data)
-        copy(filepath, f'{base_directory}/config/schedule/{filename}')
-        conf.save_data_to_json(check_data, filename)
-        conf.write_conf('General', 'schedule', filename)
-        return True
-    except Exception as e:
-        logger.error(f"保存数据时出错: {e}")
-        return e
+          
+    return check_data
 
 
 def export_schedule(filepath, filename):  # 导出课表

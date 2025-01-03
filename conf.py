@@ -392,7 +392,9 @@ def check_config():
                 logger.info(f"配置文件已更新")
             except Exception as e:
                 logger.error(f"配置文件更新失败: {e}")
+
         if not os.path.exists(f"{base_directory}/config/schedule/{read_conf('General', 'schedule')}"):  # 如果config.ini课程表不存在，则创建
+
             schedule_config = []
             # 遍历目标目录下的所有文件
             for file_name in os.listdir(f'{base_directory}/config/schedule'):

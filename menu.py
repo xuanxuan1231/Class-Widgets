@@ -20,7 +20,7 @@ from qfluentwidgets import (
     CalendarPicker, BodyLabel, ColorDialog, isDarkTheme, TimeEdit, EditableComboBox, MessageBoxBase,
     SearchLineEdit, Slider, PlainTextEdit, ToolTipFilter, ToolTipPosition, RadioButton, HyperlinkLabel,
     PrimaryDropDownPushButton, Action, RoundMenu, CardWidget, ImageLabel, StrongBodyLabel,
-    TransparentDropDownToolButton, Dialog, SmoothScrollArea
+    TransparentDropDownToolButton, Dialog, SmoothScrollArea, TransparentToolButton
 )
 from copy import deepcopy
 
@@ -205,6 +205,7 @@ class PluginCard(CardWidget):  # 插件卡片
         self.enableButton = SwitchButton()
         self.moreButton = TransparentDropDownToolButton()
         self.moreMenu = RoundMenu(parent=self.moreButton)
+        self.settingsBtn = TransparentToolButton()  # 设置按钮
 
         self.hBoxLayout = QHBoxLayout(self)
         self.hBoxLayout_Title = QHBoxLayout(self)
@@ -223,6 +224,8 @@ class PluginCard(CardWidget):  # 插件卡片
         if settings:
             self.moreMenu.addSeparator()
             self.moreMenu.addAction(Action(fIcon.SETTING, f'“{title}”插件设置', triggered=self.show_settings))
+        else:
+            self.settingsBtn.hide()
 
         if plugin_dir in enabled_plugins['enabled_plugins']:  # 插件是否启用
             self.enableButton.setChecked(True)
@@ -232,30 +235,38 @@ class PluginCard(CardWidget):  # 插件卡片
         self.moreButton.setFixedSize(34, 34)
         self.iconWidget.setBorderRadius(icon_radius, icon_radius, icon_radius, icon_radius)  # 圆角
         self.contentLabel.setTextColor("#606060", "#d2d2d2")
+        self.contentLabel.setMaximumWidth(500)
+        self.contentLabel.setWordWrap(True)  # 自动换行
         self.versionLabel.setTextColor("#999999", "#999999")
         self.authorLabel.setTextColor("#606060", "#d2d2d2")
         self.enableButton.checkedChanged.connect(self.set_enable)
         self.enableButton.setOffText('禁用')
         self.enableButton.setOnText('启用')
         self.moreButton.setMenu(self.moreMenu)
+        self.settingsBtn.setIcon(fIcon.SETTING)
+        self.settingsBtn.clicked.connect(self.show_settings)
 
         self.hBoxLayout.setContentsMargins(20, 11, 11, 11)
         self.hBoxLayout.setSpacing(15)
         self.hBoxLayout.addWidget(self.iconWidget)
 
+        # 内容
         self.vBoxLayout.setContentsMargins(0, 0, 0, 0)
         self.vBoxLayout.setSpacing(0)
         self.vBoxLayout.addLayout(self.hBoxLayout_Title)
         self.vBoxLayout.addWidget(self.contentLabel, 0, Qt.AlignmentFlag.AlignVCenter)
         self.vBoxLayout.setAlignment(Qt.AlignmentFlag.AlignVCenter)
-        self.hBoxLayout.addLayout(self.vBoxLayout)
+        self.hBoxLayout.addLayout(self.vBoxLayout, 1)  # !!!
 
+        # 标题栏
         self.hBoxLayout_Title.setSpacing(12)
+        self.hBoxLayout_Title.setAlignment(Qt.AlignmentFlag.AlignLeft)
         self.hBoxLayout_Title.addWidget(self.titleLabel, 0, Qt.AlignmentFlag.AlignVCenter)
         self.hBoxLayout_Title.addWidget(self.authorLabel, 0, Qt.AlignmentFlag.AlignVCenter)
         self.hBoxLayout_Title.addWidget(self.versionLabel, 0, Qt.AlignmentFlag.AlignVCenter)
 
         self.hBoxLayout.addStretch(1)
+        self.hBoxLayout.addWidget(self.settingsBtn, 0, Qt.AlignmentFlag.AlignRight)
         self.hBoxLayout.addWidget(self.enableButton, 0, Qt.AlignmentFlag.AlignRight)
         self.hBoxLayout.addWidget(self.moreButton, 0, Qt.AlignmentFlag.AlignRight)
 
@@ -388,6 +399,9 @@ class SettingsMenu(FluentWindow):
         open_pp = self.findChild(PushButton, 'open_plugin_plaza')
         open_pp.clicked.connect(open_plaza)  # 打开插件广场
 
+        open_pp2 = self.findChild(PushButton, 'open_plugin_plaza_2')
+        open_pp2.clicked.connect(open_plaza)  # 打开插件广场
+
         auto_delay = self.findChild(SpinBox, 'auto_delay')
         auto_delay.setValue(int(conf.read_conf('Plugin', 'auto_delay')))
         auto_delay.valueChanged.connect(lambda: conf.write_conf('Plugin', 'auto_delay', str(auto_delay.value())))
@@ -429,13 +443,13 @@ class SettingsMenu(FluentWindow):
 
     def setup_help_interface(self):
         help_docu = FramelessWebEngineView(self)
-        help_docu.load(QUrl("https://www.yuque.com/rinlit/class-widgets_help"))
+        help_docu.load(QUrl("https://classwidgets.rinlit.cn/docs-user/"))
         help_docu.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
 
         open_by_browser = self.findChild(PushButton, 'open_by_browser')
         open_by_browser.setIcon(fIcon.LINK)
         open_by_browser.clicked.connect(lambda: QDesktopServices.openUrl(QUrl(
-            'https://www.yuque.com/rinlit/class-widgets_help'
+            'https://classwidgets.rinlit.cn/docs-user/'
         )))
 
         web_layout = self.findChild(QVBoxLayout, 'web')
@@ -748,6 +762,9 @@ class SettingsMenu(FluentWindow):
         te_add_part_button.installEventFilter(
             ToolTipFilter(te_add_part_button, showDelay=300, position=ToolTipPosition.TOP))
         te_add_part_button.clicked.connect(self.te_add_part)
+
+        te_part_type_combo = self.findChild(ComboBox, 'part_type')  # 节次类型
+        te_part_type_combo.addItems(list.part_type)
 
         te_name_edit = self.findChild(EditableComboBox, 'name_part_combo')  # 名称
         te_name_edit.addItems(list.time)
@@ -1206,7 +1223,13 @@ class SettingsMenu(FluentWindow):
             prefix = part_name[part_num]
             time = QTime(int(part_time[0]), int(part_time[1])).toString('h:mm')
             period = time
-            text = f'{prefix} - {period}'
+            try:
+                part_type = part_time[2]
+            except IndexError:
+                part_type = 'part'
+
+            part_type = list.part_type[part_type == 'break']
+            text = f'{prefix} - {period} - {part_type}'
             part_list.addItem(text)
 
         for week, _ in timeline.items():  # 加载节点
@@ -1414,7 +1437,11 @@ class SettingsMenu(FluentWindow):
             item_text = te_part_list.item(i).text()
             item_info = item_text.split(' - ')
             time_tostring = item_info[1].split(':')
-            data_dict['part'][str(i)] = [int(time_tostring[0]), int(time_tostring[1])]
+            if len(item_info) == 3:
+                part_type = ['part', 'break'][item_info[2] == '休息段']
+            else:
+                part_type = 'part'
+            data_dict['part'][str(i)] = [int(time_tostring[0]), int(time_tostring[1]), part_type]
             data_dict['part_name'][str(i)] = item_info[0]
 
         try:
@@ -1523,9 +1550,10 @@ class SettingsMenu(FluentWindow):
         te_part_list = self.findChild(ListWidget, 'part_list')
         te_name_part = self.findChild(EditableComboBox, 'name_part_combo')
         te_part_time = self.findChild(TimeEdit, 'part_time')
+        te_part_type = self.findChild(ComboBox, 'part_type')
         if te_part_list.count() < 10:
             te_part_list.addItem(
-                f'{te_name_part.currentText()} - {te_part_time.time().toString("h:mm")}'
+                f'{te_name_part.currentText()} - {te_part_time.time().toString("h:mm")} - {te_part_type.currentText()}'
             )
         else:  # 最多只能添加9个节点
             Flyout.create(
