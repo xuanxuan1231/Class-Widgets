@@ -15,7 +15,7 @@ jobs:
       fail-fast: false
       matrix:
         arch: [x86, x64]
-        os: [ubuntu-20.04, windows-latest, macos-13]
+        os: [ubuntu-20.04, windows-latest, macos-13, ubuntu-latest]
         exclude:
           - os: ubuntu-20.04
             arch: x86
@@ -101,7 +101,6 @@ jobs:
         uses: actions/upload-artifact@v4.4.2
         with:
           name: ${{ matrix.os }}-${{ matrix.arch }}
-
           path: ./dist/
       - name: Upload macOS Bundle
         uses: actions/upload-artifact@v4.4.2
@@ -109,27 +108,38 @@ jobs:
           name: macos-13-x64-bundle
           path: ./dist-bundle/
 
-  self-hosted:
-    runs-on: self-hosted
-
+  debian10:
+    runs-on: ubuntu-latest
+    container: debian:10
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4.2.2
-
-      - name: 创建虚拟环境
-        run: |
-          /home/actions/.pyenv/versions/3.8.10/bin/python -m venv venv
-          source ./venv/bin/activate
-          pip install -r requirements.linux.txt
-          pip install pyinstaller
-
-      - name: 使用 PyInstaller 打包
-        run: |
-          source ./venv/bin/activate
-          pyinstaller main.py -w -i ./img/favicon.ico -n ClassWidgets --contents-directory . --add-data config:config --add-data audio:audio --add-data img:img --add-data ui:ui --add-data font:font --add-data *.ui:. --add-data LICENSE:. --add-data plugins:plugins
-
-      - name: 存到构建输出
-        uses: actions/upload-artifact@v4.4.2
-        with:
-          name: debian10-x64
-          path: ./dist/
+    - name: Checkout repository
+      uses: actions/checkout@v4.2.2
+    - name: Setup uv
+      uses: astral-sh/setup-uv@v4
+      with:
+        python-version: '3.8.10'
+    - name: Run build
+      run: |
+        uv venv
+        source .venv/bin/activate
+        uv pip install -r  requirements.linux.txt
+        uv pip install pyinstaller
+        pyinstaller main.py \
+          -w \
+          -i ./img/favicon.ico \
+          -n ClassWidgets \
+          --contents-directory . \
+          --add-data config:config \
+          --add-data audio:audio \
+          --add-data img:img \
+          --add-data ui:ui \
+          --add-data font:font \
+          --add-data *.ui:. \
+          --add-data LICENSE:. \
+          --add-data plugins:plugins \
+          --hidden-import numpy
+    - name: Upload
+      uses: actions/upload-artifact@v4.4.2
+      with:
+        name: ${{ matrix.os }}-${{ matrix.arch }}
+        path: ./dist/
