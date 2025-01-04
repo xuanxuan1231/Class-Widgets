@@ -33,8 +33,6 @@ jobs:
           architecture: ${{ matrix.arch }}
       - name: Setup uv
         uses: astral-sh/setup-uv@v4
-      - name: Install dependencies
-        run: sudo apt install binutils -y
       - name: Run Windows build
         if: ${{ matrix.os == 'windows-latest' }}
         run: |
@@ -121,6 +119,8 @@ jobs:
       uses: astral-sh/setup-uv@v4
       with:
         python-version: '3.8.10'
+    - name: Install dependencies
+      run: sudo apt install binutils -y
     - name: Run build
       shell: bash
       run: |
