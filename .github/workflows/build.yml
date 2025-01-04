@@ -21,6 +21,7 @@ jobs:
             arch: x86
           - os: macos-13
             arch: x86
+    name: ${{ matrix.os }}-${{ matrix.arch }}
     runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout repository
@@ -119,6 +120,7 @@ jobs:
       with:
         python-version: '3.8.10'
     - name: Run build
+      shell: bash
       run: |
         uv venv
         source .venv/bin/activate
