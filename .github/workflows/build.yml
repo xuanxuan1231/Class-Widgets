@@ -120,7 +120,7 @@ jobs:
       with:
         python-version: '3.8.10'
     - name: Install dependencies
-      run: sudo apt install binutils -y
+      run: apt install binutils -y
     - name: Run build
       shell: bash
       run: |
