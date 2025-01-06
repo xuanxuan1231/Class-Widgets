@@ -52,6 +52,8 @@ jobs:
             --add-data *.ui:. `
             --add-data LICENSE:. `
             --add-data plugins:plugins
+            --hidden-import numpy
+
       - name: Run Linux build
         if: ${{ matrix.os == 'ubuntu-20.04' }}
         run: |
