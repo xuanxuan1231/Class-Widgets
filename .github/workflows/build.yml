@@ -52,7 +52,7 @@ jobs:
             --add-data *.ui:. `
             --add-data LICENSE:. `
             --add-data plugins:plugins `
-            --hidden-import numpy
+            --hidden-import numpy.core._multiarray_umath
 
       - name: Run Linux build
         if: ${{ matrix.os == 'ubuntu-20.04' }}
