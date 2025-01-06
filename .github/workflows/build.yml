@@ -51,7 +51,7 @@ jobs:
             --add-data font:font `
             --add-data *.ui:. `
             --add-data LICENSE:. `
-            --add-data plugins:plugins
+            --add-data plugins:plugins `
             --hidden-import numpy
 
       - name: Run Linux build
