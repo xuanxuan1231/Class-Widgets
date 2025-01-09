@@ -110,6 +110,9 @@ def load_theme_config(theme):
         with open(f'{base_directory}/ui/{theme}/theme.json', 'r', encoding='utf-8') as file:
             data = json.load(file)
             return data
+    except FileNotFoundError:
+        logger.warning(f"主题配置文件 {theme} 不存在，返回默认配置")
+        return f'{base_directory}/ui/default/theme.json'
     except Exception as e:
         logger.error(f"加载主题数据时出错: {e}")
         return None
