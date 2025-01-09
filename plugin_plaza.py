@@ -17,6 +17,7 @@ from datetime import datetime
 from random import shuffle
 
 import conf
+from conf import base_directory
 import list as l
 import sys
 
@@ -27,10 +28,6 @@ QApplication.setHighDpiScaleFactorRoundingPolicy(
     Qt.HighDpiScaleFactorRoundingPolicy.PassThrough)
 QApplication.setAttribute(Qt.AA_EnableHighDpiScaling)
 QApplication.setAttribute(Qt.AA_UseHighDpiPixmaps)
-
-base_directory = os.path.dirname(os.path.abspath(__file__))
-if base_directory.endswith('MacOS'):
-    base_directory = os.path.join(os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir)), 'Resources')
 
 CONF_PATH = f"{base_directory}/plugins/plugins_from_pp.json"
 PLAZA_REPO_URL = "https://raw.githubusercontent.com/Class-Widgets/plugin-plaza/"

@@ -10,14 +10,11 @@ from PyQt5.QtCore import QThread, pyqtSignal
 from loguru import logger
 
 import conf
+from conf import base_directory
 
 headers = {"User-Agent": "Mozilla/5.0"}
 # proxies = {"http": "http://127.0.0.1:10809", "https": "http://127.0.0.1:10809"}  # 加速访问
 proxies = {"http": None, "https": None}
-
-base_directory = os.path.dirname(os.path.abspath(__file__))
-if base_directory.endswith('MacOS'):
-    base_directory = os.path.join(os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir)), 'Resources')
 
 MIRROR_PATH = f"{base_directory}/config/mirror.json"
 PLAZA_REPO_URL = "https://raw.githubusercontent.com/Class-Widgets/plugin-plaza/"

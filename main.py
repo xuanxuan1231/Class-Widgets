@@ -17,6 +17,7 @@ from qfluentwidgets import Theme, setTheme, setThemeColor, SystemTrayMenu, Actio
 import datetime as dt
 import list
 import conf
+from conf import base_directory
 import tip_toast
 from PyQt5.QtGui import QFontDatabase
 
@@ -36,10 +37,6 @@ QApplication.setHighDpiScaleFactorRoundingPolicy(
     Qt.HighDpiScaleFactorRoundingPolicy.PassThrough)
 QApplication.setAttribute(Qt.AA_EnableHighDpiScaling)
 QApplication.setAttribute(Qt.AA_UseHighDpiPixmaps)
-
-base_directory = os.path.dirname(os.path.abspath(__file__))
-if base_directory.endswith('MacOS'):
-    base_directory = os.path.join(os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir)), 'Resources')
 
 today = dt.date.today()
 filename = conf.read_conf('General', 'schedule')

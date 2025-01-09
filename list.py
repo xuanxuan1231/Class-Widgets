@@ -6,6 +6,7 @@ from shutil import copy
 from loguru import logger
 
 import conf
+from conf import base_directory
 
 week = ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
 week_type = ['单周', '双周']
@@ -39,10 +40,6 @@ subject = {
     '暂无课程': '(84, 255, 101',  # 绿
 }
 
-# 获取当前根目录路径
-base_directory = os.path.dirname(os.path.abspath(__file__))
-if base_directory.endswith('MacOS'):
-    base_directory = os.path.join(os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir)), 'Resources')
 schedule_dir = os.path.join(base_directory, 'config', 'schedule')
 
 class_activity = ['课程', '课间']
