@@ -1,5 +1,6 @@
 import json
 import os
+import sys
 
 from loguru import logger
 import configparser as config
@@ -8,6 +9,8 @@ base_directory = os.path.dirname(os.path.abspath(__file__))
 
 if base_directory.endswith('MacOS'):
     base_directory = os.path.join(os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir)), 'Resources')
+elif base_directory.startswith('/tmp/') and sys.platform == 'linux':
+    base_directory = '/opt/ClassWidgets'
 
 path = f'{base_directory}/config.ini'
 
