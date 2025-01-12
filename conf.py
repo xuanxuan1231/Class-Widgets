@@ -1,5 +1,6 @@
 import json
 import os
+import sys
 import configparser as config
 from pathlib import Path
 from shutil import copy
@@ -303,6 +304,10 @@ def check_config():
         conf.read_dict(default_conf)
         with open(path, 'w', encoding='utf-8') as configfile:
             conf.write(configfile)
+        if sys.platform == 'linux':
+            conf.set('General', 'hide_method', '2')
+            with open(path, 'w', encoding='utf-8') as configfile:
+                conf.write(configfile)
         logger.info("配置文件不存在，已创建并写入默认配置。")
         copy(f'{base_directory}/config/default.json', f'{base_directory}/config/schedule/新课表 - 1.json')
     else:
