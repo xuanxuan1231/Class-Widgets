@@ -2,7 +2,7 @@ import json
 import os.path
 
 from PyQt5 import uic
-from PyQt5.QtCore import QSize, Qt, QTimer, QUrl, QEvent, QStringListModel
+from PyQt5.QtCore import QSize, Qt, QTimer, QUrl, QEvent, QStringListModel, QSharedMemory
 from PyQt5.QtGui import QIcon, QPixmap, QDesktopServices
 from PyQt5.QtWidgets import QApplication, QHBoxLayout, QVBoxLayout, QGridLayout, QSpacerItem, QSizePolicy, QWidget, \
     QScroller, QCompleter
@@ -20,6 +20,7 @@ from random import shuffle
 import conf
 from conf import base_directory
 import list as l
+from app import restart
 import sys
 
 import network_thread as nt
@@ -45,11 +46,6 @@ tags = ['示例', '信息展示', '学习', '测试', '工具', '自动化']  # 
 search_items = []
 SELF_PLUGIN_VERSION = conf.read_conf('Plugin', 'version')  # 自身版本号
 SEARCH_FIELDS = ["name", "description", "tag", "author"]  # 搜索字段
-
-
-def restart():
-    logger.debug('重启程序')
-    os.execl(sys.executable, sys.executable, *sys.argv)
 
 
 class TagLink(HyperlinkButton):  # 标签链接

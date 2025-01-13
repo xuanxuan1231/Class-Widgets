@@ -26,6 +26,7 @@ from PyQt5.QtGui import QFontDatabase
 from menu import open_plaza
 from exact_menu import ExactMenu, open_settings
 import weather_db as db
+from app import *
 import importlib
 import subprocess
 from pathlib import Path
@@ -82,12 +83,6 @@ if conf.read_conf('Other', 'do_not_log') != '1':
     logger.info('未禁用日志输出')
 else:
     logger.info('已禁用日志输出功能，若需保存日志，请在“设置”->“高级选项”中关闭禁用日志功能')
-
-
-def restart():
-    logger.debug('重启程序')
-    share.detach()
-    os.execl(sys.executable, sys.executable, *sys.argv)
 
 
 def global_exceptHook(exc_type, exc_value, exc_tb):  # 全局异常捕获
@@ -1556,9 +1551,7 @@ def update_time():
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    share = QSharedMemory('ClassWidgets')
-    share.create(1)  # 创建共享内存
-    logger.info(f"共享内存：{share.isAttached()} 是否允许多开实例：{conf.read_conf('Other', 'multiple_programs')}")
+    createShared()
 
     if share.attach() and conf.read_conf('Other', 'multiple_programs') != '1':
         msg_box = Dialog('Class Widgets 正在运行', 'Class Widgets 正在运行！请勿打开多个实例，否则将会出现不可预知的问题。'
