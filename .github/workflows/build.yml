@@ -51,7 +51,8 @@ jobs:
             --add-data font:font `
             --add-data *.ui:. `
             --add-data LICENSE:. `
-            --add-data plugins:plugins
+            --add-data plugins:plugins `
+            --hidden-import PyQtWebEngine
 
       - name: Run Linux build
         if: ${{ matrix.os == 'ubuntu-20.04' }}
@@ -72,7 +73,8 @@ jobs:
             --add-data font:font \
             --add-data *.ui:. \
             --add-data LICENSE:. \
-            --add-data plugins:plugins
+            --add-data plugins:plugins \
+            --hidden-import PyQtWebEngine
 
       - name: Run macOS build
         if: ${{ matrix.os == 'macos-13' }}
@@ -93,8 +95,8 @@ jobs:
             --add-data font:font \
             --add-data *.ui:. \
             --add-data LICENSE:. \
-            --add-data plugins:plugins
-            --hidden-import PyQt5.QtWebEngineProcess
+            --add-data plugins:plugins \
+            --hidden-import PyQtWebEngine
 
       - name: Upload
         uses: actions/upload-artifact@v4.4.2
