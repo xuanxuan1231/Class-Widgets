@@ -705,11 +705,16 @@ class SettingsMenu(FluentWindow):
             lambda: conf.write_conf('General', 'time_offset', str(offset_spin.value()))
         )  # 保存时差偏移
 
+        text_scale_factor = self.adInterface.findChild(LineEdit, 'text_scale_factor')
+        text_scale_factor.setText(str(float(conf.read_conf('General', 'scale')) * 100) + '%') # 初始化缩放系数显示
+
         slider_scale_factor = self.adInterface.findChild(Slider, 'slider_scale_factor')
         slider_scale_factor.setValue(float(conf.read_conf('General', 'scale')) * 100)
         slider_scale_factor.valueChanged.connect(
-            lambda: conf.write_conf('General', 'scale', str(slider_scale_factor.value() / 100))
+            lambda: (conf.write_conf('General', 'scale', str(slider_scale_factor.value() / 100)),
+                     text_scale_factor.setText(str(slider_scale_factor.value()) + '%'))
         )  # 保存缩放系数
+
 
     def setup_schedule_edit(self):
         self.se_load_item()
