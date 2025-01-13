@@ -1187,7 +1187,10 @@ class DesktopWidget(QWidget):  # 主要小组件
             Action(fIcon.SETTING, '设置', triggered=open_settings)
         ])
         self.tray_menu.addSeparator()
-        self.tray_menu.addAction(Action(fIcon.CLOSE, '退出', triggered=lambda: sys.exit()))
+        self.tray_menu.addActions([
+            Action(fIcon.SYNC, '重新启动', triggered=lambda: restart()),
+            Action(fIcon.CLOSE, '退出', triggered=lambda: sys.exit())
+        ])
         self.tray_icon.setContextMenu(self.tray_menu)
 
         self.tray_icon.activated.connect(self.on_tray_icon_clicked)
