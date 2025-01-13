@@ -11,7 +11,8 @@
     "color_mode": 2,
     "enable_alt_schedule": 0,
     "blur_countdown": 0,
-    "theme": "default"
+    "theme": "default",
+    "scale": 1
   },
   "Toast": {
     "wave": 1,

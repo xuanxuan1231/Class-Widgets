@@ -1554,6 +1554,7 @@ def update_time():
 
 
 if __name__ == '__main__':
+    os.environ['QT_SCALE_FACTOR'] = str(conf.read_conf('General','scale'))
     app = QApplication(sys.argv)
     share = QSharedMemory('ClassWidgets')
     share.create(1)  # 创建共享内存
