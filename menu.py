@@ -705,6 +705,12 @@ class SettingsMenu(FluentWindow):
             lambda: conf.write_conf('General', 'time_offset', str(offset_spin.value()))
         )  # 保存时差偏移
 
+        slider_scale_factor = self.adInterface.findChild(Slider, 'slider_scale_factor')
+        slider_scale_factor.setValue(float(conf.read_conf('General', 'scale')) * 100)
+        slider_scale_factor.valueChanged.connect(
+            lambda: conf.write_conf('General', 'scale', str(slider_scale_factor.value() / 100))
+        )  # 保存缩放系数
+
     def setup_schedule_edit(self):
         self.se_load_item()
         se_set_button = self.findChild(ToolButton, 'set_button')

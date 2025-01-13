@@ -1554,7 +1554,11 @@ def update_time():
 
 
 if __name__ == '__main__':
-    os.environ['QT_SCALE_FACTOR'] = str(conf.read_conf('General','scale'))
+    scale_factor = float(conf.read_conf('General','scale'))
+    os.environ['QT_SCALE_FACTOR'] = str(scale_factor)
+    logger.info(f"当前缩放系数：{scale_factor * 100}%")
+    if scale_factor > 1.8 or scale_factor < 1.0:
+        logger.warning("当前缩放系数可能导致显示异常，建议使缩放系数在 100% 到 180% 之间")
     app = QApplication(sys.argv)
     share = QSharedMemory('ClassWidgets')
     share.create(1)  # 创建共享内存
