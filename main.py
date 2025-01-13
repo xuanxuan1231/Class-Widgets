@@ -86,6 +86,7 @@ else:
 
 def restart():
     logger.debug('重启程序')
+    share.detach()
     os.execl(sys.executable, sys.executable, *sys.argv)
 
 
