@@ -33,11 +33,11 @@ def read_conf(section='General', key=''):
         return data[section]
     elif section in default_data and key in default_data[section]:
         write_conf(section, key, default_data[section][key])
-        logger.info('配置文件出现问题，自动修复')
+        logger.info('配置文件出现问题，已尝试修复')
         return default_data[section][key]
     elif section in default_data and key == '':
         write_conf(section, '', default_data[section])
-        logger.info('配置文件出现问题，自动修复')
+        logger.info('配置文件出现问题，已尝试修复')
         return default_data[section]
     else:
         return None
