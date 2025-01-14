@@ -52,7 +52,8 @@ jobs:
             --add-data *.ui:. `
             --add-data LICENSE:. `
             --add-data plugins:plugins `
-            --hidden-import PyQt5.QtWebEngine
+            --hidden-import PyQt5.QtWebEngine `
+            --hidden-import plyer.platforms.win.notification
 
       - name: Run Linux build
         if: ${{ matrix.os == 'ubuntu-20.04' }}
@@ -74,7 +75,8 @@ jobs:
             --add-data *.ui:. \
             --add-data LICENSE:. \
             --add-data plugins:plugins \
-            --hidden-import PyQt5.QtWebEngine
+            --hidden-import PyQt5.QtWebEngine \
+            --hidden-import plyer.platforms.linux.notification
 
       - name: Run macOS build
         if: ${{ matrix.os == 'macos-13' }}
@@ -96,7 +98,8 @@ jobs:
             --add-data *.ui:. \
             --add-data LICENSE:. \
             --add-data plugins:plugins \
-            --hidden-import PyQt5.QtWebEngine
+            --hidden-import PyQt5.QtWebEngine \
+            --hidden-import=plyer.platforms.macosx.notification
 
       - name: Upload
         uses: actions/upload-artifact@v4.4.2
@@ -139,7 +142,8 @@ jobs:
           --add-data *.ui:. \
           --add-data LICENSE:. \
           --add-data plugins:plugins \
-          --hidden-import PyQt5.QtWebEngine
+          --hidden-import PyQt5.QtWebEngine \
+          --hidden-import plyer.platforms.linux.notification
 
       - name: Upload
         uses: actions/upload-artifact@v4.4.2
