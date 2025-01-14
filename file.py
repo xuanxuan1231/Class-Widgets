@@ -29,6 +29,9 @@ def read_conf(section='General', key=''):
         return data[section][key]
     elif section in data and key == '':
         return data[section]
+    elif :
+        write_conf(section, key, default[section][key])
+        return default[section][key]
     else:
         return None
 
