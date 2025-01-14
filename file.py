@@ -24,16 +24,21 @@ def read_conf(section='General', key=''):
     except Exception as e:
         logger.error(f'读取配置文件时出错: {e}')
         return None
-    
-    default = json.load(f'{base_directory}/config/default_config.json)
+    with open(f'{base_directory}/config/default_config.json', encoding="utf-8") as default:
+        default_data = json.load(default)
 
     if section in data and key in data[section]:
         return data[section][key]
     elif section in data and key == '':
         return data[section]
-    elif key in default[section]:
-        write_conf(section, key, default[section][key])
-        return default[section][key]
+    elif section in default_data and key in default_data[section]:
+        write_conf(section, key, default_data[section][key])
+        logger.info('配置文件出现问题，自动修复')
+        return default_data[section][key]
+    elif section in default_data and key == '':
+        write_conf(section, '', default_data[section])
+        logger.info('配置文件出现问题，自动修复')
+        return default_data[section]
     else:
         return None
 
