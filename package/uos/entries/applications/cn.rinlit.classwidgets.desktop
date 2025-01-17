@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Class Widgets
+Version=1.0
+Exec=/opt/apps/cn.rinlit.classwidgets/files/ClassWidgets
+Icon=/opt/apps/cn.rinlit.classwidgets/entries/icons/hicolor/512x512/apps/Logo.png
+Type=Application
+Terminal=false
+StartupNotify=true
+Encoding=UTF-8
