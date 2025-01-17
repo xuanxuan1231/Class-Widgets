@@ -153,6 +153,9 @@ jobs:
           
       - name: Copy file
         run: |
+          mkdir cw
+          mkdir cw/data
+          mkdir cw/data/files
           cp -R package/uos/control cw/
           cp -R dist/ClassWidgets/* cw/data/files/
           cp -R package/uos/entries cw/data/
