@@ -150,23 +150,11 @@ jobs:
         with:
           name: debian10-x64
           path: ./dist/ClassWidgets/
-
-  uos-package:
-    name: Package .deb for UOS
-    needs: self-hosted
-    runs-on: self-hosted
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-      - name: Download build artifact
-        uses: actions/download-artifact@v4.1.8
-        with:
-          # Name of the artifact to download. If unspecified, all artifacts for the run are downloaded.
-          name: debian10-x64
-          path: cw/data/opt/apps/cn.rinlit.classwidgets/files
+          
       - name: Copy file
         run: |
           cp -R package/uos/control cw/
+          cp -R dist/ClassWidgets/* cw/data/files/
           cp -R package/uos/entries cw/data/
           cp package/uos/info cw/data/
       - name: Create package
