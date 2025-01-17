@@ -87,6 +87,7 @@ else:
 
 def restart():
     logger.debug('重启程序')
+    share.detach()  # 释放共享内存
     os.execl(sys.executable, sys.executable, *sys.argv)
 
 
@@ -168,7 +169,7 @@ def get_start_time():
 def get_part():
     def return_data():
         c_time = parts_start_time[i] + dt.timedelta(seconds=time_offset)
-        return c_time, int(order[i])
+        return c_time, int(order[i])  # 返回开始时间、Part序号
 
     current_dt = dt.datetime.now()
 
@@ -177,14 +178,15 @@ def get_part():
 
         for item_name, item_time in timeline_data.items():
             if item_name.startswith(f'a{str(order[i])}') or item_name.startswith(f'f{str(order[i])}'):
-                time_len += dt.timedelta(minutes=int(item_time))  # 累计Part长度
+                time_len += dt.timedelta(minutes=int(item_time))  # 累计Part的时间点总长度
             time_len += dt.timedelta(seconds=1)
 
-        if i == len(parts_start_time) - 1:  # 最后一个Part
-            return return_data()
-        else:
-            if current_dt <= parts_start_time[i] + time_len:
+        if time_len != dt.timedelta(seconds=1):  # 有课程
+            if i == len(parts_start_time) - 1:  # 最后一个Part
                 return return_data()
+            else:
+                if current_dt <= parts_start_time[i] + time_len:
+                    return return_data()
 
     return parts_start_time[0] + dt.timedelta(seconds=time_offset), 0, 'part'
 
@@ -566,6 +568,7 @@ class PluginManager:  # 插件管理器
 
             "PLUGIN_PATH": f'{conf.PLUGINS_DIR}/{path}',  # 传递插件目录
             "Base_Directory": base_directory,  # 资源目录
+            "Widgets_Mgr": mgr,  # 组件管理器
         }
         return self.cw_contexts
 
@@ -1011,6 +1014,7 @@ class DesktopWidget(QWidget):  # 主要小组件
         self.last_theme = conf.read_conf('General', 'theme')
         self.last_color_mode = conf.read_conf('General', 'color_mode')
         self.w = 100
+        self.animation = None
 
         try:
             self.w = conf.load_theme_config(theme)['widget_width'][self.path]
@@ -1237,8 +1241,7 @@ class DesktopWidget(QWidget):  # 主要小组件
         get_current_lesson_name()
         get_next_lessons()
 
-        if not first_start:
-            self.setWindowOpacity(int(conf.read_conf('General', 'opacity')) / 100)  # 设置窗口透明度
+        self.animation_adjust_opacity(int(conf.read_conf('General', 'opacity')) / 100)  # 设置窗口透明度
 
         cd_list = get_countdown()
 
@@ -1367,6 +1370,9 @@ class DesktopWidget(QWidget):  # 主要小组件
         else:
             mgr.show_windows()
 
+    def clear_animation(self):  # 清除动画
+        self.animation = None
+
     def animate_window(self, target_pos):  # 窗口动画！
         # 创建位置动画
         self.animation = QPropertyAnimation(self, b"geometry")
@@ -1378,6 +1384,7 @@ class DesktopWidget(QWidget):  # 主要小组件
         self.animation.setEndValue(QRect(target_pos[0], target_pos[1], self.w, self.h))
         self.animation.setEasingCurve(QEasingCurve.Type.InOutCirc)  # 设置动画效果
         self.animation.start()
+        self.animation.finished.connect(self.clear_animation)
 
     def animate_hide(self, full=False):  # 隐藏窗口
         self.animation = QPropertyAnimation(self, b"geometry")
@@ -1399,6 +1406,7 @@ class DesktopWidget(QWidget):  # 主要小组件
 
         self.animation.setEasingCurve(QEasingCurve.Type.InOutCirc)  # 设置动画效果
         self.animation.start()
+        self.animation.finished.connect(self.clear_animation)
 
     def animate_hide_opacity(self):  # 隐藏窗口透明度
         self.animation = QPropertyAnimation(self, b"windowOpacity")
@@ -1416,6 +1424,7 @@ class DesktopWidget(QWidget):  # 主要小组件
         self.animation.setEndValue(int(conf.read_conf('General', 'opacity')) / 100)
         self.animation.setEasingCurve(QEasingCurve.Type.InOutCirc)  # 设置动画效果
         self.animation.start()
+        self.animation.finished.connect(self.clear_animation)
 
     def animate_show(self):  # 显示窗口
         self.animation = QPropertyAnimation(self, b"geometry")
@@ -1427,11 +1436,22 @@ class DesktopWidget(QWidget):  # 主要小组件
         self.animation.setEndValue(
             QRect(self.x(), int(conf.read_conf('General', 'margin')), self.width(), self.height()))
         self.animation.setEasingCurve(QEasingCurve.Type.InOutCirc)  # 设置动画效果
+        self.animation.finished.connect(self.clear_animation)
 
         if os.name != 'nt':
             self.show()
 
         self.animation.start()
+
+    def animation_adjust_opacity(self, opacity):  # 调整窗口透明度
+        if not self.animation:
+            self.animation = QPropertyAnimation(self, b"windowOpacity")
+            self.animation.setDuration(300)  # 持续时间
+            self.animation.setStartValue(self.windowOpacity())
+            self.animation.setEndValue(opacity)
+            self.animation.setEasingCurve(QEasingCurve.Type.InOutCirc)  # 设置动画效果
+            self.animation.start()
+            self.animation.finished.connect(self.clear_animation)
 
     # 点击自动隐藏
     def mouseReleaseEvent(self, event):
@@ -1559,8 +1579,16 @@ if __name__ == '__main__':
     scale_factor = float(conf.read_conf('General','scale'))
     os.environ['QT_SCALE_FACTOR'] = str(scale_factor)
     logger.info(f"当前缩放系数：{scale_factor * 100}%")
+
     if scale_factor > 1.8 or scale_factor < 1.0:
         logger.warning("当前缩放系数可能导致显示异常，建议使缩放系数在 100% 到 180% 之间")
+        msg_box = Dialog('缩放系数过大', f"当前缩放系数为 {scale_factor * 100}%，可能导致显示异常。\n建议将缩放系数设置为 100% 到 180% 之间。")
+        msg_box.yesButton.setText('好')
+        msg_box.cancelButton.hide()
+        msg_box.buttonLayout.insertStretch(0, 1)
+        msg_box.setFixedWidth(550)
+        msg_box.exec()
+
     app = QApplication(sys.argv)
     app.setQuitOnLastWindowClosed(False)
     share = QSharedMemory('ClassWidgets')
