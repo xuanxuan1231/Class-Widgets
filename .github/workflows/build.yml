@@ -167,8 +167,8 @@ jobs:
       - name: Copy file
         run: |
           cp -R package/uos/control cw/
-          cp -R cw-repo/package/uos/entries cw/data/
-          cp cw-repo/package/uos/info cw/data/
+          cp -R package/uos/entries cw/data/
+          cp package/uos/info cw/data/
       - name: Create package
         run: |
           echo "2.0" > cw/debian-binary
