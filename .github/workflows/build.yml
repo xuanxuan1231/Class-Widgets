@@ -176,7 +176,7 @@ jobs:
           tar -cJvf cw/control.tar.xz cw/control
           rm -rf cw/data
           rm -rf cw/control
-          dpkg -b cw cn.rinlit.classwidgets_1.1.7.01_amd64.deb
+          dpkg-deb -b cw cn.rinlit.classwidgets_1.1.7.01_amd64.deb
       - name: Upload package
         uses: actions/upload-artifact@v4
         with:
