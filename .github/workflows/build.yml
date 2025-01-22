@@ -89,7 +89,7 @@ jobs:
             --hidden-import plyer.platforms.linux.notification
 
       - name: Run macOS build
-        if: ${{ matrix.os == 'macos-13' }}
+        if: ${{ matrix.os == 'macos-13' || matrix.os == 'macos-14' }}
         run: |
           uv venv
           source .venv/bin/activate
