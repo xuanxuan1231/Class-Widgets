@@ -101,7 +101,7 @@ jobs:
             --hidden-import PyQt5.QtWebEngine \
             --hidden-import=plyer.platforms.macosx.notification
           mkdir bundle
-          mv -R dist/ClassWidgets.app bundle/Class\ Widgets.app
+          mv dist/ClassWidgets.app bundle/Class\ Widgets.app
 
       - name: Upload
         uses: actions/upload-artifact@v4.4.2
