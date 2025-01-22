@@ -705,6 +705,8 @@ class PluginPlaza(MSFluentWindow):
         self.move(int(screen_width / 2 - width / 2), 150)
         self.resize(width, height)
 
+        self.setWindowFlags(Qt.WindowType.Window)  # macOS 自动给焦点
+
         # 启动屏幕
         self.splashScreen = SplashScreen(self.windowIcon(), self)
         self.splashScreen.setIconSize(QSize(102, 102))
