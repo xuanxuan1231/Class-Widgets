@@ -111,7 +111,7 @@ jobs:
             --hidden-import PyQt5.QtWebEngine \
             --hidden-import=plyer.platforms.macosx.notification
           mkdir bundle
-          cp dist/ClassWidgets.app bundle/Class\ Widgets.app
+          cp -R dist/ClassWidgets.app bundle/Class\ Widgets.app
 
       - name: Upload
         uses: actions/upload-artifact@v4.4.2
@@ -120,7 +120,7 @@ jobs:
           path: ./dist
 
       - name: Upload macOS Bundle
-        if: ${{ matrix.os == 'macos-13' }}
+        if: ${{ matrix.os == 'macos-13' || matrix.os == 'macos-14' }}
         uses: actions/upload-artifact@v4.4.2
         with:
           name: macos-13-bundle
