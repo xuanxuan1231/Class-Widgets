@@ -49,7 +49,7 @@ jobs:
         run: |
           uv venv
           .venv\Scripts\activate
-          copy upx-4.2.4/upx.exe venv/Scripts/
+          copy upx/upx.exe venv/Scripts/
           uv pip install -r requirements.txt
           uv pip install pyinstaller
           pyinstaller main.py `
