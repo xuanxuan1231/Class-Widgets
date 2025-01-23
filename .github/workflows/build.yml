@@ -35,14 +35,14 @@ jobs:
       - name: Setup upx (win32)
         if: ${{ matrix.os == 'windows-latest' && matrix.arch == 'x86' }}
         run: |
-          curl -O upx.zip https://github.com/upx/upx/releases/download/v4.2.4/upx-4.2.4-win32.zip
-          tar -xvzf upx-4.2.4-win32.zip
+          curl -o upx.zip -L https://github.com/upx/upx/releases/download/v4.2.4/upx-4.2.4-win32.zip
+          tar -xvzf upx.zip
           ren upx-4.2.4-win32 upx
       - name: Setup upx (win64)
         if: ${{ matrix.os == 'windows-latest' && matrix.arch == 'x86' }}
         run: |
-          curl -O upx.zip https://github.com/upx/upx/releases/download/v4.2.4/upx-4.2.4-win64.zip
-          tar -xvzf upx-4.2.4-win64.zip
+          curl -o upx.zip -L https://github.com/upx/upx/releases/download/v4.2.4/upx-4.2.4-win64.zip
+          tar -xvzf upx.zip
           ren upx-4.2.4-win64 upx
       - name: Run Windows build
         if: ${{ matrix.os == 'windows-latest' }}
