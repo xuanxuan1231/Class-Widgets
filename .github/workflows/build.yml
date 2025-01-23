@@ -14,8 +14,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        arch: [x86, x64]
-        os: [ubuntu-20.04, windows-latest, macos-13]
+        arch: [ x86, x64 ]
+        os: [ ubuntu-20.04, windows-latest, macos-13 ]
         exclude:
           - os: ubuntu-20.04
             arch: x86
@@ -37,6 +37,9 @@ jobs:
         run: |
           uv venv
           .venv\Scripts\activate
+          wget https://github.site/upx/upx/releases/download/v4.2.4/upx-4.2.4-win64.zip
+          tar -xvzf upx-4.2.4-win64.zip
+          copy upx-4.2.4-win64/upx.exe venv/Scripts/
           uv pip install -r requirements.txt
           uv pip install pyinstaller
           pyinstaller main.py `
