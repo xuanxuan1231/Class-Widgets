@@ -17,4 +17,4 @@ win32-setctime==1.1.0
 PyQtWebEngine~=5.15.7
 Markdown~=3.7
 pygame~=2.6.1
-plyer==2.1.0
+pynotificator~=1.0.1

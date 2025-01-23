@@ -8,7 +8,7 @@ from datetime import datetime
 import requests
 from PyQt5.QtCore import QThread, pyqtSignal
 from loguru import logger
-from plyer import notification
+from pynotificator import DesktopNotification
 
 import conf
 from conf import base_directory
@@ -344,26 +344,37 @@ def check_version(version):  # 检查更新
         thread.terminate()
     threads = []
     if 'error' in version:
-        notification.notify(
-            title="检查更新失败！",
-            message=f"检查更新失败！\n{version['error']}",
-            app_name="Class Widgets",
-            app_icon=conf.app_icon,
-            timeout=25  # 通知显示时间（秒）
-        )
+        # notification.notify(
+        #     title="检查更新失败！",
+        #     message=f"检查更新失败！\n{version['error']}",
+        #     app_name="Class Widgets",
+        #     app_icon=conf.app_icon,
+        #     timeout=10  # 通知显示时间（秒）
+        # )
+
+        notification = DesktopNotification(f"检查更新失败！\n{version['error']}",
+                                           "Class Widgets", "检查更新失败！",
+                                           conf.app_icon)
+        notification.notify()
+
         return False
 
     channel = int(conf.read_conf("Other", "version_channel"))
     new_version = version['version_release' if channel == 0 else 'version_beta']
 
     if new_version != conf.read_conf("Other", "version"):
-        notification.notify(
-            title="发现 Class Widgets 新版本！",
-            message=f"新版本速递：{new_version}\n请在“设置”中了解更多。",
-            app_name="Class Widgets",
-            app_icon=conf.app_icon,
-            timeout=10  # 通知显示时间（秒）
-        )
+        # notification.notify(
+        #     title="发现 Class Widgets 新版本！",
+        #     message=f"新版本速递：{new_version}",
+        #     app_name="Class Widgets",
+        #     app_icon=conf.app_icon,
+        #     timeout=10  # 通知显示时间（秒）
+        # )
+
+        notification = DesktopNotification(f"新版本速递：{new_version}",
+                                           "Class Widgets", "发现 Class Widgets 新版本！",
+                                           conf.app_icon)
+        notification.notify()
 
 
 if __name__ == '__main__':

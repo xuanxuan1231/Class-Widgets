@@ -14,7 +14,7 @@ from PyQt5.QtGui import QIcon, QDesktopServices, QColor
 from PyQt5.QtWidgets import QApplication, QHeaderView, QTableWidgetItem, QLabel, QHBoxLayout, QSizePolicy, \
     QSpacerItem, QFileDialog, QVBoxLayout, QScroller
 from loguru import logger
-from plyer import notification
+from pynotificator import DesktopNotification
 from qfluentwidgets import (
     Theme, setTheme, FluentWindow, FluentIcon as fIcon, ToolButton, ListWidget, ComboBox, CaptionLabel,
     SpinBox, LineEdit, PrimaryPushButton, TableWidget, Flyout, InfoBarIcon,
@@ -1105,13 +1105,19 @@ class SettingsMenu(FluentWindow):
         if 'error' in version:
             self.version.setText(f'当前版本：{conf.read_conf("Other", "version")}\n{version["error"]}')
 
-            notification.notify(
-                title="检查更新失败！",
-                message=f"检查更新失败！\n{version['error']}",
-                app_name="Class Widgets",
-                app_icon=conf.app_icon,
-                timeout=10  # 通知显示时间（秒）
-            )
+            # notification.notify(
+            #     title="检查更新失败！",
+            #     message=f"检查更新失败！\n{version['error']}",
+            #     app_name="Class Widgets",
+            #     app_icon=conf.app_icon,
+            #     timeout=10  # 通知显示时间（秒）
+            #)
+
+            notification = DesktopNotification(f"检查更新失败！\n{version['error']}",
+                                               "Class Widgets", "检查更新失败！",
+                                               conf.app_icon)
+            notification.notify()
+
             return False
         channel = int(conf.read_conf("Other", "version_channel"))
         new_version = version['version_release' if channel == 0 else 'version_beta']
@@ -1121,13 +1127,18 @@ class SettingsMenu(FluentWindow):
         else:
             self.version.setText(f'当前版本：{conf.read_conf("Other", "version")}\n最新版本：{new_version}')
 
-            notification.notify(
-                title="发现 Class Widgets 新版本！",
-                message=f"新版本速递：{new_version}",
-                app_name="Class Widgets",
-                app_icon=conf.app_icon,
-                timeout=10  # 通知显示时间（秒）
-            )
+            # notification.notify(
+            #     title="发现 Class Widgets 新版本！",
+            #     message=f"新版本速递：{new_version}",
+            #     app_name="Class Widgets",
+            #     app_icon=conf.app_icon,
+            #     timeout=10  # 通知显示时间（秒）
+            # )
+
+            notification = DesktopNotification(f"新版本速递：{new_version}",
+                                               "Class Widgets", "发现 Class Widgets 新版本！",
+                                               conf.app_icon)
+            notification.notify()
 
     def cf_import_schedule(self):  # 导入课程表
         file_path, _ = QFileDialog.getOpenFileName(self, "选择文件", "", "Json 配置文件 (*.json)")

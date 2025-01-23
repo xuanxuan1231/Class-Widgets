@@ -19,4 +19,4 @@ PyQtWebEngine~=5.15.7
 PyGetWindow~=0.0.9
 Markdown~=3.7
 pygame~=2.6.1
-plyer==2.1.0
+pynotificator[win]~=1.0.1

@@ -65,8 +65,7 @@ jobs:
             --add-data view:view `
             --add-data LICENSE:. `
             --add-data plugins:plugins `
-            --hidden-import PyQt5.QtWebEngine `
-            --hidden-import plyer.platforms.win.notification
+            --hidden-import PyQt5.QtWebEngine
 
       - name: Run Linux build
         if: ${{ matrix.os == 'ubuntu-20.04' }}
@@ -88,8 +87,7 @@ jobs:
             --add-data view:view \
             --add-data LICENSE:. \
             --add-data plugins:plugins \
-            --hidden-import PyQt5.QtWebEngine \
-            --hidden-import plyer.platforms.linux.notification
+            --hidden-import PyQt5.QtWebEngine
 
       - name: Run macOS build
         if: ${{ matrix.os == 'macos-13' }}
@@ -111,8 +109,7 @@ jobs:
             --add-data view:view \
             --add-data LICENSE:. \
             --add-data plugins:plugins \
-            --hidden-import PyQt5.QtWebEngine \
-            --hidden-import=plyer.platforms.macosx.notification
+            --hidden-import PyQt5.QtWebEngine
           mkdir bundle
           mv dist/ClassWidgets.app bundle/Class\ Widgets.app
 
@@ -157,8 +154,7 @@ jobs:
             --add-data view:view \
             --add-data LICENSE:. \
             --add-data plugins:plugins \
-            --hidden-import PyQt5.QtWebEngine \
-            --hidden-import plyer.platforms.linux.notification
+            --hidden-import PyQt5.QtWebEngine
 
       - name: Upload
         uses: actions/upload-artifact@v4.4.2
