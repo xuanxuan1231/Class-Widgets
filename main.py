@@ -950,11 +950,17 @@ class FloatingWidget(QWidget):  # 浮窗
         # 设置窗口无边框和透明背景
         self.setAttribute(Qt.WidgetAttribute.WA_TranslucentBackground)
 
-        self.setWindowFlags(
-            Qt.WindowType.FramelessWindowHint | Qt.WindowType.WindowStaysOnTopHint |
-            Qt.WindowType.Widget | # macOS 失焦时仍然显示
-            Qt.X11BypassWindowManagerHint  # 绕过窗口管理器以在全屏显示通知
-        )
+        if sys.platform == 'darwin':
+            self.setWindowFlags(
+                Qt.WindowType.FramelessWindowHint | Qt.WindowType.WindowStaysOnTopHint |
+                Qt.WindowType.Widget | # macOS 失焦时仍然显示
+                Qt.X11BypassWindowManagerHint  # 绕过窗口管理器以在全屏显示通知
+            )
+        else:
+            self.setWindowFlags(Qt.WindowType.FramelessWindowHint | Qt.WindowType.WindowStaysOnTopHint |
+                Qt.WindowType.Tool |
+                Qt.X11BypassWindowManagerHint  # 绕过窗口管理器以在全屏显示通知
+            )
 
         backgnd = self.findChild(QFrame, 'backgnd')
         shadow_effect = QGraphicsDropShadowEffect(self)
@@ -1241,18 +1247,23 @@ class DesktopWidget(QWidget):  # 主要小组件
         if conf.read_conf('General', 'pin_on_top') == '1':  # 置顶
             self.setWindowFlags(
                 Qt.WindowType.FramelessWindowHint | Qt.WindowType.WindowStaysOnTopHint |
-                Qt.WindowType.Widget | # macOS 失焦时仍然显示
                 Qt.WindowType.WindowDoesNotAcceptFocus | Qt.X11BypassWindowManagerHint  # 绕过窗口管理器以在全屏显示通知
             )
+
         elif conf.read_conf('General', 'pin_on_top') == '2':  # 置底
             self.setWindowFlags(
-                Qt.WindowType.FramelessWindowHint | Qt.WindowType.WindowStaysOnBottomHint | Qt.WindowType.Widget |
+                Qt.WindowType.FramelessWindowHint | Qt.WindowType.WindowStaysOnBottomHint |
                 Qt.WindowType.WindowDoesNotAcceptFocus
             )
         else:
             self.setWindowFlags(
-                Qt.WindowType.FramelessWindowHint | Qt.WindowType.Widget
+                Qt.WindowType.FramelessWindowHint
             )
+
+        if sys.platform == 'darwin':
+            self.setWindowFlag(Qt.WindowType.Widget, True)
+        else:
+            self.setWindowFlag(Qt.WindowType.Tool, True)
 
         self.setAttribute(Qt.WidgetAttribute.WA_TranslucentBackground)
 
