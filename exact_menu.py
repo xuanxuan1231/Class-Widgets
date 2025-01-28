@@ -174,8 +174,6 @@ class ExactMenu(FluentWindow):
         self.move(int(screen_width / 2 - width / 2), 150)
         self.resize(width, height)
 
-        self.setWindowFlags(Qt.WindowType.Window)  # macOS 自动给焦点
-
         self.setWindowTitle('Class Widgets - 更多功能')
         self.setWindowIcon(QIcon(f'{base_directory}/img/logo/favicon-exmenu.ico'))
 
