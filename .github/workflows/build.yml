@@ -177,7 +177,7 @@ jobs:
         shell: bash
         run: |
           apt update
-          apt install -y binutils libglib2.0-dev libfreetype6 libxfixes3
+          apt install -y binutils libglib2.0-dev libfreetype6 libxfixes3 libgssapi_krb5-2
       - name: Run Linux (Debian 10) build
         shell: bash
         run: |
