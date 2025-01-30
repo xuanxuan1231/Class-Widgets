@@ -177,7 +177,7 @@ jobs:
         shell: bash
         run: |
           apt update
-          apt install binutils
+          apt install -y binutils
       - name: Run Linux (Debian 10) build
         shell: bash
         run: |
