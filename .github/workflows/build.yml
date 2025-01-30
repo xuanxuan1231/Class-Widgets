@@ -176,6 +176,7 @@ jobs:
       - name: Install dependencies
         shell: bash
         run: |
+          apt update
           apt install binutils
       - name: Run Linux (Debian 10) build
         shell: bash
