@@ -173,6 +173,10 @@ jobs:
         uses: astral-sh/setup-uv@v4
         with:
           python-version: 3.8.10
+      - name: Install dependencies
+        shell: bash
+        run: |
+          apt install binutils
       - name: Run Linux (Debian 10) build
         shell: bash
         run: |
