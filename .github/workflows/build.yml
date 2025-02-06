@@ -215,3 +215,7 @@ jobs:
           name: debian10-x64
           path: ./dist
 
+  release:
+    uses: ./.github/workflows/release.yml
+    with:
+      runid: ${{ github.run_id }}

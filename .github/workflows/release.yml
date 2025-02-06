@@ -1,8 +1,10 @@
 name: 生成 Changelog 并发布版本
 on:
-  workflow_run:
-    workflows: [构建]
-    types: [completed]
+  workflow_call:
+    inputs:
+      runid:
+        required: true
+        type: number
 
 jobs:
   generate-changelog-and-release:
