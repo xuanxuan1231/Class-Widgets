@@ -2,10 +2,10 @@ name: 生成 Changelog 并发布版本
 on:
   workflow_run:
     workflows: [构建]
-    type: [completed]
+    types: [completed]
 
 jobs:
-  generate-changelog:
+  generate-changelog-and-release:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
