@@ -99,7 +99,7 @@ jobs:
             --hidden-import PyQt5.QtWebEngine
 
       - name: Run macOS build
-        if: ${{ matrix.os == 'macos-13' }}
+        if: ${{ startsWith(matrix.os, 'macos') }}
         run: |
           uv venv
           source .venv/bin/activate
