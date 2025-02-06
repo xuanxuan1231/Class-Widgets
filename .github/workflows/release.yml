@@ -32,9 +32,10 @@ jobs:
           TAG: ${{ github.ref_name }}
           OUTPUT: CHANGELOG.md
           GITHUB_REPO: ${{ github.repository }}
-      - name: Download artifact
-        id: download-artifact
-        uses: dawidd6/action-download-artifact@v8
+      - name: Prepare release
+        run: mkdir release
+      - name: Download artifacts
+        uses: actions/download-artifact@v4
         with:
-          workflow: build.yml
-          run_id: ${{ github.event.workflow_run.id }}
+          path: release
+          run-id: ${{ github.event.workflow_run.id }}
