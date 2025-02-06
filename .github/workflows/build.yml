@@ -216,6 +216,7 @@ jobs:
           path: ./dist
 
   release:
+    needs: [debian, builder_matrix]
     uses: ./.github/workflows/release.yml
     with:
       runid: ${{ github.run_id }}
