@@ -57,6 +57,7 @@ jobs:
       - name: Run Windows build
         if: ${{ matrix.os == 'windows-latest' }}
         run: |
+          curl -o zip.exe -L http://www.stahlworks.com/dev/zip.exe
           uv venv
           .venv\Scripts\activate
           uv pip install -r requirements.txt
@@ -74,13 +75,7 @@ jobs:
             --add-data view:view `
             --add-data LICENSE:. `
             --add-data plugins:plugins
-      - name: Compress windows artifact
-        if: ${{ matrix.os == 'windows-latest' }}
-        uses: somaz94/compress-decompress@v1
-        with:
-          command: compress
-          source: ./dist/ClassWidgets/*
-          format: zip
+          ./zip -r dist/ClassWidgets-Windows-${{ matrix.arch }}.zip dist/ClassWidgets/*
 
       - name: Run Linux build
         if: ${{ matrix.os == 'ubuntu-20.04' }}
