@@ -74,7 +74,7 @@ jobs:
             --add-data view:view `
             --add-data LICENSE:. `
             --add-data plugins:plugins
-          zip -r dist/ClassWidgets.zip dist/ClassWidgets/*
+          zip -r dist/ClassWidgets-Windows-${{ matrix.arch }}.zip dist/ClassWidgets/*
 
       - name: Run Linux build
         if: ${{ matrix.os == 'ubuntu-20.04' }}
@@ -96,7 +96,7 @@ jobs:
             --add-data view:view \
             --add-data LICENSE:. \
             --add-data plugins:plugins
-          zip -r dist/ClassWidgets.zip dist/ClassWidgets/*
+          zip -r dist/ClassWidgets-Ubuntu20.04.zip dist/ClassWidgets/*
 
       - name: Run macOS build
         if: ${{ startsWith(matrix.os, 'macos') }}
@@ -118,8 +118,9 @@ jobs:
             --add-data view:view \
             --add-data LICENSE:. \
             --add-data plugins:plugins
-          zip -r dist/Class\ Widgets\ (bundle).zip dist/Class\ Widgets.app/*
-          zip -r dist/Class\ Widgets.zip dist/Class\ Widgets/*
+          
+          zip -r "dist/Class Widgets-${{ matrix.arch }} (bundle).zip" dist/Class\ Widgets.app/*
+          zip -r dist/Class\ Widgets-${{ matrix.arch }}.zip dist/Class\ Widgets/*
 
       - name: Upload unsigned application
         if: ${{ ( matrix.os != 'windows-latest' && github.event_name != 'pull_request' ) || github.event_name == 'pull_request' }}
@@ -205,6 +206,7 @@ jobs:
             --add-data view:view \
             --add-data LICENSE:. \
             --add-data plugins:plugins
+          zip -r ClassWidgets-Debian10.zip dist/ClassWidgets/*
 
       - name: Upload
         uses: actions/upload-artifact@v4.4.2
