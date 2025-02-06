@@ -5,7 +5,7 @@ on:
     inputs:
       runid:
         required: true
-        type: number
+        type: string
 
 jobs:
   generate-changelog-and-release:
