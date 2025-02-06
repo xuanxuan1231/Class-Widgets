@@ -14,13 +14,23 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        arch: [ x86, x64 ]
-        os: [ ubuntu-20.04, windows-latest, macos-13 ]
+        arch: [ x86, x64, arm64 ]
+        os: [ ubuntu-20.04, windows-latest, macos-13, macos-14 ]
         exclude:
           - os: ubuntu-20.04
             arch: x86
+          - os: ubuntu-20.04
+            arch: arm64
           - os: macos-13
             arch: x86
+          - os: macos-13
+            arch: arm64
+          - os: windows-latest
+            arch: arm64
+          - os: macos-14
+            arch: x86
+          - os: macos-14
+            arch: x64
     runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout repository
