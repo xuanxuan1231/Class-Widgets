@@ -74,7 +74,6 @@ jobs:
             --add-data view:view `
             --add-data LICENSE:. `
             --add-data plugins:plugins
-          zip -r dist/ClassWidgets-Windows-${{ matrix.arch }}.zip dist/ClassWidgets/*
       - name: Compress windows artifact
         if: ${{ matrix.os == 'windows-latest' }}
         uses: somaz94/compress-decompress@v1
