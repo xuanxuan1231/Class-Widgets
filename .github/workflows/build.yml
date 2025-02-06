@@ -75,7 +75,7 @@ jobs:
             --add-data view:view `
             --add-data LICENSE:. `
             --add-data plugins:plugins
-          ./zip -r dist/ClassWidgets-Windows-${{ matrix.arch }}.zip dist/ClassWidgets/*
+          ./zip -r zip/ClassWidgets-Windows-${{ matrix.arch }}.zip dist/ClassWidgets/*
 
       - name: Run Linux build
         if: ${{ matrix.os == 'ubuntu-20.04' }}
@@ -97,7 +97,7 @@ jobs:
             --add-data view:view \
             --add-data LICENSE:. \
             --add-data plugins:plugins
-          zip -r dist/ClassWidgets-Ubuntu20.04.zip dist/ClassWidgets/*
+          zip -r zip/ClassWidgets-Ubuntu20.04.zip dist/ClassWidgets/*
 
       - name: Run macOS build
         if: ${{ startsWith(matrix.os, 'macos') }}
@@ -120,15 +120,15 @@ jobs:
             --add-data LICENSE:. \
             --add-data plugins:plugins
           
-          zip -r "dist/Class Widgets-${{ matrix.arch }} (bundle).zip" dist/Class\ Widgets.app/*
-          zip -r dist/Class\ Widgets-${{ matrix.arch }}.zip dist/Class\ Widgets/*
+          zip -r "zip/Class Widgets-${{ matrix.arch }} (bundle).zip" dist/Class\ Widgets.app/*
+          zip -r zip/Class\ Widgets-${{ matrix.arch }}.zip dist/Class\ Widgets/*
 
       - name: Upload unsigned application
         if: ${{ ( matrix.os != 'windows-latest' && github.event_name != 'pull_request' ) || github.event_name == 'pull_request' }}
         uses: actions/upload-artifact@v4.4.2
         with:
           name: ${{ matrix.os }}-${{ matrix.arch }}
-          path: ./dist
+          path: ./zip
       - name: Upload unsigned single file
         if: ${{ matrix.os == 'windows-latest' && github.event_name != 'pull_request' }}
         id: upload-unsigned-artifact
@@ -161,14 +161,14 @@ jobs:
       - name: Recompress
         if: ${{ matrix.os == 'windows-latest' && github.event_name != 'pull_request' }}
         run: |
-          del ClassWidgets.zip
-          ./zip -r ClassWidgets.zip dist/ClassWidgets/*
+          del zip/ClassWidgets.zip
+          ./zip -r zip/ClassWidgets.zip dist/ClassWidgets/*
       - name: Upload signed application
         if: ${{ matrix.os == 'windows-latest' && github.event_name != 'pull_request' }}
         uses: actions/upload-artifact@v4.4.2
         with:
           name: windows-latest-${{ matrix.arch }}
-          path: ./dist
+          path: ./zip
 
   debian:
     runs-on: ubuntu-latest

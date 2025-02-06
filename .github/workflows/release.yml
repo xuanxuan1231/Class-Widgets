@@ -1,4 +1,5 @@
 name: 生成 Changelog 并发布版本
+
 on:
   workflow_call:
     inputs:
@@ -8,6 +9,7 @@ on:
 
 jobs:
   generate-changelog-and-release:
+    name: 生成 Changelog 并发布版本
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
