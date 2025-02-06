@@ -54,6 +54,8 @@ jobs:
       #     curl -o upx.zip -L https://github.com/upx/upx/releases/download/v4.2.4/upx-4.2.4-win64.zip
       #     tar -xvzf upx.zip
       #     ren upx-4.2.4-win64 upx
+      - name: Init zip folder
+        run: mkdir zip
       - name: Run Windows build
         if: ${{ matrix.os == 'windows-latest' }}
         run: |
@@ -191,6 +193,7 @@ jobs:
       - name: Run Linux (Debian 10) build
         shell: bash
         run: |
+          mkdir zip
           uv venv
           source .venv/bin/activate
           uv pip install -r requirements.txt
