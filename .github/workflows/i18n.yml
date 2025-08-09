@@ -192,6 +192,7 @@ jobs:
           commit_message: |
             chore(i18n): 更新翻译文件 (.ts) (Auto-Commit)
 
+            - 初始触发者: ${{ github.actor }}
             - 触发事件: ${{ github.event_name }}
             - 提交哈希: ${{ github.sha }}
             - 工作流运行: ${{ github.run_id }}
@@ -199,6 +200,8 @@ jobs:
             * 由 GitHub Actions 自动生成
           commit_options: '--signoff'
           file_pattern: 'i18n/*.ts ui/*/i18n/*.ts'
+          commit_user_name: 'ChimeYao-bot'
+          commit_user_email: 'ChimeYao@outlook.jp'
           commit_author: 'ChimeYao-bot <ChimeYao@outlook.jp>'
 
   compile-translations:
@@ -281,6 +284,7 @@ jobs:
           commit_message: |
             chore(i18n): 编译翻译文件(.qm) (Auto-Commit)
 
+            - 初始触发者: ${{ github.actor }}
             - 触发事件: ${{ github.event_name }}
             - 提交哈希: ${{ github.sha }}
             - 工作流运行: ${{ github.run_id }}
@@ -288,6 +292,8 @@ jobs:
             * 由 GitHub Actions 自动生成
           commit_options: '--signoff'
           file_pattern: 'i18n/*.qm ui/*/i18n/*.qm'
+          commit_user_name: 'ChimeYao-bot'
+          commit_user_email: 'ChimeYao@outlook.jp'
           commit_author: 'ChimeYao-bot <ChimeYao@outlook.jp>'
 
   summary:
