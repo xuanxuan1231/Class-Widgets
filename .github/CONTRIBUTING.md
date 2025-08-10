@@ -2,7 +2,7 @@
 简体中文 | <a href="/docs/contributing/CONTRIBUTING.en_US.md">English</a> | <a href="/docs/contributing/CONTRIBUTING.ja.md">日本語</a>
 </div>
 
-# 向 Class Widgets 贡献
+# 向 `Class Widgets` 贡献
 
 ## 反馈
 
