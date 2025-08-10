@@ -1456,12 +1456,11 @@ class QWeatherProvider(GenericWeatherProvider):
         try:
             from network_thread import proxies
             if ',' in location_key:
-                lat, lon = location_key.split(',')
-                # 和风天气坐标格式：经度,纬度(经度在前纬度在后), 只支持小数点后两位
+                lon, lat = location_key.split(',')
                 lat = f"{float(lat):.2f}"
                 lon = f"{float(lon):.2f}"
-                # Note：和风天气API要求经度在前, 纬度在后
-                url = self.base_url.format(location_key=f"{lat},{lon}", key=api_key)
+                # Note：和风天气API要求经度在前, 纬度在后 (小数点后两位)
+                url = self.base_url.format(location_key=f"{lon},{lat}", key=api_key)
             else:
                 url = self.base_url.format(location_key=location_key, key=api_key)
             # logger.debug(f'{self.api_name} 请求URL: {url.replace(api_key, "***" if api_key else "(空)")}')
@@ -1648,11 +1647,10 @@ class QWeatherProvider(GenericWeatherProvider):
             from network_thread import proxies
             if ',' in location_key:
                 lon, lat = location_key.split(',')
-                # 和风天气坐标格式：经度,纬度(经度在前纬度在后), 只支持小数点后两位
                 lat = f"{float(lat):.2f}"
                 lon = f"{float(lon):.2f}"
-                # Note：和风天气API要求经度在前, 纬度在后
-                air_url = f"https://devapi.qweather.com/v7/air/now?location={lat},{lon}&key={api_key}"
+                # Note：和风天气API要求经度在前, 纬度在后 (小数点后两位)
+                air_url = f"https://devapi.qweather.com/v7/air/now?location={lon},{lat}&key={api_key}"
             else:
                 air_url = f"https://devapi.qweather.com/v7/air/now?location={location_key}&key={api_key}"
 
@@ -1727,11 +1725,11 @@ class QWeatherProvider(GenericWeatherProvider):
         try:
             from network_thread import proxies
             if ',' in location_key:
-                lat, lon = location_key.split(',')
+                lon, lat = location_key.split(',')
                 lat = f"{float(lat):.2f}"
                 lon = f"{float(lon):.2f}"
-                # Note：和风天气API要求经度在前, 纬度在后
-                alert_url = f"https://devapi.qweather.com/v7/warning/now?location={lat},{lon}&key={api_key}"
+                # Note：和风天气API要求经度在前, 纬度在后 (小数点后两位)
+                alert_url = f"https://devapi.qweather.com/v7/warning/now?location={lon},{lat}&key={api_key}"
             else:
                 alert_url = f"https://devapi.qweather.com/v7/warning/now?location={location_key}&key={api_key}"
             # logger.debug(f'和风天气预警请求URL: {alert_url.replace(api_key, "***" if api_key else "(空)")}')
