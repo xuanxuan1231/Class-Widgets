@@ -30,15 +30,19 @@ jobs:
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
 
-    - name: Delete PR branch cache
+    - name: Delete PR cache
       if: github.event_name == 'pull_request_target'
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        echo "[DEBUG] 删除分支 '${{ github.event.pull_request.head.ref }}' 的缓存"
-        cache_list=$(gh cache list --json id,ref --repo ${{ github.repository }} | jq -r '.[] | select(.ref == "refs/heads/${{ github.event.pull_request.head.ref }}") | .id')
+        PR_NUMBER="${{ github.event.pull_request.number }}"
+        BRANCH_NAME="${{ github.event.pull_request.head.ref }}"
+        echo "[DEBUG] 删除PR #$PR_NUMBER (分支: $BRANCH_NAME) 的缓存"
+        # PR缓存包含: refs/pull/{number}/merge, (refs/heads/{branch})(不常见)
+        cache_list=$(gh cache list --json id,ref --repo ${{ github.repository }} | jq -r '.[] | select(.ref == "refs/pull/'$PR_NUMBER'/merge" or .ref == "refs/heads/'$BRANCH_NAME'") | .id')
         if [ -z "$cache_list" ]; then
-          echo "[DEBUG] 分支 '${{ github.event.pull_request.head.ref }}' 未找到缓存"
+          echo "[DEBUG] 没有找到PR #$PR_NUMBER (分支: $BRANCH_NAME) 的缓存,当前所有缓存:"
+          gh cache list --repo ${{ github.repository }} || echo "❌ 无法获取缓存列表"
         else
           echo "::group::缓存ID"
           echo "[DEBUG] 找到的缓存ID:"
