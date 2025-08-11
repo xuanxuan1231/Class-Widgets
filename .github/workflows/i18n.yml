@@ -196,8 +196,9 @@ jobs:
             - 触发事件: ${{ github.event_name }}
             - 提交哈希: ${{ github.sha }}
             - 工作流运行: ${{ github.run_id }}
-
             * 由 GitHub Actions 自动生成
+
+            Co-authored-by: ${{ github.actor }} <${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com>
           commit_options: '--signoff'
           file_pattern: 'i18n/*.ts ui/*/i18n/*.ts'
           commit_user_name: 'ChimeYao-bot'
@@ -288,8 +289,9 @@ jobs:
             - 触发事件: ${{ github.event_name }}
             - 提交哈希: ${{ github.sha }}
             - 工作流运行: ${{ github.run_id }}
-
             * 由 GitHub Actions 自动生成
+
+            Co-authored-by: ${{ github.actor }} <${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com>
           commit_options: '--signoff'
           file_pattern: 'i18n/*.qm ui/*/i18n/*.qm'
           commit_user_name: 'ChimeYao-bot'
