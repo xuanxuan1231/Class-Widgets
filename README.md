@@ -103,8 +103,6 @@ Copyright © 2025 RinLit.
 [![Contributors](http://contrib.nn.ci/api?repo=Class-Widgets/Class-Widgets&repo=Class-Widgets/plugin-plaza&repo=Class-Widgets/cw-interim-site)](https://github.com/Class-Widgets/Class-Widgets/graphs/contributors)
 ![Repobeats](https://repobeats.axiom.co/api/embed/9d06f1435d1b14cb7837d1e863e55f24cc98df23.svg "Repobeats analytics image")
 
-如果您想要为 Class Widgets 作出贡献，请阅读[贡献指南](CONTRIBUTING.md)
-
 ### 赞助商
 
 感谢以下人员对本项目的支持。
