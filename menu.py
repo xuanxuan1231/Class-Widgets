@@ -2865,6 +2865,10 @@ class SettingsMenu(FluentWindow):
         bilibili_page.clicked.connect(lambda: QDesktopServices.openUrl(QUrl(
             self.tr('https://space.bilibili.com/569522843'))))
 
+        weblate_page = self.findChild(PushButton, 'button_weblate')
+        weblate_page.clicked.connect(lambda: QDesktopServices.openUrl(QUrl(
+            'https://hosted.weblate.org/engage/class-widgets-1')))
+
         license_button = self.findChild(PushButton, 'button_show_license')
         license_button.clicked.connect(self.show_license)
 
@@ -4114,9 +4118,6 @@ class SettingsMenu(FluentWindow):
     def check_version(self, version):  # 检查更新
         if 'error' in version:
             self.version_number_label.setText(self.tr('版本号：获取失败！'))
-            self.build_commit_label.setText(self.tr('获取失败！'))
-            self.build_uuid_label.setText(self.tr('获取失败！'))
-            self.build_date_label.setText(self.tr('获取失败！'))
 
             if utils.tray_icon:
                 utils.tray_icon.push_error_notification(
