@@ -6,6 +6,8 @@ import os
 from pathlib import Path
 from loguru import logger
 import sys
+import json
+from datetime import datetime
 
 import utils
 from file import config_center
@@ -48,57 +50,73 @@ class I18nManager:
         self.available_languages_view = {}
         self.available_languages_widgets = {}
         self.current_language_view = 'zh_CN'
+        self.completed_i18n_config = {}
+        self.config_file_path = base_directory / 'config' / 'completed_i18n.json'
+        self.load_completed_i18n_config()
         self.scan_available_languages()
         
     def scan_available_languages(self):
         try:
-            from pathlib import Path
-            main_i18n_dir = Path(base_directory) / 'i18n'
-            if main_i18n_dir.exists():
-                for ts_file in main_i18n_dir.glob('*.qm'):
-                    lang_code = ts_file.stem
-                    if name:=self._get_language_display_name(lang_code):
-                        self.available_languages_view[lang_code] = name
-                    else:
-                        logger.warning(f"{lang_code} 未做完全的语言支持，不显示。")
+            completed_main = self.completed_i18n_config.get('completed_languages', {}).get('main', [])
+            completed_themes = self.completed_i18n_config.get('completed_languages', {}).get('themes', {})
+            for lang_code in completed_main:
+                if display_name := self._get_language_display_name(lang_code):
+                    self.available_languages_view[lang_code] = display_name
+            all_theme_languages = set()
+            for theme_name, theme_languages in completed_themes.items():
+                all_theme_languages.update(theme_languages)
+            for lang_code in all_theme_languages:
+                if display_name := self._get_language_display_name(lang_code):
+                    self.available_languages_widgets[lang_code] = display_name
 
-            ui_dir = Path(base_directory) / 'ui'
-            if ui_dir.exists():
-                for theme_dir in ui_dir.iterdir():
-                    if theme_dir.is_dir():
-                        theme_i18n_dir = theme_dir / 'i18n'
-                        if theme_i18n_dir.exists():
-                            for ts_file in theme_i18n_dir.glob('*.qm'):
-                                lang_code = ts_file.stem
-                                if lang_code not in self.available_languages_widgets:
-                                    self.available_languages_widgets[lang_code] = self._get_language_display_name(lang_code)
-                                    
             logger.info(f"可用界面语言: {list(self.available_languages_view.keys())}")
             logger.info(f"可用组件语言: {list(self.available_languages_widgets.keys())}")
-            
         except Exception as e:
             logger.error(f"扫描语言包时出错: {e}")
-            if not self.available_languages_view:
-                self.available_languages_view['zh_CN'] = '简体中文'
-            if not self.available_languages_widgets:
-                self.available_languages_widgets['zh_CN'] = '简体中文'
-                
+
+        if not self.available_languages_view:
+            self.available_languages_view['zh_CN'] = '简体中文'
+        if not self.available_languages_widgets:
+            self.available_languages_widgets['zh_CN'] = '简体中文'
+
+    def load_completed_i18n_config(self):
+        """加载完整翻译配置文件"""
+        try:
+            if self.config_file_path.exists():
+                with open(self.config_file_path, 'r', encoding='utf-8') as f:
+                    self.completed_i18n_config = json.load(f)
+                # logger.debug(f"已加载完整翻译配置: {self.config_file_path}")
+            else:
+                logger.warning(f"完整翻译配置文件不存在: {self.config_file_path}")
+                self.completed_i18n_config = {
+                    "last_updated": "",
+                    "completed_languages": {"main": [], "themes": {}}
+                }
+        except Exception as e:
+            logger.error(f"加载完整翻译配置时出错: {e}")
+            self.completed_i18n_config = {
+                "last_updated": "", 
+                "completed_languages": {"main": [], "themes": {}}
+            }
+
     def _get_language_display_name(self, lang_code):
-        """todo:获取的优化修正"""
+        """获取语言代码对应的显示名称"""
         language_names = {
             'zh_CN': '简体中文',
             'zh_HK': '繁體中文（HK）',
-            # 'zh_SIMPLIFIED': '梗体中文',
+            'zh_SIMPLIFIED': '梗体中文',
             'en_US': 'English',
             'ja_JP': '日本語',
-            # 'ko_KR': '한국어',
-            # 'fr_FR': 'Français',
-            # 'de_DE': 'Deutsch',
-            # 'es_ES': 'Español',
-            # 'ru_RU': 'Русский',
-            # 'pt_BR': 'Português (Brasil)',
-            # 'it_IT': 'Italiano',
-            # 'ar_SA': 'العربية'
+            'ko_KR': '한국어',
+            'fr_FR': 'Français',
+            'de_DE': 'Deutsch',
+            'es_ES': 'Español',
+            'ru_RU': 'Русский',
+            'pt_BR': 'Português (Brasil)',
+            'it_IT': 'Italiano',
+            'ar_SA': 'العربية',
+            'bo': 'བོད་ཡིག',  # 藏语
+            'ug': 'ئۇيغۇرچە'   # 维吾尔语
         }
         return language_names.get(lang_code, None)
 
@@ -112,9 +130,18 @@ class I18nManager:
         return locale_list.get(lang_code, QLocale(QLocale.English, QLocale.UnitedStates))
         
     def get_available_languages_view(self):
-        """获取可用界面语言列表"""
-        keys = set(self.available_languages_view.keys()) & set(self.available_languages_widgets.keys())
-        return {key: self.available_languages_view[key] for key in keys}
+        """获取可用界面语言列表仅(完整翻译的语言)"""
+        completed_main = set(self.completed_i18n_config.get('completed_languages', {}).get('main', []))
+        current_theme = config_center.read_conf('General', 'theme', 'default')
+        completed_theme = set(self.completed_i18n_config.get('completed_languages', {}).get('themes', {}).get(current_theme, []))
+        completed_languages = completed_main & completed_theme
+        if not completed_languages:
+            completed_languages = {'zh_CN'}
+            logger.warning("没有找到完整翻译的语言")
+        available_keys = set(self.available_languages_view.keys()) & set(self.available_languages_widgets.keys())
+        filtered_keys = available_keys & completed_languages
+
+        return {key: self.available_languages_view[key] for key in filtered_keys if key in self.available_languages_view}
         
     def get_current_language_view_name(self):
         """获取当前界面语言名称"""
