@@ -95,6 +95,7 @@ Copyright © 2025 RinLit.
 
 - [SF Symbols](https://developer.apple.com/sf-symbols/) (some icons modified)
 - [QWeather Icons](https://icons.qweather.com/en/) (some icons modified)
+- [Segoe Fluent Icons](https://learn.microsoft.com/en-us/windows/apps/design/style/segoe-fluent-icons-font)（some icons modified）
 - [HarmonyOS Sans](https://developer.huawei.com/consumer/en/design/resource/)
 
 ### Contributions
