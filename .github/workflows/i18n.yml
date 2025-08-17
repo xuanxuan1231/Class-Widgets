@@ -10,8 +10,8 @@ on:
       - 'ui/**/i18n/**/*.ts'
   workflow_dispatch:
     inputs:
-      update_all_ts:
-        description: '更新全部.ts文件'
+      update_ts_files:
+        description: '是否更新.ts文件'
         required: true
         default: true
         type: boolean
@@ -69,12 +69,13 @@ jobs:
               echo "[DEBUG] .ts Changes Detected"
             fi
             if [[ "$has_ui_changes" == "true" || "$has_py_changes" == "true" || "$has_ts_changes" == "true" ]]; then
+              should_update_all="true"
               should_compile="true"
             fi
           elif [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
-            should_update_all=${{ github.event.inputs.update_all_ts }}
+            should_update_all=${{ github.event.inputs.update_ts_files }}
             should_compile="${{ github.event.inputs.compile_to_qm }}"
-            echo "[DEBUG] 手动触发 - 更新全部: $should_update_all; 是否编译: $should_compile"
+            echo "[DEBUG] 手动触发 - 是否更新.ts: $should_update_all; 是否编译: $should_compile"
           fi
           echo "has_ui_changes=$has_ui_changes" >> $GITHUB_OUTPUT
           echo "has_py_changes=$has_py_changes" >> $GITHUB_OUTPUT
@@ -88,7 +89,7 @@ jobs:
             echo "| .py | $has_py_changes |"
             echo "| .ui | $has_ui_changes |"
             echo "| .ts | $has_ts_changes |"
-            echo "| 更新全部 | $should_update_all |"
+            echo "| 更新.ts | $should_update_all |"
             echo "| 是否编译 | $should_compile |"
           } >> $GITHUB_STEP_SUMMARY
 
@@ -455,7 +456,7 @@ jobs:
             echo "- **提交**: ${{ github.sha }}"
             echo "- **执行时间**: $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
             if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
-              echo "- **更新全部**: true (默认)"
+              echo "- **更新.ts文件**: ${{ github.event.inputs.update_ts_files }}"
               echo "- **编译 QM**: ${{ github.event.inputs.compile_to_qm }}"
             fi
             echo ""
