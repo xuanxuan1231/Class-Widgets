@@ -430,13 +430,13 @@ Siz sistem bexatliridin ta yana köp avaaz qoshaliysiz (*≧▽≦)</translation
         <location filename="../view/menu/sound.ui" line="608"/>
         <location filename="../view/menu/sound.ui" line="687"/>
         <location filename="../view/menu/about.ui" line="693"/>
-        <location filename="../view/menu/advance.ui" line="143"/>
-        <location filename="../view/menu/advance.ui" line="685"/>
-        <location filename="../view/menu/advance.ui" line="1167"/>
-        <location filename="../view/menu/advance.ui" line="1335"/>
-        <location filename="../view/menu/advance.ui" line="1666"/>
-        <location filename="../view/menu/advance.ui" line="1758"/>
-        <location filename="../view/menu/advance.ui" line="1833"/>
+        <location filename="../view/menu/advance.ui" line="152"/>
+        <location filename="../view/menu/advance.ui" line="715"/>
+        <location filename="../view/menu/advance.ui" line="1227"/>
+        <location filename="../view/menu/advance.ui" line="1401"/>
+        <location filename="../view/menu/advance.ui" line="1747"/>
+        <location filename="../view/menu/advance.ui" line="1845"/>
+        <location filename="../view/menu/advance.ui" line="1926"/>
         <source>启用</source>
         <translation>qozghat</translation>
     </message>
@@ -449,11 +449,11 @@ Siz sistem bexatliridin ta yana köp avaaz qoshaliysiz (*≧▽≦)</translation
         <location filename="../view/menu/sound.ui" line="611"/>
         <location filename="../view/menu/sound.ui" line="690"/>
         <location filename="../view/menu/about.ui" line="696"/>
-        <location filename="../view/menu/advance.ui" line="1170"/>
-        <location filename="../view/menu/advance.ui" line="1338"/>
-        <location filename="../view/menu/advance.ui" line="1669"/>
-        <location filename="../view/menu/advance.ui" line="1761"/>
-        <location filename="../view/menu/advance.ui" line="1836"/>
+        <location filename="../view/menu/advance.ui" line="1230"/>
+        <location filename="../view/menu/advance.ui" line="1404"/>
+        <location filename="../view/menu/advance.ui" line="1750"/>
+        <location filename="../view/menu/advance.ui" line="1848"/>
+        <location filename="../view/menu/advance.ui" line="1929"/>
         <source>禁用</source>
         <translation>chəklə</translation>
     </message>
@@ -468,291 +468,291 @@ Siz sistem bexatliridin ta yana köp avaaz qoshaliysiz (*≧▽≦)</translation
         <translation>aliy tallanmilar</translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="71"/>
+        <location filename="../view/menu/advance.ui" line="74"/>
         <source>课程</source>
         <translation>dərs</translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="271"/>
+        <location filename="../view/menu/advance.ui" line="286"/>
         <source>时差偏移</source>
         <translation>waqit pərqi siljiⁿ</translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="278"/>
+        <location filename="../view/menu/advance.ui" line="296"/>
         <source>修正系统时间与学校铃声的时差，学校铃声慢于系统时间为正值，反之为负</source>
         <translation>sistəma waqti bilən məktəp qoⁿghuraq waqtining pərqini tüzət, məktəp qoⁿghuraq sistəma waqtindin asta bolsa müsbət san, əksichə bolsa mənpi san</translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="110"/>
+        <location filename="../view/menu/advance.ui" line="116"/>
         <source>启用 单/双 周课表</source>
         <translation>bir/qosh həptə dərs jədvilini qozghat</translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="117"/>
+        <location filename="../view/menu/advance.ui" line="126"/>
         <source>若要启用此选项，需设定开学日期以计算</source>
         <translation>bu tallanmini qozghatmaⁿ üchün, məktəp achilish chislisini bəlgiləsh kerək həsablaⁿ üchün</translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="146"/>
-        <location filename="../view/menu/advance.ui" line="688"/>
+        <location filename="../view/menu/advance.ui" line="155"/>
+        <location filename="../view/menu/advance.ui" line="718"/>
         <source>关闭</source>
         <translation>yap</translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="188"/>
-        <location filename="../view/menu/advance.ui" line="221"/>
+        <location filename="../view/menu/advance.ui" line="197"/>
+        <location filename="../view/menu/advance.ui" line="233"/>
         <source>选取开学日期</source>
         <translation>Oqush bashlinidighan künni talla</translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="195"/>
+        <location filename="../view/menu/advance.ui" line="207"/>
         <source>将用于计算单/双周，开学日期需设置为开学第一周第一天（即周一）</source>
         <translation>bir/qosh həptini hesablaⁿ üchün ishlətilidu, məktəp achilish chislisi məktəp achilish birinchi həptisining birinchi küni (yəni dünshənbə) dəp bəlgilənishi kerək</translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="238"/>
+        <location filename="../view/menu/advance.ui" line="250"/>
         <source>时间</source>
         <translation>waqit</translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="349"/>
+        <location filename="../view/menu/advance.ui" line="367"/>
         <source>时间获得方法</source>
         <translation>waqit ëlish usuli</translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="356"/>
+        <location filename="../view/menu/advance.ui" line="377"/>
         <source>选择时间获得方法</source>
         <translation>waqit ëlish usulini tallaⁿ</translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="457"/>
+        <location filename="../view/menu/advance.ui" line="478"/>
         <source>NTP服务器</source>
         <translation>NTP muxidimətchisi</translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="464"/>
+        <location filename="../view/menu/advance.ui" line="488"/>
         <source>使用url链接NTP服务器同步时间</source>
         <translation>url ulanghan NTP muxidimətchisini ishlətp waqitni muttasil qil</translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="544"/>
+        <location filename="../view/menu/advance.ui" line="568"/>
         <source>NTP同步使用的时区</source>
         <translation>NTP muttasil qilishta ishlitilighan waqit rayoni</translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="551"/>
+        <location filename="../view/menu/advance.ui" line="578"/>
         <source>NTP同步时应使用的时区</source>
         <translation>NTP muttasil qilghan chaghda ishlitilishi kerək bolghan waqit rayoni</translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="622"/>
+        <location filename="../view/menu/advance.ui" line="649"/>
         <source>NTP自动校准</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="632"/>
+        <location filename="../view/menu/advance.ui" line="662"/>
         <source>上次校准: 1145年1月1日 - 11:45:14</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="656"/>
+        <location filename="../view/menu/advance.ui" line="686"/>
         <source>按照设定的校准分钟数自动执行校准</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="705"/>
+        <location filename="../view/menu/advance.ui" line="735"/>
         <source>外观</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="712"/>
+        <location filename="../view/menu/advance.ui" line="745"/>
         <source>界面文字</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="719"/>
+        <location filename="../view/menu/advance.ui" line="755"/>
         <source>在此处您可以修改界面所显示的语言</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="778"/>
+        <location filename="../view/menu/advance.ui" line="814"/>
         <source>界面语言</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="785"/>
+        <location filename="../view/menu/advance.ui" line="824"/>
         <source>选择你所需要界面显示的语言</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="817"/>
+        <location filename="../view/menu/advance.ui" line="856"/>
         <source>隐藏方式</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="824"/>
+        <location filename="../view/menu/advance.ui" line="866"/>
         <source>隐藏方式将会修改单击隐藏和自动隐藏的行为，可按需更改（重启后生效）</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="898"/>
+        <location filename="../view/menu/advance.ui" line="943"/>
         <source>默认</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="949"/>
+        <location filename="../view/menu/advance.ui" line="997"/>
         <source>全部隐藏</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="1000"/>
+        <location filename="../view/menu/advance.ui" line="1051"/>
         <source>最小化为浮窗（推荐）</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../view/menu/plugin_mgr.ui" line="637"/>
-        <location filename="../view/menu/advance.ui" line="1011"/>
-        <location filename="../view/menu/advance.ui" line="1686"/>
+        <location filename="../view/menu/advance.ui" line="1062"/>
+        <location filename="../view/menu/advance.ui" line="1767"/>
         <source>其他</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="1053"/>
+        <location filename="../view/menu/advance.ui" line="1107"/>
         <source>自动隐藏</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="1060"/>
+        <location filename="../view/menu/advance.ui" line="1117"/>
         <source>选择你需要的自动隐藏方式</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="1084"/>
+        <location filename="../view/menu/advance.ui" line="1141"/>
         <source>什么是灵活隐藏？</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="1134"/>
+        <location filename="../view/menu/advance.ui" line="1191"/>
         <source>特定课程不自动隐藏</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="1141"/>
+        <location filename="../view/menu/advance.ui" line="1201"/>
         <source>若启用，在遇到下方设置的特定课程时不会自动隐藏，以英文逗号分隔</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="1215"/>
+        <location filename="../view/menu/advance.ui" line="1275"/>
         <source>不自动隐藏的课程</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="1222"/>
+        <location filename="../view/menu/advance.ui" line="1285"/>
         <source>配合 特定课程不自动隐藏 使用</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="1301"/>
+        <location filename="../view/menu/advance.ui" line="1364"/>
         <source>允许点击或触摸小组件</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="1308"/>
+        <location filename="../view/menu/advance.ui" line="1374"/>
         <source>启用后：轻点小组件即可切换显示/隐藏, 右键会弹出更多选项哟
 禁用时：点击小组件会像不存在一样, 直接穿透到后面的窗口</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="1390"/>
+        <location filename="../view/menu/advance.ui" line="1456"/>
         <source>自定义缩放</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="1397"/>
+        <location filename="../view/menu/advance.ui" line="1466"/>
         <source>更改自定义缩放系数百分比（重启后生效）
 *不建议使用 180% 以上的值，这可能会导致显示异常</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="1494"/>
+        <location filename="../view/menu/advance.ui" line="1563"/>
         <source>置顶/置底小组件</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="1507"/>
+        <location filename="../view/menu/advance.ui" line="1579"/>
         <source>更改小组件的窗口状态（重启后生效）
 *开启“置底”功能时，将会禁用“单击隐藏小组件”</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="1566"/>
+        <location filename="../view/menu/advance.ui" line="1638"/>
         <source>边距大小</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="1573"/>
+        <location filename="../view/menu/advance.ui" line="1648"/>
         <source>设定桌面组件离屏幕边缘的大小（单位：px）</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="1625"/>
+        <location filename="../view/menu/advance.ui" line="1700"/>
         <source>启动</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="1659"/>
+        <location filename="../view/menu/advance.ui" line="1737"/>
         <source>开机自启动</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="1725"/>
+        <location filename="../view/menu/advance.ui" line="1809"/>
         <source>安全模式</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="1732"/>
+        <location filename="../view/menu/advance.ui" line="1819"/>
         <source>若启用，Class Widgets 将在程序崩溃时自动忽略，并不再弹出窗口；以免影响教学任务。</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="1803"/>
+        <location filename="../view/menu/advance.ui" line="1890"/>
         <source>禁用日志</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="1810"/>
+        <location filename="../view/menu/advance.ui" line="1900"/>
         <source>若启用，应用将不再会保存日志到本地</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="1878"/>
-        <location filename="../view/menu/advance.ui" line="1908"/>
+        <location filename="../view/menu/advance.ui" line="1971"/>
+        <location filename="../view/menu/advance.ui" line="2007"/>
         <source>清空日志</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="1885"/>
+        <location filename="../view/menu/advance.ui" line="1981"/>
         <source>将会清空 软件根目录下log. 的所有内容</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="1950"/>
+        <location filename="../view/menu/advance.ui" line="2049"/>
         <source>允许程序多开</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="1957"/>
+        <location filename="../view/menu/advance.ui" line="2059"/>
         <source>程序多开后可能出现未知的问题，请谨慎使用</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="1980"/>
-        <location filename="../view/menu/advance.ui" line="1986"/>
+        <location filename="../view/menu/advance.ui" line="2085"/>
+        <location filename="../view/menu/advance.ui" line="2091"/>
         <source>不允许</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="1983"/>
+        <location filename="../view/menu/advance.ui" line="2088"/>
         <source>允许</source>
         <translation type="unfinished"></translation>
     </message>
@@ -983,7 +983,7 @@ Siz sistem bexatliridin ta yana köp avaaz qoshaliysiz (*≧▽≦)</translation
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../view/menu/weather.ui" line="1316"/>
+        <location filename="../view/menu/weather.ui" line="1376"/>
         <location filename="../view/menu/custom.ui" line="839"/>
         <source>显示</source>
         <translation type="unfinished"></translation>
@@ -1004,148 +1004,148 @@ Siz sistem bexatliridin ta yana köp avaaz qoshaliysiz (*≧▽≦)</translation
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../view/menu/weather.ui" line="1100"/>
+        <location filename="../view/menu/weather.ui" line="1148"/>
         <source>选择城市</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../view/menu/weather.ui" line="1107"/>
+        <location filename="../view/menu/weather.ui" line="1158"/>
         <source>将会用于获得天气数据</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../view/menu/weather.ui" line="1136"/>
+        <location filename="../view/menu/weather.ui" line="1190"/>
         <source>  选择一个城市  </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../view/menu/weather.ui" line="1031"/>
+        <location filename="../view/menu/weather.ui" line="1073"/>
         <source>设置天气源</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../view/menu/weather.ui" line="137"/>
+        <location filename="../view/menu/weather.ui" line="140"/>
         <source>北京市 · 当前天气</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../view/menu/weather.ui" line="157"/>
+        <location filename="../view/menu/weather.ui" line="163"/>
         <source>最后更新于 00/00/0000 00:00:00</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../view/menu/weather.ui" line="286"/>
+        <location filename="../view/menu/weather.ui" line="292"/>
         <source>-- °C</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../view/menu/weather.ui" line="330"/>
+        <location filename="../view/menu/weather.ui" line="339"/>
         <source>大部晴朗</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../view/menu/weather.ui" line="344"/>
+        <location filename="../view/menu/weather.ui" line="356"/>
         <source>体感温度: -- °C</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../view/menu/weather.ui" line="472"/>
+        <location filename="../view/menu/weather.ui" line="484"/>
         <source>风速</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../view/menu/weather.ui" line="534"/>
+        <location filename="../view/menu/weather.ui" line="549"/>
         <source>-- km/h</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../view/menu/weather.ui" line="599"/>
+        <location filename="../view/menu/weather.ui" line="617"/>
         <source>湿度</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../view/menu/weather.ui" line="661"/>
+        <location filename="../view/menu/weather.ui" line="682"/>
         <source>-- %</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../view/menu/weather.ui" line="729"/>
+        <location filename="../view/menu/weather.ui" line="753"/>
         <source>能见度</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../view/menu/weather.ui" line="791"/>
+        <location filename="../view/menu/weather.ui" line="818"/>
         <source>-- km</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../view/menu/weather.ui" line="859"/>
+        <location filename="../view/menu/weather.ui" line="889"/>
         <source>气压</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../view/menu/weather.ui" line="921"/>
+        <location filename="../view/menu/weather.ui" line="954"/>
         <source>---- hPa</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../view/menu/weather.ui" line="949"/>
+        <location filename="../view/menu/weather.ui" line="985"/>
         <source>天气预警</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../view/menu/weather.ui" line="995"/>
+        <location filename="../view/menu/weather.ui" line="1034"/>
         <source>天气源</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../view/menu/weather.ui" line="1038"/>
+        <location filename="../view/menu/weather.ui" line="1083"/>
         <source>将会影响“天气”小组件的天气数据源</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../view/menu/weather.ui" line="1172"/>
+        <location filename="../view/menu/weather.ui" line="1226"/>
         <source>天气源 API Key</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../view/menu/weather.ui" line="1179"/>
+        <location filename="../view/menu/weather.ui" line="1236"/>
         <source>部分天气源可能需要设置 Key 才能正常使用，可在“帮助”页找到各个天气源获得 Key 的方法。</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../view/menu/weather.ui" line="1250"/>
+        <location filename="../view/menu/weather.ui" line="1307"/>
         <source>排除的气象预警</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../view/menu/weather.ui" line="1257"/>
+        <location filename="../view/menu/weather.ui" line="1317"/>
         <source>包含该字符串内容的预警将不会被显示
 多个内容使用空格分隔</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../view/menu/weather.ui" line="1355"/>
+        <location filename="../view/menu/weather.ui" line="1418"/>
         <source>计时自动刷新</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../view/menu/weather.ui" line="1362"/>
+        <location filename="../view/menu/weather.ui" line="1428"/>
         <source>按照设定的分钟数定时执行天气数据刷新</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../view/menu/weather.ui" line="1436"/>
+        <location filename="../view/menu/weather.ui" line="1502"/>
         <source>显示温度单位</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../view/menu/weather.ui" line="1443"/>
+        <location filename="../view/menu/weather.ui" line="1512"/>
         <source>调整显示的温度单位</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../view/menu/weather.ui" line="1481"/>
+        <location filename="../view/menu/weather.ui" line="1550"/>
         <source>摄氏度 (°C)</source>
         <translation type="unfinished"></translation>
     </message>

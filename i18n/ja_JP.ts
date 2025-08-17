@@ -440,13 +440,13 @@
         <location filename="../view/menu/sound.ui" line="608"/>
         <location filename="../view/menu/sound.ui" line="687"/>
         <location filename="../view/menu/about.ui" line="693"/>
-        <location filename="../view/menu/advance.ui" line="143"/>
-        <location filename="../view/menu/advance.ui" line="685"/>
-        <location filename="../view/menu/advance.ui" line="1167"/>
-        <location filename="../view/menu/advance.ui" line="1335"/>
-        <location filename="../view/menu/advance.ui" line="1666"/>
-        <location filename="../view/menu/advance.ui" line="1758"/>
-        <location filename="../view/menu/advance.ui" line="1833"/>
+        <location filename="../view/menu/advance.ui" line="152"/>
+        <location filename="../view/menu/advance.ui" line="715"/>
+        <location filename="../view/menu/advance.ui" line="1227"/>
+        <location filename="../view/menu/advance.ui" line="1401"/>
+        <location filename="../view/menu/advance.ui" line="1747"/>
+        <location filename="../view/menu/advance.ui" line="1845"/>
+        <location filename="../view/menu/advance.ui" line="1926"/>
         <source>启用</source>
         <translation>有効化</translation>
     </message>
@@ -459,11 +459,11 @@
         <location filename="../view/menu/sound.ui" line="611"/>
         <location filename="../view/menu/sound.ui" line="690"/>
         <location filename="../view/menu/about.ui" line="696"/>
-        <location filename="../view/menu/advance.ui" line="1170"/>
-        <location filename="../view/menu/advance.ui" line="1338"/>
-        <location filename="../view/menu/advance.ui" line="1669"/>
-        <location filename="../view/menu/advance.ui" line="1761"/>
-        <location filename="../view/menu/advance.ui" line="1836"/>
+        <location filename="../view/menu/advance.ui" line="1230"/>
+        <location filename="../view/menu/advance.ui" line="1404"/>
+        <location filename="../view/menu/advance.ui" line="1750"/>
+        <location filename="../view/menu/advance.ui" line="1848"/>
+        <location filename="../view/menu/advance.ui" line="1929"/>
         <source>禁用</source>
         <translation>無効化</translation>
     </message>
@@ -478,114 +478,114 @@
         <translation>詳細オプション</translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="71"/>
+        <location filename="../view/menu/advance.ui" line="74"/>
         <source>课程</source>
         <translation>コース</translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="271"/>
+        <location filename="../view/menu/advance.ui" line="286"/>
         <source>时差偏移</source>
         <translation>時差オフセット</translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="278"/>
+        <location filename="../view/menu/advance.ui" line="296"/>
         <source>修正系统时间与学校铃声的时差，学校铃声慢于系统时间为正值，反之为负</source>
         <translation>システム時間と学校のチャイムの時差を補正します。チャイムがシステム時間より遅い場合は正の値、逆の場合は負の値を設定してください</translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="110"/>
+        <location filename="../view/menu/advance.ui" line="116"/>
         <source>启用 单/双 周课表</source>
         <translation>単週/双週のコース表を有効にする</translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="117"/>
+        <location filename="../view/menu/advance.ui" line="126"/>
         <source>若要启用此选项，需设定开学日期以计算</source>
         <translation>このオプションを有効にするには、計算のために開学日を設定する必要があります</translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="146"/>
-        <location filename="../view/menu/advance.ui" line="688"/>
+        <location filename="../view/menu/advance.ui" line="155"/>
+        <location filename="../view/menu/advance.ui" line="718"/>
         <source>关闭</source>
         <translation>閉じる</translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="188"/>
-        <location filename="../view/menu/advance.ui" line="221"/>
+        <location filename="../view/menu/advance.ui" line="197"/>
+        <location filename="../view/menu/advance.ui" line="233"/>
         <source>选取开学日期</source>
         <translation>開学日を選択</translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="195"/>
+        <location filename="../view/menu/advance.ui" line="207"/>
         <source>将用于计算单/双周，开学日期需设置为开学第一周第一天（即周一）</source>
         <translation>単週/双週の計算に使用されます。開学日は、開学初週の月曜日（第一日目）として設定する必要があります</translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="238"/>
+        <location filename="../view/menu/advance.ui" line="250"/>
         <source>时间</source>
         <translation>タイムライン</translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="349"/>
+        <location filename="../view/menu/advance.ui" line="367"/>
         <source>时间获得方法</source>
         <translation>時間取得方法</translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="356"/>
+        <location filename="../view/menu/advance.ui" line="377"/>
         <source>选择时间获得方法</source>
         <translation>時間取得方法を選択してください</translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="457"/>
+        <location filename="../view/menu/advance.ui" line="478"/>
         <source>NTP服务器</source>
         <translation>NTPサーバー</translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="464"/>
+        <location filename="../view/menu/advance.ui" line="488"/>
         <source>使用url链接NTP服务器同步时间</source>
         <translation>URLリンクを使用してNTPサーバーと同期します</translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="544"/>
+        <location filename="../view/menu/advance.ui" line="568"/>
         <source>NTP同步使用的时区</source>
         <translation>NTP同期で使用するタイムゾーン</translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="551"/>
+        <location filename="../view/menu/advance.ui" line="578"/>
         <source>NTP同步时应使用的时区</source>
         <translation>NTP同期時に使用すべきタイムゾーン</translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="622"/>
+        <location filename="../view/menu/advance.ui" line="649"/>
         <source>NTP自动校准</source>
         <translation>NTP自動校正</translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="632"/>
+        <location filename="../view/menu/advance.ui" line="662"/>
         <source>上次校准: 1145年1月1日 - 11:45:14</source>
         <translation>前回の校正：1145年1月1日 - 11:45:14</translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="656"/>
+        <location filename="../view/menu/advance.ui" line="686"/>
         <source>按照设定的校准分钟数自动执行校准</source>
         <translation>設定された校正間隔（分）に従って自動的に校正を実行します</translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="705"/>
+        <location filename="../view/menu/advance.ui" line="735"/>
         <source>外观</source>
         <translation>外観</translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="712"/>
+        <location filename="../view/menu/advance.ui" line="745"/>
         <source>界面文字</source>
         <translation>画面の文字</translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="719"/>
+        <location filename="../view/menu/advance.ui" line="755"/>
         <source>在此处您可以修改界面所显示的语言</source>
         <translation>ここで表示される言語を変更できます</translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="1308"/>
+        <location filename="../view/menu/advance.ui" line="1374"/>
         <source>启用后：轻点小组件即可切换显示/隐藏, 右键会弹出更多选项哟
 禁用时：点击小组件会像不存在一样, 直接穿透到后面的窗口</source>
         <translation>有効時：ウィジェットをタップすると表示／非表示を切り替えます。右クリックで詳細オプションが表示されます
@@ -600,84 +600,84 @@
         <translation type="vanished">必要なコンポーネントの表示言語を選択してください</translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="778"/>
+        <location filename="../view/menu/advance.ui" line="814"/>
         <source>界面语言</source>
         <translation>インターフェースの言語</translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="785"/>
+        <location filename="../view/menu/advance.ui" line="824"/>
         <source>选择你所需要界面显示的语言</source>
         <translation>必要なインターフェースの表示言語を選択してください</translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="817"/>
+        <location filename="../view/menu/advance.ui" line="856"/>
         <source>隐藏方式</source>
         <translation>非表示方法</translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="824"/>
+        <location filename="../view/menu/advance.ui" line="866"/>
         <source>隐藏方式将会修改单击隐藏和自动隐藏的行为，可按需更改（重启后生效）</source>
         <translation>非表示方法は、クリックでの非表示と自動非表示の動作を変更します。必要に応じて変更できます（再起動後に有効）</translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="898"/>
+        <location filename="../view/menu/advance.ui" line="943"/>
         <source>默认</source>
         <translation>デフォルト</translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="949"/>
+        <location filename="../view/menu/advance.ui" line="997"/>
         <source>全部隐藏</source>
         <translation>すべて非表示</translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="1000"/>
+        <location filename="../view/menu/advance.ui" line="1051"/>
         <source>最小化为浮窗（推荐）</source>
         <translation>浮動ウィンドウに最小化（推奨）</translation>
     </message>
     <message>
         <location filename="../view/menu/plugin_mgr.ui" line="637"/>
-        <location filename="../view/menu/advance.ui" line="1011"/>
-        <location filename="../view/menu/advance.ui" line="1686"/>
+        <location filename="../view/menu/advance.ui" line="1062"/>
+        <location filename="../view/menu/advance.ui" line="1767"/>
         <source>其他</source>
         <translation>その他</translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="1053"/>
+        <location filename="../view/menu/advance.ui" line="1107"/>
         <source>自动隐藏</source>
         <translation>自動非表示</translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="1060"/>
+        <location filename="../view/menu/advance.ui" line="1117"/>
         <source>选择你需要的自动隐藏方式</source>
         <translation>必要な自動非表示方法を選択してください</translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="1084"/>
+        <location filename="../view/menu/advance.ui" line="1141"/>
         <source>什么是灵活隐藏？</source>
         <translation>ダイナミック非表示とは何ですか？</translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="1134"/>
+        <location filename="../view/menu/advance.ui" line="1191"/>
         <source>特定课程不自动隐藏</source>
         <translation>特定のコースは自動で非表示にしない</translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="1141"/>
+        <location filename="../view/menu/advance.ui" line="1201"/>
         <source>若启用，在遇到下方设置的特定课程时不会自动隐藏，以英文逗号分隔</source>
         <translation>有効にすると、下記の設定された特定のコースに遭遇した際、自動で非表示にされません。設定は英語のカンマで区切ってください</translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="1215"/>
+        <location filename="../view/menu/advance.ui" line="1275"/>
         <source>不自动隐藏的课程</source>
         <translation>自動で非表示にしないコース</translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="1222"/>
+        <location filename="../view/menu/advance.ui" line="1285"/>
         <source>配合 特定课程不自动隐藏 使用</source>
         <translation>「特定のコースは自動で非表示にしない」と併用してください。</translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="1301"/>
+        <location filename="../view/menu/advance.ui" line="1364"/>
         <source>允许点击或触摸小组件</source>
         <translation>ウィジェットのクリックまたはタッチを許可する</translation>
     </message>
@@ -695,24 +695,24 @@
 ※ 再起動後に有効になります。</translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="1390"/>
+        <location filename="../view/menu/advance.ui" line="1456"/>
         <source>自定义缩放</source>
         <translation>カスタムズーム</translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="1397"/>
+        <location filename="../view/menu/advance.ui" line="1466"/>
         <source>更改自定义缩放系数百分比（重启后生效）
 *不建议使用 180% 以上的值，这可能会导致显示异常</source>
         <translation>カスタムズーム係数のパーセンテージを変更します（再起動後に有効）。
 ※180%以上の値は表示の異常を引き起こす可能性があるため、使用は推奨されません。</translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="1494"/>
+        <location filename="../view/menu/advance.ui" line="1563"/>
         <source>置顶/置底小组件</source>
         <translation>ウィジェットの前面/背面表示</translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="1507"/>
+        <location filename="../view/menu/advance.ui" line="1579"/>
         <source>更改小组件的窗口状态（重启后生效）
 *开启“置底”功能时，将会禁用“单击隐藏小组件”</source>
         <translation>ウィジェットのウィンドウ状態を変更します（再起動後に有効）。
@@ -720,74 +720,74 @@
 ※「背面に表示」機能を有効にすると、「クリックでウィジェットを非表示」機能は無効になります。</translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="1566"/>
+        <location filename="../view/menu/advance.ui" line="1638"/>
         <source>边距大小</source>
         <translation>マージンサイズ</translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="1573"/>
+        <location filename="../view/menu/advance.ui" line="1648"/>
         <source>设定桌面组件离屏幕边缘的大小（单位：px）</source>
         <translation>デスクトップウィジェットと画面端の距離を設定します（単位：px）</translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="1625"/>
+        <location filename="../view/menu/advance.ui" line="1700"/>
         <source>启动</source>
         <translation>起動</translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="1659"/>
+        <location filename="../view/menu/advance.ui" line="1737"/>
         <source>开机自启动</source>
         <translation>自動起動</translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="1725"/>
+        <location filename="../view/menu/advance.ui" line="1809"/>
         <source>安全模式</source>
         <translation>セーフモード</translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="1732"/>
+        <location filename="../view/menu/advance.ui" line="1819"/>
         <source>若启用，Class Widgets 将在程序崩溃时自动忽略，并不再弹出窗口；以免影响教学任务。</source>
         <translation>有効にすると、Class Widgets はプログラムがクラッシュした際に自動的に無視され、ウィンドウは表示されません。これにより、授業の進行に影響を与えません。</translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="1803"/>
+        <location filename="../view/menu/advance.ui" line="1890"/>
         <source>禁用日志</source>
         <translation>ログを無効にする</translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="1810"/>
+        <location filename="../view/menu/advance.ui" line="1900"/>
         <source>若启用，应用将不再会保存日志到本地</source>
         <translation>有効にすると、アプリケーションはログをローカルに保存しなくなります</translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="1878"/>
-        <location filename="../view/menu/advance.ui" line="1908"/>
+        <location filename="../view/menu/advance.ui" line="1971"/>
+        <location filename="../view/menu/advance.ui" line="2007"/>
         <source>清空日志</source>
         <translation>ログを消去</translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="1885"/>
+        <location filename="../view/menu/advance.ui" line="1981"/>
         <source>将会清空 软件根目录下log. 的所有内容</source>
         <translation>ソフトウェアのルートディレクトリ下のlog.のすべての内容が消去されます</translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="1950"/>
+        <location filename="../view/menu/advance.ui" line="2049"/>
         <source>允许程序多开</source>
         <translation>プログラムの同時起動を許可する</translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="1957"/>
+        <location filename="../view/menu/advance.ui" line="2059"/>
         <source>程序多开后可能出现未知的问题，请谨慎使用</source>
         <translation>プログラムを複数回起動すると、予期しない問題が発生する可能性がありますので、慎重に使用してください</translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="1980"/>
-        <location filename="../view/menu/advance.ui" line="1986"/>
+        <location filename="../view/menu/advance.ui" line="2085"/>
+        <location filename="../view/menu/advance.ui" line="2091"/>
         <source>不允许</source>
         <translation>許可しない</translation>
     </message>
     <message>
-        <location filename="../view/menu/advance.ui" line="1983"/>
+        <location filename="../view/menu/advance.ui" line="2088"/>
         <source>允许</source>
         <translation>許可する</translation>
     </message>
@@ -1022,7 +1022,7 @@
         <translation>浮動ウィンドウのカウントダウンをぼかす</translation>
     </message>
     <message>
-        <location filename="../view/menu/weather.ui" line="1316"/>
+        <location filename="../view/menu/weather.ui" line="1376"/>
         <location filename="../view/menu/custom.ui" line="839"/>
         <source>显示</source>
         <translation>表示</translation>
@@ -1047,149 +1047,149 @@
         <translation type="vanished">Gaode 天気/Tencent 天気 と Xiaomi 天気/Hefeng 天気 の間で切り替えた後、都市を再選択する必要があります</translation>
     </message>
     <message>
-        <location filename="../view/menu/weather.ui" line="1100"/>
+        <location filename="../view/menu/weather.ui" line="1148"/>
         <source>选择城市</source>
         <translation>都市を選択</translation>
     </message>
     <message>
-        <location filename="../view/menu/weather.ui" line="1107"/>
+        <location filename="../view/menu/weather.ui" line="1158"/>
         <source>将会用于获得天气数据</source>
         <translation>天気データを取得するために使用されます</translation>
     </message>
     <message>
-        <location filename="../view/menu/weather.ui" line="1136"/>
+        <location filename="../view/menu/weather.ui" line="1190"/>
         <source>  选择一个城市  </source>
         <translation>  都市を選択してください  </translation>
     </message>
     <message>
-        <location filename="../view/menu/weather.ui" line="1031"/>
+        <location filename="../view/menu/weather.ui" line="1073"/>
         <source>设置天气源</source>
         <translation>天気ソースを設定</translation>
     </message>
     <message>
-        <location filename="../view/menu/weather.ui" line="137"/>
+        <location filename="../view/menu/weather.ui" line="140"/>
         <source>北京市 · 当前天气</source>
         <translation>北京 · 現在の天気</translation>
     </message>
     <message>
-        <location filename="../view/menu/weather.ui" line="157"/>
+        <location filename="../view/menu/weather.ui" line="163"/>
         <source>最后更新于 00/00/0000 00:00:00</source>
         <translation>最終更新日: 00/00/0000 00:00:00</translation>
     </message>
     <message>
-        <location filename="../view/menu/weather.ui" line="286"/>
+        <location filename="../view/menu/weather.ui" line="292"/>
         <source>-- °C</source>
         <translation>-- °C</translation>
     </message>
     <message>
-        <location filename="../view/menu/weather.ui" line="330"/>
+        <location filename="../view/menu/weather.ui" line="339"/>
         <source>大部晴朗</source>
         <translation>晴れ</translation>
     </message>
     <message>
-        <location filename="../view/menu/weather.ui" line="344"/>
+        <location filename="../view/menu/weather.ui" line="356"/>
         <source>体感温度: -- °C</source>
         <translation>体感温度: -- °C</translation>
     </message>
     <message>
-        <location filename="../view/menu/weather.ui" line="472"/>
+        <location filename="../view/menu/weather.ui" line="484"/>
         <source>风速</source>
         <translation>風速</translation>
     </message>
     <message>
-        <location filename="../view/menu/weather.ui" line="534"/>
+        <location filename="../view/menu/weather.ui" line="549"/>
         <source>-- km/h</source>
         <translation>-- km/h</translation>
     </message>
     <message>
-        <location filename="../view/menu/weather.ui" line="599"/>
+        <location filename="../view/menu/weather.ui" line="617"/>
         <source>湿度</source>
         <translation>湿度</translation>
     </message>
     <message>
-        <location filename="../view/menu/weather.ui" line="661"/>
+        <location filename="../view/menu/weather.ui" line="682"/>
         <source>-- %</source>
         <translation>-- %</translation>
     </message>
     <message>
-        <location filename="../view/menu/weather.ui" line="729"/>
+        <location filename="../view/menu/weather.ui" line="753"/>
         <source>能见度</source>
         <translation>可視性</translation>
     </message>
     <message>
-        <location filename="../view/menu/weather.ui" line="791"/>
+        <location filename="../view/menu/weather.ui" line="818"/>
         <source>-- km</source>
         <translation>-- km</translation>
     </message>
     <message>
-        <location filename="../view/menu/weather.ui" line="859"/>
+        <location filename="../view/menu/weather.ui" line="889"/>
         <source>气压</source>
         <translation>空気圧</translation>
     </message>
     <message>
-        <location filename="../view/menu/weather.ui" line="921"/>
+        <location filename="../view/menu/weather.ui" line="954"/>
         <source>---- hPa</source>
         <translation>---- hPa</translation>
     </message>
     <message>
-        <location filename="../view/menu/weather.ui" line="949"/>
+        <location filename="../view/menu/weather.ui" line="985"/>
         <source>天气预警</source>
         <translation>気象警報</translation>
     </message>
     <message>
-        <location filename="../view/menu/weather.ui" line="995"/>
+        <location filename="../view/menu/weather.ui" line="1034"/>
         <source>天气源</source>
         <translation>天気情報源</translation>
     </message>
     <message>
-        <location filename="../view/menu/weather.ui" line="1038"/>
+        <location filename="../view/menu/weather.ui" line="1083"/>
         <source>将会影响“天气”小组件的天气数据源</source>
         <translation>「天気」ウィジェットの天気情報ソースに影響します</translation>
     </message>
     <message>
-        <location filename="../view/menu/weather.ui" line="1172"/>
+        <location filename="../view/menu/weather.ui" line="1226"/>
         <source>天气源 API Key</source>
         <translation>天気ソース APIキー</translation>
     </message>
     <message>
-        <location filename="../view/menu/weather.ui" line="1179"/>
+        <location filename="../view/menu/weather.ui" line="1236"/>
         <source>部分天气源可能需要设置 Key 才能正常使用，可在“帮助”页找到各个天气源获得 Key 的方法。</source>
         <translation>一部の天気ソースは、正常に利用するためにAPIキーの設定が必要です。「ヘルプ」ページで、各天気ソースのキー取得方法をご確認ください。</translation>
     </message>
     <message>
-        <location filename="../view/menu/weather.ui" line="1250"/>
+        <location filename="../view/menu/weather.ui" line="1307"/>
         <source>排除的气象预警</source>
         <translation>排除の天気警報です</translation>
     </message>
     <message>
-        <location filename="../view/menu/weather.ui" line="1257"/>
+        <location filename="../view/menu/weather.ui" line="1317"/>
         <source>包含该字符串内容的预警将不会被显示
 多个内容使用空格分隔</source>
         <translation>この文字列を含む警報は表示されません
 複数の文字列はスペースで区切ってください</translation>
     </message>
     <message>
-        <location filename="../view/menu/weather.ui" line="1355"/>
+        <location filename="../view/menu/weather.ui" line="1418"/>
         <source>计时自动刷新</source>
         <translation>タイマー自動更新</translation>
     </message>
     <message>
-        <location filename="../view/menu/weather.ui" line="1362"/>
+        <location filename="../view/menu/weather.ui" line="1428"/>
         <source>按照设定的分钟数定时执行天气数据刷新</source>
         <translation>設定した分数に応じて天気データを定期的に更新します</translation>
     </message>
     <message>
-        <location filename="../view/menu/weather.ui" line="1436"/>
+        <location filename="../view/menu/weather.ui" line="1502"/>
         <source>显示温度单位</source>
         <translation>温度単位を表示</translation>
     </message>
     <message>
-        <location filename="../view/menu/weather.ui" line="1443"/>
+        <location filename="../view/menu/weather.ui" line="1512"/>
         <source>调整显示的温度单位</source>
         <translation>表示される温度単位を調整する</translation>
     </message>
     <message>
-        <location filename="../view/menu/weather.ui" line="1481"/>
+        <location filename="../view/menu/weather.ui" line="1550"/>
         <source>摄氏度 (°C)</source>
         <translation>°C</translation>
     </message>
