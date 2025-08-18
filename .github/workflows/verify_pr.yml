@@ -70,7 +70,7 @@ jobs:
 
       - name: Delete resolved title comment
         if: steps.semantic-check.outcome == 'success' && steps.find-title-comment.outputs.comment-id != ''
-        uses: detomarco/delete-comment@v1
+        uses: detomarco/delete-comment@main
         with:
           comment-id: ${{ steps.find-title-comment.outputs.comment-id }}
           token: ${{ secrets.GITHUB_TOKEN }}
