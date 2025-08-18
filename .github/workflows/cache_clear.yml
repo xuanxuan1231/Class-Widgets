@@ -21,6 +21,16 @@ on:
         type: string
         default: ''
 
+  workflow_call:
+    inputs:
+      branch_name:
+        description: '要删除缓存的分支名'
+        required: true
+        type: string
+
+  schedule:
+    - cron: '0 2 * * 0'  # 每周日UTC 2:00 (北京时间10:00) 清理非main分支缓存
+
 jobs:
   delete-cache:
     runs-on: ubuntu-latest
@@ -87,6 +97,59 @@ jobs:
           echo "[DEBUG] 找到以下缓存ID:"
           echo "[DEBUG] $cache_list"
           echo "::endgroup::"
+          count=0
+          for cache_id in $cache_list; do
+            count=$((count + 1))
+            echo "[DEBUG] 正在删除缓存: $cache_id (第 $count 个)"
+            gh cache delete "$cache_id" --repo ${{ github.repository }}
+            if [ $? -eq 0 ]; then
+              echo "[DEBUG] 成功删除缓存: $cache_id"
+            else
+              echo "[DEBUG] 删除ID为 $cache_id 的缓存时失败"
+            fi
+          done
+          echo "[DEBUG] 共删除了 $count 个缓存"
+        fi
+
+    - name: Delete non-main branch caches (scheduled)
+      if: github.event_name == 'schedule'
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        echo "[DEBUG] 定时清理非main分支的缓存"
+        cache_list=$(gh cache list --json id,ref --repo ${{ github.repository }} | jq -r '.[] | select(.ref != "refs/heads/main") | .id')
+        if [ -z "$cache_list" ]; then
+          echo "[DEBUG] 没有找到非main分支的缓存"
+        else
+          echo "[DEBUG] 找到以下非main分支缓存ID:"
+          echo "[DEBUG] $cache_list"
+          count=0
+          for cache_id in $cache_list; do
+            count=$((count + 1))
+            echo "[DEBUG] 正在删除缓存: $cache_id (第 $count 个)"
+            gh cache delete "$cache_id" --repo ${{ github.repository }}
+            if [ $? -eq 0 ]; then
+              echo "[DEBUG] 成功删除缓存: $cache_id"
+            else
+              echo "[DEBUG] 删除ID为 $cache_id 的缓存时失败"
+            fi
+          done
+          echo "[DEBUG] 共删除了 $count 个非main分支缓存"
+        fi
+
+    - name: Delete cache from workflow call
+      if: github.event_name == 'workflow_call'
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        BRANCH_NAME="${{ inputs.branch_name }}"
+        echo "[DEBUG] 通过工作流调用删除分支 '$BRANCH_NAME' 的缓存"
+        cache_list=$(gh cache list --json id,ref --repo ${{ github.repository }} | jq -r '.[] | select(.ref == "refs/heads/'$BRANCH_NAME'") | .id')
+        if [ -z "$cache_list" ]; then
+          echo "[DEBUG] 分支 '$BRANCH_NAME' 没有找到缓存"
+        else
+          echo "[DEBUG] 找到以下缓存ID:"
+          echo "[DEBUG] $cache_list"
           count=0
           for cache_id in $cache_list; do
             count=$((count + 1))

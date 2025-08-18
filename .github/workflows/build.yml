@@ -16,7 +16,7 @@ on:
         required: false
         type: string
   pull_request:
-    types: [opened, synchronize]
+    types: [opened, synchronize, closed]
     paths-ignore:
       - '**/*.md'
       - '**/*.txt'
