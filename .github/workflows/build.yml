@@ -132,8 +132,8 @@ jobs:
             build_type="Release"
             echo "[DEBUG] Release (push,tag)"
           elif [[ "${GITHUB_EVENT_NAME}" == "workflow_dispatch" ]]; then
-            build_type="${{ github.event.inputs.build_type || 'Debug' }}"
-            echo "[DEBUG] (workflow_dispatch)"
+            build_type="${{ github.event.inputs.build_type || inputs.build_type }}"
+            echo "[DEBUG] (workflow_dispatch or workflow_call)"
           elif [[ "${GITHUB_EVENT_NAME}" == "workflow_call" ]]; then
             build_type="${{ inputs.build_type || 'Debug' }}"
             echo "[DEBUG] (workflow_call)"
