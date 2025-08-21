@@ -122,6 +122,7 @@ jobs:
         env:
           PR_NUMBER: ${{ github.event.pull_request.number || 0 }}
           PR_BRANCH: ${{ github.event.pull_request.head.repo.owner.login || github.repository_owner }}:${{ github.event.pull_request.head.ref || github.ref_name }}
+          GITHUB_EVENT_NAME: ${{ github.event_name }}
         run: |
           build_time=$(date -u -d "+8 hours" +"%Y-%m-%d %H:%M")
           build_commit="${GITHUB_SHA:0:7}"
@@ -129,14 +130,18 @@ jobs:
           build_runid="${GITHUB_RUN_ID}"
           if [[ "${GITHUB_EVENT_NAME}" == "push" && "${GITHUB_REF}" =~ ^refs/tags/v ]]; then
             build_type="Release"
+            echo "[DEBUG] Release (push,tag)"
           elif [[ "${GITHUB_EVENT_NAME}" == "workflow_dispatch" ]]; then
             build_type="${{ github.event.inputs.build_type || 'Debug' }}"
+            echo "[DEBUG] (workflow_dispatch)"
           elif [[ "${GITHUB_EVENT_NAME}" == "workflow_call" ]]; then
             build_type="${{ inputs.build_type || 'Debug' }}"
+            echo "[DEBUG] (workflow_call)"
           elif [[ "${GITHUB_EVENT_NAME}" == "pull_request" ]]; then
             build_branch="$PR_BRANCH"
             build_type="Debug (PR-#${PR_NUMBER})"
           else
+            echo "[DEBUG] (other)"
             build_type="Debug"
           fi
           release_version="${{ inputs.release_version }}"
@@ -612,7 +617,7 @@ jobs:
       - name: Generate package provenance
         uses: actions/attest-build-provenance@v2
         with:
-          subject-path: 'final-packages/*.zip'
+          subject-path: "final-packages/*.zip"
 
   publish:
     name: Publish
