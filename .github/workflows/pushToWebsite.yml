@@ -3,6 +3,10 @@ on:
   release:
     types: [published]
 
+permissions:
+  contents: write
+  actions: write
+
 jobs:
   send-dispatch:
     runs-on: ubuntu-latest
