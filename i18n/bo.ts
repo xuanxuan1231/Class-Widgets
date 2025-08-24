@@ -1809,7 +1809,7 @@
     <name>PluginPlaza</name>
     <message>
         <location filename="../plugin_plaza.py" line="593"/>
-        <source>{month}月{day}日 {weekday}</source>
+        <source>{month}{day}日 {weekday}</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
