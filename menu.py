@@ -10,7 +10,17 @@ import zipfile
 from copy import deepcopy
 from pathlib import Path
 from shutil import rmtree
-from typing import Tuple, Union
+
+from PyQt5 import uic, QtCore
+from PyQt5.QtCore import Qt, QTime, QUrl, QDate, pyqtSignal, QSize, QThread, QTranslator, QObject, QTimer, QLocale
+from PyQt5.QtGui import QIcon, QDesktopServices, QColor
+# from PyQt5.QtPrintSupport import QPrinter
+from PyQt5.QtCore import Qt, pyqtSignal, QRectF
+from PyQt5.QtGui import QPainter
+from PyQt5.QtWidgets import QApplication, QHeaderView, QTableWidgetItem, QLabel, QHBoxLayout, QSizePolicy, \
+    QSpacerItem, QFileDialog, QVBoxLayout, QScroller, QWidget, QFrame, QListWidgetItem, QWidget, QStyle
+from packaging.version import Version
+from typing import Tuple, Union, Dict, List, Optional
 
 from loguru import logger
 from packaging.version import Version
@@ -385,7 +395,7 @@ loaded_data = schedule_center.schedule_data
 schedule_dict = {}  # 对应时间线的课程表
 schedule_even_dict = {}  # 对应时间线的课程表（双周）
 
-timeline_dict = {}  # 时间线字典
+timeline_dict = {'odd' : {}, 'even': {}}  # 时间
 
 countdown_dict = {}
 
@@ -409,10 +419,10 @@ def cleanup_plaza():
     plugin_plaza = None
 
 
-def get_timeline():
+def get_timeline()-> Dict[str, Dict[str, List[Tuple[int, str, int, int]]]]:
     global loaded_data
     loaded_data = schedule_center.schedule_data
-    return loaded_data['timeline']
+    return {'odd': loaded_data['timeline'], 'even': loaded_data['timeline_even']}
 
 
 def open_dir(path: str):
@@ -447,7 +457,7 @@ def get_theme_name():
     return load_theme_config(config_center.read_conf('General', 'theme')).path.name
 
 
-def load_schedule_dict(schedule, part, part_name):
+def load_schedule_dict(schedule, week_type, part, part_name):
     """
     加载课表字典
     """
@@ -457,27 +467,27 @@ def load_schedule_dict(schedule, part, part_name):
         count = []  # 初始化计数器
         for i in range(len(part)):
             count.append(0)
-        if str(week) in loaded_data['timeline'] and loaded_data['timeline'][str(week)]:
-            timeline = get_timeline()[str(week)]
+        if str(week) in loaded_data['timeline_even' if week_type else 'timeline'] and loaded_data['timeline_even' if week_type else 'timeline'][str(week)]:
+            timeline = get_timeline()['even' if week_type else 'odd'][str(week)]
         else:
-            timeline = get_timeline()['default']
+            timeline = get_timeline()['even' if week_type else 'odd']['default']
 
-        for item_name, item_time in timeline.items():
-            if item_name.startswith('a'):
+        for isbreak, item_name, item_index, item_time in timeline:
+            if not isbreak:
                 try:
-                    if int(item_name[1]) == 0:
+                    if item_name == '0':
                         count_num = 0
                     else:
-                        count_num = sum(count[:int(item_name[1])])
+                        count_num = sum(count[:int(item_name)])
 
-                    prefix = item[int(item_name[2:]) - 1 + count_num]
-                    period = part_name[str(item_name[1])]
+                    prefix = item[item_index - 1 + count_num]
+                    period = part_name[str(item_name)]
                     all_class.append(f'{prefix}-{period}')
                 except IndexError or ValueError:  # 未设置值
                     prefix = QCoreApplication.translate('menu','未添加')
-                    period = part_name[str(item_name[1])]
+                    period = part_name[str(item_name)]
                     all_class.append(f'{prefix}-{period}')
-                count[int(item_name[1])] += 1
+                count[int(item_name)] += 1
         schedule_dict_[week] = all_class
     return schedule_dict_
 
@@ -504,8 +514,8 @@ def se_load_item():
     schedule = loaded_data.get('schedule')
     schedule_even = loaded_data.get('schedule_even')
 
-    schedule_dict = load_schedule_dict(schedule, part, part_name)
-    schedule_even_dict = load_schedule_dict(schedule_even, part, part_name)
+    schedule_dict = load_schedule_dict(schedule, 0, part, part_name)
+    schedule_even_dict = load_schedule_dict(schedule_even, 1, part, part_name)
 
 
 def cd_load_item():
@@ -3958,14 +3968,23 @@ class SettingsMenu(FluentWindow):
         te_class_activity_combo.setToolTip(self.tr('选择活动类型（“课程”或“课间”）'))
         te_class_activity_combo.currentIndexChanged.connect(self.te_sync_time)
 
+        te_select_week_type = self.findChild(ComboBox, 'select_week_type')  # 选择周类型
+        te_select_week_type.addItems(list_.week_type)
+        te_select_week_type.setToolTip(self.tr('选择单双周'))
+        te_select_week_type.currentIndexChanged.connect(self.te_upload_list)
+
         te_select_timeline = self.findChild(ComboBox, 'select_timeline')  # 选择时间线
         te_select_timeline.addItem(self.tr('默认'))
         te_select_timeline.addItems(list_.week)
         te_select_timeline.setToolTip(self.tr('选择一周内的某一天的时间线'))
         te_select_timeline.currentIndexChanged.connect(self.te_upload_list)
 
+        te_copy_timeline = self.findChild(PushButton, 'copy_timeline')  # 复制时间线
+        te_copy_timeline.setToolTip(self.tr('复制时间线'))
+        te_copy_timeline.clicked.connect(self.te_copy_timeline_from)
+
         te_timeline_list = self.findChild(ListWidget, 'timeline_list')  # 所选时间线列表
-        te_timeline_list.addItems(timeline_dict['default'])
+        te_timeline_list.addItems(timeline_dict['odd']['default'])
         te_timeline_list.itemChanged.connect(self.te_upload_item)
 
         te_part_time = self.teInterface.findChild(TimeEdit, 'part_time')  # 节次时间
@@ -3981,6 +4000,52 @@ class SettingsMenu(FluentWindow):
         QScroller.grabGesture(part_list.viewport(), QScroller.LeftMouseButtonGesture)  # 触摸屏适配
         self.te_detect_item()
         self.te_update_parts_name()
+
+    def te_copy_timeline_from(self):
+        class ask_which(FlyoutViewBase):
+            def __init__(self, parent=None, now = (-1, -1)):
+                super().__init__(parent)
+                self.now = now
+                self.parent_obj = parent
+                self.vBoxLayout = QHBoxLayout(self)
+                self.vBoxLayout.setSpacing(8)
+                self.vBoxLayout.setContentsMargins(16, 12, 16, 12)
+                self.week_type_combo = ComboBox()
+                self.week_type_combo.addItems(list_.week_type)
+                self.week_type_combo.currentIndexChanged.connect(self._on_day_change)
+                self.week_combo = ComboBox()
+                self.week_combo.addItem(self.tr('默认'))
+                self.week_combo.addItems(list_.week)
+                self.week_combo.currentIndexChanged.connect(self._on_day_change)
+                self.confirm_button = PrimaryPushButton(self.tr('复制'))
+                self.confirm_button.setFixedHeight(32)
+                self.confirm_button.setFixedWidth(100)
+                self.confirm_button.clicked.connect(self._on_confirm)
+                self.vBoxLayout.addWidget(BodyLabel(self.tr('从')))
+                self.vBoxLayout.addWidget(self.week_type_combo)
+                self.vBoxLayout.addWidget(self.week_combo)
+                self.vBoxLayout.addWidget(BodyLabel(self.tr('复制时间线')))
+                self.vBoxLayout.addWidget(self.confirm_button)
+
+                self._on_day_change()
+
+            def _on_day_change(self):
+                if (self.week_type_combo.currentIndex(), self.week_combo.currentIndex()) == self.now:
+                    self.confirm_button.setEnabled(False)
+                else:
+                    self.confirm_button.setEnabled(True)
+
+            def _on_confirm(self):
+                global timeline_dict
+                timeline_dict['even' if self.now[0] else 'odd']['default' if self.now[1] == 0 else str(self.now[1] - 1)] = deepcopy(timeline_dict['even' if self.week_type_combo.currentIndex() else 'odd']['default' if (index := self.week_combo.currentIndex()) == 0 else str(index - 1)])
+                self.parent_obj.te_upload_list()
+                self.close()
+
+        te_copy_timeline = self.findChild(PushButton, 'copy_timeline')
+        te_select_week_type = self.findChild(ComboBox, 'select_week_type')  # 选择周类型
+        te_select_timeline = self.findChild(ComboBox, 'select_timeline')  # 选择时间线
+
+        Flyout.make(ask_which(self, (te_select_week_type.currentIndex(), te_select_timeline.currentIndex())), te_copy_timeline, self, aniType=FlyoutAnimationType.PULL_UP)
 
     def te_edit_part_time(self):
         """编辑选中节点的开始时间"""
@@ -4787,6 +4852,7 @@ class SettingsMenu(FluentWindow):
         else:
             subtitle.setText(self.tr('预览  -  {schedule_name}').format(schedule_name=schedule_name))
         schedule_view = self.findChild(TableWidget, 'schedule_view')
+        schedule_view.clear()
         schedule_view.setRowCount(sp_get_class_num())
 
         for i in range(len(schedule_dict_sp)):  # 周数
@@ -4831,22 +4897,23 @@ class SettingsMenu(FluentWindow):
             text = f'{prefix} - {period} - {part_type}'
             part_list.addItem(text)
 
-        for week, _ in timeline.items():  # 加载节点
-            all_line = []
-            for item_name, time in timeline[week].items():  # 加载时间线
-                prefix = ''
-                item_time = self.tr('{data}分钟').format(data=timeline[week][item_name])
-                # 判断前缀和时段
-                if item_name.startswith('a'):
-                    prefix = self.tr('课程')
-                elif item_name.startswith('f'):
-                    prefix = '课间'
-                period = part_name[item_name[1]]
+        for week_type, timeline_data in timeline.items():  # 加载时间线
+            for week, data in timeline_data.items():  # 加载节点
+                all_line = []
+                for isbreak, item_name, item_index, item_time in data:  # 加载时间线
+                    prefix = ''
+                    item_time = self.tr('{data}分钟').format(data=item_time)
+                    # 判断前缀和时段
+                    if not isbreak:
+                        prefix = self.tr('课程')
+                    else:
+                        prefix = self.tr('课间')
+                    period = part_name[item_name]
 
-                # 还原 item_text
-                item_text = f"{prefix} - {item_time} - {period}"
-                all_line.append(item_text)
-            timeline_dict[week] = all_line
+                    # 还原 item_text
+                    item_text = f"{prefix} - {item_time} - {period}"
+                    all_line.append(item_text)
+                timeline_dict[week_type][week] = all_line
 
     def se_copy_odd_schedule(self):
         logger.info('复制单周课表')
@@ -4856,15 +4923,17 @@ class SettingsMenu(FluentWindow):
 
     def te_upload_list(self):  # 更新时间线到列表组件
         logger.info('更新列表：时间线编辑')
+        te_select_week_type = self.findChild(ComboBox, 'select_week_type')
         te_timeline_list = self.findChild(ListWidget, 'timeline_list')
         te_select_timeline = self.findChild(ComboBox, 'select_timeline')
+        te_copy_timeline = self.findChild(PushButton, 'copy_timeline')
         try:
             if te_select_timeline.currentIndex() == 0:
                 te_timeline_list.clear()
-                te_timeline_list.addItems(timeline_dict['default'])
+                te_timeline_list.addItems(timeline_dict['even' if te_select_week_type.currentIndex() else 'odd']['default'])
             else:
                 te_timeline_list.clear()
-                te_timeline_list.addItems(timeline_dict[str(te_select_timeline.currentIndex() - 1)])
+                te_timeline_list.addItems(timeline_dict['even' if te_select_week_type.currentIndex() else 'odd'][str(te_select_timeline.currentIndex() - 1)])
             self.te_detect_item()
         except Exception as e:
             logger.error(f'加载时间线时发生错误：{e}')
@@ -4891,8 +4960,11 @@ class SettingsMenu(FluentWindow):
         global current_week
         try:
             if se_week_type_combo.currentIndex() == 1:
-                se_copy_schedule_button.show()
                 current_week = se_week_combo.currentIndex()
+                if len(schedule_dict[str(current_week)]) == len(schedule_even_dict[str(current_week)]):
+                    se_copy_schedule_button.show()
+                else:
+                    se_copy_schedule_button.hide()
                 se_schedule_list.clear()
                 se_schedule_list.addItems(schedule_even_dict[str(current_week)])
             else:
@@ -4954,20 +5026,22 @@ class SettingsMenu(FluentWindow):
     def te_upload_item(self):  # 上传时间线到列表组件
         te_timeline_list = self.findChild(ListWidget, 'timeline_list')
         te_select_timeline = self.findChild(ComboBox, 'select_timeline')
+        te_select_week_type = self.findChild(ComboBox, 'select_week_type')
         global timeline_dict
         cache_list = []
         for i in range(te_timeline_list.count()):
             item_text = te_timeline_list.item(i).text()
             cache_list.append(item_text)
         if te_select_timeline.currentIndex() == 0:
-            timeline_dict['default'] = cache_list
+            timeline_dict['even' if te_select_week_type.currentIndex() else 'odd']['default'] = cache_list
         else:
-            timeline_dict[str(te_select_timeline.currentIndex() - 1)] = cache_list
+            timeline_dict['even' if te_select_week_type.currentIndex() else 'odd'][str(te_select_timeline.currentIndex() - 1)] = cache_list
 
     # 保存时间线
     def te_save_item(self):
         te_part_list = self.findChild(ListWidget, 'part_list')
-        data_dict = {"part": {}, "part_name": {}, "timeline": {'default': {}, **{str(w): {} for w in range(7)}}}
+        te_select_week_type = self.findChild(ComboBox, 'select_week_type')
+        data_dict = {"part": {}, "part_name": {}, 'timeline': {'default': [], **{str(w): [] for w in range(7)}}, 'timeline_even': {'default': [], **{str(w): [] for w in range(7)}}}
         data_timeline_dict = deepcopy(timeline_dict)
         # 逐条把列表里的信息整理保存
         for i in range(te_part_list.count()):
@@ -4982,34 +5056,37 @@ class SettingsMenu(FluentWindow):
             data_dict['part_name'][str(i)] = item_info[0]
 
         try:
-            for week, _ in data_timeline_dict.items():
-                counter = []  # 初始化计数器
-                for i in range(len(data_dict['part'])):
-                    counter.append(0)
-                counter_key = 0
-                lesson_num = 0
-                for i in range(len(data_timeline_dict[week])):
-                    item_text = data_timeline_dict[week][i]
-                    item_info = item_text.split(' - ')
-                    item_name = ''
-                    if item_info[0] == self.tr('课程'): # 'Course - 40 minutes - a.m.'
-                        item_name += 'a'
-                        lesson_num += 1
-                    if item_info[0] == self.tr('课间'):
-                        item_name += 'f'
+            for week_type in ['odd', 'even']:
+                for week, _ in data_timeline_dict[week_type].items():
+                    counter = []  # 初始化计数器
+                    for i in range(len(data_dict['part'])):
+                        counter.append(0)
+                    counter_key = 0
+                    lesson_num = 0
+                    for i in range(len(data_timeline_dict[week_type][week])):
+                        item_text = data_timeline_dict[week_type][week][i]
+                        item_info:List[str] = item_text.split(' - ')
+                        # item_name = ''
+                        isbreak, item_name, item_index, item_time = 0, '', 0, 0
+                        if item_info[0] == self.tr('课程'): # 'Course - 40 minutes - a.m.'
+                            isbreak = 0
+                            lesson_num += 1
+                        if item_info[0] == self.tr('课间'):
+                            isbreak = 1
 
-                    for key, value in data_dict['part_name'].items():  # 节点计数
-                        if value == item_info[2]:
-                            item_name += str(key)  # +节点序数
-                            counter_key = int(key)  # 记录节点序数
-                            break
+                        for key, value in data_dict['part_name'].items():  # 节点计数
+                            if value == item_info[2]:
+                                item_name = key
+                                counter_key = int(key)  # 记录节点序数
+                                break
 
-                    if item_name.startswith('a'):
-                        counter[counter_key] += 1
+                        # if item_name.startswith('a'):
+                        if not isbreak:
+                            counter[counter_key] += 1
 
-                    item_name += str(lesson_num - sum(counter[:counter_key]))  # 课程序数
-                    item_time = item_info[1].replace(self.tr('分钟'), '')  # 获取时间
-                    data_dict['timeline'][str(week)][item_name] = item_time
+                        item_index = lesson_num - sum(counter[:counter_key])
+                        item_time = item_info[1].replace(self.tr('分钟'), '').strip()  # 获取时间
+                        data_dict[f"timeline{'_even' if week_type == 'even' else ''}"][str(week)].append([isbreak, item_name, item_index, int(item_time)])
 
             schedule_center.save_data(data_dict, config_center.schedule_name)
             self.te_detect_item()
@@ -5088,20 +5165,9 @@ class SettingsMenu(FluentWindow):
         te_name_part = self.findChild(EditableComboBox, 'name_part_combo')
         te_part_time = self.findChild(TimeEdit, 'part_time')
         te_part_type = self.findChild(ComboBox, 'part_type')
-        if te_part_list.count() < 10:
-            te_part_list.addItem(
-                f'{te_name_part.currentText()} - {te_part_time.time().toString("h:mm")} - {te_part_type.currentText()}'
-            )
-        else:  # 最多只能添加9个节点
-            Flyout.create(
-                icon=InfoBarIcon.WARNING,
-                title=self.tr('没办法继续添加了 o(TヘTo)'),
-                content=self.tr('Class Widgets 最多只能添加10个“节点”！'),
-                target=self.findChild(ToolButton, 'add_part_button'),
-                parent=self,
-                isClosable=True,
-                aniType=FlyoutAnimationType.PULL_UP
-            )
+        te_part_list.addItem(
+            f'{te_name_part.currentText()} - {te_part_time.time().toString("h:mm")} - {te_part_type.currentText()}'
+        )
         self.te_detect_item()
         self.te_update_parts_name()
 
@@ -5143,46 +5209,47 @@ class SettingsMenu(FluentWindow):
             for item in selected_items:
                 te_part_list.takeItem(te_part_list.row(item))
 
+            for week_type in ['odd', 'even']:
             # 修复了删除时段没能同步删除时间线的Bug #123
-            for day in timeline_dict:  # 删除时间线
-                count = 0
-                break_count = 0
-                delete_schedule_list = []
-                delete_schedule_even_list = []
-                delete_part_list = []
-                for i in range(len(timeline_dict[day])):
-                    act = timeline_dict[day][i]
-                    count += 1
-                    item_info = act.split(' - ')
+                for day in timeline_dict[week_type]:  # 删除时间线
+                    count = 0
+                    break_count = 0
+                    delete_schedule_list = []
+                    delete_schedule_even_list = []
+                    delete_part_list = []
+                    for i in range(len(timeline_dict[week_type][day])):
+                        act = timeline_dict[week_type][day][i]
+                        count += 1
+                        item_info = act.split(' - ')
 
-                    if item_info[0] == self.tr('课间'):
-                        break_count += 1
+                        if item_info[0] == self.tr('课间'):
+                            break_count += 1
 
-                    if item_info[2] == deleted_part_name:
-                        delete_part_list.append(act)
-                        if item_info[0] != self.tr('课间'):
-                            if day != 'default':
-                                delete_schedule_list.append(schedule_dict[day][count - break_count - 1])
-                                delete_schedule_even_list.append(schedule_even_dict[day][count - break_count - 1])
-                            else:
-                                for j in range(7):
-                                    try:
-                                        for item in schedule_dict[str(j)]:
-                                            if item.split('-')[1] == deleted_part_name:
-                                                delete_schedule_list.append(
-                                                    schedule_dict[str(j)][count - break_count - 1])
-                                        for item in schedule_even_dict[str(j)]:
-                                            if item.split('-')[1] == deleted_part_name:
-                                                delete_schedule_even_list.append(
-                                                    schedule_dict[str(j)][count - break_count - 1])
-                                    except Exception as e:
-                                        logger.warning(f'删除时段时发生错误：{e}')
+                        if item_info[2] == deleted_part_name:
+                            delete_part_list.append(act)
+                            if item_info[0] != self.tr('课间'):
+                                if day != 'default':
+                                    delete_schedule_list.append(schedule_dict[day][count - break_count - 1])
+                                    delete_schedule_even_list.append(schedule_even_dict[day][count - break_count - 1])
+                                else:
+                                    for j in range(7):
+                                        try:
+                                            for item in schedule_dict[str(j)]:
+                                                if item.split('-')[1] == deleted_part_name:
+                                                    delete_schedule_list.append(
+                                                        schedule_dict[str(j)][count - break_count - 1])
+                                            for item in schedule_even_dict[str(j)]:
+                                                if item.split('-')[1] == deleted_part_name:
+                                                    delete_schedule_even_list.append(
+                                                        schedule_dict[str(j)][count - break_count - 1])
+                                        except Exception as e:
+                                            logger.warning(f'删除时段时发生错误：{e}')
 
-                for item in delete_part_list:  # 删除时间线
-                    timeline_dict[day].remove(item)
-                if day != 'default':  # 删除课表
-                    for item in delete_schedule_list:
-                        schedule_dict[day].remove(item)
+                    for item in delete_part_list:  # 删除时间线
+                        timeline_dict[week_type][day].remove(item)
+                    if day != 'default':  # 删除课表
+                        for item in delete_schedule_list:
+                            schedule_dict[day].remove(item)
 
             for day in range(7):  # 删除默认课程表
                 delete_schedule_list = []
@@ -5572,11 +5639,11 @@ class NTPSyncWorker(QObject):
 
 def sp_get_class_num():  # 获取当前周课程数（未完成）
     highest_count = 0
-    for timeline_ in get_timeline().keys():
-        timeline = get_timeline()[timeline_]
+    for timeline_ in get_timeline()['even' if conf.get_week_type() else 'odd'].keys():
+        timeline = get_timeline()['even' if conf.get_week_type() else 'odd'][timeline_]
         count = 0
-        for item_name, item_time in timeline.items():
-            if item_name.startswith('a'):
+        for isbreak, item_name, item_index, item_time in timeline:
+            if not isbreak:
                 count += 1
         if count > highest_count:
             highest_count = count
