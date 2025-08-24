@@ -78,6 +78,12 @@ from qfluentwidgets import (
 )
 from qfluentwidgets import FluentIcon as fIcon
 
+import splash
+splash_window = splash.Splash()
+splash_window.run()
+
+splash_window.update_status((0, QCoreApplication.translate('main', '加载模块...')))
+
 import conf
 import list_
 import menu
@@ -662,6 +668,10 @@ class ErrorDialog(Dialog):  # 重大错误提示框
         # KeyboardInterrupt 直接 exit
         if error_details.endswith('KeyboardInterrupt') or error_details.endswith('KeyboardInterrupt\n'):
             stop()
+
+        global splash_window
+
+        splash_window.error()
 
         super().__init__(
             QCoreApplication.translate('ErrorDialog', 'Class Widgets 崩溃报告'),
@@ -1406,7 +1416,6 @@ class FloatingWidget(QWidget):  # 浮窗
         return None
 
     def init_ui(self):
-        setTheme_()
         theme_info = conf.load_theme_config(str('default' if theme is None else theme))
         theme_path = theme_info.path
         theme_config = theme_info.config
@@ -3369,6 +3378,7 @@ def init() -> None:
 
     theme = load_theme_config(config_center.read_conf('General', 'theme')).path.name # 主题
     logger.info(f'应用主题：{theme}')
+    setTheme_()
 
     mgr = WidgetsManager()
     utils.main_mgr = mgr
@@ -3421,6 +3431,7 @@ def setup_signal_handlers_optimized(app: QApplication) -> None:
         signal.signal(signal.SIGHUP, signal_handler)  # 终端挂起
 
 if __name__ == '__main__':
+    splash_window.update_status((10, QCoreApplication.translate('main', '检查多开...')))
     utils.guard = utils.SingleInstanceGuard("ClassWidgets.lock")
 
     old_config_file = CW_HOME / "config.ini"
@@ -3430,6 +3441,7 @@ if __name__ == '__main__':
     if config_center.read_conf('Other', 'multiple_programs') != '1':
         if not utils.guard.try_acquire():
             if (info:=utils.guard.get_lock_info()):
+                splash_window.error()
                 logger.debug(f'不允许多开实例，{info}')
                 from qfluentwidgets import Dialog
                 app = QApplication.instance() or QApplication(sys.argv)
@@ -3454,15 +3466,21 @@ if __name__ == '__main__':
 
     logger.info(
         f"是否允许多开实例：{config_center.read_conf('Other', 'multiple_programs')}")
+
+    splash_window.update_status((20, QCoreApplication.translate('main', '初始化颜色监视器...')))
+
     try:
-        dark_mode_watcher = DarkModeWatcher(parent=app)
+        dark_mode_watcher = DarkModeWatcher()
         dark_mode_watcher.darkModeChanged.connect(handle_dark_mode_change) # 连接信号
         # 初始主题设置依赖于 darkModeChanged 信号
     except Exception as e:
         logger.error(f"初始化颜色模式监测器时出错: {e}")
         dark_mode_watcher = None
 
+    splash_window.update_status((30, QCoreApplication.translate('main', '检查缩放...')))
+
     if scale_factor > 1.8 or scale_factor < 1.0:
+        splash_window.error()
         logger.warning("当前缩放系数可能导致显示异常，建议使缩放系数在 100% 到 180% 之间")
         msg_box = Dialog(QCoreApplication.translate('main', '缩放系数过大'),
                          QCoreApplication.translate('main', "当前缩放系数为 {scale_factor}%，可能导致显示异常。\n建议将缩放系数设置为 100% 到 180% 之间。").format(scale_factor=scale_factor*100))
@@ -3471,6 +3489,9 @@ if __name__ == '__main__':
         msg_box.buttonLayout.insertStretch(0, 1)
         msg_box.setFixedWidth(550)
         msg_box.exec()
+        splash_window.unerror()
+
+    splash_window.update_status((40, QCoreApplication.translate('main', '获取系统版本...')))
 
     # 优化操作系统和版本输出
     system = platform.system()
@@ -3489,10 +3510,14 @@ if __name__ == '__main__':
 
     # list_pyttsx3_voices()
 
+    splash_window.update_status((50, QCoreApplication.translate('main', '初始化窗口管理器...')))
+
     mgr = WidgetsManager()
     app.aboutToQuit.connect(mgr.cleanup_resources)
     setup_signal_handlers_optimized(app)
     utils.main_mgr = mgr
+
+    splash_window.update_status((55, QCoreApplication.translate('main', '检查初次启动...')))
 
     if config_center.read_conf('Other', 'initialstartup') == '1':  # 首次启动
         try:
@@ -3505,15 +3530,24 @@ if __name__ == '__main__':
         except Exception as e:
             logger.error(f'添加快捷方式失败：{e}')
 
+    splash_window.update_status((60, QCoreApplication.translate('main', '初始化插件管理器...')))
+
     p_mgr = PluginManager()
     p_loader.set_manager(p_mgr)
     p_loader.load_plugins()
 
+    splash_window.update_status((91, QCoreApplication.translate('main', '加载窗口...')))
+
     init()
+
+    splash_window.update_status((95, QCoreApplication.translate('main', '加载课程...')))
+
     get_start_time()
     get_current_lessons()
     get_current_lesson_name()
     get_next_lessons()
+
+    splash_window.update_status((98, QCoreApplication.translate('main', '加载隐藏状态...')))
 
     hide_mode = config_center.read_conf('General', 'hide')
     should_hide = False
@@ -3532,10 +3566,14 @@ if __name__ == '__main__':
     else:
         setThemeColor(f"#{config_center.read_conf('Color', 'finish_class')}")
 
+    splash_window.update_status((100, QCoreApplication.translate('main', '检查更新...')))
+
     # w = ErrorDialog()
     # w.exec()
     if config_center.read_conf('Version', 'auto_check_update', '1') == '1':
         check_update()
+
+    splash_window.close()
 
     status = app.exec()
 
