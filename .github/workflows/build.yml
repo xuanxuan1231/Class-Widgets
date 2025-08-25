@@ -190,7 +190,7 @@ jobs:
             arch: x64
             platform: linux-x64
     env:
-      PYTHON_VERSION: ${{ (startsWith(matrix.os, 'macos') || matrix.platform == 'linux-x64') && '3.12' || '3.8' }}
+      PYTHON_VERSION: ${{ (startsWith(matrix.os, 'macos') || matrix.platform == 'linux-x64') && '3.11' || '3.8' }}
       BUILD_TYPE: ${{ needs.prepare.outputs.build_type }}
       BUILD_TIME: ${{ needs.prepare.outputs.build_time }}
       BUILD_COMMIT: ${{ needs.prepare.outputs.build_commit }}
