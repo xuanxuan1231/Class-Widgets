@@ -3971,47 +3971,47 @@ These placeholders apply only to the “Other Notifications”:
 <context>
     <name>config</name>
     <message>
-        <location filename="../file.py" line="288"/>
+        <location filename="../file.py" line="287"/>
         <source>{section}.{key}</source>
         <translation>{section}.{key}</translation>
     </message>
     <message>
-        <location filename="../file.py" line="483"/>
+        <location filename="../file.py" line="482"/>
         <source>General.schedule</source>
         <translation>New schedule - 1.json</translation>
     </message>
     <message>
-        <location filename="../file.py" line="484"/>
+        <location filename="../file.py" line="483"/>
         <source>TTS.language</source>
         <translation>en-US</translation>
     </message>
     <message>
-        <location filename="../file.py" line="485"/>
+        <location filename="../file.py" line="484"/>
         <source>TTS.attend_class</source>
         <translation>Class begins, {lesson_name}</translation>
     </message>
     <message>
-        <location filename="../file.py" line="486"/>
+        <location filename="../file.py" line="485"/>
         <source>TTS.finish_class</source>
         <translation>Class is over. Next class: {lesson_name}</translation>
     </message>
     <message>
-        <location filename="../file.py" line="487"/>
+        <location filename="../file.py" line="486"/>
         <source>TTS.prepare_class</source>
         <translation>Class is about to begin. Next class: {lesson_name}</translation>
     </message>
     <message>
-        <location filename="../file.py" line="488"/>
+        <location filename="../file.py" line="487"/>
         <source>TTS.after_school</source>
         <translation>School is over</translation>
     </message>
     <message>
-        <location filename="../file.py" line="489"/>
+        <location filename="../file.py" line="488"/>
         <source>Weather.api</source>
         <translation>open-meteo</translation>
     </message>
     <message>
-        <location filename="../file.py" line="490"/>
+        <location filename="../file.py" line="489"/>
         <source>Plugin.mirror</source>
         <translation>original</translation>
     </message>
@@ -4060,7 +4060,7 @@ These placeholders apply only to the “Other Notifications”:
         <translation>Failed to launch Class Widgets w(ﾟДﾟ)w</translation>
     </message>
     <message>
-        <location filename="../file.py" line="50"/>
+        <location filename="../file.py" line="49"/>
         <source>加载默认配置文件失败,请检查文件完整性或尝试重新安装。
 错误信息: {e}</source>
         <translation>Failed to load default configuration file. Please check file integrity or try reinstalling.
