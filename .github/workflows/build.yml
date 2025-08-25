@@ -349,16 +349,16 @@ jobs:
           uv run pyinstaller main.py \
             -w \
             -i ./img/favicon.ico \
-            -n ClassWidgets \
+            -n "ClassWidgets" \
             --contents-directory . \
-            --add-data data:data \
-            --add-data audio:audio \
-            --add-data img:img \
-            --add-data ui:ui \
-            --add-data font:font \
-            --add-data view:view \
+            --add-data "data:data" \
+            --add-data "audio:audio" \
+            --add-data "img:img" \
+            --add-data "ui:ui" \
+            --add-data "font:font" \
+            --add-data "view:view" \
             --add-data "i18n/*.qm:i18n" \
-            --add-data LICENSE:. \
+            --add-data "LICENSE:." \
             --hidden-import darkdetect
           if [[ "$BUILD_TYPE" == "Release" ]]; then
             zip_name="ClassWidgets-Windows-${{ matrix.arch }}"
@@ -403,16 +403,16 @@ jobs:
           uv run pyinstaller main.py \
             -w \
             -i ./img/favicon.png \
-            -n ClassWidgets \
+            -n "ClassWidgets" \
             --contents-directory . \
-            --add-data data:data \
-            --add-data audio:audio \
-            --add-data img:img \
-            --add-data ui:ui \
-            --add-data font:font \
-            --add-data view:view \
+            --add-data "data:data" \
+            --add-data "audio:audio" \
+            --add-data "img:img" \
+            --add-data "ui:ui" \
+            --add-data "font:font" \
+            --add-data "view:view" \
             --add-data "i18n/*.qm:i18n" \
-            --add-data LICENSE:. \
+            --add-data "LICENSE:." \
             --hidden-import darkdetect
 
           if [[ "$BUILD_TYPE" == "Release" ]]; then
