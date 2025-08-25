@@ -351,14 +351,14 @@ jobs:
             -i ./img/favicon.ico \
             -n ClassWidgets \
             --contents-directory . \
-            --add-data config:config \
+            --add-data data:data \
             --add-data audio:audio \
             --add-data img:img \
             --add-data ui:ui \
             --add-data font:font \
             --add-data view:view \
-            --add-data LICENSE:. \
             --add-data "i18n/*.qm:i18n" \
+            --add-data LICENSE:. \
             --hidden-import darkdetect
           if [[ "$BUILD_TYPE" == "Release" ]]; then
             zip_name="ClassWidgets-Windows-${{ matrix.arch }}"
@@ -377,7 +377,7 @@ jobs:
             -i ./img/favicon.icns \
             -n "Class Widgets" \
             --contents-directory . \
-            --add-data "config:config" \
+            --add-data "data:data" \
             --add-data "audio:audio" \
             --add-data "img:img" \
             --add-data "ui:ui" \
@@ -405,14 +405,14 @@ jobs:
             -i ./img/favicon.png \
             -n ClassWidgets \
             --contents-directory . \
-            --add-data config:config \
+            --add-data data:data \
             --add-data audio:audio \
             --add-data img:img \
             --add-data ui:ui \
             --add-data font:font \
             --add-data view:view \
-            --add-data LICENSE:. \
             --add-data "i18n/*.qm:i18n" \
+            --add-data LICENSE:. \
             --hidden-import darkdetect
 
           if [[ "$BUILD_TYPE" == "Release" ]]; then
