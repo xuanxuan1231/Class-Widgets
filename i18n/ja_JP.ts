@@ -1868,6 +1868,7 @@
 <context>
     <name>PluginPlaza</name>
     <message>
+        <location filename="../plugin_plaza.py" line="627"/>
         <source>{month}月{day}日 {weekday}</source>
         <translation>{month}月{day}日 {weekday}</translation>
     </message>
