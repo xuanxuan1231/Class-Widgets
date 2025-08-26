@@ -35,17 +35,6 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Set up git-cliff
-        uses: kenji-miyake/setup-git-cliff@v2
-
-      - name: Generate a changelog
-        run: |
-          if [[ "${{ inputs.build_type }}" == "Nightly" ]]; then
-            git cliff --config .github/cliff.nightly.toml --latest --output CHANGELOG.md
-          else
-            git cliff --config .github/cliff.toml --latest --output CHANGELOG.md
-          fi
-
       - name: Prepare release directory
         run: |
           mkdir -p release
@@ -96,6 +85,17 @@ jobs:
             fi
             git tag -s "$tag_name" -m "$tag_message"
             git push origin "$tag_name"
+          fi
+
+      - name: Set up git-cliff
+        uses: kenji-miyake/setup-git-cliff@v2
+
+      - name: Generate a changelog
+        run: |
+          if [[ "${{ inputs.build_type }}" == "Nightly" ]]; then
+            git cliff --config .github/cliff.nightly.toml --latest --output CHANGELOG.md
+          else
+            git cliff --config .github/cliff.toml --latest --output CHANGELOG.md
           fi
 
       - name: Release
