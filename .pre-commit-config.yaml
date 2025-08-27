@@ -34,6 +34,12 @@ repos:
         args: ["--format", "brief"]
         exclude: '\.ts$'
 
+  - repo: https://github.com/codespell-project/codespell
+    rev: v2.4.1
+    hooks:
+      - id: codespell
+        exclude: '\.ts$'
+
   # 格式化
   # - repo: https://github.com/executablebooks/mdformat
   #   rev: 0.7.22
