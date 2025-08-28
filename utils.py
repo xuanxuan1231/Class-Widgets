@@ -6,8 +6,8 @@ import signal
 import sys
 import threading
 import time
-from heapq import heappush, heapify, heappop
 from abc import ABC, abstractmethod
+from heapq import heapify, heappop, heappush
 from typing import Any, Callable, Dict, Optional, Tuple, Type, Union
 
 import darkdetect

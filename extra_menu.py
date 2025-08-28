@@ -23,7 +23,7 @@ from qfluentwidgets import FluentIcon as fIcon
 
 import list_
 from conf import CW_HOME, get_week_type
-from file import config_center, schedule_center, save_data_to_json, load_from_json
+from file import config_center, load_from_json, save_data_to_json, schedule_center
 from menu import SettingsMenu
 from utils import TimeManagerFactory
 

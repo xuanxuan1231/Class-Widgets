@@ -8,8 +8,8 @@ import signal
 import subprocess
 import sys
 import traceback
-from shutil import copy
 from functools import lru_cache
+from shutil import copy
 from typing import Any, Dict, List, Optional, Tuple, Union
 
 import psutil
@@ -3529,7 +3529,7 @@ def check_windows_maximize() -> bool:
                 pid_val = ctypes.c_ulong()
                 ctypes.windll.user32.GetWindowThreadProcessId(hwnd_int, ctypes.byref(pid_val))
                 win_pid = pid_val.value  # 获取进程信息
-                if win_pid == 0 or win_pid == current_pid:
+                if win_pid in (0, current_pid):
                     continue
                 process_name = psutil.Process(win_pid).name().lower()
                 title = window.title.strip()

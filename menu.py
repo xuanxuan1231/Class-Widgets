@@ -111,7 +111,7 @@ import utils
 import weather as wd
 from basic_dirs import CONFIG_HOME, CW_HOME, PLUGIN_HOME, SCHEDULE_DIR, THEME_HOME
 from cses_mgr import CSES_Converter
-from file import config_center, schedule_center, load_from_json
+from file import config_center, load_from_json, schedule_center
 from generate_speech import (
     TTSEngine,
     generate_speech_sync,
