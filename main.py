@@ -3229,9 +3229,7 @@ class DesktopWidget(QWidget):  # 主要小组件
                         self._reset_weather_alert_state()
                     current_city = self.findChild(QLabel, 'current_city')
                     if current_city:
-                        city_name = db.search_by_num(
-                            config_center.read_conf('Weather', 'city')
-                        )
+                        city_name = db.search_by_num(config_center.read_conf('Weather', 'city'))
                         if city_name != 'coordinates':
                             current_city.setText(self.tr("{city} · 未知").format(city=city_name))
                         else:
@@ -3570,9 +3568,6 @@ def init() -> None:
     mgr = WidgetsManager()
     utils.main_mgr = mgr
     fw = FloatingWidget()
-
-    # 获取屏幕横向分辨率
-    screen_geometry = app.primaryScreen().availableGeometry()
 
     widgets = list_.get_widget_config()
 

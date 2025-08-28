@@ -92,7 +92,7 @@ class Splash:
         logger.info("Splash 启动")
         dark_mode_watcher.start()
         self.dark_mode_watcher_connection = dark_mode_watcher.darkModeChanged.connect(
-            lambda: self.apply_theme_stylesheet()
+            self.apply_theme_stylesheet
         )
         self.update_status((0, app.translate('main', 'Class Widgets 启动中...')))
         app.processEvents()

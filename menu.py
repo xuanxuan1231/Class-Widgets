@@ -9,7 +9,6 @@ import sys
 import zipfile
 from copy import deepcopy
 from pathlib import Path
-from shutil import rmtree
 from typing import Dict, List, Optional, Tuple, Union
 
 from loguru import logger
@@ -124,6 +123,7 @@ from generate_speech import (
 from network_thread import VersionThread, proxies, scheduleThread
 from plugin import p_loader
 from plugin_plaza import PluginPlaza
+
 
 class I18nManager:
     """i18n"""
@@ -2944,14 +2944,10 @@ class SettingsMenu(FluentWindow):
                 voice_selector.setCurrentIndex(0)
                 first_voice_id = available_voices[0]['id']
                 config_center.write_conf('TTS', 'voice_id', first_voice_id)
-            else:
-                switch_enable_TTS.setEnabled(False)
         elif available_voices:  # 默认选择
             voice_selector.setCurrentIndex(0)
             first_voice_id = available_voices[0]['id']
             config_center.write_conf('TTS', 'voice_id', first_voice_id)
-        else:  # 理论不会到这里
-            switch_enable_TTS.setEnabled(False)
 
         voice_selector.setEnabled(True)
         try:
@@ -3804,7 +3800,6 @@ class SettingsMenu(FluentWindow):
     def _add_ntp_auto_sync_callback(self):
         """添加NTP自动同步回调"""
         try:
-            from utils import update_timer
 
             def ntp_auto_sync_callback():
                 """NTP自动同步回调函数"""
@@ -3824,7 +3819,7 @@ class SettingsMenu(FluentWindow):
             self._ntp_auto_sync_callback = ntp_auto_sync_callback
             ntp_auto_refresh_minutes = int(config_center.read_conf('Time', 'ntp_auto_refresh'))
             ntp_auto_refresh_seconds = ntp_auto_refresh_minutes * 60
-            update_timer.add_callback(ntp_auto_sync_callback, ntp_auto_refresh_seconds)
+            utils.update_timer.add_callback(ntp_auto_sync_callback, ntp_auto_refresh_seconds)
 
         except Exception as e:
             logger.error(f"添加NTP自动同步回调失败: {e}")
@@ -3832,10 +3827,8 @@ class SettingsMenu(FluentWindow):
     def _remove_ntp_auto_sync_callback(self):
         """移除NTP自动同步回调"""
         try:
-            from utils import update_timer
-
             if hasattr(self, '_ntp_auto_sync_callback'):
-                update_timer.remove_callback(self._ntp_auto_sync_callback)
+                utils.update_timer.remove_callback(self._ntp_auto_sync_callback)
                 delattr(self, '_ntp_auto_sync_callback')
         except Exception as e:
             logger.error(f"移除NTP自动同步回调失败: {e}")
@@ -4726,7 +4719,7 @@ class SettingsMenu(FluentWindow):
 
         try:
             if os.path.exists('log'):
-                rmtree('log')
+                shutil.rmtree('log')
                 Flyout.create(
                     icon=InfoBarIcon.SUCCESS,
                     title=self.tr('已清除日志'),

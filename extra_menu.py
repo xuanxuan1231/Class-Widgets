@@ -21,11 +21,9 @@ from qfluentwidgets import (
 )
 from qfluentwidgets import FluentIcon as fIcon
 
-import conf
-import file
 import list_
 from conf import CW_HOME, get_week_type
-from file import config_center, schedule_center
+from file import config_center, schedule_center, save_data_to_json, load_from_json
 from menu import SettingsMenu
 from utils import TimeManagerFactory
 
@@ -146,7 +144,7 @@ class ExtraMenu(FluentWindow):
                 )
                 current_full_schedule_data['adjusted_classes'][f'odd_{adjusted_week}'] = True
 
-            file.save_data_to_json(current_full_schedule_data, config_center.schedule_name)
+            save_data_to_json(current_full_schedule_data, config_center.schedule_name)
             schedule_center.update_schedule()
             config_center.write_conf('Temp', 'set_week', str(temp_week.currentIndex()))
             config_center.write_conf('Temp', 'set_schedule', str(temp_schedule_set.currentIndex()))
@@ -191,12 +189,10 @@ class ExtraMenu(FluentWindow):
                 )
         elif current_schedule:
             tmp_schedule_list.addItems(
-                file.load_from_json('backup.json')['schedule_even'][str(current_week)]
+                load_from_json('backup.json')['schedule_even'][str(current_week)]
             )
         else:
-            tmp_schedule_list.addItems(
-                file.load_from_json('backup.json')['schedule'][str(current_week)]
-            )
+            tmp_schedule_list.addItems(load_from_json('backup.json')['schedule'][str(current_week)])
 
     def upload_item(self) -> None:
         global temp_schedule

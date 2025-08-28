@@ -305,9 +305,7 @@ class EdgeTTSProvider(TTSVoiceProvider):
             try:
                 current_loop = asyncio.get_running_loop()
                 if current_loop and not current_loop.is_closed():
-                    import concurrent.futures
-
-                    with concurrent.futures.ThreadPoolExecutor() as executor:
+                    with ThreadPoolExecutor() as executor:
                         future = executor.submit(self._fetch_voices_sync)
                         return future.result(timeout=10.0)
             except RuntimeError:
@@ -376,6 +374,7 @@ class EdgeTTSProvider(TTSVoiceProvider):
     def synthesize(self, text: str, voice_id: str, output_path: str, speed: float = 1.0) -> bool:
         """合成 Edge TTS 语音"""
         try:
+
             def _run_synthesis():
                 loop = None
                 try:
