@@ -11,24 +11,24 @@
 <context>
     <name>CustomMessageBox</name>
     <message>
-        <location filename="../menu.py" line="2806"/>
+        <location filename="../menu.py" line="2805"/>
         <source>系统 TTS（pyttsx3）用的是系统自带的语音服务噢~
 您可以在系统设置里添加更多语音(*≧▽≦)</source>
         <translation>システムのTTS（pyttsx3）は、システム標準の音声サービスを使用しています〜 システム設定でさらに多くの音声を追加できますよ(*≧▽≦)</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2809"/>
+        <location filename="../menu.py" line="2808"/>
         <source>打开Windows语音设置</source>
         <translation>Windowsの音声設定を開く</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2814"/>
-        <location filename="../menu.py" line="2839"/>
+        <location filename="../menu.py" line="2813"/>
+        <location filename="../menu.py" line="2838"/>
         <source>知道啦~</source>
         <translation>わかった〜</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2830"/>
+        <location filename="../menu.py" line="2829"/>
         <source>这个语音引擎还没有提示信息呢~(・ω&lt;)</source>
         <translation>この音声エンジンにはまだメッセージがありません〜(・ω&lt;)</translation>
     </message>
@@ -1757,49 +1757,49 @@
 <context>
     <name>NTPServerFlyoutView</name>
     <message>
-        <location filename="../menu.py" line="3934"/>
+        <location filename="../menu.py" line="3933"/>
         <source>设置成功 ✨</source>
         <translation>設定が完了しました ✨</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3937"/>
+        <location filename="../menu.py" line="3936"/>
         <source>格式警告</source>
         <translation>フォーマット警告</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3940"/>
-        <location filename="../menu.py" line="4169"/>
-        <location filename="../menu.py" line="4171"/>
+        <location filename="../menu.py" line="3939"/>
+        <location filename="../menu.py" line="4168"/>
+        <location filename="../menu.py" line="4170"/>
         <source>NTP设置</source>
         <translation>NTP設定</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3961"/>
+        <location filename="../menu.py" line="3960"/>
         <source>推荐的NTP服务器:</source>
         <translation>推奨されるNTPサーバー：</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3963"/>
+        <location filename="../menu.py" line="3962"/>
         <source>建议的修正:</source>
         <translation>推奨される修正案：</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3985"/>
+        <location filename="../menu.py" line="3984"/>
         <source>执意保存当前输入的内容?</source>
         <translation>現在の入力内容を強制的に保存しますか？</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4006"/>
+        <location filename="../menu.py" line="4005"/>
         <source>执意保存</source>
         <translation>強制的に保存</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4100"/>
+        <location filename="../menu.py" line="4099"/>
         <source>NTP服务器已更新: {suggestion}</source>
         <translation>NTPサーバーが更新されました: {suggestion}</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4121"/>
+        <location filename="../menu.py" line="4120"/>
         <source>设置已保存ヾ(≧▽≦*)o</source>
         <translation>設定が保存されましたヾ(≧▽≦*)o</translation>
     </message>
@@ -1807,7 +1807,7 @@
 <context>
     <name>PluginCard</name>
     <message>
-        <location filename="../menu.py" line="1011"/>
+        <location filename="../menu.py" line="1010"/>
         <source>永久删除</source>
         <translation>永遠に削除</translation>
     </message>
@@ -1880,173 +1880,173 @@
 <context>
     <name>SettingsMenu</name>
     <message>
-        <location filename="../menu.py" line="1348"/>
+        <location filename="../menu.py" line="1347"/>
         <source>全部插件</source>
         <translation>すべてのプラグイン</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="1349"/>
+        <location filename="../menu.py" line="1348"/>
         <source>已启用</source>
         <translation>有効になりました</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="1350"/>
+        <location filename="../menu.py" line="1349"/>
         <source>已禁用</source>
         <translation>無効になりました</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="1351"/>
+        <location filename="../menu.py" line="1350"/>
         <source>有设置项</source>
         <translation>設定項目があります</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="1352"/>
+        <location filename="../menu.py" line="1351"/>
         <source>无设置项</source>
         <translation>設定項目はありません</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2103"/>
+        <location filename="../menu.py" line="2102"/>
         <source>已安装 {total_count} 个插件，已启用 {enabled_count} 个</source>
         <translation>合計 {total_count} 個のプラグインがインストールされており、そのうち {enabled_count} 個が有効になっています</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2149"/>
+        <location filename="../menu.py" line="2148"/>
         <source>没有找到匹配的插件</source>
         <translation>一致するプラグインが見つかりませんでした</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2189"/>
+        <location filename="../menu.py" line="2188"/>
         <source>导入插件时发生错误：{e}</source>
         <translation>プラグインのインポート中にエラーが発生しました：{e}</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2195"/>
-        <location filename="../menu.py" line="2241"/>
+        <location filename="../menu.py" line="2194"/>
+        <location filename="../menu.py" line="2240"/>
         <source>未知插件</source>
         <translation>不明なプラグイン</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2202"/>
-        <location filename="../menu.py" line="2246"/>
+        <location filename="../menu.py" line="2201"/>
+        <location filename="../menu.py" line="2245"/>
         <source>插件已存在</source>
         <translation>プラグインは既に存在します</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2203"/>
-        <location filename="../menu.py" line="2247"/>
+        <location filename="../menu.py" line="2202"/>
+        <location filename="../menu.py" line="2246"/>
         <source>插件 &quot;{plugin_name}&quot; 已存在，是否覆盖？</source>
         <translation>プラグイン「{plugin_name}」は既に存在します。上書きしますか？</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2214"/>
-        <location filename="../menu.py" line="2258"/>
+        <location filename="../menu.py" line="2213"/>
+        <location filename="../menu.py" line="2257"/>
         <source>导入成功</source>
         <translation>インポート成功</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2215"/>
-        <location filename="../menu.py" line="2259"/>
+        <location filename="../menu.py" line="2214"/>
+        <location filename="../menu.py" line="2258"/>
         <source>插件 &quot;{plugin_name}&quot; 导入成功！
 重启应用后生效。</source>
         <translation>プラグイン「{plugin_name}」のインポートに成功しました！
 アプリを再起動すると反映されます。</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2220"/>
-        <location filename="../menu.py" line="2264"/>
-        <location filename="../menu.py" line="2277"/>
+        <location filename="../menu.py" line="2219"/>
+        <location filename="../menu.py" line="2263"/>
+        <location filename="../menu.py" line="2276"/>
         <source>好</source>
         <translation>はい</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2228"/>
-        <location filename="../menu.py" line="2273"/>
+        <location filename="../menu.py" line="2227"/>
+        <location filename="../menu.py" line="2272"/>
         <source>插件配置文件格式错误</source>
         <translation>プラグイン設定ファイルの形式が正しくありません</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2231"/>
+        <location filename="../menu.py" line="2230"/>
         <source>复制插件文件夹时发生错误：{e}</source>
         <translation>プラグインフォルダのコピー中にエラーが発生しました：{e}</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2237"/>
+        <location filename="../menu.py" line="2236"/>
         <source>无效的插件文件：缺少 plugin.json 配置文件</source>
         <translation>無効なプラグインファイル：plugin.json 設定ファイルがありません</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2270"/>
+        <location filename="../menu.py" line="2269"/>
         <source>无效的ZIP文件</source>
         <translation>無効なZIPファイル</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2276"/>
+        <location filename="../menu.py" line="2275"/>
         <source>错误</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2311"/>
+        <location filename="../menu.py" line="2310"/>
         <source>https://classwidgets.rinlit.cn/docs-user/</source>
         <translation>https://classwidgets.rinlit.cn/docs-user/</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2365"/>
+        <location filename="../menu.py" line="2364"/>
         <source>上课提醒</source>
         <translation>授業開始の通知</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2368"/>
-        <location filename="../menu.py" line="2375"/>
-        <location filename="../menu.py" line="2382"/>
+        <location filename="../menu.py" line="2367"/>
+        <location filename="../menu.py" line="2374"/>
+        <location filename="../menu.py" line="2381"/>
         <source>信息技术</source>
         <translation>ICT</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2372"/>
+        <location filename="../menu.py" line="2371"/>
         <source>下课提醒</source>
         <translation>授業終了の通知</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2379"/>
+        <location filename="../menu.py" line="2378"/>
         <source>预备提醒</source>
         <translation>予鈴の通知</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2386"/>
+        <location filename="../menu.py" line="2385"/>
         <source>其他提醒</source>
         <translation>その他の通知</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2389"/>
+        <location filename="../menu.py" line="2388"/>
         <source>通知</source>
         <translation>通知</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2390"/>
+        <location filename="../menu.py" line="2389"/>
         <source>测试通知示例</source>
         <translation>通知テストのサンプル</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2391"/>
+        <location filename="../menu.py" line="2390"/>
         <source>这是一条测试通知ヾ(≧▽≦*)o</source>
         <translation>これはテスト通知ですヾ(≧▽≦*)o</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2665"/>
-        <location filename="../menu.py" line="2679"/>
-        <location filename="../menu.py" line="2699"/>
-        <location filename="../menu.py" line="2864"/>
-        <location filename="../menu.py" line="2886"/>
+        <location filename="../menu.py" line="2664"/>
+        <location filename="../menu.py" line="2678"/>
+        <location filename="../menu.py" line="2698"/>
+        <location filename="../menu.py" line="2863"/>
+        <location filename="../menu.py" line="2885"/>
         <source>未启用</source>
         <translation>未有効</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2777"/>
+        <location filename="../menu.py" line="2776"/>
         <source>引擎小提示</source>
         <translation>エンジンのヒント</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2784"/>
+        <location filename="../menu.py" line="2783"/>
         <source>Edge TTS 需要联网才能正常发声哦~
 请确保网络连接,不然会说不出话来(&gt;﹏&lt;)
 * 可能会有一定的延迟,耐心等待一下~</source>
@@ -2055,123 +2055,123 @@
 * 遅延が発生する場合がありますので、しばらくお待ちください〜</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2793"/>
+        <location filename="../menu.py" line="2792"/>
         <source>知道啦~</source>
         <translation>わかった〜</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2864"/>
-        <location filename="../menu.py" line="3048"/>
+        <location filename="../menu.py" line="2863"/>
+        <location filename="../menu.py" line="3047"/>
         <source>加载失败</source>
         <translation>読み込みに失敗しました</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2865"/>
-        <location filename="../menu.py" line="2925"/>
+        <location filename="../menu.py" line="2864"/>
+        <location filename="../menu.py" line="2924"/>
         <source>无可用语音</source>
         <translation>利用可能な音声がありません</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2880"/>
+        <location filename="../menu.py" line="2879"/>
         <source>请选择引擎</source>
         <translation>エンジンを選択してください</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3056"/>
+        <location filename="../menu.py" line="3055"/>
         <source>TTS语音加载失败</source>
         <translation>TTS音声の読み込みに失敗しました</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3057"/>
+        <location filename="../menu.py" line="3056"/>
         <source>加载TTS语音时发生错误:
 {error_message}</source>
         <translation>TTS音声の読み込み中にエラーが発生しました:
 {error_message}</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="1501"/>
+        <location filename="../menu.py" line="1500"/>
         <source>大风 雷电 地质...</source>
         <translation>大風&#x3000;雷&#x3000;地質......</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="1873"/>
+        <location filename="../menu.py" line="1872"/>
         <source>未知</source>
         <translation>未知の</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="1875"/>
+        <location filename="../menu.py" line="1874"/>
         <source>预警</source>
         <translation>警報</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="1945"/>
+        <location filename="../menu.py" line="1944"/>
         <source>未知时间</source>
         <translation>不明な時間</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="1956"/>
+        <location filename="../menu.py" line="1955"/>
         <source>暂无详细描述</source>
         <translation>詳細な説明はまだありません</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="1959"/>
+        <location filename="../menu.py" line="1958"/>
         <source>不再显示该类型预警</source>
         <translation>この種類の警告を再度表示しない</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="1968"/>
+        <location filename="../menu.py" line="1967"/>
         <source>天气预警详情</source>
         <translation>気象警報の詳細</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2040"/>
+        <location filename="../menu.py" line="2039"/>
         <source>天气API已切换</source>
         <translation>天気 API が切り替わりました</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2041"/>
+        <location filename="../menu.py" line="2040"/>
         <source>建议重新选择城市以获取准确的天气数据</source>
         <translation>正確な天気データを取得するには、都市を再選択することをお勧めします</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3361"/>
+        <location filename="../menu.py" line="3360"/>
         <source>https://github.com/RinLit-233-shiroko/Class-Widgets</source>
         <translation>https://github.com/RinLit-233-shiroko/Class-Widgets</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3367"/>
+        <location filename="../menu.py" line="3366"/>
         <source>https://space.bilibili.com/569522843</source>
         <translation>https://space.bilibili.com/569522843</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3387"/>
+        <location filename="../menu.py" line="3386"/>
         <source>https://github.com/RinLit-233-shiroko/Class-Widgets?tab=readme-ov-file#致谢</source>
         <translation>https://github.com/RinLit-233-shiroko/Class-Widgets?tab=readme-ov-file#致谢</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3412"/>
+        <location filename="../menu.py" line="3411"/>
         <source> (仅Windows)</source>
         <translation> (ただWindowsする）</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3420"/>
-        <location filename="../menu.py" line="3431"/>
-        <location filename="../menu.py" line="3505"/>
+        <location filename="../menu.py" line="3419"/>
+        <location filename="../menu.py" line="3430"/>
+        <location filename="../menu.py" line="3504"/>
         <source>提示</source>
         <translation>提示</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3421"/>
+        <location filename="../menu.py" line="3420"/>
         <source>窗口会置于次底部, 但仍然比普通置顶要高一点点~</source>
         <translation>窓は底に置きデス、ただ普通の置け高いです〜</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3432"/>
+        <location filename="../menu.py" line="3431"/>
         <source>当前平台可能不完全支持该功能~</source>
         <translation>現在のプラットフォームでは、この機能が完全にサポートされていない可能性があります〜</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3508"/>
+        <location filename="../menu.py" line="3507"/>
         <source>窗口实体状态
 会认真挡住前面的点击哦~
 
@@ -2182,7 +2182,7 @@
 ※再起動で完全に反映されます</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3512"/>
+        <location filename="../menu.py" line="3511"/>
         <source>鼠标穿透启用
 窗口不挡你啦,可以点穿它~
 
@@ -2193,527 +2193,527 @@
 ※再起動で完全に反映されます</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3598"/>
+        <location filename="../menu.py" line="3597"/>
         <source>灵活模式</source>
         <translation>フレキシブルモード</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3601"/>
+        <location filename="../menu.py" line="3600"/>
         <source>灵活模式为上课时自动隐藏，可手动改变隐藏状态，当前课程状态（上课/课间）改变后会清除手动隐藏状态，重新转为自动隐藏。</source>
         <translation>フレキシブルモードは授業中に自動的に非表示になりますが、手動で表示状態を変更可能です。現在の授業ステータス（授業中/休憩時間）が変更されると、手動での非表示状態は解除され、自動非表示に戻ります。</translation>
     </message>
     <message>
+        <location filename="../menu.py" line="3616"/>
         <location filename="../menu.py" line="3617"/>
-        <location filename="../menu.py" line="3618"/>
         <source>跟随系统</source>
         <translation>システムに従う</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3631"/>
+        <location filename="../menu.py" line="3630"/>
         <source>系统时间</source>
         <translation>システム時間</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3631"/>
+        <location filename="../menu.py" line="3630"/>
         <source>NTP时间</source>
         <translation>NTP時間</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3647"/>
+        <location filename="../menu.py" line="3646"/>
         <source>立即同步NTP时间</source>
         <translation>NTP時刻を即時同期</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="1453"/>
-        <location filename="../menu.py" line="3656"/>
+        <location filename="../menu.py" line="1452"/>
+        <location filename="../menu.py" line="3655"/>
         <source> 分钟</source>
         <translation> 分</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3661"/>
+        <location filename="../menu.py" line="3660"/>
         <source>系统时区</source>
         <translation>システムタイムゾーン</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3661"/>
+        <location filename="../menu.py" line="3660"/>
         <source>local</source>
         <translation>local</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3662"/>
+        <location filename="../menu.py" line="3661"/>
         <source>(UTC+0)  伦敦时间</source>
         <translation>(UTC+0)  ロンドン</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3663"/>
+        <location filename="../menu.py" line="3662"/>
         <source>(UTC+1)  巴黎时间</source>
         <translation>(UTC+1)  パリス</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3664"/>
+        <location filename="../menu.py" line="3663"/>
         <source>(UTC+3)  莫斯科时间</source>
         <translation>(UTC+3)  モスコ</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3665"/>
+        <location filename="../menu.py" line="3664"/>
         <source>(UTC+8)  北京时间</source>
         <translation>(UTC+8)  北京</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3666"/>
+        <location filename="../menu.py" line="3665"/>
         <source>(UTC+8)  新加坡时间</source>
         <translation>(UTC+8)  シンガポール</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3667"/>
+        <location filename="../menu.py" line="3666"/>
         <source>(UTC+9)  东京时间</source>
         <translation>(UTC+9)  東京</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3668"/>
+        <location filename="../menu.py" line="3667"/>
         <source>(UTC+10)  悉尼时间</source>
         <translation>(UTC+10)  シドニー</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3669"/>
+        <location filename="../menu.py" line="3668"/>
         <source>(UTC-8)  洛杉矶时间</source>
         <translation>(UTC-8)  ロス·アンジェレス</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3670"/>
+        <location filename="../menu.py" line="3669"/>
         <source>(UTC-5)  纽约时间</source>
         <translation>(UTC-5)  ニューヨーク</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3716"/>
-        <location filename="../menu.py" line="3725"/>
-        <location filename="../menu.py" line="3733"/>
+        <location filename="../menu.py" line="3715"/>
+        <location filename="../menu.py" line="3724"/>
+        <location filename="../menu.py" line="3732"/>
         <source>时间设置</source>
         <translation>時間設定</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3717"/>
+        <location filename="../menu.py" line="3716"/>
         <source>已切换到NTP时间,正在同步时间~</source>
         <translation>NTP時刻に切り替え済み、時刻を同期中</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3725"/>
+        <location filename="../menu.py" line="3724"/>
         <source>已切换到系统时间</source>
         <translation>システム時刻に切り替え済み</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3733"/>
+        <location filename="../menu.py" line="3732"/>
         <source>切换失败</source>
         <translation>切り替え失敗</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3740"/>
-        <location filename="../menu.py" line="3743"/>
-        <location filename="../menu.py" line="3745"/>
-        <location filename="../menu.py" line="3749"/>
-        <location filename="../menu.py" line="4214"/>
-        <location filename="../menu.py" line="4233"/>
-        <location filename="../menu.py" line="4240"/>
-        <location filename="../menu.py" line="4248"/>
+        <location filename="../menu.py" line="3739"/>
+        <location filename="../menu.py" line="3742"/>
+        <location filename="../menu.py" line="3744"/>
+        <location filename="../menu.py" line="3748"/>
+        <location filename="../menu.py" line="4213"/>
+        <location filename="../menu.py" line="4232"/>
+        <location filename="../menu.py" line="4239"/>
+        <location filename="../menu.py" line="4247"/>
         <source>NTP同步</source>
         <translation>NTP同期</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3740"/>
+        <location filename="../menu.py" line="3739"/>
         <source>当前无需NTP同步</source>
         <translation>現在、NTP同期は不要です</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3743"/>
+        <location filename="../menu.py" line="3742"/>
         <source>当前时间管理器不支持NTP同步</source>
         <translation>現在の時間マネージャーはNTP同期をサポートしていません</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3745"/>
+        <location filename="../menu.py" line="3744"/>
         <source>正在同步NTP时间~</source>
         <translation>NTP時刻を同期中</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3749"/>
+        <location filename="../menu.py" line="3748"/>
         <source>NTP时间同步失败</source>
         <translation>NTP時刻同期失敗</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3771"/>
-        <location filename="../menu.py" line="3775"/>
-        <location filename="../menu.py" line="3778"/>
+        <location filename="../menu.py" line="3770"/>
+        <location filename="../menu.py" line="3774"/>
+        <location filename="../menu.py" line="3777"/>
         <source>NTP设置</source>
         <translation>NTP設定</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3772"/>
+        <location filename="../menu.py" line="3771"/>
         <source>已开启NTP自动同步ヾ(≧▽≦*)o</source>
         <translation>NTP自動同期をオンにしましたヾ(≧▽≦*)o</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3775"/>
+        <location filename="../menu.py" line="3774"/>
         <source>已关闭NTP自动同步(≧﹏ ≦)</source>
         <translation>NTP自動同期をオフにしました(≧﹏ ≦)</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3778"/>
+        <location filename="../menu.py" line="3777"/>
         <source>设置失败 (╥﹏╥)</source>
         <translation>設定失敗(╥﹏╥)</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3789"/>
-        <location filename="../menu.py" line="3801"/>
-        <location filename="../menu.py" line="3808"/>
+        <location filename="../menu.py" line="3788"/>
+        <location filename="../menu.py" line="3800"/>
+        <location filename="../menu.py" line="3807"/>
         <source>时区设置</source>
         <translation>タイムゾーン設定</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3790"/>
+        <location filename="../menu.py" line="3789"/>
         <source>时区已更新为 {ntp_sync_timezone}，正在重新同步时间~</source>
         <translation>{ntp_sync_timezone}にタイムゾーンを更新しました。時刻を再同期しています～</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3808"/>
+        <location filename="../menu.py" line="3807"/>
         <source>时区设置失败</source>
         <translation>タイムゾーン設定失敗</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3868"/>
+        <location filename="../menu.py" line="3867"/>
         <source>NTP服务器URL不能为空 o(〃＾▽＾〃)o
 请输入有效的NTP服务器地址</source>
         <translation>NTPサーバーのURLは空にできません
 有効なNTPサーバーアドレスを入力してください</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3897"/>
+        <location filename="../menu.py" line="3896"/>
         <source>NTP服务器已更新: {url}</source>
         <translation>NTPサーバーを更新しました: {url}</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3905"/>
+        <location filename="../menu.py" line="3904"/>
         <source>URL格式可能不正确: {url}
 请检查是否为有效的域名或IP地址（︶^︶）</source>
         <translation>URLの形式が正しくない可能性があります: {url}
 有効なドメイン名またはIPアドレスであるか確認してください</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4180"/>
+        <location filename="../menu.py" line="4179"/>
         <source>当前使用: 系统本地时间</source>
         <translation>現在使用中：システムローカル時間</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4184"/>
+        <location filename="../menu.py" line="4183"/>
         <source>%Y年%m月%d日 - %H:%M:%S</source>
         <translation>%Y年%m月%d日 - %H:%M:%S</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4186"/>
+        <location filename="../menu.py" line="4185"/>
         <source>上次NTP校准: {sync_time_str}</source>
         <translation>最終NTP校正: {sync_time_str}</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4189"/>
+        <location filename="../menu.py" line="4188"/>
         <source>NTP时间: 尚未进行校准</source>
         <translation>NTP時刻：未校正</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4191"/>
+        <location filename="../menu.py" line="4190"/>
         <source>时间状态: 未知</source>
         <translation>時間状態: 不明</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4215"/>
+        <location filename="../menu.py" line="4214"/>
         <source>同步正在进行中,请稍候~</source>
         <translation>同期を実行中です。しばらくお待ちください〜</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4233"/>
+        <location filename="../menu.py" line="4232"/>
         <source>启动同步失败</source>
         <translation>同期の開始に失敗しました</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4240"/>
+        <location filename="../menu.py" line="4239"/>
         <source>NTP时间同步成功!</source>
         <translation>NTP時間の同期に成功しました！</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4249"/>
+        <location filename="../menu.py" line="4248"/>
         <source>NTP时间同步失败,请检查网络连接和url地址!</source>
         <translation>NTP時間の同期に失敗しました。ネットワーク接続とURLアドレスをご確認ください！</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3802"/>
+        <location filename="../menu.py" line="3801"/>
         <source>时区已更新为 {ntp_sync_timezone}</source>
         <translation>タイムゾーンが {ntp_sync_timezone} に更新されました</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="1625"/>
+        <location filename="../menu.py" line="1624"/>
         <source>{city_name} · 当前天气</source>
         <translation>{city_name}・現在の天気</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="1628"/>
+        <location filename="../menu.py" line="1627"/>
         <source>当前天气</source>
         <translation>現在の天気</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="1657"/>
+        <location filename="../menu.py" line="1656"/>
         <source>最后更新于 {display_datetime}</source>
         <translation>最終更新：{display_datetime}</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="1679"/>
+        <location filename="../menu.py" line="1678"/>
         <source>体感温度: {feels_like_data}</source>
         <translation>体感温度：{feels_like_data}</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="1682"/>
+        <location filename="../menu.py" line="1681"/>
         <source>体感温度: --°</source>
         <translation>体感温度： --°</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4340"/>
+        <location filename="../menu.py" line="4339"/>
         <source>编辑课程</source>
         <translation>授業を編集</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4348"/>
+        <location filename="../menu.py" line="4347"/>
         <source>清空课程</source>
         <translation>授業をクリア</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4391"/>
+        <location filename="../menu.py" line="4390"/>
         <source>添加时间线</source>
         <translation>タイムラインを追加</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4400"/>
+        <location filename="../menu.py" line="4399"/>
         <source>添加节点</source>
         <translation>ノードを追加</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4416"/>
+        <location filename="../menu.py" line="4415"/>
         <source>编辑节点开始时间</source>
         <translation>ノードの開始時刻を編集</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4424"/>
+        <location filename="../menu.py" line="4423"/>
         <source>删除节点</source>
         <translation>ノードを削除</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4432"/>
+        <location filename="../menu.py" line="4431"/>
         <source>编辑时间线</source>
         <translation>タイムラインを編集</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4440"/>
+        <location filename="../menu.py" line="4439"/>
         <source>删除时间线</source>
         <translation>タイムラインを削除</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4449"/>
+        <location filename="../menu.py" line="4448"/>
         <source>选择活动类型（“课程”或“课间”）</source>
         <translation>アクティビティの種類を選択（「授業」または「休み時間」）</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4454"/>
+        <location filename="../menu.py" line="4453"/>
         <source>选择单双周</source>
         <translation>奇数週・偶数週を選択</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4458"/>
+        <location filename="../menu.py" line="4457"/>
         <source>默认</source>
         <translation>デフォルト</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4460"/>
+        <location filename="../menu.py" line="4459"/>
         <source>选择一周内的某一天的时间线</source>
         <translation>週内のある一日のタイムラインを選択</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4464"/>
+        <location filename="../menu.py" line="4463"/>
         <source>复制时间线</source>
         <translation>タイムラインをコピー</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4474"/>
+        <location filename="../menu.py" line="4473"/>
         <source>重要提示</source>
         <translation>重要な注意事項</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4474"/>
+        <location filename="../menu.py" line="4473"/>
         <source>请使用 24 小时制</source>
         <translation>24時間制を使用してください</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4588"/>
+        <location filename="../menu.py" line="4587"/>
         <source>请先选择一个节点 o(TヘTo)</source>
         <translation>まずノードを選択してください o(TヘTo)</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4589"/>
+        <location filename="../menu.py" line="4588"/>
         <source>在编辑节点时间前，请先在左侧列表中选择要编辑的节点</source>
         <translation>ノードの時間を編集する前に、左側のリストから編集するノードを選択してください</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4609"/>
+        <location filename="../menu.py" line="4608"/>
         <source>节点时间已更新 ヾ(≧▽≦*)o</source>
         <translation>ノードの時間が更新されました ヾ(≧▽≦*)o</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4610"/>
+        <location filename="../menu.py" line="4609"/>
         <source>节点 &quot;{part_name}&quot; 的开始时间已更新为 {new_time}</source>
         <translation>ノード「{part_name}」の開始時間が {new_time} に更新されました</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4621"/>
+        <location filename="../menu.py" line="4620"/>
         <source>节点格式异常 (╥﹏╥)</source>
         <translation>ノードの形式が異常です (╥﹏╥)</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4622"/>
+        <location filename="../menu.py" line="4621"/>
         <source>选中的节点格式不正确，无法编辑</source>
         <translation>選択したノードの形式が正しくないため、編集できません</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4632"/>
+        <location filename="../menu.py" line="4631"/>
         <source>预览 - {schedule_name}</source>
         <translation>プレビュー - {schedule_name}</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4666"/>
+        <location filename="../menu.py" line="4665"/>
         <source>选择位置输入方式</source>
         <translation>場所の入力方法を選択</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4667"/>
+        <location filename="../menu.py" line="4666"/>
         <source>和风天气支持城市ID和经纬度两种方式，请选择您偏好的输入方式：</source>
         <translation>都市IDと緯度経度の2つの入力方法をサポートしています。お好みの入力方法を選択してください :</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4670"/>
+        <location filename="../menu.py" line="4669"/>
         <source>城市搜索</source>
         <translation>都市検索</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4671"/>
+        <location filename="../menu.py" line="4670"/>
         <source>经纬度输入</source>
         <translation>緯度と経度の入力</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4697"/>
+        <location filename="../menu.py" line="4696"/>
         <source>无效的经纬度</source>
         <translation>無効な緯度経度</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4698"/>
+        <location filename="../menu.py" line="4697"/>
         <source>请输入有效的经度和纬度值。</source>
         <translation>有効な緯度と経度を入力してください。</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4738"/>
-        <location filename="../menu.py" line="4758"/>
+        <location filename="../menu.py" line="4737"/>
+        <location filename="../menu.py" line="4757"/>
         <source>已清除日志</source>
         <translation>ログがクリアされました</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4739"/>
-        <location filename="../menu.py" line="4759"/>
+        <location filename="../menu.py" line="4738"/>
+        <location filename="../menu.py" line="4758"/>
         <source>已清空所有日志文件，约 {size} KB</source>
         <translation>すべてのログファイルがクリアされました。合計約 {size} KB</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4749"/>
+        <location filename="../menu.py" line="4748"/>
         <source>日志目录下为空，已清理完成。</source>
         <translation>ログフォルダが空です。クリーンアップが完了しました。</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4769"/>
+        <location filename="../menu.py" line="4768"/>
         <source>清除日志失败：{e}</source>
         <translation>ログのクリアに失敗しました：{e}</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4812"/>
+        <location filename="../menu.py" line="4811"/>
         <source>更改上课时主题色</source>
         <translation>授業中のテーマカラーを変更</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4820"/>
+        <location filename="../menu.py" line="4819"/>
         <source>更改课间时主题色</source>
         <translation>休み時間のテーマカラーを変更</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4828"/>
+        <location filename="../menu.py" line="4827"/>
         <source>更改浮窗时间颜色</source>
         <translation>フローティングウィンドウの時間表示色を変更</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4837"/>
+        <location filename="../menu.py" line="4836"/>
         <source>保存文件</source>
         <translation>ファイルを保存</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4838"/>
+        <location filename="../menu.py" line="4837"/>
         <source>Json 配置文件 (*.json)</source>
         <translation>Json 設定ファイル (*.json)</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4872"/>
+        <location filename="../menu.py" line="4871"/>
         <source>检查更新失败！</source>
         <translation>更新の確認に失敗しました！</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4873"/>
+        <location filename="../menu.py" line="4872"/>
         <source>检查更新失败！
 {data}</source>
         <translation>更新の確認に失敗しました！
 {data}</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4930"/>
-        <location filename="../menu.py" line="5023"/>
+        <location filename="../menu.py" line="4929"/>
+        <location filename="../menu.py" line="5022"/>
         <source>文件已存在</source>
         <translation>ファイルが既に存在します</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4931"/>
-        <location filename="../menu.py" line="5024"/>
+        <location filename="../menu.py" line="4930"/>
+        <location filename="../menu.py" line="5023"/>
         <source>文件 {file_name} 已存在，是否覆盖？</source>
         <translation>ファイル {file_name} はすでに存在します。上書きしますか？</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4934"/>
-        <location filename="../menu.py" line="5027"/>
+        <location filename="../menu.py" line="4933"/>
+        <location filename="../menu.py" line="5026"/>
         <source>覆盖</source>
         <translation>上書き</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4958"/>
+        <location filename="../menu.py" line="4957"/>
         <source>导入成功！</source>
         <translation>インポートに成功しました！</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4959"/>
+        <location filename="../menu.py" line="4958"/>
         <source>课程表文件导入成功！
 请手动切换您的配置文件。</source>
         <translation>スケジュールファイルのインポートに成功しました！
 設定ファイルを手動で切り替えてください。</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4999"/>
+        <location filename="../menu.py" line="4998"/>
         <source>课程表文件导出失败，
 可能为文件损坏，请将此情况反馈给开发者。</source>
         <translation>スケジュールファイルのエクスポートに失敗しました。
 ファイルが破損している可能性がありますので、この状況を開発者に報告してください。</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5008"/>
+        <location filename="../menu.py" line="5007"/>
         <source>选择文件</source>
         <translation>ファイルを選択</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4948"/>
+        <location filename="../menu.py" line="4947"/>
         <source>课程表文件转换失败！
 可能为格式错误或文件损坏，请检查此文件是否为正确的 CSES 课程表文件。
 详情请查看Log日志，日志位于./log/下。</source>
@@ -2722,7 +2722,7 @@
 詳細はログをご確認ください。ログは ./log/ フォルダにあります。</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4972"/>
+        <location filename="../menu.py" line="4971"/>
         <source>课程表文件导入失败！
 可能为格式错误或文件损坏，请检查此文件是否为正确的 CSES 课程表文件。
 详情请查看Log日志，日志位于./log/下。</source>
@@ -2731,52 +2731,52 @@
 詳細はログをご確認ください。ログは ./log/ フォルダにあります。</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5062"/>
+        <location filename="../menu.py" line="5061"/>
         <source>已保存至 ./config/widget.json</source>
         <translation>./config/widget.json に保存されました</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5235"/>
+        <location filename="../menu.py" line="5234"/>
         <source>列表选项异常！{data}</source>
         <translation>リストオプションに異常があります！{data}</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5755"/>
-        <location filename="../menu.py" line="5853"/>
+        <location filename="../menu.py" line="5754"/>
+        <location filename="../menu.py" line="5852"/>
         <source>已保存至 ./config/schedule/{schedule_name}</source>
         <translation>./config/schedule/{schedule_name} に保存されました</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5868"/>
+        <location filename="../menu.py" line="5867"/>
         <source>{e}
 保存失败，请将 ./log/ 中的日志提交给开发者以反馈问题。</source>
         <translation>{e}
 保存に失敗しました。問題を報告するために、./log/ フォルダ内のログを開発者に送ってください。</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5935"/>
+        <location filename="../menu.py" line="5934"/>
         <source>您确定要删除这个时段吗？</source>
         <translation>この時間帯を削除してもよろしいですか？</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5936"/>
+        <location filename="../menu.py" line="5935"/>
         <source>删除该节点后，将一并删除该节点下所有课程安排，且无法恢复。</source>
         <translation>このノードを削除すると、ノードに含まれるすべての授業スケジュールも一緒に削除され、復元できません。</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="6165"/>
+        <location filename="../menu.py" line="6164"/>
         <source>已保存至 ./config.ini</source>
         <translation>./config.ini に保存されました</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="6379"/>
+        <location filename="../menu.py" line="6378"/>
         <source>界面语言已切换为 {selected_lang_name}
 新语言将在重启程序后完全生效</source>
         <translation>インターフェース言語が {selected_lang_name} に切り替えられました
 新しい言語はプログラム再起動後に完全に反映されます</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="6417"/>
+        <location filename="../menu.py" line="6416"/>
         <source>界面语言切换时出错: {e}</source>
         <translation>インターフェース言語の切り替え中にエラーが発生しました: {e}</translation>
     </message>
@@ -2791,52 +2791,52 @@
         <translation type="vanished">コンポーネント言語の切り替え中にエラーが発生しました: {e}</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4748"/>
+        <location filename="../menu.py" line="4747"/>
         <source>未找到日志</source>
         <translation>ログが見つかりません</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4768"/>
+        <location filename="../menu.py" line="4767"/>
         <source>清除日志失败！</source>
         <translation>ログのクリアに失敗しました！</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4805"/>
+        <location filename="../menu.py" line="4804"/>
         <source>无法删除</source>
         <translation>削除できません</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4805"/>
+        <location filename="../menu.py" line="4804"/>
         <source>至少需要保留两个小组件。</source>
         <translation>少なくとも2つのウィジェットを残す必要があります。</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4842"/>
-        <location filename="../menu.py" line="4990"/>
+        <location filename="../menu.py" line="4841"/>
+        <location filename="../menu.py" line="4989"/>
         <source>您已成功导出课程表配置文件</source>
         <translation>スケジュール設定ファイルのエクスポートに成功しました</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4843"/>
-        <location filename="../menu.py" line="4991"/>
+        <location filename="../menu.py" line="4842"/>
+        <location filename="../menu.py" line="4990"/>
         <source>文件将导出于{file_path}</source>
         <translation>ファイルは {file_path} にエクスポートされます</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4998"/>
+        <location filename="../menu.py" line="4997"/>
         <source>导出失败！</source>
         <translation>エクスポートに失敗しました！</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4868"/>
+        <location filename="../menu.py" line="4867"/>
         <source>版本号：获取失败！</source>
         <translation>バージョン番号：取得失敗！</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2660"/>
-        <location filename="../menu.py" line="2706"/>
-        <location filename="../menu.py" line="2868"/>
-        <location filename="../menu.py" line="2924"/>
+        <location filename="../menu.py" line="2659"/>
+        <location filename="../menu.py" line="2705"/>
+        <location filename="../menu.py" line="2867"/>
+        <location filename="../menu.py" line="2923"/>
         <source>加载中...</source>
         <translation>読み込み中...</translation>
     </message>
@@ -2849,150 +2849,150 @@
         <translation type="vanished">取得失敗！</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4903"/>
+        <location filename="../menu.py" line="4902"/>
         <source>版本号：{local_version}
 已是最新版本！</source>
         <translation>バージョン番号：{local_version}
 は最新バージョンです！</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4909"/>
+        <location filename="../menu.py" line="4908"/>
         <source>版本号：{local_version}
 可更新版本: {new_version}</source>
         <translation>バージョン番号：{local_version}
 更新可能バージョン：{new_version}</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4914"/>
+        <location filename="../menu.py" line="4913"/>
         <source>版本号：Debug
 调试版本！</source>
         <translation>バージョン番号：Debug
 デバッグバージョンです！</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4918"/>
+        <location filename="../menu.py" line="4917"/>
         <source>新版本速递：{new_version}</source>
         <translation>バージョン</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4943"/>
+        <location filename="../menu.py" line="4942"/>
         <source>转换失败！</source>
         <translation>変換に失敗しました！</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4967"/>
-        <location filename="../menu.py" line="5042"/>
+        <location filename="../menu.py" line="4966"/>
+        <location filename="../menu.py" line="5041"/>
         <source>导入失败！</source>
         <translation>インポートに失敗しました！</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5012"/>
+        <location filename="../menu.py" line="5011"/>
         <source>支持的文件类型 (*.json *.yaml *.yml);;Json 配置文件 (*.json);;CSES 通用课程表交换文件 (*.yaml) (*.yaml *.yml)</source>
         <translation>対応ファイルタイプ (.json .yaml .yml);;Json 設定ファイル (.json);;CSES 共通スケジュール交換ファイル (.yaml) (.yaml .yml)</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5034"/>
+        <location filename="../menu.py" line="5033"/>
         <source>您已成功导入课程表配置文件</source>
         <translation>スケジュール設定ファイルのインポートに成功しました</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5035"/>
+        <location filename="../menu.py" line="5034"/>
         <source>请在“高级选项”中手动切换您的配置文件。</source>
         <translation>「詳細オプション」で設定ファイルを手動で切り替えてください。</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5061"/>
-        <location filename="../menu.py" line="5754"/>
-        <location filename="../menu.py" line="5852"/>
-        <location filename="../menu.py" line="6164"/>
+        <location filename="../menu.py" line="5060"/>
+        <location filename="../menu.py" line="5753"/>
+        <location filename="../menu.py" line="5851"/>
+        <location filename="../menu.py" line="6163"/>
         <source>保存成功</source>
         <translation>保存に成功しました</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5142"/>
+        <location filename="../menu.py" line="5141"/>
         <source>文件名不能为空</source>
         <translation>ファイル名を空にすることはできません</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5147"/>
+        <location filename="../menu.py" line="5146"/>
         <source>文件名包含非法字符</source>
         <translation>ファイル名に無効な文字が含まれています</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5151"/>
+        <location filename="../menu.py" line="5150"/>
         <source>文件名过长</source>
         <translation>ファイル名が長すぎます</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5179"/>
+        <location filename="../menu.py" line="5178"/>
         <source>文件名是保留名称</source>
         <translation>ファイル名は予約名称です</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5182"/>
+        <location filename="../menu.py" line="5181"/>
         <source>文件名不能包含路径分隔符</source>
         <translation>ファイル名にパス区切り文字を含めることはできません</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5184"/>
+        <location filename="../menu.py" line="5183"/>
         <source>文件名合法</source>
         <translation>ファイル名は有効です</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5186"/>
+        <location filename="../menu.py" line="5185"/>
         <source>请输入新课表名称</source>
         <translation>新しい時間割名を入力してください</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5187"/>
+        <location filename="../menu.py" line="5186"/>
         <source>请命名您的课程表计划：</source>
         <translation>授業計画に名前を付けてください：</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5188"/>
+        <location filename="../menu.py" line="5187"/>
         <source>新课表 - 1</source>
         <translation>新しいスケジュール - 1</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5234"/>
+        <location filename="../menu.py" line="5233"/>
         <source>错误！</source>
         <translation>エラー！</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5262"/>
-        <location filename="../menu.py" line="5276"/>
-        <location filename="../menu.py" line="5321"/>
+        <location filename="../menu.py" line="5261"/>
+        <location filename="../menu.py" line="5275"/>
+        <location filename="../menu.py" line="5320"/>
         <source>获取配置文件失败</source>
         <translation>設定ファイルの取得に失敗しました</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5263"/>
+        <location filename="../menu.py" line="5262"/>
         <source>当前课表为本地课表，无法获取配置文件。请上传课表后再尝试获取配置文件。</source>
         <translation>現在の時間割はローカル時間割のため、設定ファイルを取得できません。時間割をアップロードしてから設定ファイルの取得を再試行してください。</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5288"/>
+        <location filename="../menu.py" line="5287"/>
         <source>更新配置文件失败</source>
         <translation>設定ファイルの更新に失敗しました</translation>
     </message>
     <message>
+        <location filename="../menu.py" line="5302"/>
         <location filename="../menu.py" line="5303"/>
-        <location filename="../menu.py" line="5304"/>
         <source>请输入配置文件链接</source>
         <translation>設定ファイルのリンクを入力してください</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5338"/>
+        <location filename="../menu.py" line="5337"/>
         <source>保存配置文件失败，将自动保存为空课表</source>
         <translation>設定ファイルの保存に失敗しました。空の時間割として自動保存されます</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5355"/>
+        <location filename="../menu.py" line="5354"/>
         <source>请输入课表链接</source>
         <translation>時間割リンクを入力してください</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5358"/>
+        <location filename="../menu.py" line="5357"/>
         <source>当前可缩写数据库：
 {dbs}
 你可以使用缩写来代替完整的数据库链接</source>
@@ -3001,72 +3001,72 @@
 完全なデータベースリンクの代わりに略語を使用できます</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5382"/>
-        <location filename="../menu.py" line="5392"/>
+        <location filename="../menu.py" line="5381"/>
+        <location filename="../menu.py" line="5391"/>
         <source>上传配置文件失败</source>
         <translation>設定ファイルのアップロードに失敗しました</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5574"/>
+        <location filename="../menu.py" line="5573"/>
         <source>预览  -  [调休] {schedule_name}</source>
         <translation>プレビュー - 【振替休日】{schedule_name}</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5578"/>
+        <location filename="../menu.py" line="5577"/>
         <source>预览  -  {schedule_name}</source>
         <translation>プレビュー - {schedule_name}</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5588"/>
+        <location filename="../menu.py" line="5587"/>
         <source>未添加</source>
         <translation>未追加</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5631"/>
+        <location filename="../menu.py" line="5630"/>
         <source>{data}分钟</source>
         <translation>{data}分</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5633"/>
-        <location filename="../menu.py" line="5822"/>
+        <location filename="../menu.py" line="5632"/>
+        <location filename="../menu.py" line="5821"/>
         <source>课程</source>
         <translation>コース</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5802"/>
+        <location filename="../menu.py" line="5801"/>
         <source>休息段</source>
         <translation>休憩時間</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5634"/>
-        <location filename="../menu.py" line="5825"/>
-        <location filename="../menu.py" line="5991"/>
-        <location filename="../menu.py" line="5996"/>
+        <location filename="../menu.py" line="5633"/>
+        <location filename="../menu.py" line="5824"/>
+        <location filename="../menu.py" line="5990"/>
+        <location filename="../menu.py" line="5995"/>
         <source>课间</source>
         <translation>休み時間</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5838"/>
+        <location filename="../menu.py" line="5837"/>
         <source>分钟</source>
         <translation>分</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5865"/>
+        <location filename="../menu.py" line="5864"/>
         <source>保存失败!</source>
         <translation>保存に失敗しました！</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5905"/>
+        <location filename="../menu.py" line="5904"/>
         <source>无法添加时间线 o(TヘTo)</source>
         <translation>タイムラインを追加できません o(TヘTo)</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5906"/>
+        <location filename="../menu.py" line="5905"/>
         <source>在添加时间线前，先任意添加一个节点</source>
         <translation>タイムラインを追加する前に、まず任意のノードを1つ追加してください</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5914"/>
+        <location filename="../menu.py" line="5913"/>
         <source>{class_activity} - {spin_time}分钟 - {time_period}</source>
         <translation>{class_activity} - {spin_time}分 - {time_period}</translation>
     </message>
@@ -3079,114 +3079,114 @@
         <translation type="vanished">Class Widgets は最大で10個の「ノード」しか追加できません！</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5939"/>
+        <location filename="../menu.py" line="5938"/>
         <source>删除</source>
         <translation>削除</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5965"/>
+        <location filename="../menu.py" line="5964"/>
         <source>取消</source>
         <translation>ｷｬﾝｾﾙ</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="6123"/>
+        <location filename="../menu.py" line="6122"/>
         <source>未添加-{data}</source>
         <translation>未追加-{data}</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="6240"/>
+        <location filename="../menu.py" line="6239"/>
         <source>课表预览</source>
         <translation>時間割プレビュー</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="6241"/>
+        <location filename="../menu.py" line="6240"/>
         <source>时间线编辑</source>
         <translation>タイムライン編集</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="6242"/>
+        <location filename="../menu.py" line="6241"/>
         <source>课程表编辑</source>
         <translation>コース編集</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="6243"/>
+        <location filename="../menu.py" line="6242"/>
         <source>倒计日编辑</source>
         <translation>カウントダウン日編集</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="6244"/>
+        <location filename="../menu.py" line="6243"/>
         <source>配置文件</source>
         <translation>設定ファイル</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="6246"/>
+        <location filename="../menu.py" line="6245"/>
         <source>帮助</source>
         <translation>ヘルプ</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="6248"/>
+        <location filename="../menu.py" line="6247"/>
         <source>插件</source>
         <translation>プラグイン</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="6252"/>
+        <location filename="../menu.py" line="6251"/>
         <source>天气</source>
         <translation>天気</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="6255"/>
+        <location filename="../menu.py" line="6254"/>
         <source>自定义</source>
         <translation>カスタム</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="6258"/>
+        <location filename="../menu.py" line="6257"/>
         <source>提醒</source>
         <translation>リマインダー</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="6261"/>
+        <location filename="../menu.py" line="6260"/>
         <source>高级选项</source>
         <translation>詳細オプション</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="6264"/>
+        <location filename="../menu.py" line="6263"/>
         <source>关于本产品</source>
         <translation>この製品について</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="6294"/>
+        <location filename="../menu.py" line="6293"/>
         <source>Class Widgets - 设置</source>
         <translation>Class Widgets - 設定</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="6377"/>
+        <location filename="../menu.py" line="6376"/>
         <source>界面语言切换成功 ♪(´▽｀)</source>
         <translation>インターフェース言語の切り替えが完了しました ♪(´▽｀)</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="6409"/>
+        <location filename="../menu.py" line="6408"/>
         <source>界面语言切换失败 (＃°Д°)</source>
         <translation>インターフェース言語の切り替えに失敗しました (＃°Д°)</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="6410"/>
+        <location filename="../menu.py" line="6409"/>
         <source>无法加载选定的界面语言包，请检查翻译文件是否存在</source>
         <translation>選択されたインターフェース言語パックを読み込めません。翻訳ファイルが存在するかご確認ください</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="1958"/>
-        <location filename="../menu.py" line="6413"/>
-        <location filename="../menu.py" line="6423"/>
+        <location filename="../menu.py" line="1957"/>
+        <location filename="../menu.py" line="6412"/>
+        <location filename="../menu.py" line="6422"/>
         <source>确定</source>
         <translation>はい</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="6419"/>
+        <location filename="../menu.py" line="6418"/>
         <source>界面语言切换出错 (＃°Д°)</source>
         <translation>インターフェース言語の切り替えでエラーが発生しました (＃°Д°)</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="6420"/>
+        <location filename="../menu.py" line="6419"/>
         <source>切换界面语言时发生错误: {e}</source>
         <translation>インターフェース言語の切り替え時にエラーが発生しました: {e}</translation>
     </message>
@@ -3428,17 +3428,17 @@
 <context>
     <name>TTSSettings</name>
     <message>
-        <location filename="../menu.py" line="2453"/>
+        <location filename="../menu.py" line="2452"/>
         <source>加载中...</source>
         <translation>読み込み中...</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2481"/>
+        <location filename="../menu.py" line="2480"/>
         <source>小语法?</source>
         <translation>軽量文法？</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2488"/>
+        <location filename="../menu.py" line="2487"/>
         <source>可以使用以下占位符来动态插入信息：
 - `{lesson_name}`: 开始&amp;结束&amp;下节的课程名(例如：信息技术)
 - `{minutes}`: 分钟数 (例如：5) *其他
@@ -3453,62 +3453,62 @@
 </translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2544"/>
+        <location filename="../menu.py" line="2543"/>
         <source>上课提醒</source>
         <translation>授業開始の通知</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2549"/>
+        <location filename="../menu.py" line="2548"/>
         <source>下课提醒</source>
         <translation>授業終了の通知</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2554"/>
+        <location filename="../menu.py" line="2553"/>
         <source>预备提醒</source>
         <translation>予鈴の通知</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2559"/>
+        <location filename="../menu.py" line="2558"/>
         <source>放学提醒</source>
         <translation>下校リマインダー</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2564"/>
+        <location filename="../menu.py" line="2563"/>
         <source>其他提醒</source>
         <translation>その他の通知</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2578"/>
+        <location filename="../menu.py" line="2577"/>
         <source>信息技术</source>
         <translation>ICT</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2580"/>
+        <location filename="../menu.py" line="2579"/>
         <source>通知</source>
         <translation>通知</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2581"/>
+        <location filename="../menu.py" line="2580"/>
         <source>这是一条测试通知ヾ(≧▽≦*)o</source>
         <translation>これはテスト通知ですヾ(≧▽≦*)o</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2627"/>
+        <location filename="../menu.py" line="2626"/>
         <source>TTS预览失败</source>
         <translation>TTSプレビューに失敗しました</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2627"/>
+        <location filename="../menu.py" line="2626"/>
         <source>启动TTS预览时出错: {e}</source>
         <translation>TTSプレビューの起動時にエラーが発生しました: {e}</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2635"/>
+        <location filename="../menu.py" line="2634"/>
         <source>TTS生成失败</source>
         <translation>TTS生成に失敗しました</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2636"/>
+        <location filename="../menu.py" line="2635"/>
         <source>生成或播放语音时出错: {error_message}</source>
         <translation>音声の生成または再生時にエラーが発生しました: {error_message}</translation>
     </message>
@@ -3516,22 +3516,22 @@
 <context>
     <name>TextFieldMessageBox</name>
     <message>
-        <location filename="../menu.py" line="1101"/>
+        <location filename="../menu.py" line="1100"/>
         <source>确定</source>
         <translation>確定</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="1125"/>
+        <location filename="../menu.py" line="1124"/>
         <source>不能为空值啊 ( •̀ ω •́ )✧</source>
         <translation>空値にはできません ( •̀ ω •́ )✧</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="1128"/>
+        <location filename="../menu.py" line="1127"/>
         <source>不可以和之前的课程名重复哦 o(TヘTo)</source>
         <translation>以前の授業名と重複してはいけません o(TヘTo)</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="1138"/>
+        <location filename="../menu.py" line="1137"/>
         <source>很好！就这样！ヾ(≧▽≦*)o</source>
         <translation>素晴らしい！その通りです！ヾ(≧▽≦*)o</translation>
     </message>
@@ -3621,22 +3621,22 @@
 <context>
     <name>ask_which</name>
     <message>
-        <location filename="../menu.py" line="4527"/>
+        <location filename="../menu.py" line="4526"/>
         <source>默认</source>
         <translation>デフォルト</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4530"/>
+        <location filename="../menu.py" line="4529"/>
         <source>复制</source>
         <translation>からコピー</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4534"/>
+        <location filename="../menu.py" line="4533"/>
         <source>从</source>
         <translation>&#xa0;</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4537"/>
+        <location filename="../menu.py" line="4536"/>
         <source>复制时间线</source>
         <translation>タイムラインをコピー</translation>
     </message>
@@ -3644,39 +3644,39 @@
 <context>
     <name>cfDbEdit</name>
     <message>
-        <location filename="../menu.py" line="5415"/>
+        <location filename="../menu.py" line="5414"/>
         <source>添加课表数据库</source>
         <translation>時間割データベースの追加</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5420"/>
+        <location filename="../menu.py" line="5419"/>
         <source>删除课表数据库</source>
         <translation>時間割データベースの削除</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5423"/>
+        <location filename="../menu.py" line="5422"/>
         <source>更改课表数据库</source>
         <translation>時間割データベースの変更</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5451"/>
-        <location filename="../menu.py" line="5483"/>
+        <location filename="../menu.py" line="5450"/>
+        <location filename="../menu.py" line="5482"/>
         <source>错误！</source>
         <translation>エラー！</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5452"/>
-        <location filename="../menu.py" line="5484"/>
+        <location filename="../menu.py" line="5451"/>
+        <location filename="../menu.py" line="5483"/>
         <source>数据库缩写 {db_short} 已存在，请更换缩写。</source>
         <translation>データベース略語 {db_short} は既に存在しています。別の略語に変更してください。</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5504"/>
+        <location filename="../menu.py" line="5503"/>
         <source>保存成功</source>
         <translation>保存に成功しました</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5505"/>
+        <location filename="../menu.py" line="5504"/>
         <source>已保存至 ./config/schedule_db.json</source>
         <translation>./config/schedule_db.json に保存されました</translation>
     </message>
@@ -4522,171 +4522,171 @@
         <translation type="vanished">ﾌﾟﾗｸﾞｲﾝ「{title}」のｱﾝｲﾝｽﾄｰﾙ中にエラーが発生しました。詳細はログを確認してください。</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="436"/>
+        <location filename="../menu.py" line="435"/>
         <source>无法打开文件夹</source>
         <translation>フォルダーを開けません</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="440"/>
+        <location filename="../menu.py" line="439"/>
         <source>Class Widgets 在您的系统下不支持自动打开文件夹，请手动打开以下地址：
 {path}</source>
         <translation>Class Widgets は自動でﾌｫﾙﾀﾞｰを開けません。以下のパスを手動で開いてください
 {path}</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="442"/>
-        <location filename="../menu.py" line="828"/>
+        <location filename="../menu.py" line="441"/>
+        <location filename="../menu.py" line="827"/>
         <source>好</source>
         <translation>はい</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="493"/>
+        <location filename="../menu.py" line="492"/>
         <source>未添加</source>
         <translation>未追加</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="550"/>
+        <location filename="../menu.py" line="549"/>
         <source>搜索城市</source>
         <translation>都市を検索（都道府県）</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="551"/>
+        <location filename="../menu.py" line="550"/>
         <source>请输入当地城市名进行搜索</source>
         <translation>お住まいの都市名を入力して検索してください</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="552"/>
+        <location filename="../menu.py" line="551"/>
         <source>选择此城市</source>
         <translation>この都市を選択</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="553"/>
-        <location filename="../menu.py" line="570"/>
+        <location filename="../menu.py" line="552"/>
+        <location filename="../menu.py" line="569"/>
         <source>取消</source>
         <translation>ｷｬﾝｾﾙ</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="554"/>
+        <location filename="../menu.py" line="553"/>
         <source>输入城市名</source>
         <translation>都市名を入力</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="567"/>
+        <location filename="../menu.py" line="566"/>
         <source>手动输入经纬度</source>
         <translation>手動で緯度と経度を入力</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="568"/>
+        <location filename="../menu.py" line="567"/>
         <source>请输入当地的经度和纬度</source>
         <translation>現地の緯度と経度を入力してください</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="569"/>
+        <location filename="../menu.py" line="568"/>
         <source>确定</source>
         <translation>確定</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="572"/>
+        <location filename="../menu.py" line="571"/>
         <source>经度</source>
         <translation>経度</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="573"/>
+        <location filename="../menu.py" line="572"/>
         <source>纬度</source>
         <translation>緯度</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="578"/>
+        <location filename="../menu.py" line="577"/>
         <source>经度，例如 116.40</source>
         <translation>経度、例：116.40</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="581"/>
+        <location filename="../menu.py" line="580"/>
         <source>纬度，例如 39.90</source>
         <translation>緯度、例：39.90</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="587"/>
+        <location filename="../menu.py" line="586"/>
         <source>通过互联网获取经纬度</source>
         <translation>インターネット経由で緯度と経度を取得</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="822"/>
+        <location filename="../menu.py" line="821"/>
         <source>软件许可协议</source>
         <translation>ソフトウェア使用許諾契約書</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="827"/>
+        <location filename="../menu.py" line="826"/>
         <source>此项目 (Class Widgets) 基于 GPL-3.0 许可证授权发布，详情请参阅：</source>
         <translation>本ﾌﾟﾛｼﾞｪｸﾄ（Class Widgets）はGPL-3.0ﾗｲｾﾝｽで提供。詳細は以下参照：</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="905"/>
+        <location filename="../menu.py" line="904"/>
         <source>打开“{title}”插件文件夹</source>
         <translation>「{title}」ﾌﾟﾗｸﾞｲﾝﾌｫﾙﾀﾞｰを開く</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="913"/>
+        <location filename="../menu.py" line="912"/>
         <source>访问“{title}”插件页面</source>
         <translation>「{title}」ﾌﾟﾗｸﾞｲﾝページにアクセス</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="920"/>
+        <location filename="../menu.py" line="919"/>
         <source>卸载“{title}”插件</source>
         <translation>「{title}」ﾌﾟﾗｸﾞｲﾝをｱﾝｲﾝｽﾄｰﾙする</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="942"/>
+        <location filename="../menu.py" line="941"/>
         <source>此插件被临时禁用,重启后将尝试重新加载</source>
         <translation>このﾌﾟﾗｸﾞｲﾝは一時的に無効化されています。再起動後に再度リロードを試みます</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="944"/>
+        <location filename="../menu.py" line="943"/>
         <source>{title} (已临时禁用)</source>
         <translation>「{title}」（一時無効）</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="958"/>
+        <location filename="../menu.py" line="957"/>
         <source>禁用</source>
         <translation>無効化</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="959"/>
+        <location filename="../menu.py" line="958"/>
         <source>启用</source>
         <translation>有効化</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="1005"/>
+        <location filename="../menu.py" line="1004"/>
         <source>您确定要删除插件“{title}”吗？</source>
         <translation>プラグイン「{title}」を削除してもよろしいですか？</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="1008"/>
+        <location filename="../menu.py" line="1007"/>
         <source>删除此插件后，将无法恢复。</source>
         <translation>このプラグインを削除すると、復元できません。</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="1037"/>
+        <location filename="../menu.py" line="1036"/>
         <source>我再想想……</source>
         <translation>もう少し考えますね…</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="1052"/>
+        <location filename="../menu.py" line="1051"/>
         <source>卸载成功</source>
         <translation>ｱﾝｲﾝｽﾄｰﾙ成功</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="1055"/>
+        <location filename="../menu.py" line="1054"/>
         <source>插件 “{title}” 已卸载。请重启 Class Widgets 以完全移除。</source>
         <translation>ﾌﾟﾗｸﾞｲﾝ「{title}」はアンインストールされました。完全に削除するには Class Widgets を再起動してください。</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="1065"/>
+        <location filename="../menu.py" line="1064"/>
         <source>卸载失败</source>
         <translation>ｱﾝｲﾝｽﾄｰﾙ失敗</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="1068"/>
+        <location filename="../menu.py" line="1067"/>
         <source>卸载插件 “{title}” 时出错，请查看日志获取详细信息。</source>
         <translation>ﾌﾟﾗｸﾞｲﾝ「{title}」のｱﾝｲﾝｽﾄｰﾙ中にエラーが発生しました。詳細はログを確認してください。</translation>
     </message>
@@ -4714,17 +4714,17 @@ Class Widgets を更新してから、このプラグインのインストール
 <context>
     <name>selectCity</name>
     <message>
-        <location filename="../menu.py" line="650"/>
+        <location filename="../menu.py" line="649"/>
         <source>经纬度获取失败</source>
         <translation>緯度と経度の取得に失敗しました</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="664"/>
+        <location filename="../menu.py" line="663"/>
         <source>经度和纬度必须是数字。</source>
         <translation>緯度と経度は数値でなければなりません。</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="668"/>
+        <location filename="../menu.py" line="667"/>
         <source>经度必须在 -180 到 180 之间，纬度必须在 -90 到 90 之间。</source>
         <translation>経度は -180 から 180 の間、緯度は -90 から 90 の間である必要があります。</translation>
     </message>
