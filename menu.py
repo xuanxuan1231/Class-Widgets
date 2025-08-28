@@ -417,7 +417,6 @@ def open_plaza():
 def cleanup_plaza():
     global plugin_plaza
     logger.info('关闭“插件广场”')
-    del plugin_plaza
 
 
 def get_timeline() -> Dict[str, Dict[str, List[Tuple[int, str, int, int]]]]:
