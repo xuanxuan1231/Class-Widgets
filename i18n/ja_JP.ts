@@ -36,64 +36,64 @@
 <context>
     <name>DesktopWidget</name>
     <message>
-        <location filename="../main.py" line="1904"/>
-        <location filename="../main.py" line="2406"/>
+        <location filename="../main.py" line="1908"/>
+        <location filename="../main.py" line="2410"/>
         <source>{year} 年 {month}</source>
         <translation>{year} 年 {month}</translation>
     </message>
     <message>
-        <location filename="../main.py" line="1910"/>
-        <location filename="../main.py" line="2411"/>
+        <location filename="../main.py" line="1914"/>
+        <location filename="../main.py" line="2415"/>
         <source>{day}日  {week}</source>
         <translation>{day}日  {week}</translation>
     </message>
     <message>
-        <location filename="../main.py" line="2324"/>
+        <location filename="../main.py" line="2328"/>
         <source>完全隐藏/显示小组件</source>
         <translation>ウィジェットを完全に非表示／表示にする</translation>
     </message>
     <message>
-        <location filename="../main.py" line="2329"/>
+        <location filename="../main.py" line="2333"/>
         <source>最小化为浮窗</source>
         <translation>フローティングウィンドウとして最小化</translation>
     </message>
     <message>
-        <location filename="../main.py" line="2337"/>
+        <location filename="../main.py" line="2341"/>
         <source>插件广场</source>
         <translation>プラグイン広場</translation>
     </message>
     <message>
-        <location filename="../main.py" line="2338"/>
+        <location filename="../main.py" line="2342"/>
         <source>额外选项</source>
         <translation>追加オプション</translation>
     </message>
     <message>
-        <location filename="../main.py" line="2339"/>
+        <location filename="../main.py" line="2343"/>
         <source>设置</source>
         <translation>設定</translation>
     </message>
     <message>
-        <location filename="../main.py" line="2343"/>
+        <location filename="../main.py" line="2347"/>
         <source>重新启动</source>
         <translation>再起動</translation>
     </message>
     <message>
-        <location filename="../main.py" line="2344"/>
+        <location filename="../main.py" line="2348"/>
         <source>退出</source>
         <translation>戻る</translation>
     </message>
     <message>
-        <location filename="../main.py" line="2451"/>
+        <location filename="../main.py" line="2455"/>
         <source>&lt; - 分钟</source>
         <translation>&lt; - 分</translation>
     </message>
     <message>
-        <location filename="../main.py" line="2454"/>
+        <location filename="../main.py" line="2458"/>
         <source>&lt;&#x2005;{minutes}&#x2005;分钟</source>
         <translation>&lt;&#x2005;{minutes}&#x2005;分</translation>
     </message>
     <message>
-        <location filename="../main.py" line="2466"/>
+        <location filename="../main.py" line="2470"/>
         <source>距离 {cd_text} 还有</source>
         <translation>{cd_text} まであと</translation>
     </message>
@@ -106,7 +106,7 @@
         <translation type="vanished">{data}</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3227"/>
+        <location filename="../main.py" line="3231"/>
         <source>未知</source>
         <translation>未知の</translation>
     </message>
@@ -115,7 +115,7 @@
         <translation type="vanished">{data}警報</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3225"/>
+        <location filename="../main.py" line="3229"/>
         <source>{city} · 未知</source>
         <translation>{city} · アンノウン</translation>
     </message>
@@ -219,12 +219,12 @@
 <context>
     <name>FloatingWidget</name>
     <message>
-        <location filename="../main.py" line="1611"/>
+        <location filename="../main.py" line="1615"/>
         <source>&lt; - 分钟</source>
         <translation>&lt; - 分</translation>
     </message>
     <message>
-        <location filename="../main.py" line="1615"/>
+        <location filename="../main.py" line="1619"/>
         <source>&lt;&#x2005;{minutes}&#x2005;分钟</source>
         <translation>&lt;&#x2005;{minutes}&#x2005;分</translation>
     </message>
@@ -3219,7 +3219,7 @@
         <translation>Splash</translation>
     </message>
     <message>
-        <location filename="../view/splash.ui" line="297"/>
+        <location filename="../view/splash.ui" line="329"/>
         <source>正在启动...</source>
         <translation>起動中です…</translation>
     </message>
@@ -3613,7 +3613,7 @@
 <context>
     <name>WidgetsManager</name>
     <message>
-        <location filename="../main.py" line="1181"/>
+        <location filename="../main.py" line="1185"/>
         <source>未知组件</source>
         <translation>未知のコンポーネント</translation>
     </message>
@@ -4264,25 +4264,25 @@
         <translation>これは通知の例です</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3277"/>
-        <location filename="../main.py" line="3311"/>
+        <location filename="../main.py" line="3281"/>
+        <location filename="../main.py" line="3315"/>
         <source>上课时自动隐藏</source>
         <translation>授業中に自動非表示</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3279"/>
-        <location filename="../main.py" line="3313"/>
+        <location filename="../main.py" line="3283"/>
+        <location filename="../main.py" line="3317"/>
         <source>窗口最大化时隐藏</source>
         <translation>ウィンドウ最大化時に非表示</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3281"/>
-        <location filename="../main.py" line="3315"/>
+        <location filename="../main.py" line="3285"/>
+        <location filename="../main.py" line="3319"/>
         <source>暂时无法变更“状态”</source>
         <translation>現在「状態」を変更できません</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3287"/>
+        <location filename="../main.py" line="3291"/>
         <source>您正在使用 {hide_mode_text} 模式，无法变更隐藏状态
 若变更状态，将修改隐藏模式“灵活隐藏” (您稍后可以在“设置”中更改此选项)
 您确定要隐藏组件吗?</source>
@@ -4291,19 +4291,19 @@
 コンポーネントを非表示にしてもよろしいですか？</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3290"/>
-        <location filename="../main.py" line="3324"/>
+        <location filename="../main.py" line="3294"/>
+        <location filename="../main.py" line="3328"/>
         <source>确定</source>
         <translation>確定</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3292"/>
-        <location filename="../main.py" line="3326"/>
+        <location filename="../main.py" line="3296"/>
+        <location filename="../main.py" line="3330"/>
         <source>取消</source>
         <translation>ｷｬﾝｾﾙ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3321"/>
+        <location filename="../main.py" line="3325"/>
         <source>您正在使用 {hide_mode_text} 模式，无法变更隐藏状态
 若变更状态，将修改隐藏模式“灵活隐藏” (您可以在“设置”中更改此选项)
 您确定要隐藏组件吗?</source>
@@ -4312,87 +4312,87 @@
 コンポーネントを非表示にしてもよろしいですか？</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3642"/>
+        <location filename="../main.py" line="3646"/>
         <source>检查多开...</source>
         <translation>多重起動をチェックしています…</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3657"/>
+        <location filename="../main.py" line="3661"/>
         <source>Class Widgets 正在运行</source>
         <translation>Class Widgets が実行中です</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3662"/>
+        <location filename="../main.py" line="3666"/>
         <source>Class Widgets 正在运行！请勿打开多个实例，否则将会出现不可预知的问题。
 (若您需要打开多个实例，请在“设置”-&gt;“高级选项”中启用“允许程序多开”)</source>
         <translation>Class Widgets が実行中です！複数のインスタンスを開かないでください。予期しない問題が発生する可能性があります。
 （複数のインスタンスを開く必要がある場合は、「設定」→「高度なオプション」で「プログラムの多重起動を許可」を有効にしてください）</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3682"/>
+        <location filename="../main.py" line="3686"/>
         <source>初始化颜色监视器...</source>
         <translation>配色モードの監視を初期化しています…</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3692"/>
+        <location filename="../main.py" line="3696"/>
         <source>检查缩放...</source>
         <translation>拡大率をチェックしています…</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3698"/>
+        <location filename="../main.py" line="3702"/>
         <source>缩放系数过大</source>
         <translation>拡大率が大きすぎます</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3702"/>
+        <location filename="../main.py" line="3706"/>
         <source>当前缩放系数为 {scale_factor}%，可能导致显示异常。
 建议将缩放系数设置为 100% 到 180% 之间。</source>
         <translation>現在の拡大率は {scale_factor}% です。表示に問題が発生する可能性があります。
 拡大率を100%から180%の間に設定することをお勧めします。</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3711"/>
+        <location filename="../main.py" line="3715"/>
         <source>获取系统版本...</source>
         <translation>システムバージョンを取得しています…</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3730"/>
+        <location filename="../main.py" line="3734"/>
         <source>初始化窗口管理器...</source>
         <translation>ウィンドウマネージャーを初期化しています…</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3737"/>
+        <location filename="../main.py" line="3741"/>
         <source>检查初次启动...</source>
         <translation>初回起動をチェックしています…</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3749"/>
+        <location filename="../main.py" line="3753"/>
         <source>初始化插件管理器...</source>
         <translation>プラグインマネージャーを初期化しています…</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3755"/>
+        <location filename="../main.py" line="3759"/>
         <source>加载窗口...</source>
         <translation>ウィンドウを読み込んでいます…</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3759"/>
+        <location filename="../main.py" line="3763"/>
         <source>加载课程...</source>
         <translation>コースを読み込んでいます…</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3766"/>
+        <location filename="../main.py" line="3770"/>
         <source>加载隐藏状态...</source>
         <translation>非表示状態を読み込んでいます…</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3785"/>
+        <location filename="../main.py" line="3789"/>
         <source>检查更新...</source>
         <translation>更新を確認しています…</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3664"/>
-        <location filename="../main.py" line="3704"/>
+        <location filename="../main.py" line="3668"/>
+        <location filename="../main.py" line="3708"/>
         <source>好</source>
         <translation>はい</translation>
     </message>
