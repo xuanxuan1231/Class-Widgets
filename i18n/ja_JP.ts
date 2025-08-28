@@ -3227,59 +3227,48 @@
 <context>
     <name>SplashWelcomePage</name>
     <message>
-        <location filename="../view/splash1.ui" line="20"/>
         <source>Welcome</source>
-        <translation>Welcome</translation>
+        <translation type="vanished">Welcome</translation>
     </message>
     <message>
-        <location filename="../view/splash1.ui" line="176"/>
         <source>Class Widgets</source>
-        <translation>Class Widgets</translation>
+        <translation type="vanished">Class Widgets</translation>
     </message>
     <message>
-        <location filename="../view/splash1.ui" line="186"/>
         <source>v1.2.0.0 LTS</source>
-        <translation>v1.2.0.0 LTS</translation>
+        <translation type="vanished">v1.2.0.0 LTS</translation>
     </message>
     <message>
-        <location filename="../view/splash1.ui" line="218"/>
         <source>© 2025 RinLit</source>
-        <translation>© 2025 RinLit</translation>
+        <translation type="vanished">© 2025 RinLit</translation>
     </message>
     <message>
-        <location filename="../view/splash1.ui" line="252"/>
         <source>Initializing modules…</source>
-        <translation>モジュールを初期化しています…</translation>
+        <translation type="vanished">モジュールを初期化しています…</translation>
     </message>
     <message>
-        <location filename="../view/splash1.ui" line="268"/>
         <source>Release notes</source>
-        <translation>リリースノート</translation>
+        <translation type="vanished">リリースノート</translation>
     </message>
     <message>
-        <location filename="../view/splash1.ui" line="272"/>
         <source>https://github.com/Class-Widgets/Class-Widgets/releases</source>
-        <translation>https://github.com/Class-Widgets/Class-Widgets/releases</translation>
+        <translation type="vanished">https://github.com/Class-Widgets/Class-Widgets/releases</translation>
     </message>
     <message>
-        <location filename="../view/splash1.ui" line="584"/>
         <source>Documentation</source>
-        <translation>ドキュメント</translation>
+        <translation type="vanished">ドキュメント</translation>
     </message>
     <message>
-        <location filename="../view/splash1.ui" line="588"/>
         <source>https://www.yuque.com/rinlit/class-widgets_help/gs3gsbms1iivgibm</source>
-        <translation>https://www.yuque.com/rinlit/class-widgets_help/gs3gsbms1iivgibm</translation>
+        <translation type="vanished">https://www.yuque.com/rinlit/class-widgets_help/gs3gsbms1iivgibm</translation>
     </message>
     <message>
-        <location filename="../view/splash1.ui" line="596"/>
         <source>Community</source>
-        <translation>コミュニティ</translation>
+        <translation type="vanished">コミュニティ</translation>
     </message>
     <message>
-        <location filename="../view/splash1.ui" line="600"/>
         <source>https://github.com/Class-Widgets/Class-Widgets</source>
-        <translation>https://github.com/Class-Widgets/Class-Widgets</translation>
+        <translation type="vanished">https://github.com/Class-Widgets/Class-Widgets</translation>
     </message>
 </context>
 <context>
@@ -3558,22 +3547,22 @@
 <context>
     <name>WeatherAlertMsgbox</name>
     <message>
-        <location filename="../view/menu/weather_alert_msgbox.ui" line="15"/>
+        <location filename="../view/menu/weather_alert_msgbox.ui" line="20"/>
         <source>WeatherAlertMsgbox</source>
         <translation>WeatherAlertMsgbox</translation>
     </message>
     <message>
-        <location filename="../view/menu/weather_alert_msgbox.ui" line="106"/>
+        <location filename="../view/menu/weather_alert_msgbox.ui" line="114"/>
         <source>-- 红色预警</source>
         <translation>-- 赤色警報</translation>
     </message>
     <message>
-        <location filename="../view/menu/weather_alert_msgbox.ui" line="141"/>
+        <location filename="../view/menu/weather_alert_msgbox.ui" line="152"/>
         <source>0000-00-00 00:00</source>
         <translation>0000-00-00 00:00</translation>
     </message>
     <message>
-        <location filename="../view/menu/weather_alert_msgbox.ui" line="241"/>
+        <location filename="../view/menu/weather_alert_msgbox.ui" line="257"/>
         <source>NAN</source>
         <translation>NAN</translation>
     </message>

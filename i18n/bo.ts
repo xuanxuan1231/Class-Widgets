@@ -3099,64 +3099,6 @@
     </message>
 </context>
 <context>
-    <name>SplashWelcomePage</name>
-    <message>
-        <location filename="../view/splash1.ui" line="20"/>
-        <source>Welcome</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../view/splash1.ui" line="176"/>
-        <source>Class Widgets</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../view/splash1.ui" line="186"/>
-        <source>v1.2.0.0 LTS</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../view/splash1.ui" line="218"/>
-        <source>© 2025 RinLit</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../view/splash1.ui" line="252"/>
-        <source>Initializing modules…</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../view/splash1.ui" line="268"/>
-        <source>Release notes</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../view/splash1.ui" line="272"/>
-        <source>https://github.com/Class-Widgets/Class-Widgets/releases</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../view/splash1.ui" line="584"/>
-        <source>Documentation</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../view/splash1.ui" line="588"/>
-        <source>https://www.yuque.com/rinlit/class-widgets_help/gs3gsbms1iivgibm</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../view/splash1.ui" line="596"/>
-        <source>Community</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../view/splash1.ui" line="600"/>
-        <source>https://github.com/Class-Widgets/Class-Widgets</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>TTSAdvancedSettings</name>
     <message>
         <location filename="../view/menu/tts_settings.ui" line="14"/>
@@ -3427,22 +3369,22 @@
 <context>
     <name>WeatherAlertMsgbox</name>
     <message>
-        <location filename="../view/menu/weather_alert_msgbox.ui" line="15"/>
+        <location filename="../view/menu/weather_alert_msgbox.ui" line="20"/>
         <source>WeatherAlertMsgbox</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../view/menu/weather_alert_msgbox.ui" line="106"/>
+        <location filename="../view/menu/weather_alert_msgbox.ui" line="114"/>
         <source>-- 红色预警</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../view/menu/weather_alert_msgbox.ui" line="141"/>
+        <location filename="../view/menu/weather_alert_msgbox.ui" line="152"/>
         <source>0000-00-00 00:00</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../view/menu/weather_alert_msgbox.ui" line="241"/>
+        <location filename="../view/menu/weather_alert_msgbox.ui" line="257"/>
         <source>NAN</source>
         <translation type="unfinished"></translation>
     </message>
