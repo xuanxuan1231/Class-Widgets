@@ -79,7 +79,6 @@ class WeatherReminderThread(QThread):
                 if self._is_running:
                     self.reminders_ready.emit(reminders)
             if self._is_running:
-                from weather import get_unified_weather_alerts
 
                 unified_alert_data = get_unified_weather_alerts(self.weather_data)
                 all_alerts = unified_alert_data.get('all_alerts', [])
