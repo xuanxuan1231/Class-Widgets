@@ -302,8 +302,6 @@ class EdgeTTSProvider(TTSVoiceProvider):
     def _fetch_voices(self) -> List[TTSVoice]:
         """获取 Edge TTS 语音列表"""
         try:
-            import asyncio
-
             try:
                 current_loop = asyncio.get_running_loop()
                 if current_loop and not current_loop.is_closed():
@@ -350,8 +348,6 @@ class EdgeTTSProvider(TTSVoiceProvider):
     def _fetch_voices_sync(self) -> List[TTSVoice]:
         """同步方式获取 Edge TTS 语音列表"""
         try:
-            import asyncio
-
             loop = None
             try:
                 loop = asyncio.new_event_loop()
@@ -380,8 +376,6 @@ class EdgeTTSProvider(TTSVoiceProvider):
     def synthesize(self, text: str, voice_id: str, output_path: str, speed: float = 1.0) -> bool:
         """合成 Edge TTS 语音"""
         try:
-            import asyncio
-
             def _run_synthesis():
                 loop = None
                 try:

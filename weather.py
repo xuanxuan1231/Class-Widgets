@@ -15,6 +15,7 @@ from PyQt5.QtCore import QCoreApplication, QEventLoop, QThread, pyqtSignal
 
 from basic_dirs import CW_HOME
 from file import config_center
+from network_thread import proxies
 
 ICON_DIR = CW_HOME / "img" / "weather"
 
@@ -786,7 +787,7 @@ class WeatherManager:
                             )
                         # 明日降水提醒
                         elif precip_info['tomorrow_precipitation']:
-                            days = precip_info['precipitation_day']  # 先留着吧
+                            #  days = precip_info['precipitation_day']  # 先留着吧
                             reminders.append(
                                 {
                                     'type': 'tomorrow_precipitation',
@@ -849,8 +850,6 @@ class GenericWeatherProvider(WeatherapiProvider):
             raise ValueError(f'{self.api_name}: location_key 参数不能为空')
 
         try:
-            from network_thread import proxies
-
             url = self.base_url.format(location_key=location_key, days=1, key=api_key)
             # logger.debug(f'{self.api_name} 请求URL: {url}')
             response = requests.get(url, proxies=proxies, timeout=10)
@@ -869,8 +868,6 @@ class GenericWeatherProvider(WeatherapiProvider):
             raise ValueError(f'{self.api_name}: location_key 参数不能为空')
 
         try:
-            from network_thread import proxies
-
             alert_url = self.config['alerts'].get('url', '')
             if not alert_url:
                 return None
@@ -967,8 +964,6 @@ class GenericWeatherProvider(WeatherapiProvider):
             return {}
 
         try:
-            from network_thread import proxies
-
             url_template = forecast_config.get('url', '')
             if not url_template:
                 return {}
@@ -1515,8 +1510,6 @@ class QWeatherProvider(GenericWeatherProvider):
             raise ValueError(f'{self.api_name}: location_key 参数不能为空')
 
         try:
-            from network_thread import proxies
-
             if ',' in location_key:
                 lon, lat = location_key.split(',')
                 lat = f"{float(lat):.2f}"
@@ -1719,8 +1712,6 @@ class QWeatherProvider(GenericWeatherProvider):
             raise ValueError(f'{self.api_name}: location_key 参数不能为空')
 
         try:
-            from network_thread import proxies
-
             if ',' in location_key:
                 lon, lat = location_key.split(',')
                 lat = f"{float(lat):.2f}"
@@ -1796,8 +1787,6 @@ class QWeatherProvider(GenericWeatherProvider):
             raise ValueError(f'{self.api_name}: location_key 参数不能为空')
 
         try:
-            from network_thread import proxies
-
             if ',' in location_key:
                 lon, lat = location_key.split(',')
                 lat = f"{float(lat):.2f}"
@@ -2218,8 +2207,6 @@ class OpenMeteoProvider(GenericWeatherProvider):
             raise ValueError(f'{self.api_name}: location_key 不为逗号分隔的经纬度模式')
 
         try:
-            from network_thread import proxies
-
             weather_url = self.base_url.format(lon=lon, lat=lat)
             headers = {'User-Agent': 'ClassWidgets'}
             weather_response = requests.get(
@@ -2493,8 +2480,6 @@ class OpenMeteoProvider(GenericWeatherProvider):
             raise ValueError(f'{self.api_name}: location_key 不为逗号分隔的经纬度模式')
 
         try:
-            from network_thread import proxies
-
             # Open-Meteo的预报数据已经在主API中包含了
             url = self.base_url.format(lon=lon, lat=lat)
             headers = {

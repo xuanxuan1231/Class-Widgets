@@ -953,6 +953,7 @@ class PluginMethod:  # 插件方法
             return config.get(section, option)
         except Exception as e:
             logger.error(f"插件读取配置文件失败：{e}")
+            return None
 
     @staticmethod
     def generate_speech(
@@ -1732,17 +1733,12 @@ class FloatingWidget(QWidget):  # 浮窗
         duration = int(base_duration + (max_duration - base_duration) * (distance_ratio**0.7))
         duration = max(min_duration, min(duration, max_duration))
         # 多平台兼容
-        if platform.system() == "Darwin":
-            curve = QEasingCurve.Type.OutQuad
-            duration = int(duration * 0.85)
-        curve = QEasingCurve.Type.Linear
-        if platform.system() == "Windows":
-            curve = QEasingCurve.Type.OutCubic
+        curve = QEasingCurve.Type.OutCubic
+        if system == "Windows":
             if current_pos.y() > screen_center_y:
-                duration += 50  # 底部移动稍慢
-            curve = QEasingCurve.Type.InOutQuad
-        elif platform.system() == "Darwin":
-            curve = QEasingCurve.Type.InOutQuad  # macOS 也用这个吧
+                duration += 50
+        elif system == "Darwin":
+            duration = int(duration * 0.85)
 
         self.animation = QPropertyAnimation(self, b"windowOpacity")
         self.animation.setDuration(int(duration * 1.15))
@@ -3233,7 +3229,7 @@ class DesktopWidget(QWidget):  # 主要小组件
                         self._reset_weather_alert_state()
                     current_city = self.findChild(QLabel, 'current_city')
                     if current_city:
-                        city_name = city = db.search_by_num(
+                        city_name = db.search_by_num(
                             config_center.read_conf('Weather', 'city')
                         )
                         if city_name != 'coordinates':
@@ -3577,7 +3573,6 @@ def init() -> None:
 
     # 获取屏幕横向分辨率
     screen_geometry = app.primaryScreen().availableGeometry()
-    screen_width = screen_geometry.width()
 
     widgets = list_.get_widget_config()
 

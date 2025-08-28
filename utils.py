@@ -330,7 +330,6 @@ class UnionUpdateTimer(QObject):
         """移除回调函数"""
         with self._lock:
             if callback in self.callback_info:
-                interval = self.callback_info.pop(callback)
                 self.task_heap = [
                     (t, cb_id, cb, i) for t, cb_id, cb, i in self.task_heap if cb != callback
                 ]

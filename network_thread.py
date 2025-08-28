@@ -13,7 +13,6 @@ from PyQt5.QtCore import QThread, pyqtSignal
 import conf
 import list_
 import utils
-import weather as db
 from basic_dirs import CACHE_HOME, CW_HOME
 from file import config_center
 
@@ -216,6 +215,8 @@ class getCity(QThread):
 
     def run(self) -> None:
         try:
+            import weather as db
+
             city_data = self.get_city()
             config_center.write_conf('Weather', 'city', db.search_code_by_name(city_data))
         except Exception as e:

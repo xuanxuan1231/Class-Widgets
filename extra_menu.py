@@ -24,7 +24,7 @@ from qfluentwidgets import FluentIcon as fIcon
 import conf
 import file
 import list_
-from conf import CW_HOME
+from conf import CW_HOME, get_week_type
 from file import config_center, schedule_center
 from menu import SettingsMenu
 from utils import TimeManagerFactory
@@ -81,7 +81,7 @@ class ExtraMenu(FluentWindow):
 
         select_temp_schedule = self.findChild(ComboBox, 'select_temp_schedule')  # 选择替换课表
         select_temp_schedule.addItems(list_.week_type)
-        select_temp_schedule.setCurrentIndex(conf.get_week_type())
+        select_temp_schedule.setCurrentIndex(get_week_type())
         select_temp_schedule.currentIndexChanged.connect(self.refresh_schedule_list)  # 日期选择变化
 
         tmp_schedule_list = self.findChild(ListWidget, 'schedule_list')  # 换课列表
@@ -103,7 +103,7 @@ class ExtraMenu(FluentWindow):
 
     @staticmethod
     def load_schedule() -> List[str]:
-        if conf.get_week_type():
+        if get_week_type():
             return schedule_center.schedule_data['schedule_even'][str(current_week)]
         return schedule_center.schedule_data['schedule'][str(current_week)]
 
@@ -205,7 +205,7 @@ class ExtraMenu(FluentWindow):
         for i in range(se_schedule_list.count()):  # 缓存ListWidget数据至列表
             item_text = se_schedule_list.item(i).text()
             cache_list.append(item_text)
-        if conf.get_week_type():
+        if get_week_type():
             temp_schedule['schedule_even'][str(current_week)] = cache_list
         else:
             temp_schedule['schedule'][str(current_week)] = cache_list

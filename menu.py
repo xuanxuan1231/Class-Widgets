@@ -105,16 +105,14 @@ from qfluentwidgets.common import themeColor
 from qfluentwidgets.components.widgets import ListItemDelegate
 
 import conf
-import file
 import i18n_manager
 import list_
 import tip_toast
 import utils
 import weather as wd
 from basic_dirs import CONFIG_HOME, CW_HOME, PLUGIN_HOME, SCHEDULE_DIR, THEME_HOME
-from conf import load_theme_config
 from cses_mgr import CSES_Converter
-from file import config_center, schedule_center
+from file import config_center, schedule_center, load_from_json
 from generate_speech import (
     TTSEngine,
     generate_speech_sync,
@@ -126,8 +124,6 @@ from generate_speech import (
 from network_thread import VersionThread, proxies, scheduleThread
 from plugin import p_loader
 from plugin_plaza import PluginPlaza
-from utils import TimeManagerFactory
-
 
 class I18nManager:
     """i18n"""
@@ -266,7 +262,7 @@ class I18nManager:
                 self.load_language_view(current_lang)
                 return False
 
-            current_theme = load_theme_config(config_center.read_conf('General', 'theme'))
+            current_theme = conf.load_theme_config(config_center.read_conf('General', 'theme'))
             theme_translator = self._load_translation_file(
                 Path(current_theme.path / 'i18n' / f'{lang_code}.qm')
             )
@@ -381,7 +377,7 @@ from PyQt5.QtCore import QCoreApplication
 
 global_i18n_manager = None
 
-today = TimeManagerFactory.get_instance().get_today()
+today = utils.TimeManagerFactory.get_instance().get_today()
 plugin_plaza = None
 
 plugin_dict = {}  # 插件字典
@@ -458,7 +454,7 @@ def switch_checked(section, key, checked):
 
 
 def get_theme_name():
-    return load_theme_config(config_center.read_conf('General', 'theme')).path.name
+    return conf.load_theme_config(config_center.read_conf('General', 'theme')).path.name
 
 
 def load_schedule_dict(schedule, week_type, part, part_name):
@@ -827,7 +823,8 @@ class licenseDialog(MessageBoxBase):  # 显示软件许可协议
         self.yesButton.setText(QCoreApplication.translate('menu', '好'))  # 按钮组件汉化
         self.cancelButton.hide()
         self.buttonLayout.insertStretch(0, 1)
-        self.license_text.setPlainText(open('LICENSE', encoding='utf-8').read())
+        with open('LICENSE', encoding='utf-8') as f:
+            self.license_text.setPlainText(f.read())
         self.license_text.setReadOnly(True)
 
         # 将组件添加到布局中
@@ -2948,14 +2945,12 @@ class SettingsMenu(FluentWindow):
                 first_voice_id = available_voices[0]['id']
                 config_center.write_conf('TTS', 'voice_id', first_voice_id)
             else:
-                voice_selector.setEnabled(False)
                 switch_enable_TTS.setEnabled(False)
         elif available_voices:  # 默认选择
             voice_selector.setCurrentIndex(0)
             first_voice_id = available_voices[0]['id']
             config_center.write_conf('TTS', 'voice_id', first_voice_id)
         else:  # 理论不会到这里
-            voice_selector.setEnabled(False)
             switch_enable_TTS.setEnabled(False)
 
         voice_selector.setEnabled(True)
@@ -3700,7 +3695,7 @@ class SettingsMenu(FluentWindow):
         is_ntp = conf_time_get.currentIndex() == 1
         config_center.write_conf('Time', 'type', 'ntp' if is_ntp else 'local')
         try:
-            new_manager = TimeManagerFactory.reset_instance()
+            new_manager = utils.TimeManagerFactory.reset_instance()
             utils.time_manager = new_manager
             try:
                 if hasattr(self, 'parent') and self.parent and hasattr(self.parent, 'update_data'):
@@ -3790,7 +3785,7 @@ class SettingsMenu(FluentWindow):
                             ntp_sync_timezone=ntp_sync_timezone.currentText()
                         ),
                     )
-                    TimeManagerFactory.reset_instance()
+                    utils.TimeManagerFactory.reset_instance()
                     QTimer.singleShot(100, self.update_ntp_status_display)
                     self._start_async_ntp_sync(utils.time_manager)
                 except Exception as e:
@@ -5084,7 +5079,7 @@ class SettingsMenu(FluentWindow):
             widgets_preview.addItem(left_spacer)
 
             theme_folder = config_center.read_conf("General", "theme")
-            theme_info = load_theme_config(str(theme_folder))
+            theme_info = conf.load_theme_config(str(theme_folder))
             theme_config = theme_info.config
             theme_path = theme_info.path
             for i in range(len(widget_config)):
@@ -5120,7 +5115,7 @@ class SettingsMenu(FluentWindow):
         config_list = list_.get_schedule_config()
         self.cf_file_list = []
         for i, cfg in enumerate(config_list):
-            url = file.load_from_json(cfg).get('url', 'local')
+            url = load_from_json(cfg).get('url', 'local')
             self.cf_file_list.append(self.cf_add_item(cfg, url, i))
 
         cur = config_list.index(config_center.read_conf('General', 'schedule'))
