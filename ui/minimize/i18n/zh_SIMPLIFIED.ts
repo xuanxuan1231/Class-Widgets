@@ -4,38 +4,24 @@
 <context>
     <name>Theme</name>
     <message>
-        <location filename="../widget-floating.ui" line="20"/>
-        <location filename="../dark/widget-floating.ui" line="20"/>
-        <location filename="../dark/toast-open_dialog.ui" line="20"/>
-        <location filename="../toast-open_dialog.ui" line="20"/>
         <source>Form</source>
-        <translation>心情</translation>
+        <translation type="vanished">心情</translation>
     </message>
     <message>
-        <location filename="../dark/toast-open_dialog.ui" line="105"/>
-        <location filename="../toast-open_dialog.ui" line="105"/>
         <source>%p</source>
-        <translation>%p</translation>
+        <translation type="vanished">%p</translation>
     </message>
     <message>
-        <location filename="../dark/toast-open_dialog.ui" line="142"/>
-        <location filename="../toast-open_dialog.ui" line="142"/>
         <source>即将打开</source>
-        <translation>开！</translation>
+        <translation type="vanished">开！</translation>
     </message>
     <message>
-        <location filename="../widget-floating.ui" line="146"/>
-        <location filename="../dark/widget-floating.ui" line="153"/>
-        <location filename="../dark/toast-open_dialog.ui" line="171"/>
-        <location filename="../toast-open_dialog.ui" line="171"/>
         <source>测试</source>
-        <translation>捉虫子</translation>
+        <translation type="vanished">捉虫子</translation>
     </message>
     <message>
-        <location filename="../dark/toast-open_dialog.ui" line="210"/>
-        <location filename="../toast-open_dialog.ui" line="210"/>
         <source>取消</source>
-        <translation>跑路</translation>
+        <translation type="vanished">跑路</translation>
     </message>
     <message>
         <location filename="../widget-base.ui" line="26"/>
@@ -45,13 +31,13 @@
     </message>
     <message>
         <location filename="../widget-base.ui" line="90"/>
-        <location filename="../dark/widget-base.ui" line="90"/>
+        <location filename="../dark/widget-base.ui" line="91"/>
         <source>Title</source>
         <translation>抬头</translation>
     </message>
     <message>
         <location filename="../widget-base.ui" line="127"/>
-        <location filename="../dark/widget-base.ui" line="127"/>
+        <location filename="../dark/widget-base.ui" line="128"/>
         <source>Content</source>
         <translation>康疼特</translation>
     </message>
@@ -80,42 +66,38 @@
         <translation>幸福倒计时</translation>
     </message>
     <message>
-        <location filename="../widget-countdown.ui" line="84"/>
-        <location filename="../dark/widget-countdown.ui" line="84"/>
+        <location filename="../widget-countdown.ui" line="93"/>
+        <location filename="../dark/widget-countdown.ui" line="93"/>
         <source>倒计时</source>
         <translation>几点了啊</translation>
     </message>
     <message>
-        <location filename="../widget-countdown.ui" line="116"/>
-        <location filename="../dark/widget-countdown.ui" line="116"/>
+        <location filename="../widget-countdown.ui" line="125"/>
+        <location filename="../dark/widget-countdown.ui" line="125"/>
         <source>00:00</source>
         <translation>11:45</translation>
     </message>
     <message>
         <location filename="../dark/widget-current-activity.ui" line="26"/>
-        <location filename="../dark/widget-current-activity.ui" line="108"/>
+        <location filename="../dark/widget-current-activity.ui" line="103"/>
         <location filename="../widget-current-activity.ui" line="26"/>
         <location filename="../widget-current-activity.ui" line="103"/>
         <source>当前活动</source>
         <translation>活跃的当前</translation>
     </message>
     <message>
-        <location filename="../dark/widget-current-activity.ui" line="56"/>
+        <location filename="../dark/widget-current-activity.ui" line="51"/>
         <location filename="../widget-current-activity.ui" line="51"/>
         <source>  测试</source>
         <translation>  捉虫子</translation>
     </message>
     <message>
-        <location filename="../widget-floating.ui" line="165"/>
-        <location filename="../dark/widget-floating.ui" line="178"/>
         <source>&lt;0分钟</source>
-        <translation>没时间了</translation>
+        <translation type="vanished">没时间了</translation>
     </message>
     <message>
-        <location filename="../widget-floating.ui" line="206"/>
-        <location filename="../dark/widget-floating.ui" line="219"/>
         <source>%p%</source>
-        <translation>@w@</translation>
+        <translation type="vanished">@w@</translation>
     </message>
     <message>
         <location filename="../widget-next-activity.ui" line="26"/>
@@ -132,7 +114,7 @@
     <message>
         <location filename="../widget-next-activity.ui" line="82"/>
         <location filename="../dark/widget-next-activity.ui" line="82"/>
-        <source>测试测试</source>
+        <source>一  二  三  四  五</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -143,13 +125,13 @@
     </message>
     <message>
         <location filename="../dark/widget-time.ui" line="50"/>
-        <location filename="../widget-time.ui" line="49"/>
+        <location filename="../widget-time.ui" line="50"/>
         <source>2025 年  13 月</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../dark/widget-time.ui" line="82"/>
-        <location filename="../widget-time.ui" line="80"/>
+        <location filename="../widget-time.ui" line="82"/>
         <source>32 日 周二</source>
         <translation type="unfinished"></translation>
     </message>
@@ -166,8 +148,8 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../widget-weather.ui" line="128"/>
-        <location filename="../dark/widget-weather.ui" line="128"/>
+        <location filename="../widget-weather.ui" line="129"/>
+        <location filename="../dark/widget-weather.ui" line="129"/>
         <source>114℉</source>
         <translation type="unfinished"></translation>
     </message>
