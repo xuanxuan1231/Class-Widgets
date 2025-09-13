@@ -147,6 +147,8 @@ ex_menu = None
 dark_mode_watcher = None
 was_floating_mode = False  # 浮窗状态
 
+focus_manager = None
+
 if config_center.read_conf('Other', 'do_not_log') != '1':
     logger.add(
         str(LOG_HOME) + "/ClassWidgets_main_{time}.log",
@@ -1070,6 +1072,15 @@ class WidgetsManager:
     def create_widgets(self) -> None:
         for widget in self.widgets:
             widget.show()
+            # print(int(widget.winId()))
+            # print(ctypes.c_void_p(int(widget.winId())).value)
+            if focus_manager:
+                QTimer.singleShot(
+                    0,
+                    lambda w=widget: focus_manager.ignore.emit(
+                        ctypes.c_void_p(int(w.winId())).value
+                    ),
+                )
             logger.info(f'显示小组件：{widget.path, widget.windowTitle()}')
 
     def adjust_ui(self) -> None:  # 更新小组件UI
@@ -1177,6 +1188,13 @@ class WidgetsManager:
             if not fw.animating:
                 self.full_hide_windows()
                 fw.show()
+                if focus_manager:
+                    QTimer.singleShot(
+                        0,
+                        lambda w=fw: focus_manager.ignore.emit(
+                            ctypes.c_void_p(int(w.winId())).value
+                        ),
+                    )
         else:
             self.hide_windows()
 
@@ -1766,6 +1784,11 @@ class FloatingWidget(QWidget):  # 浮窗
 
         self.animation_rect.finished.connect(cleanup)
 
+        if focus_manager:
+            QTimer.singleShot(
+                500, focus_manager.removeIgnore.emit(ctypes.c_void_p(int(self.winId())).value)
+            )
+
     def hideEvent(self, event: QHideEvent) -> None:
         event.accept()
         logger.info('隐藏浮窗')
@@ -1825,6 +1848,8 @@ class FloatingWidget(QWidget):  # 浮窗
             elif hide_mode == '0':
                 mgr.show_windows()
                 self.close()
+        if focus_manager:
+            focus_manager.restoreRequested.emit()
 
     def focusInEvent(self, event: QFocusEvent) -> None:
         self.focusing = True
@@ -2296,6 +2321,11 @@ class DesktopWidget(QWidget):  # 主要小组件
 
             self.backgnd.setGraphicsEffect(shadow_effect)
 
+        if focus_manager:
+            QTimer.singleShot(
+                500, focus_manager.removeIgnore.emit(ctypes.c_void_p(int(self.winId())).value)
+            )
+
     def init_font(self):
         font_path = str(CW_HOME / 'font/HarmonyOS_Sans_SC_Bold.ttf')
         font_id = QFontDatabase.addApplicationFont(font_path)
@@ -2379,6 +2409,8 @@ class DesktopWidget(QWidget):  # 主要小组件
         event.ignore()
         if event.button() == Qt.MouseButton.RightButton:
             self.open_extra_menu()
+        if focus_manager:
+            focus_manager.restoreRequested.emit()
 
     def update_data(self, path: str = '') -> None:
         global current_time, current_week, start_y, today
@@ -2393,17 +2425,19 @@ class DesktopWidget(QWidget):  # 主要小组件
         hide_status = get_hide_status()
 
         if (hide_mode := config_center.read_conf('General', 'hide')) in ['1', '2']:  # 上课自动隐藏
-            if hide_status:
-                mgr.decide_to_hide()
-            else:
-                mgr.show_windows()
+            if mgr.state == hide_status:
+                if hide_status:
+                    mgr.decide_to_hide()
+                else:
+                    mgr.show_windows()
         elif hide_mode == '3':  # 灵活隐藏
             if mgr.hide_status is None or mgr.hide_status[0] != current_state:
                 mgr.hide_status = (-1, hide_status)
-            if mgr.hide_status[1]:
-                mgr.decide_to_hide()
-            else:
-                mgr.show_windows()
+            if mgr.state == mgr.hide_status[1]:
+                if mgr.hide_status[1]:
+                    mgr.decide_to_hide()
+                else:
+                    mgr.show_windows()
 
         if conf.is_temp_week():  # 调休日
             current_week = config_center.read_conf('Temp', 'set_week')
@@ -3359,11 +3393,22 @@ class DesktopWidget(QWidget):  # 主要小组件
             if w.exec():
                 if mgr.state:
                     fw.show()
+                    if focus_manager:
+                        QTimer.singleShot(
+                            0,
+                            lambda w=fw: focus_manager.ignore.emit(
+                                ctypes.c_void_p(int(w.winId())).value
+                            ),
+                        )
                     mgr.full_hide_windows()
                 else:
                     mgr.show_windows()
         elif mgr.state:
             fw.show()
+            if focus_manager:
+                QTimer.singleShot(
+                    0, lambda w=fw: focus_manager.ignore.emit(ctypes.c_void_p(int(w.winId())).value)
+                )
             mgr.full_hide_windows()
         else:
             mgr.show_windows()
@@ -3482,6 +3527,8 @@ class DesktopWidget(QWidget):  # 主要小组件
                 mgr.hide_status = (current_state, 0)
         else:
             event.ignore()
+        if focus_manager:
+            focus_manager.restoreRequested.emit()
 
     def stop(self):
         if mgr:
@@ -3605,6 +3652,10 @@ def init() -> None:
     mgr.init_widgets()
     if not first_start and was_floating_mode and fw:
         fw.show()
+        if focus_manager:
+            QTimer.singleShot(
+                0, lambda w=fw: focus_manager.ignore.emit(ctypes.c_void_p(int(w.winId())).value)
+            )
         mgr.full_hide_windows()
 
     update_timer.add_callback(mgr.update_widgets)
@@ -3727,6 +3778,12 @@ if __name__ == '__main__':
         osVersion = 'macOS ' + platform.mac_ver()[0]
 
     logger.info(f"操作系统：{system}，版本：{osRelease}/{osVersion}")
+
+    if system == 'Windows':
+        splash_window.update_status(
+            (45, QCoreApplication.translate('main', '初始化窗口焦点监视器...'))
+        )
+        focus_manager = utils.PreviousWindowFocusManager()
 
     # list_pyttsx3_voices()
 
