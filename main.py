@@ -37,8 +37,11 @@ from PyQt5.QtGui import (
     QHideEvent,
     QIcon,
     QMouseEvent,
+    QPainter,
+    QPixmap,
     QShowEvent,
 )
+from PyQt5.QtSvg import QSvgRenderer
 from PyQt5.QtWidgets import (
     QApplication,
     QFrame,
@@ -2433,8 +2436,42 @@ class DesktopWidget(QWidget):  # 主要小组件
                     f'background-color: rgba{list_.subject_color("课间")}, 200);'
                 )
 
-            self.current_subject.setIcon(QIcon(icon_path))
-            self.blur_effect.setBlurRadius(25)  # 模糊半径
+            renderer = QSvgRenderer(icon_path)
+            if not renderer.isValid():
+                raise ValueError(f"无效的SVG文件: {icon_path}")
+
+            svg_size = renderer.defaultSize()
+            if svg_size.isEmpty():
+                svg_size = QSize(100, 100)  # 默认尺寸
+            target_size = 100
+            aspect_ratio = svg_size.width() / svg_size.height()
+            if aspect_ratio > 1:
+                final_width = target_size
+                final_height = int(target_size / aspect_ratio)
+            else:
+                final_height = target_size
+                final_width = int(target_size * aspect_ratio)
+            final_size = QSize(final_width, final_height)
+            high_res_size = final_size * 2
+            pixmap = QPixmap(high_res_size)
+            pixmap.fill(Qt.transparent)
+            painter = QPainter(pixmap)
+            painter.setRenderHints(
+                QPainter.Antialiasing | QPainter.SmoothPixmapTransform | QPainter.TextAntialiasing
+            )
+            renderer.render(painter)
+            theme_config = conf.load_theme_config(str('default' if theme is None else theme)).config
+            if (isDarkTheme() and theme_config.support_dark_mode) or (
+                isDarkTheme() and theme_config.default_theme == 'dark'
+            ):
+                # 在暗色模式显示亮色图标
+                painter.setCompositionMode(QPainter.CompositionMode.CompositionMode_SourceIn)
+                painter.fillRect(pixmap.rect(), QColor("#FFFFFF"))
+            painter.end()
+            icon_pixmap = pixmap.scaled(final_size, Qt.KeepAspectRatio, Qt.SmoothTransformation)
+            self.current_subject.setIcon(QIcon(icon_pixmap))
+
+            self.blur_effect.setBlurRadius(25)
             self.blur_effect_label.setGraphicsEffect(self.blur_effect)
 
         elif path == 'widget-next-activity.ui':  # 接下来的活动
