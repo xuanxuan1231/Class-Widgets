@@ -105,7 +105,7 @@ jobs:
           name: ${{ inputs.build_type == 'Nightly' && format('🌙 Nightly Build {0}', inputs.release_version) || format('🚀 Release {0}', inputs.release_version || github.ref_name) }}
           files: release/*
           body_path: CHANGELOG.md
-          draft: ${{ inputs.build_type != 'Release' }}
+          draft: ${{ inputs.build_type == 'Release' }}
           prerelease: ${{ inputs.build_type == 'Nightly' }}
           generate_release_notes: false
           make_latest: ${{ inputs.build_type == 'Release' }}
