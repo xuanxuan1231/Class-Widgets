@@ -29,74 +29,74 @@
 <context>
     <name>DesktopWidget</name>
     <message>
-        <location filename="../main.py" line="1948"/>
-        <location filename="../main.py" line="2461"/>
+        <location filename="../main.py" line="1947"/>
+        <location filename="../main.py" line="2460"/>
         <source>{year} 年 {month}</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="1954"/>
-        <location filename="../main.py" line="2466"/>
+        <location filename="../main.py" line="1953"/>
+        <location filename="../main.py" line="2465"/>
         <source>{day}日  {week}</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="2375"/>
+        <location filename="../main.py" line="2374"/>
         <source>完全隐藏/显示小组件</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="2380"/>
+        <location filename="../main.py" line="2379"/>
         <source>最小化为浮窗</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="2388"/>
+        <location filename="../main.py" line="2387"/>
         <source>插件广场</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="2389"/>
+        <location filename="../main.py" line="2388"/>
         <source>额外选项</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="2390"/>
+        <location filename="../main.py" line="2389"/>
         <source>设置</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="2394"/>
+        <location filename="../main.py" line="2393"/>
         <source>重新启动</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="2395"/>
+        <location filename="../main.py" line="2394"/>
         <source>退出</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="2528"/>
+        <location filename="../main.py" line="2527"/>
         <source>&lt; - 分钟</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="2531"/>
+        <location filename="../main.py" line="2530"/>
         <source>&lt;&#x2005;{minutes}&#x2005;分钟</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="2543"/>
+        <location filename="../main.py" line="2542"/>
         <source>距离 {cd_text} 还有</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="3299"/>
+        <location filename="../main.py" line="3298"/>
         <source>{city} · 未知</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="3301"/>
+        <location filename="../main.py" line="3300"/>
         <source>未知</source>
         <translation type="unfinished"></translation>
     </message>
@@ -200,12 +200,12 @@
 <context>
     <name>FloatingWidget</name>
     <message>
-        <location filename="../main.py" line="1651"/>
+        <location filename="../main.py" line="1650"/>
         <source>&lt; - 分钟</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="1655"/>
+        <location filename="../main.py" line="1654"/>
         <source>&lt;&#x2005;{minutes}&#x2005;分钟</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3436,7 +3436,7 @@
 <context>
     <name>WidgetsManager</name>
     <message>
-        <location filename="../main.py" line="1221"/>
+        <location filename="../main.py" line="1220"/>
         <source>未知组件</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4082,44 +4082,44 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="3348"/>
-        <location filename="../main.py" line="3382"/>
+        <location filename="../main.py" line="3347"/>
+        <location filename="../main.py" line="3381"/>
         <source>上课时自动隐藏</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="3350"/>
-        <location filename="../main.py" line="3384"/>
+        <location filename="../main.py" line="3349"/>
+        <location filename="../main.py" line="3383"/>
         <source>窗口最大化时隐藏</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="3352"/>
-        <location filename="../main.py" line="3386"/>
+        <location filename="../main.py" line="3351"/>
+        <location filename="../main.py" line="3385"/>
         <source>暂时无法变更“状态”</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="3358"/>
+        <location filename="../main.py" line="3357"/>
         <source>您正在使用 {hide_mode_text} 模式，无法变更隐藏状态
 若变更状态，将修改隐藏模式“灵活隐藏” (您稍后可以在“设置”中更改此选项)
 您确定要隐藏组件吗?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="3361"/>
-        <location filename="../main.py" line="3395"/>
+        <location filename="../main.py" line="3360"/>
+        <location filename="../main.py" line="3394"/>
         <source>确定</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="3363"/>
-        <location filename="../main.py" line="3397"/>
+        <location filename="../main.py" line="3362"/>
+        <location filename="../main.py" line="3396"/>
         <source>取消</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="3392"/>
+        <location filename="../main.py" line="3391"/>
         <source>您正在使用 {hide_mode_text} 模式，无法变更隐藏状态
 若变更状态，将修改隐藏模式“灵活隐藏” (您可以在“设置”中更改此选项)
 您确定要隐藏组件吗?</source>
