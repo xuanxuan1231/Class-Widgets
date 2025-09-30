@@ -858,6 +858,7 @@ jobs:
             echo ""
             echo "## 包信息 (${{ steps.organize.outputs.package-count }}个文件)"
             echo ""
+            echo "```"
             echo "| 文件名 | 类型 | 大小(MB) | 大小(字节) | MD5 |"
             echo "|--------|------|----------|------------|-----|"
           } > final-packages/file-info.md
@@ -882,6 +883,7 @@ jobs:
                 echo "| $filename | $file_type | $file_size_mb | $file_size | \`$file_md5\` |" >> final-packages/file-info.md
               fi
             done
+            echo "```" >> final-packages/file-info.md
           fi
           echo "" >> final-packages/file-info.md
           cat final-packages/file-info.md >> $GITHUB_STEP_SUMMARY
