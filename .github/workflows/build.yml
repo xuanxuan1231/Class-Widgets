@@ -858,9 +858,10 @@ jobs:
             echo ""
             echo "## 包信息 (${{ steps.organize.outputs.package-count }}个文件)"
             echo ""
-            echo "```"
-            echo "| 文件名 | 类型 | 大小(MB) | 大小(字节) | MD5 |"
-            echo "|--------|------|----------|------------|-----|"
+            echo '<div style="overflow-x: auto; white-space: nowrap;">'
+            echo ""
+            echo "| 文件名 | 大小(MB) | 大小(字节) | MD5 |"
+            echo "|--------|----------|------------|-----|"
           } > final-packages/file-info.md
           shopt -s nullglob
           files=(final-packages/*.zip final-packages/*.msi)
@@ -870,21 +871,15 @@ jobs:
             for package_file in "${files[@]}"; do
               if [[ -f "$package_file" ]]; then
                 filename=$(basename "$package_file")
-                file_extension="${filename##*.}"
-                file_type=""
-                case "$file_extension" in
-                  "zip") file_type="ZIP包" ;;
-                  "msi") file_type="MSI安装包" ;;
-                  *) file_type="其他" ;;
-                esac
                 file_size=$(stat -c%s "$package_file" 2>/dev/null || wc -c < "$package_file" 2>/dev/null || echo "未知")
                 file_md5=$(md5sum "$package_file" 2>/dev/null | cut -d' ' -f1 || echo "未知")
                 file_size_mb=$(awk "BEGIN {printf \"%.2f\", $file_size / 1024 / 1024}" 2>/dev/null || echo "未知")
-                echo "| $filename | $file_type | $file_size_mb | $file_size | \`$file_md5\` |" >> final-packages/file-info.md
+                echo "| $filename | $file_size_mb | $file_size | \`$file_md5\` |" >> final-packages/file-info.md
               fi
             done
-            echo "```" >> final-packages/file-info.md
           fi
+          echo "" >> final-packages/file-info.md
+          echo "</div>" >> final-packages/file-info.md
           echo "" >> final-packages/file-info.md
           cat final-packages/file-info.md >> $GITHUB_STEP_SUMMARY
 
@@ -899,7 +894,6 @@ jobs:
         with:
           name: ClassWidgets-Packages
           path: final-packages
-
 
   publish:
     name: Publish
