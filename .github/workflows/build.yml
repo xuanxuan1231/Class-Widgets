@@ -846,6 +846,12 @@ jobs:
           echo "[DEBUG] 最终包列表:"
           ls -la final-packages/ || true
 
+      - name: Generate package provenance
+        uses: actions/attest-build-provenance@v3
+        id: generate-provenance
+        with:
+          subject-path: "final-packages/*"
+
       - name: Calculate package properties
         shell: bash
         run: |
@@ -882,12 +888,7 @@ jobs:
           echo "</div>" >> final-packages/file-info.md
           echo "" >> final-packages/file-info.md
           cat final-packages/file-info.md >> $GITHUB_STEP_SUMMARY
-
-      - name: Generate package provenance
-        uses: actions/attest-build-provenance@v3
-        with:
-          subject-path: "final-packages/*"
-          bundle-path: final-packages/attestation.json
+          cp -af "${{ steps.generate-provenance.outputs.bundle-path }}" final-packages/
 
       - name: Upload final packages
         uses: actions/upload-artifact@v4
