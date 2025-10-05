@@ -11,24 +11,24 @@
 <context>
     <name>CustomMessageBox</name>
     <message>
-        <location filename="../menu.py" line="2745"/>
+        <location filename="../menu.py" line="2747"/>
         <source>系统 TTS（pyttsx3）用的是系统自带的语音服务噢~
 您可以在系统设置里添加更多语音(*≧▽≦)</source>
         <translation>喵我也不知道(*≧▽≦)真想看提示的话还是切换回原来的语言吧（</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2748"/>
+        <location filename="../menu.py" line="2750"/>
         <source>打开Windows语音设置</source>
         <translation>Zako，语音设置都找不到要我帮你打开</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2753"/>
-        <location filename="../menu.py" line="2778"/>
+        <location filename="../menu.py" line="2755"/>
+        <location filename="../menu.py" line="2780"/>
         <source>知道啦~</source>
         <translation>阅</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2769"/>
+        <location filename="../menu.py" line="2771"/>
         <source>这个语音引擎还没有提示信息呢~(・ω&lt;)</source>
         <translation>我也不知道这是什么引擎（</translation>
     </message>
@@ -1740,49 +1740,49 @@
 <context>
     <name>NTPServerFlyoutView</name>
     <message>
-        <location filename="../menu.py" line="3864"/>
+        <location filename="../menu.py" line="3866"/>
         <source>设置成功 ✨</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3867"/>
+        <location filename="../menu.py" line="3869"/>
         <source>格式警告</source>
         <translation type="unfinished">格式警告</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3870"/>
-        <location filename="../menu.py" line="4099"/>
+        <location filename="../menu.py" line="3872"/>
         <location filename="../menu.py" line="4101"/>
+        <location filename="../menu.py" line="4103"/>
         <source>NTP设置</source>
         <translation type="unfinished">NTP设置</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3891"/>
+        <location filename="../menu.py" line="3893"/>
         <source>推荐的NTP服务器:</source>
         <translation type="unfinished">推荐的NTP服务器:</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3893"/>
+        <location filename="../menu.py" line="3895"/>
         <source>建议的修正:</source>
         <translation type="unfinished">建议的修正:</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3915"/>
+        <location filename="../menu.py" line="3917"/>
         <source>执意保存当前输入的内容?</source>
         <translation type="unfinished">执意保存当前输入的内容?</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3936"/>
+        <location filename="../menu.py" line="3938"/>
         <source>执意保存</source>
         <translation type="unfinished">执意保存</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4030"/>
+        <location filename="../menu.py" line="4032"/>
         <source>NTP服务器已更新: {suggestion}</source>
         <translation type="unfinished">NTP服务器已更新: {suggestion}</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4051"/>
+        <location filename="../menu.py" line="4053"/>
         <source>设置已保存ヾ(≧▽≦*)o</source>
         <translation type="unfinished">设置已保存ヾ(≧▽≦*)o</translation>
     </message>
@@ -1888,156 +1888,156 @@
         <translation type="unfinished">无设置项</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2042"/>
+        <location filename="../menu.py" line="2044"/>
         <source>已安装 {total_count} 个插件，已启用 {enabled_count} 个</source>
         <translation type="unfinished">已安装 {total_count} 个插件，已启用 {enabled_count} 个</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2088"/>
+        <location filename="../menu.py" line="2090"/>
         <source>没有找到匹配的插件</source>
         <translation type="unfinished">没有找到匹配的插件</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2128"/>
+        <location filename="../menu.py" line="2130"/>
         <source>导入插件时发生错误：{e}</source>
         <translation type="unfinished">导入插件时发生错误：{e}</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2134"/>
-        <location filename="../menu.py" line="2180"/>
+        <location filename="../menu.py" line="2136"/>
+        <location filename="../menu.py" line="2182"/>
         <source>未知插件</source>
         <translation type="unfinished">未知插件</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2141"/>
-        <location filename="../menu.py" line="2185"/>
+        <location filename="../menu.py" line="2143"/>
+        <location filename="../menu.py" line="2187"/>
         <source>插件已存在</source>
         <translation type="unfinished">插件已存在</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2142"/>
-        <location filename="../menu.py" line="2186"/>
+        <location filename="../menu.py" line="2144"/>
+        <location filename="../menu.py" line="2188"/>
         <source>插件 &quot;{plugin_name}&quot; 已存在，是否覆盖？</source>
         <translation type="unfinished">插件 &quot;{plugin_name}&quot; 已存在，是否覆盖？</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2153"/>
-        <location filename="../menu.py" line="2197"/>
+        <location filename="../menu.py" line="2155"/>
+        <location filename="../menu.py" line="2199"/>
         <source>导入成功</source>
         <translation type="unfinished">导入成功</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2154"/>
-        <location filename="../menu.py" line="2198"/>
+        <location filename="../menu.py" line="2156"/>
+        <location filename="../menu.py" line="2200"/>
         <source>插件 &quot;{plugin_name}&quot; 导入成功！
 重启应用后生效。</source>
         <translation type="unfinished">插件 &quot;{plugin_name}&quot; 导入成功！
 重启应用后生效。</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2159"/>
-        <location filename="../menu.py" line="2203"/>
-        <location filename="../menu.py" line="2216"/>
+        <location filename="../menu.py" line="2161"/>
+        <location filename="../menu.py" line="2205"/>
+        <location filename="../menu.py" line="2218"/>
         <source>好</source>
         <translation type="unfinished">好</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2167"/>
-        <location filename="../menu.py" line="2212"/>
+        <location filename="../menu.py" line="2169"/>
+        <location filename="../menu.py" line="2214"/>
         <source>插件配置文件格式错误</source>
         <translation type="unfinished">插件配置文件格式错误</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2170"/>
+        <location filename="../menu.py" line="2172"/>
         <source>复制插件文件夹时发生错误：{e}</source>
         <translation type="unfinished">复制插件文件夹时发生错误：{e}</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2176"/>
+        <location filename="../menu.py" line="2178"/>
         <source>无效的插件文件：缺少 plugin.json 配置文件</source>
         <translation type="unfinished">无效的插件文件：缺少 plugin.json 配置文件</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2209"/>
+        <location filename="../menu.py" line="2211"/>
         <source>无效的ZIP文件</source>
         <translation type="unfinished">无效的ZIP文件</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2215"/>
+        <location filename="../menu.py" line="2217"/>
         <source>错误</source>
         <translation type="unfinished">错误</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2250"/>
+        <location filename="../menu.py" line="2252"/>
         <source>https://classwidgets.rinlit.cn/docs-user/</source>
         <translation type="unfinished">https://classwidgets.rinlit.cn/docs-user/</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2304"/>
+        <location filename="../menu.py" line="2306"/>
         <source>上课提醒</source>
         <translation type="unfinished">上课提醒</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2307"/>
-        <location filename="../menu.py" line="2314"/>
-        <location filename="../menu.py" line="2321"/>
+        <location filename="../menu.py" line="2309"/>
+        <location filename="../menu.py" line="2316"/>
+        <location filename="../menu.py" line="2323"/>
         <source>信息技术</source>
         <translation type="unfinished">信息技术</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2311"/>
+        <location filename="../menu.py" line="2313"/>
         <source>下课提醒</source>
         <translation type="unfinished">下课提醒</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2318"/>
+        <location filename="../menu.py" line="2320"/>
         <source>预备提醒</source>
         <translation type="unfinished">预备提醒</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2325"/>
+        <location filename="../menu.py" line="2327"/>
         <source>其他提醒</source>
         <translation type="unfinished">其他提醒</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2328"/>
+        <location filename="../menu.py" line="2330"/>
         <source>通知</source>
         <translation type="unfinished">通知</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2329"/>
+        <location filename="../menu.py" line="2331"/>
         <source>测试通知示例</source>
         <translation type="unfinished">测试通知示例</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2330"/>
+        <location filename="../menu.py" line="2332"/>
         <source>这是一条测试通知ヾ(≧▽≦*)o</source>
         <translation type="unfinished">这是一条测试通知ヾ(≧▽≦*)o</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2599"/>
-        <location filename="../menu.py" line="2645"/>
-        <location filename="../menu.py" line="2807"/>
-        <location filename="../menu.py" line="2863"/>
+        <location filename="../menu.py" line="2601"/>
+        <location filename="../menu.py" line="2647"/>
+        <location filename="../menu.py" line="2809"/>
+        <location filename="../menu.py" line="2865"/>
         <source>加载中...</source>
         <translation type="unfinished">加载中...</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2604"/>
-        <location filename="../menu.py" line="2618"/>
-        <location filename="../menu.py" line="2638"/>
-        <location filename="../menu.py" line="2803"/>
-        <location filename="../menu.py" line="2825"/>
+        <location filename="../menu.py" line="2606"/>
+        <location filename="../menu.py" line="2620"/>
+        <location filename="../menu.py" line="2640"/>
+        <location filename="../menu.py" line="2805"/>
+        <location filename="../menu.py" line="2827"/>
         <source>未启用</source>
         <translation type="unfinished">未启用</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2716"/>
+        <location filename="../menu.py" line="2718"/>
         <source>引擎小提示</source>
         <translation type="unfinished">引擎提示</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2723"/>
+        <location filename="../menu.py" line="2725"/>
         <source>Edge TTS 需要联网才能正常发声哦~
 请确保网络连接,不然会说不出话来(&gt;﹏&lt;)
 * 可能会有一定的延迟,耐心等待一下~</source>
@@ -2046,34 +2046,34 @@
 * 可能会有一定的延迟，耐心等待一下~</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2732"/>
+        <location filename="../menu.py" line="2734"/>
         <source>知道啦~</source>
         <translation type="unfinished">知道了~</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2803"/>
-        <location filename="../menu.py" line="2981"/>
+        <location filename="../menu.py" line="2805"/>
+        <location filename="../menu.py" line="2983"/>
         <source>加载失败</source>
         <translation type="unfinished">加载失败</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2804"/>
-        <location filename="../menu.py" line="2864"/>
+        <location filename="../menu.py" line="2806"/>
+        <location filename="../menu.py" line="2866"/>
         <source>无可用语音</source>
         <translation type="unfinished">无可用语音</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2819"/>
+        <location filename="../menu.py" line="2821"/>
         <source>请选择引擎</source>
         <translation type="unfinished">请选择引擎</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2989"/>
+        <location filename="../menu.py" line="2991"/>
         <source>TTS语音加载失败</source>
         <translation type="unfinished">TTS语音加载失败</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2990"/>
+        <location filename="../menu.py" line="2992"/>
         <source>加载TTS语音时发生错误:
 {error_message}</source>
         <translation type="unfinished">加载TTS语音时发生错误:
@@ -2085,44 +2085,44 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3294"/>
+        <location filename="../menu.py" line="3296"/>
         <source>https://github.com/RinLit-233-shiroko/Class-Widgets</source>
         <translation type="unfinished">https://github.com/RinLit-233-shiroko/Class-Widgets</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3300"/>
+        <location filename="../menu.py" line="3302"/>
         <source>https://space.bilibili.com/569522843</source>
         <translation type="unfinished">https://space.bilibili.com/569522843</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3320"/>
+        <location filename="../menu.py" line="3322"/>
         <source>https://github.com/RinLit-233-shiroko/Class-Widgets?tab=readme-ov-file#致谢</source>
         <translation type="unfinished">https://github.com/RinLit-233-shiroko/Class-Widgets?tab=readme-ov-file#致谢</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3345"/>
+        <location filename="../menu.py" line="3347"/>
         <source> (仅Windows)</source>
         <translation type="unfinished"> (仅Windows)</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3353"/>
-        <location filename="../menu.py" line="3364"/>
-        <location filename="../menu.py" line="3438"/>
+        <location filename="../menu.py" line="3355"/>
+        <location filename="../menu.py" line="3366"/>
+        <location filename="../menu.py" line="3440"/>
         <source>提示</source>
         <translation type="unfinished">提示</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3354"/>
+        <location filename="../menu.py" line="3356"/>
         <source>窗口会置于次底部, 但仍然比普通置顶要高一点点~</source>
         <translation type="unfinished">窗口会置于次底部, 但仍然比普通置顶要高一点点~</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3365"/>
+        <location filename="../menu.py" line="3367"/>
         <source>当前平台可能不完全支持该功能~</source>
         <translation type="unfinished">当前平台可能不完全支持该功能~</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3441"/>
+        <location filename="../menu.py" line="3443"/>
         <source>窗口实体状态
 会认真挡住前面的点击哦~
 
@@ -2133,7 +2133,7 @@
 *请重启应用以完全生效</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3445"/>
+        <location filename="../menu.py" line="3447"/>
         <source>鼠标穿透启用
 窗口不挡你啦,可以点穿它~
 
@@ -2144,256 +2144,261 @@
 *请重启应用以完全生效</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3531"/>
+        <location filename="../menu.py" line="3533"/>
         <source>灵活模式</source>
         <translation type="unfinished">灵活模式</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3534"/>
+        <location filename="../menu.py" line="3536"/>
         <source>灵活模式为上课时自动隐藏，可手动改变隐藏状态，当前课程状态（上课/课间）改变后会清除手动隐藏状态，重新转为自动隐藏。</source>
         <translation type="unfinished">灵活模式上课时自动隐藏，可手动调整隐藏状态。当前课程状态（上课/课间）变化后会清除手动隐藏状态，重新启用自动隐藏。</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3550"/>
-        <location filename="../menu.py" line="3551"/>
+        <location filename="../menu.py" line="3552"/>
+        <location filename="../menu.py" line="3553"/>
         <source>跟随系统</source>
         <translation type="unfinished">跟随系统</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3564"/>
+        <location filename="../menu.py" line="3566"/>
         <source>系统时间</source>
         <translation type="unfinished">系统时间</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3564"/>
+        <location filename="../menu.py" line="3566"/>
         <source>NTP时间</source>
         <translation type="unfinished">NTP时间</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3580"/>
+        <location filename="../menu.py" line="3582"/>
         <source>立即同步NTP时间</source>
         <translation type="unfinished">立即同步NTP时间</translation>
     </message>
     <message>
         <location filename="../menu.py" line="1447"/>
-        <location filename="../menu.py" line="3589"/>
+        <location filename="../menu.py" line="3591"/>
         <source> 分钟</source>
         <translation type="unfinished"> 分钟</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3594"/>
+        <location filename="../menu.py" line="1678"/>
+        <source>体感温度: --{default_unit}</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../menu.py" line="3596"/>
         <source>系统时区</source>
         <translation type="unfinished">系统时区</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3594"/>
+        <location filename="../menu.py" line="3596"/>
         <source>local</source>
         <translation type="unfinished">本地</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3595"/>
+        <location filename="../menu.py" line="3597"/>
         <source>(UTC+0)  伦敦时间</source>
         <translation type="unfinished">(UTC+0)  伦敦时间</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3596"/>
+        <location filename="../menu.py" line="3598"/>
         <source>(UTC+1)  巴黎时间</source>
         <translation type="unfinished">(UTC+1)  巴黎时间</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3597"/>
+        <location filename="../menu.py" line="3599"/>
         <source>(UTC+3)  莫斯科时间</source>
         <translation type="unfinished">(UTC+3)  莫斯科时间</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3598"/>
+        <location filename="../menu.py" line="3600"/>
         <source>(UTC+8)  北京时间</source>
         <translation type="unfinished">(UTC+8)  北京时间</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3599"/>
+        <location filename="../menu.py" line="3601"/>
         <source>(UTC+8)  新加坡时间</source>
         <translation type="unfinished">(UTC+8)  新加坡时间</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3600"/>
+        <location filename="../menu.py" line="3602"/>
         <source>(UTC+9)  东京时间</source>
         <translation type="unfinished">(UTC+9)  东京时间</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3601"/>
+        <location filename="../menu.py" line="3603"/>
         <source>(UTC+10)  悉尼时间</source>
         <translation type="unfinished">(UTC+10) 悉尼时间</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3602"/>
+        <location filename="../menu.py" line="3604"/>
         <source>(UTC-8)  洛杉矶时间</source>
         <translation type="unfinished">(UTC-8) 洛杉矶时间</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3603"/>
+        <location filename="../menu.py" line="3605"/>
         <source>(UTC-5)  纽约时间</source>
         <translation type="unfinished">(UTC-5) 纽约时间</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3649"/>
-        <location filename="../menu.py" line="3658"/>
-        <location filename="../menu.py" line="3666"/>
+        <location filename="../menu.py" line="3651"/>
+        <location filename="../menu.py" line="3660"/>
+        <location filename="../menu.py" line="3668"/>
         <source>时间设置</source>
         <translation type="unfinished">时间设置</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3650"/>
+        <location filename="../menu.py" line="3652"/>
         <source>已切换到NTP时间,正在同步时间~</source>
         <translation type="unfinished">已切换到NTP时间,正在同步时间~</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3658"/>
+        <location filename="../menu.py" line="3660"/>
         <source>已切换到系统时间</source>
         <translation type="unfinished">已切换到系统时间</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3666"/>
+        <location filename="../menu.py" line="3668"/>
         <source>切换失败</source>
         <translation type="unfinished">切换失败</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3673"/>
-        <location filename="../menu.py" line="3676"/>
+        <location filename="../menu.py" line="3675"/>
         <location filename="../menu.py" line="3678"/>
-        <location filename="../menu.py" line="3682"/>
-        <location filename="../menu.py" line="4144"/>
-        <location filename="../menu.py" line="4163"/>
-        <location filename="../menu.py" line="4170"/>
-        <location filename="../menu.py" line="4178"/>
+        <location filename="../menu.py" line="3680"/>
+        <location filename="../menu.py" line="3684"/>
+        <location filename="../menu.py" line="4146"/>
+        <location filename="../menu.py" line="4165"/>
+        <location filename="../menu.py" line="4172"/>
+        <location filename="../menu.py" line="4180"/>
         <source>NTP同步</source>
         <translation type="unfinished">NTP同步</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3673"/>
+        <location filename="../menu.py" line="3675"/>
         <source>当前无需NTP同步</source>
         <translation type="unfinished">当前无需NTP同步</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3676"/>
+        <location filename="../menu.py" line="3678"/>
         <source>当前时间管理器不支持NTP同步</source>
         <translation type="unfinished">当前时间管理器不支持NTP同步</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3678"/>
+        <location filename="../menu.py" line="3680"/>
         <source>正在同步NTP时间~</source>
         <translation type="unfinished">正在同步NTP时间~</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3682"/>
+        <location filename="../menu.py" line="3684"/>
         <source>NTP时间同步失败</source>
         <translation type="unfinished">NTP时间同步失败</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3704"/>
-        <location filename="../menu.py" line="3708"/>
-        <location filename="../menu.py" line="3711"/>
+        <location filename="../menu.py" line="3706"/>
+        <location filename="../menu.py" line="3710"/>
+        <location filename="../menu.py" line="3713"/>
         <source>NTP设置</source>
         <translation type="unfinished">NTP设置</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3705"/>
+        <location filename="../menu.py" line="3707"/>
         <source>已开启NTP自动同步ヾ(≧▽≦*)o</source>
         <translation type="unfinished">已开启NTP自动同步ヾ(≧▽≦*)o</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3708"/>
+        <location filename="../menu.py" line="3710"/>
         <source>已关闭NTP自动同步(≧﹏ ≦)</source>
         <translation type="unfinished">已关闭NTP自动同步(≧﹏≦)</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3711"/>
+        <location filename="../menu.py" line="3713"/>
         <source>设置失败 (╥﹏╥)</source>
         <translation type="unfinished">设置失败 (╥﹏╥)</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3722"/>
-        <location filename="../menu.py" line="3734"/>
-        <location filename="../menu.py" line="3741"/>
+        <location filename="../menu.py" line="3724"/>
+        <location filename="../menu.py" line="3736"/>
+        <location filename="../menu.py" line="3743"/>
         <source>时区设置</source>
         <translation type="unfinished">时区设置</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3723"/>
+        <location filename="../menu.py" line="3725"/>
         <source>时区已更新为 {ntp_sync_timezone}，正在重新同步时间~</source>
         <translation type="unfinished">时区已更新为 {ntp_sync_timezone}，正在重新同步时间~</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3741"/>
+        <location filename="../menu.py" line="3743"/>
         <source>时区设置失败</source>
         <translation type="unfinished">时区设置失败</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3798"/>
+        <location filename="../menu.py" line="3800"/>
         <source>NTP服务器URL不能为空 o(〃＾▽＾〃)o
 请输入有效的NTP服务器地址</source>
         <translation type="unfinished">NTP服务器URL不能为空 o(〃＾▽＾〃)o
 请输入有效的NTP服务器地址</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3827"/>
+        <location filename="../menu.py" line="3829"/>
         <source>NTP服务器已更新: {url}</source>
         <translation type="unfinished">NTP服务器已更新: {url}</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3835"/>
+        <location filename="../menu.py" line="3837"/>
         <source>URL格式可能不正确: {url}
 请检查是否为有效的域名或IP地址（︶^︶）</source>
         <translation type="unfinished">URL格式可能不正确: {url}
 请检查是否为有效的域名或IP地址（︶^︶）</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4110"/>
+        <location filename="../menu.py" line="4112"/>
         <source>当前使用: 系统本地时间</source>
         <translation type="unfinished">当前使用: 系统本地时间</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4114"/>
+        <location filename="../menu.py" line="4116"/>
         <source>%Y年%m月%d日 - %H:%M:%S</source>
         <translation type="unfinished">%Y年%m月%d日 - %H:%M:%S</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4116"/>
+        <location filename="../menu.py" line="4118"/>
         <source>上次NTP校准: {sync_time_str}</source>
         <translation type="unfinished">上次NTP校准: {sync_time_str}</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4119"/>
+        <location filename="../menu.py" line="4121"/>
         <source>NTP时间: 尚未进行校准</source>
         <translation type="unfinished">NTP时间: 尚未进行校准</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4121"/>
+        <location filename="../menu.py" line="4123"/>
         <source>时间状态: 未知</source>
         <translation type="unfinished">时间状态: 未知</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4145"/>
+        <location filename="../menu.py" line="4147"/>
         <source>同步正在进行中,请稍候~</source>
         <translation type="unfinished">同步正在进行中,请稍候~</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4163"/>
+        <location filename="../menu.py" line="4165"/>
         <source>启动同步失败</source>
         <translation type="unfinished">启动同步失败</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4170"/>
+        <location filename="../menu.py" line="4172"/>
         <source>NTP时间同步成功!</source>
         <translation type="unfinished">NTP时间同步成功!</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4179"/>
+        <location filename="../menu.py" line="4181"/>
         <source>NTP时间同步失败,请检查网络连接和url地址!</source>
         <translation type="unfinished">NTP时间同步失败,请检查网络连接和url地址!</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="3735"/>
+        <location filename="../menu.py" line="3737"/>
         <source>时区已更新为 {ntp_sync_timezone}</source>
         <translation type="unfinished">时区已更新为 {ntp_sync_timezone}</translation>
     </message>
@@ -2413,399 +2418,394 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../menu.py" line="1673"/>
+        <location filename="../menu.py" line="1674"/>
         <source>体感温度: {feels_like_data}</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../menu.py" line="1676"/>
-        <source>体感温度: --°</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../menu.py" line="4270"/>
+        <location filename="../menu.py" line="4272"/>
         <source>编辑课程</source>
         <translation type="unfinished">编辑课程</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4278"/>
+        <location filename="../menu.py" line="4280"/>
         <source>清空课程</source>
         <translation type="unfinished">清空课程</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4321"/>
+        <location filename="../menu.py" line="4323"/>
         <source>添加时间线</source>
         <translation type="unfinished">添加时间线</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4330"/>
+        <location filename="../menu.py" line="4332"/>
         <source>添加节点</source>
         <translation type="unfinished">添加节点</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4346"/>
+        <location filename="../menu.py" line="4348"/>
         <source>编辑节点开始时间</source>
         <translation type="unfinished">编辑节点开始时间</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4354"/>
+        <location filename="../menu.py" line="4356"/>
         <source>删除节点</source>
         <translation type="unfinished">删除节点</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4362"/>
+        <location filename="../menu.py" line="4364"/>
         <source>编辑时间线</source>
         <translation type="unfinished">编辑时间线</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4370"/>
+        <location filename="../menu.py" line="4372"/>
         <source>删除时间线</source>
         <translation type="unfinished">删除时间线</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4379"/>
+        <location filename="../menu.py" line="4381"/>
         <source>选择活动类型（“课程”或“课间”）</source>
         <translation type="unfinished">选择活动类型（&quot;课程&quot;或&quot;课间&quot;）</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4384"/>
+        <location filename="../menu.py" line="4386"/>
         <source>选择单双周</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4388"/>
+        <location filename="../menu.py" line="4390"/>
         <source>默认</source>
         <translation type="unfinished">默认</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4390"/>
+        <location filename="../menu.py" line="4392"/>
         <source>选择一周内的某一天的时间线</source>
         <translation type="unfinished">选择一周内某天的时间线</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4394"/>
+        <location filename="../menu.py" line="4396"/>
         <source>复制时间线</source>
         <translation type="unfinished">复制时间线</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4404"/>
+        <location filename="../menu.py" line="4406"/>
         <source>重要提示</source>
         <translation type="unfinished">重要提示</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4404"/>
+        <location filename="../menu.py" line="4406"/>
         <source>请使用 24 小时制</source>
         <translation type="unfinished">请使用24小时制</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4518"/>
+        <location filename="../menu.py" line="4520"/>
         <source>请先选择一个节点 o(TヘTo)</source>
         <translation type="unfinished">请先选择一个节点 o(TヘTo)</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4519"/>
+        <location filename="../menu.py" line="4521"/>
         <source>在编辑节点时间前，请先在左侧列表中选择要编辑的节点</source>
         <translation type="unfinished">编辑节点时间前，请先在左侧列表中选择目标节点</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4539"/>
+        <location filename="../menu.py" line="4541"/>
         <source>节点时间已更新 ヾ(≧▽≦*)o</source>
         <translation type="unfinished">节点时间已更新 ヾ(≧▽≦*)o</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4540"/>
+        <location filename="../menu.py" line="4542"/>
         <source>节点 &quot;{part_name}&quot; 的开始时间已更新为 {new_time}</source>
         <translation type="unfinished">节点&quot;{part_name}&quot;的开始时间已更新为{new_time}</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4551"/>
+        <location filename="../menu.py" line="4553"/>
         <source>节点格式异常 (╥﹏╥)</source>
         <translation type="unfinished">节点格式异常 (╥﹏╥)</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4552"/>
+        <location filename="../menu.py" line="4554"/>
         <source>选中的节点格式不正确，无法编辑</source>
         <translation type="unfinished">选中节点格式错误，无法编辑</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4562"/>
+        <location filename="../menu.py" line="4564"/>
         <source>预览 - {schedule_name}</source>
         <translation type="unfinished">预览 - {schedule_name}</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4668"/>
-        <location filename="../menu.py" line="4688"/>
+        <location filename="../menu.py" line="4670"/>
+        <location filename="../menu.py" line="4690"/>
         <source>已清除日志</source>
         <translation type="unfinished">已清除日志</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4669"/>
-        <location filename="../menu.py" line="4689"/>
+        <location filename="../menu.py" line="4671"/>
+        <location filename="../menu.py" line="4691"/>
         <source>已清空所有日志文件，约 {size} KB</source>
         <translation type="unfinished">已清空所有日志文件，约 {size} KB</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4679"/>
+        <location filename="../menu.py" line="4681"/>
         <source>日志目录下为空，已清理完成。</source>
         <translation type="unfinished">日志目录为空，清理已完成。</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4699"/>
+        <location filename="../menu.py" line="4701"/>
         <source>清除日志失败：{e}</source>
         <translation type="unfinished">清除日志失败：{e}</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4742"/>
+        <location filename="../menu.py" line="4744"/>
         <source>更改上课时主题色</source>
         <translation type="unfinished">更改上课时主题色</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4750"/>
+        <location filename="../menu.py" line="4752"/>
         <source>更改课间时主题色</source>
         <translation type="unfinished">更改课间时主题色</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4758"/>
+        <location filename="../menu.py" line="4760"/>
         <source>更改浮窗时间颜色</source>
         <translation type="unfinished">更改浮窗时间颜色</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4767"/>
+        <location filename="../menu.py" line="4769"/>
         <source>保存文件</source>
         <translation type="unfinished">保存文件</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4768"/>
+        <location filename="../menu.py" line="4770"/>
         <source>Json 配置文件 (*.json)</source>
         <translation type="unfinished">JSON配置文件 (*.json)</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4802"/>
+        <location filename="../menu.py" line="4804"/>
         <source>检查更新失败！</source>
         <translation type="unfinished">检查更新失败！</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4803"/>
+        <location filename="../menu.py" line="4805"/>
         <source>检查更新失败！
 {data}</source>
         <translation type="unfinished">检查更新失败！
 {data}</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4862"/>
-        <location filename="../menu.py" line="4955"/>
+        <location filename="../menu.py" line="4864"/>
+        <location filename="../menu.py" line="4957"/>
         <source>文件已存在</source>
         <translation type="unfinished">文件已存在</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4863"/>
-        <location filename="../menu.py" line="4956"/>
+        <location filename="../menu.py" line="4865"/>
+        <location filename="../menu.py" line="4958"/>
         <source>文件 {file_name} 已存在，是否覆盖？</source>
         <translation type="unfinished">文件 {file_name} 已存在，是否覆盖？</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4866"/>
-        <location filename="../menu.py" line="4959"/>
+        <location filename="../menu.py" line="4868"/>
+        <location filename="../menu.py" line="4961"/>
         <source>覆盖</source>
         <translation type="unfinished">覆盖</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4890"/>
+        <location filename="../menu.py" line="4892"/>
         <source>导入成功！</source>
         <translation type="unfinished">导入成功！</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4891"/>
+        <location filename="../menu.py" line="4893"/>
         <source>课程表文件导入成功！
 请手动切换您的配置文件。</source>
         <translation type="unfinished">课程表文件导入成功！请手动切换您的配置文件。</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4931"/>
+        <location filename="../menu.py" line="4933"/>
         <source>课程表文件导出失败，
 可能为文件损坏，请将此情况反馈给开发者。</source>
         <translation type="unfinished">课程表文件导出失败，可能是文件损坏，请将此情况反馈给开发者。</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4940"/>
+        <location filename="../menu.py" line="4942"/>
         <source>选择文件</source>
         <translation type="unfinished">选择文件</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="6353"/>
+        <location filename="../menu.py" line="6355"/>
         <source>界面语言切换时出错: {e}</source>
         <translation type="unfinished">界面语言切换出错: {e}</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="6355"/>
+        <location filename="../menu.py" line="6357"/>
         <source>界面语言切换出错 (＃°Д°)</source>
         <translation type="unfinished">界面语言切换出错 (（＃°Д°）)</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="6356"/>
+        <location filename="../menu.py" line="6358"/>
         <source>切换界面语言时发生错误: {e}</source>
         <translation type="unfinished">切换界面语言时发生错误: {e}</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4880"/>
+        <location filename="../menu.py" line="4882"/>
         <source>课程表文件转换失败！
 可能为格式错误或文件损坏，请检查此文件是否为正确的 CSES 课程表文件。
 详情请查看Log日志，日志位于./log/下。</source>
         <translation type="unfinished">课程表文件转换失败！可能为格式错误或文件损坏，请检查此文件是否为正确的 CSES 课程表文件。详情请查看Log日志，日志位于./log/下。</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4904"/>
+        <location filename="../menu.py" line="4906"/>
         <source>课程表文件导入失败！
 可能为格式错误或文件损坏，请检查此文件是否为正确的 CSES 课程表文件。
 详情请查看Log日志，日志位于./log/下。</source>
         <translation type="unfinished">课程表文件导入失败！可能为格式错误或文件损坏，请检查此文件是否为正确的 CSES 课程表文件。详情请查看Log日志，日志位于./log/下。</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4994"/>
+        <location filename="../menu.py" line="4996"/>
         <source>已保存至 ./config/widget.json</source>
         <translation type="unfinished">已保存至 ./config/widget.json</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5167"/>
+        <location filename="../menu.py" line="5169"/>
         <source>列表选项异常！{data}</source>
         <translation type="unfinished">列表选项异常！{data}</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5687"/>
-        <location filename="../menu.py" line="5785"/>
+        <location filename="../menu.py" line="5689"/>
+        <location filename="../menu.py" line="5787"/>
         <source>已保存至 ./config/schedule/{schedule_name}</source>
         <translation type="unfinished">已保存至 ./config/schedule/{schedule_name}</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5800"/>
+        <location filename="../menu.py" line="5802"/>
         <source>{e}
 保存失败，请将 ./log/ 中的日志提交给开发者以反馈问题。</source>
         <translation type="unfinished">{e} 保存失败，请将 ./log/ 中的日志提交给开发者以反馈问题。</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5867"/>
+        <location filename="../menu.py" line="5869"/>
         <source>您确定要删除这个时段吗？</source>
         <translation type="unfinished">您确定要删除这个时段吗？</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5868"/>
+        <location filename="../menu.py" line="5870"/>
         <source>删除该节点后，将一并删除该节点下所有课程安排，且无法恢复。</source>
         <translation type="unfinished">删除该节点后，将同时删除该节点下的所有课程安排，且不可恢复。</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="6101"/>
+        <location filename="../menu.py" line="6103"/>
         <source>已保存至 ./config.ini</source>
         <translation type="unfinished">已保存至 ./config.ini</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4678"/>
+        <location filename="../menu.py" line="4680"/>
         <source>未找到日志</source>
         <translation type="unfinished">未找到日志</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4698"/>
+        <location filename="../menu.py" line="4700"/>
         <source>清除日志失败！</source>
         <translation type="unfinished">清除日志失败！</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4735"/>
+        <location filename="../menu.py" line="4737"/>
         <source>无法删除</source>
         <translation type="unfinished">无法删除</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4735"/>
+        <location filename="../menu.py" line="4737"/>
         <source>至少需要保留两个小组件。</source>
         <translation type="unfinished">至少需要保留两个小组件。</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4772"/>
-        <location filename="../menu.py" line="4922"/>
+        <location filename="../menu.py" line="4774"/>
+        <location filename="../menu.py" line="4924"/>
         <source>您已成功导出课程表配置文件</source>
         <translation type="unfinished">您已成功导出课程表配置文件</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4773"/>
-        <location filename="../menu.py" line="4923"/>
+        <location filename="../menu.py" line="4775"/>
+        <location filename="../menu.py" line="4925"/>
         <source>文件将导出于{file_path}</source>
         <translation type="unfinished">文件将导出于{file_path}</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4930"/>
+        <location filename="../menu.py" line="4932"/>
         <source>导出失败！</source>
         <translation type="unfinished">导出失败！</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4798"/>
+        <location filename="../menu.py" line="4800"/>
         <source>版本号：获取失败！</source>
         <translation type="unfinished">版本号：获取失败！</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="1817"/>
+        <location filename="../menu.py" line="1819"/>
         <source>未知</source>
         <translation type="unfinished">未知</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="1819"/>
+        <location filename="../menu.py" line="1821"/>
         <source>预警</source>
         <translation type="unfinished">預警</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="1884"/>
+        <location filename="../menu.py" line="1886"/>
         <source>未知时间</source>
         <translation type="unfinished">未知時間</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="1895"/>
+        <location filename="../menu.py" line="1897"/>
         <source>暂无详细描述</source>
         <translation type="unfinished">暫無詳細描述</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="1898"/>
+        <location filename="../menu.py" line="1900"/>
         <source>不再显示该类型预警</source>
         <translation type="unfinished">不再顯示該類型預警</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="1907"/>
+        <location filename="../menu.py" line="1909"/>
         <source>天气预警详情</source>
         <translation type="unfinished">天氣預警詳情</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="1979"/>
+        <location filename="../menu.py" line="1981"/>
         <source>天气API已切换</source>
         <translation type="unfinished">天氣API已切換</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="1980"/>
+        <location filename="../menu.py" line="1982"/>
         <source>建议重新选择城市以获取准确的天气数据</source>
         <translation type="unfinished">建議重新選擇城市以獲取準確的天氣數據</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4596"/>
+        <location filename="../menu.py" line="4598"/>
         <source>选择位置输入方式</source>
         <translation type="unfinished">選擇位置輸入方式</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4597"/>
+        <location filename="../menu.py" line="4599"/>
         <source>和风天气支持城市ID和经纬度两种方式，请选择您偏好的输入方式：</source>
         <translation type="unfinished">和風天氣支援城市ID和經緯度兩種方式，請選擇您偏好的輸入方式：</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4600"/>
+        <location filename="../menu.py" line="4602"/>
         <source>城市搜索</source>
         <translation type="unfinished">城市搜尋</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4601"/>
+        <location filename="../menu.py" line="4603"/>
         <source>经纬度输入</source>
         <translation type="unfinished">經緯度輸入</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4627"/>
+        <location filename="../menu.py" line="4629"/>
         <source>无效的经纬度</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4628"/>
+        <location filename="../menu.py" line="4630"/>
         <source>请输入有效的经度和纬度值。</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2814,149 +2814,149 @@
         <translation type="obsolete">Zako自己去获取！</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4835"/>
+        <location filename="../menu.py" line="4837"/>
         <source>版本号：{local_version}
 已是最新版本！</source>
         <translation type="unfinished">版本号：{local_version}
 已是最新版本！</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4841"/>
+        <location filename="../menu.py" line="4843"/>
         <source>版本号：{local_version}
 可更新版本: {new_version}</source>
         <translation type="unfinished">版本号：{local_version}
 可更新版本: {new_version}</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4846"/>
+        <location filename="../menu.py" line="4848"/>
         <source>版本号：Debug
 调试版本！</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4850"/>
+        <location filename="../menu.py" line="4852"/>
         <source>新版本速递：{new_version}</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4875"/>
+        <location filename="../menu.py" line="4877"/>
         <source>转换失败！</source>
         <translation type="unfinished">转换失败！</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4899"/>
-        <location filename="../menu.py" line="4974"/>
+        <location filename="../menu.py" line="4901"/>
+        <location filename="../menu.py" line="4976"/>
         <source>导入失败！</source>
         <translation type="unfinished">导入失败！</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4944"/>
+        <location filename="../menu.py" line="4946"/>
         <source>支持的文件类型 (*.json *.yaml *.yml);;Json 配置文件 (*.json);;CSES 通用课程表交换文件 (*.yaml) (*.yaml *.yml)</source>
         <translation type="unfinished">支持的文件类型 (*.json *.yaml *.yml);;Json 配置文件 (*.json);;CSES 通用课程表交换文件 (*.yaml) (*.yaml *.yml)</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4966"/>
+        <location filename="../menu.py" line="4968"/>
         <source>您已成功导入课程表配置文件</source>
         <translation type="unfinished">您已成功导入课程表配置文件</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4967"/>
+        <location filename="../menu.py" line="4969"/>
         <source>请在“高级选项”中手动切换您的配置文件。</source>
         <translation type="unfinished">请在“高级选项”中手动切换您的配置文件。</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4993"/>
-        <location filename="../menu.py" line="5686"/>
-        <location filename="../menu.py" line="5784"/>
-        <location filename="../menu.py" line="6100"/>
+        <location filename="../menu.py" line="4995"/>
+        <location filename="../menu.py" line="5688"/>
+        <location filename="../menu.py" line="5786"/>
+        <location filename="../menu.py" line="6102"/>
         <source>保存成功</source>
         <translation type="unfinished">保存成功</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5074"/>
+        <location filename="../menu.py" line="5076"/>
         <source>文件名不能为空</source>
         <translation type="unfinished">文件名不能为空</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5079"/>
+        <location filename="../menu.py" line="5081"/>
         <source>文件名包含非法字符</source>
         <translation type="unfinished">文件名包含非法字符</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5083"/>
+        <location filename="../menu.py" line="5085"/>
         <source>文件名过长</source>
         <translation type="unfinished">文件名过长</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5111"/>
+        <location filename="../menu.py" line="5113"/>
         <source>文件名是保留名称</source>
         <translation type="unfinished">文件名是保留名称</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5114"/>
+        <location filename="../menu.py" line="5116"/>
         <source>文件名不能包含路径分隔符</source>
         <translation type="unfinished">文件名不能包含路径分隔符</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5116"/>
+        <location filename="../menu.py" line="5118"/>
         <source>文件名合法</source>
         <translation type="unfinished">文件名合法</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5118"/>
+        <location filename="../menu.py" line="5120"/>
         <source>请输入新课表名称</source>
         <translation type="unfinished">请输入新课表名称</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5119"/>
+        <location filename="../menu.py" line="5121"/>
         <source>请命名您的课程表计划：</source>
         <translation type="unfinished">请命名您的课程表计划：</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5120"/>
+        <location filename="../menu.py" line="5122"/>
         <source>新课表 - 1</source>
         <translation type="unfinished">新课表 - 1</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5166"/>
+        <location filename="../menu.py" line="5168"/>
         <source>错误！</source>
         <translation type="unfinished">错误！</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5194"/>
-        <location filename="../menu.py" line="5208"/>
-        <location filename="../menu.py" line="5253"/>
+        <location filename="../menu.py" line="5196"/>
+        <location filename="../menu.py" line="5210"/>
+        <location filename="../menu.py" line="5255"/>
         <source>获取配置文件失败</source>
         <translation type="unfinished">获取配置文件失败</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5195"/>
+        <location filename="../menu.py" line="5197"/>
         <source>当前课表为本地课表，无法获取配置文件。请上传课表后再尝试获取配置文件。</source>
         <translation type="unfinished">当前课表为本地课表，无法获取配置文件。请上传课表后再尝试获取配置文件。</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5220"/>
+        <location filename="../menu.py" line="5222"/>
         <source>更新配置文件失败</source>
         <translation type="unfinished">更新配置文件失败</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5235"/>
-        <location filename="../menu.py" line="5236"/>
+        <location filename="../menu.py" line="5237"/>
+        <location filename="../menu.py" line="5238"/>
         <source>请输入配置文件链接</source>
         <translation type="unfinished">请输入配置文件链接</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5270"/>
+        <location filename="../menu.py" line="5272"/>
         <source>保存配置文件失败，将自动保存为空课表</source>
         <translation type="unfinished">保存配置文件失败，将自动保存为空课表</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5287"/>
+        <location filename="../menu.py" line="5289"/>
         <source>请输入课表链接</source>
         <translation type="unfinished">请输入课表链接</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5290"/>
+        <location filename="../menu.py" line="5292"/>
         <source>当前可缩写数据库：
 {dbs}
 你可以使用缩写来代替完整的数据库链接</source>
@@ -2965,182 +2965,182 @@
 您可以使用缩写代替完整的数据库链接</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5314"/>
-        <location filename="../menu.py" line="5324"/>
+        <location filename="../menu.py" line="5316"/>
+        <location filename="../menu.py" line="5326"/>
         <source>上传配置文件失败</source>
         <translation type="unfinished">上传配置文件失败</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5506"/>
+        <location filename="../menu.py" line="5508"/>
         <source>预览  -  [调休] {schedule_name}</source>
         <translation type="unfinished">预览  -  [调休] {schedule_name}</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5510"/>
+        <location filename="../menu.py" line="5512"/>
         <source>预览  -  {schedule_name}</source>
         <translation type="unfinished">预览  -  {schedule_name}</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5520"/>
+        <location filename="../menu.py" line="5522"/>
         <source>未添加</source>
         <translation type="unfinished">未添加</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5563"/>
+        <location filename="../menu.py" line="5565"/>
         <source>{data}分钟</source>
         <translation type="unfinished">{data}分钟</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5565"/>
-        <location filename="../menu.py" line="5754"/>
+        <location filename="../menu.py" line="5567"/>
+        <location filename="../menu.py" line="5756"/>
         <source>课程</source>
         <translation type="unfinished">课程</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5734"/>
+        <location filename="../menu.py" line="5736"/>
         <source>休息段</source>
         <translation type="unfinished">休息段</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5566"/>
-        <location filename="../menu.py" line="5757"/>
-        <location filename="../menu.py" line="5923"/>
-        <location filename="../menu.py" line="5928"/>
+        <location filename="../menu.py" line="5568"/>
+        <location filename="../menu.py" line="5759"/>
+        <location filename="../menu.py" line="5925"/>
+        <location filename="../menu.py" line="5930"/>
         <source>课间</source>
         <translation type="unfinished">课间</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5770"/>
+        <location filename="../menu.py" line="5772"/>
         <source>分钟</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5797"/>
+        <location filename="../menu.py" line="5799"/>
         <source>保存失败!</source>
         <translation type="unfinished">保存失败!</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5837"/>
+        <location filename="../menu.py" line="5839"/>
         <source>无法添加时间线 o(TヘTo)</source>
         <translation type="unfinished">无法添加时间线 o(TヘTo)</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5838"/>
+        <location filename="../menu.py" line="5840"/>
         <source>在添加时间线前，先任意添加一个节点</source>
         <translation type="unfinished">在添加时间线前，先任意添加一个节点</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5846"/>
-        <location filename="../menu.py" line="6002"/>
+        <location filename="../menu.py" line="5848"/>
+        <location filename="../menu.py" line="6004"/>
         <source>{class_activity} - {spin_time}分钟 - {time_period}</source>
         <translation type="unfinished">{class_activity} - {spin_time}分钟 - {time_period}</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5871"/>
+        <location filename="../menu.py" line="5873"/>
         <source>删除</source>
         <translation type="unfinished">删除</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5897"/>
+        <location filename="../menu.py" line="5899"/>
         <source>取消</source>
         <translation type="unfinished">取消</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="6059"/>
+        <location filename="../menu.py" line="6061"/>
         <source>未添加-{data}</source>
         <translation type="unfinished">未添加-{data}</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="6176"/>
+        <location filename="../menu.py" line="6178"/>
         <source>课表预览</source>
         <translation type="unfinished">课表预览</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="6177"/>
+        <location filename="../menu.py" line="6179"/>
         <source>时间线编辑</source>
         <translation type="unfinished">时间轴编辑</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="6178"/>
+        <location filename="../menu.py" line="6180"/>
         <source>课程表编辑</source>
         <translation type="unfinished">课程表编辑</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="6179"/>
+        <location filename="../menu.py" line="6181"/>
         <source>倒计日编辑</source>
         <translation type="unfinished">倒计日编辑</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="6180"/>
+        <location filename="../menu.py" line="6182"/>
         <source>配置文件</source>
         <translation type="unfinished">配置文件</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="6182"/>
+        <location filename="../menu.py" line="6184"/>
         <source>帮助</source>
         <translation type="unfinished">帮助</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="6184"/>
+        <location filename="../menu.py" line="6186"/>
         <source>插件</source>
         <translation type="unfinished">插件</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="6188"/>
+        <location filename="../menu.py" line="6190"/>
         <source>天气</source>
         <translation type="unfinished">天气</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="6191"/>
+        <location filename="../menu.py" line="6193"/>
         <source>自定义</source>
         <translation type="unfinished">自定义</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="6194"/>
+        <location filename="../menu.py" line="6196"/>
         <source>提醒</source>
         <translation type="unfinished">提醒</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="6197"/>
+        <location filename="../menu.py" line="6199"/>
         <source>高级选项</source>
         <translation type="unfinished">高级选项</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="6200"/>
+        <location filename="../menu.py" line="6202"/>
         <source>关于本产品</source>
         <translation type="unfinished">关于本产品</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="6230"/>
+        <location filename="../menu.py" line="6232"/>
         <source>Class Widgets - 设置</source>
         <translation type="unfinished">Class Widgets - 设置</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="6313"/>
+        <location filename="../menu.py" line="6315"/>
         <source>界面语言切换成功 ♪(´▽｀)</source>
         <translation type="unfinished">界面语言切换成功 （´▽｀）</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="6315"/>
+        <location filename="../menu.py" line="6317"/>
         <source>界面语言已切换为 {selected_lang_name}
 新语言将在重启程序后完全生效</source>
         <translation type="unfinished">界面语言已切换为 {selected_lang_name}
 新语言将在重启程序后完全生效</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="6345"/>
+        <location filename="../menu.py" line="6347"/>
         <source>界面语言切换失败 (＃°Д°)</source>
         <translation type="unfinished">界面语言切换失败 (（＃°Д°）)</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="6346"/>
+        <location filename="../menu.py" line="6348"/>
         <source>无法加载选定的界面语言包，请检查翻译文件是否存在</source>
         <translation type="unfinished">无法加载选定的界面语言包，请检查翻译文件是否存在</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="1897"/>
-        <location filename="../menu.py" line="6349"/>
-        <location filename="../menu.py" line="6359"/>
+        <location filename="../menu.py" line="1899"/>
+        <location filename="../menu.py" line="6351"/>
+        <location filename="../menu.py" line="6361"/>
         <source>确定</source>
         <translation type="unfinished">确定</translation>
     </message>
@@ -3358,17 +3358,17 @@
 <context>
     <name>TTSSettings</name>
     <message>
-        <location filename="../menu.py" line="2392"/>
+        <location filename="../menu.py" line="2394"/>
         <source>加载中...</source>
         <translation type="unfinished">加载中...</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2420"/>
+        <location filename="../menu.py" line="2422"/>
         <source>小语法?</source>
         <translation type="unfinished">小語法?</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2427"/>
+        <location filename="../menu.py" line="2429"/>
         <source>可以使用以下占位符来动态插入信息：
 - `{lesson_name}`: 开始&amp;结束&amp;下节的课程名(例如：信息技术)
 - `{minutes}`: 分钟数 (例如：5) *其他
@@ -3383,62 +3383,62 @@
 </translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2483"/>
+        <location filename="../menu.py" line="2485"/>
         <source>上课提醒</source>
         <translation type="unfinished">上课提醒</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2488"/>
+        <location filename="../menu.py" line="2490"/>
         <source>下课提醒</source>
         <translation type="unfinished">下课提醒</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2493"/>
+        <location filename="../menu.py" line="2495"/>
         <source>预备提醒</source>
         <translation type="unfinished">预备提醒</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2498"/>
+        <location filename="../menu.py" line="2500"/>
         <source>放学提醒</source>
         <translation type="unfinished">放學提醒</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2503"/>
+        <location filename="../menu.py" line="2505"/>
         <source>其他提醒</source>
         <translation type="unfinished">其他提醒</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2517"/>
+        <location filename="../menu.py" line="2519"/>
         <source>信息技术</source>
         <translation type="unfinished">信息技术</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2519"/>
+        <location filename="../menu.py" line="2521"/>
         <source>通知</source>
         <translation type="unfinished">通知</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2520"/>
+        <location filename="../menu.py" line="2522"/>
         <source>这是一条测试通知ヾ(≧▽≦*)o</source>
         <translation type="unfinished">这是一条测试通知ヾ(≧▽≦*)o</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2566"/>
+        <location filename="../menu.py" line="2568"/>
         <source>TTS预览失败</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2566"/>
+        <location filename="../menu.py" line="2568"/>
         <source>启动TTS预览时出错: {e}</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2574"/>
+        <location filename="../menu.py" line="2576"/>
         <source>TTS生成失败</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../menu.py" line="2575"/>
+        <location filename="../menu.py" line="2577"/>
         <source>生成或播放语音时出错: {error_message}</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3551,22 +3551,22 @@
 <context>
     <name>ask_which</name>
     <message>
-        <location filename="../menu.py" line="4457"/>
+        <location filename="../menu.py" line="4459"/>
         <source>默认</source>
         <translation type="unfinished">默认</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4460"/>
+        <location filename="../menu.py" line="4462"/>
         <source>复制</source>
         <translation type="unfinished">复制</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4464"/>
+        <location filename="../menu.py" line="4466"/>
         <source>从</source>
         <translation type="unfinished">从</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="4467"/>
+        <location filename="../menu.py" line="4469"/>
         <source>复制时间线</source>
         <translation type="unfinished">复制时间线</translation>
     </message>
@@ -3574,39 +3574,39 @@
 <context>
     <name>cfDbEdit</name>
     <message>
-        <location filename="../menu.py" line="5347"/>
+        <location filename="../menu.py" line="5349"/>
         <source>添加课表数据库</source>
         <translation type="unfinished">添加课表数据库</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5352"/>
+        <location filename="../menu.py" line="5354"/>
         <source>删除课表数据库</source>
         <translation type="unfinished">删除课表数据库</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5355"/>
+        <location filename="../menu.py" line="5357"/>
         <source>更改课表数据库</source>
         <translation type="unfinished">更改课表数据库</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5383"/>
-        <location filename="../menu.py" line="5415"/>
+        <location filename="../menu.py" line="5385"/>
+        <location filename="../menu.py" line="5417"/>
         <source>错误！</source>
         <translation type="unfinished">错误！</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5384"/>
-        <location filename="../menu.py" line="5416"/>
+        <location filename="../menu.py" line="5386"/>
+        <location filename="../menu.py" line="5418"/>
         <source>数据库缩写 {db_short} 已存在，请更换缩写。</source>
         <translation type="unfinished">数据库缩写 {db_short} 已存在，请更换缩写。</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5436"/>
+        <location filename="../menu.py" line="5438"/>
         <source>保存成功</source>
         <translation type="unfinished">保存成功</translation>
     </message>
     <message>
-        <location filename="../menu.py" line="5437"/>
+        <location filename="../menu.py" line="5439"/>
         <source>已保存至 ./config/schedule_db.json</source>
         <translation type="unfinished">已保存至 ./config/schedule_db.json</translation>
     </message>
@@ -4160,19 +4160,13 @@
         <translation type="unfinished">灵活隐藏</translation>
     </message>
     <message>
-        <location filename="../list_.py" line="68"/>
         <source>摄氏度 (°C)</source>
-        <translation type="unfinished">攝氏度 (°C)</translation>
+        <translation type="obsolete">攝氏度 (°C)</translation>
     </message>
     <message>
         <location filename="../list_.py" line="72"/>
         <source>正式版 (Release)</source>
         <translation type="unfinished">正式版（正式版）</translation>
-    </message>
-    <message>
-        <location filename="../list_.py" line="69"/>
-        <source>华氏度 (°F)</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../list_.py" line="73"/>
@@ -4182,6 +4176,16 @@
     <message>
         <source>测试版 (Beta)</source>
         <translation type="obsolete">Cwc里的群友belike</translation>
+    </message>
+    <message>
+        <location filename="../list_.py" line="68"/>
+        <source>摄氏度 (℃)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../list_.py" line="69"/>
+        <source>华氏度 (℉)</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../list_.py" line="80"/>
@@ -4532,108 +4536,108 @@
 您确定要隐藏组件吗?</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3706"/>
+        <location filename="../main.py" line="3711"/>
         <source>检查多开...</source>
         <translation type="unfinished">检查多开...</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3721"/>
+        <location filename="../main.py" line="3726"/>
         <source>Class Widgets 正在运行</source>
         <translation type="unfinished">Class Widgets 正在运行</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3726"/>
+        <location filename="../main.py" line="3731"/>
         <source>Class Widgets 正在运行！请勿打开多个实例，否则将会出现不可预知的问题。
 (若您需要打开多个实例，请在“设置”-&gt;“高级选项”中启用“允许程序多开”)</source>
         <translation type="unfinished">Class Widgets 正在运行！请勿打开多个实例，否则将会出现不可预知的问题。
 (若您需要打开多个实例，请在“设置”-&gt;“高级选项”中启用“允许程序多开”)</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3746"/>
+        <location filename="../main.py" line="3751"/>
         <source>初始化颜色监视器...</source>
         <translation type="unfinished">初始化颜色监视器...</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3756"/>
+        <location filename="../main.py" line="3761"/>
         <source>检查缩放...</source>
         <translation type="unfinished">检查缩放...</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3762"/>
+        <location filename="../main.py" line="3767"/>
         <source>缩放系数过大</source>
         <translation type="unfinished">缩放系数过大</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3766"/>
+        <location filename="../main.py" line="3771"/>
         <source>当前缩放系数为 {scale_factor}%，可能导致显示异常。
 建议将缩放系数设置为 100% 到 180% 之间。</source>
         <translation type="unfinished">当前缩放系数为 {scale_factor}%，可能导致显示异常。
 建议将缩放系数设置为 100% 到 180% 之间。</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3775"/>
+        <location filename="../main.py" line="3780"/>
         <source>获取系统版本...</source>
         <translation type="unfinished">获取系统版本...</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3816"/>
-        <location filename="../main.py" line="3822"/>
+        <location filename="../main.py" line="3821"/>
+        <location filename="../main.py" line="3827"/>
         <source>初始化窗口焦点监视器...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="3828"/>
+        <location filename="../main.py" line="3833"/>
         <source>初始化窗口管理器...</source>
         <translation type="unfinished">初始化窗口管理器...</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3835"/>
+        <location filename="../main.py" line="3840"/>
         <source>检查初次启动...</source>
         <translation type="unfinished">检查初次启动...</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3847"/>
+        <location filename="../main.py" line="3852"/>
         <source>初始化插件管理器...</source>
         <translation type="unfinished">初始化插件管理器...</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3853"/>
+        <location filename="../main.py" line="3858"/>
         <source>检查临时课表...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="3858"/>
+        <location filename="../main.py" line="3863"/>
         <source>存在临时课表</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="3859"/>
+        <location filename="../main.py" line="3864"/>
         <source>当前存在临时课表，是否沿用</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="3869"/>
+        <location filename="../main.py" line="3874"/>
         <source>加载窗口...</source>
         <translation type="unfinished">加载窗口...</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3873"/>
+        <location filename="../main.py" line="3878"/>
         <source>加载课程...</source>
         <translation type="unfinished">加载课程...</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3880"/>
+        <location filename="../main.py" line="3885"/>
         <source>加载隐藏状态...</source>
         <translation type="unfinished">加载隐藏状态...</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3899"/>
+        <location filename="../main.py" line="3904"/>
         <source>检查更新...</source>
         <translation type="unfinished">检查更新...</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3728"/>
-        <location filename="../main.py" line="3768"/>
+        <location filename="../main.py" line="3733"/>
+        <location filename="../main.py" line="3773"/>
         <source>好</source>
         <translation type="unfinished">好</translation>
     </message>
