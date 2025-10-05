@@ -2321,7 +2321,7 @@ The window is not blocking you, you can tap through it.
     <message>
         <location filename="../menu.py" line="1685"/>
         <source>体感温度: --{default_unit}</source>
-        <translation type="unfinished"></translation>
+        <translation>Apparent temperature: --{default_unit}</translation>
     </message>
     <message>
         <location filename="../menu.py" line="3603"/>
@@ -4557,12 +4557,12 @@ Error message: {e}</translation>
     <message>
         <location filename="../list_.py" line="68"/>
         <source>摄氏度 (℃)</source>
-        <translation type="unfinished"></translation>
+        <translation>℃</translation>
     </message>
     <message>
         <location filename="../list_.py" line="69"/>
         <source>华氏度 (℉)</source>
-        <translation type="unfinished"></translation>
+        <translation>℉</translation>
     </message>
     <message>
         <location filename="../list_.py" line="80"/>
@@ -4959,7 +4959,7 @@ It is recommended to set the scaling factor to a value between 100% and 180%.</t
     <message>
         <location filename="../main.py" line="3866"/>
         <source>初始化窗口焦点监视器...</source>
-        <translation type="unfinished"></translation>
+        <translation>Initialize window focus monitor...</translation>
     </message>
     <message>
         <location filename="../main.py" line="3872"/>
@@ -4979,17 +4979,17 @@ It is recommended to set the scaling factor to a value between 100% and 180%.</t
     <message>
         <location filename="../main.py" line="3897"/>
         <source>检查临时课表...</source>
-        <translation type="unfinished"></translation>
+        <translation>Check the temporary class schedule</translation>
     </message>
     <message>
         <location filename="../main.py" line="3902"/>
         <source>存在临时课表</source>
-        <translation type="unfinished"></translation>
+        <translation>Temporary schedule exists</translation>
     </message>
     <message>
         <location filename="../main.py" line="3903"/>
         <source>当前存在临时课表，是否沿用</source>
-        <translation type="unfinished"></translation>
+        <translation>Is the current temporary schedule to be continued?</translation>
     </message>
     <message>
         <location filename="../main.py" line="3913"/>
