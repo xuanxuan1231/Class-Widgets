@@ -4409,22 +4409,22 @@
         <translation>現在、一時的なタイムテーブルがあります。引き続き使用しますか？</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3913"/>
+        <location filename="../main.py" line="3916"/>
         <source>加载窗口...</source>
         <translation>ウィンドウを読み込んでいます…</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3917"/>
+        <location filename="../main.py" line="3920"/>
         <source>加载课程...</source>
         <translation>コースを読み込んでいます…</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3924"/>
+        <location filename="../main.py" line="3927"/>
         <source>加载隐藏状态...</source>
         <translation>非表示状態を読み込んでいます…</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3943"/>
+        <location filename="../main.py" line="3946"/>
         <source>检查更新...</source>
         <translation>更新を確認しています…</translation>
     </message>
@@ -4435,9 +4435,14 @@
         <translation>はい</translation>
     </message>
     <message>
-        <location filename="../splash.py" line="109"/>
+        <location filename="../splash.py" line="111"/>
         <source>Class Widgets 启动中...</source>
         <translation>Class Widgets を起動しています…</translation>
+    </message>
+    <message>
+        <location filename="../splash.py" line="162"/>
+        <source>当前存在远端课表与本地不一致，是否使用远端课表？</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -4765,6 +4770,14 @@ Class Widgets を更新してから、このプラグインのインストール
         <location filename="../menu.py" line="661"/>
         <source>经度必须在 -180 到 180 之间，纬度必须在 -90 到 90 之间。</source>
         <translation>経度は -180 から 180 の間、緯度は -90 から 90 の間である必要があります。</translation>
+    </message>
+</context>
+<context>
+    <name>splash</name>
+    <message>
+        <location filename="../splash.py" line="161"/>
+        <source>检测到远端课表更新</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

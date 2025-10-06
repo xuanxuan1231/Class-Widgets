@@ -4996,22 +4996,22 @@ CSES 通用課程時間表交換文件(*.yaml)</translation>
         <translation>當前存在臨時課表，是否沿用</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3913"/>
+        <location filename="../main.py" line="3916"/>
         <source>加载窗口...</source>
         <translation>加載窗口...</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3917"/>
+        <location filename="../main.py" line="3920"/>
         <source>加载课程...</source>
         <translation>加載課程...</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3924"/>
+        <location filename="../main.py" line="3927"/>
         <source>加载隐藏状态...</source>
         <translation>加載隱藏狀態...</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3943"/>
+        <location filename="../main.py" line="3946"/>
         <source>检查更新...</source>
         <translation>檢查更新...</translation>
     </message>
@@ -5022,9 +5022,14 @@ CSES 通用課程時間表交換文件(*.yaml)</translation>
         <translation>好</translation>
     </message>
     <message>
-        <location filename="../splash.py" line="109"/>
+        <location filename="../splash.py" line="111"/>
         <source>Class Widgets 启动中...</source>
         <translation>Class Widgets 啟動中...</translation>
+    </message>
+    <message>
+        <location filename="../splash.py" line="162"/>
+        <source>当前存在远端课表与本地不一致，是否使用远端课表？</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -5352,6 +5357,14 @@ CSES 通用課程時間表交換文件(*.yaml)</translation>
         <location filename="../menu.py" line="661"/>
         <source>经度必须在 -180 到 180 之间，纬度必须在 -90 到 90 之间。</source>
         <translation>經度必須在 -180 到 180 之間，緯度必須在 -90 到 90 之間。</translation>
+    </message>
+</context>
+<context>
+    <name>splash</name>
+    <message>
+        <location filename="../splash.py" line="161"/>
+        <source>检测到远端课表更新</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
