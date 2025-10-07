@@ -4330,107 +4330,107 @@
 コンポーネントを非表示にしてもよろしいですか？</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3754"/>
+        <location filename="../main.py" line="3755"/>
         <source>检查多开...</source>
         <translation>多重起動をチェックしています…</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3769"/>
+        <location filename="../main.py" line="3770"/>
         <source>Class Widgets 正在运行</source>
         <translation>Class Widgets が実行中です</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3774"/>
+        <location filename="../main.py" line="3775"/>
         <source>Class Widgets 正在运行！请勿打开多个实例，否则将会出现不可预知的问题。
 (若您需要打开多个实例，请在“设置”-&gt;“高级选项”中启用“允许程序多开”)</source>
         <translation>Class Widgets が実行中です！複数のインスタンスを開かないでください。予期しない問題が発生する可能性があります。
 （複数のインスタンスを開く必要がある場合は、「設定」→「高度なオプション」で「プログラムの多重起動を許可」を有効にしてください）</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3794"/>
+        <location filename="../main.py" line="3795"/>
         <source>初始化颜色监视器...</source>
         <translation>配色モードの監視を初期化しています…</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3804"/>
+        <location filename="../main.py" line="3805"/>
         <source>检查缩放...</source>
         <translation>拡大率をチェックしています…</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3810"/>
+        <location filename="../main.py" line="3811"/>
         <source>缩放系数过大</source>
         <translation>拡大率が大きすぎます</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3814"/>
+        <location filename="../main.py" line="3815"/>
         <source>当前缩放系数为 {scale_factor}%，可能导致显示异常。
 建议将缩放系数设置为 100% 到 180% 之间。</source>
         <translation>現在の拡大率は {scale_factor}% です。表示に問題が発生する可能性があります。
 拡大率を100%から180%の間に設定することをお勧めします。</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3823"/>
+        <location filename="../main.py" line="3824"/>
         <source>获取系统版本...</source>
         <translation>システムバージョンを取得しています…</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3866"/>
+        <location filename="../main.py" line="3867"/>
         <source>初始化窗口焦点监视器...</source>
         <translation>ウインドウフォーカスモニターを初期化しています</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3872"/>
+        <location filename="../main.py" line="3873"/>
         <source>初始化窗口管理器...</source>
         <translation>ウィンドウマネージャーを初期化しています…</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3879"/>
+        <location filename="../main.py" line="3880"/>
         <source>检查初次启动...</source>
         <translation>初回起動をチェックしています…</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3891"/>
+        <location filename="../main.py" line="3892"/>
         <source>初始化插件管理器...</source>
         <translation>プラグインマネージャーを初期化しています…</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3897"/>
+        <location filename="../main.py" line="3898"/>
         <source>检查临时课表...</source>
         <translation>確認しています</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3902"/>
+        <location filename="../main.py" line="3903"/>
         <source>存在临时课表</source>
         <translation>一時的なタイムテーブルが存在しています</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3903"/>
+        <location filename="../main.py" line="3904"/>
         <source>当前存在临时课表，是否沿用</source>
         <translation>現在、一時的なタイムテーブルがあります。引き続き使用しますか？</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3916"/>
+        <location filename="../main.py" line="3917"/>
         <source>加载窗口...</source>
         <translation>ウィンドウを読み込んでいます…</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3920"/>
+        <location filename="../main.py" line="3921"/>
         <source>加载课程...</source>
         <translation>コースを読み込んでいます…</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3927"/>
+        <location filename="../main.py" line="3928"/>
         <source>加载隐藏状态...</source>
         <translation>非表示状態を読み込んでいます…</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3946"/>
+        <location filename="../main.py" line="3947"/>
         <source>检查更新...</source>
         <translation>更新を確認しています…</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3776"/>
-        <location filename="../main.py" line="3816"/>
+        <location filename="../main.py" line="3777"/>
+        <location filename="../main.py" line="3817"/>
         <source>好</source>
         <translation>はい</translation>
     </message>
