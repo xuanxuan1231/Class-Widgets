@@ -4387,12 +4387,12 @@
         <translation>好</translation>
     </message>
     <message>
-        <location filename="../splash.py" line="111"/>
+        <location filename="../splash.py" line="110"/>
         <source>Class Widgets 启动中...</source>
         <translation>Class Widgets 启动中...</translation>
     </message>
     <message>
-        <location filename="../splash.py" line="162"/>
+        <location filename="../splash.py" line="161"/>
         <source>当前存在远端课表与本地不一致，是否使用远端课表？</source>
         <translation>当前本地课表与远端课表存在不一致，是否采用远端课表？</translation>
     </message>
@@ -4610,7 +4610,7 @@
 <context>
     <name>splash</name>
     <message>
-        <location filename="../splash.py" line="161"/>
+        <location filename="../splash.py" line="160"/>
         <source>检测到远端课表更新</source>
         <translation>检测到远端课表更新</translation>
     </message>

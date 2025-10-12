@@ -5018,12 +5018,12 @@ It is recommended to set the scaling factor to a value between 100% and 180%.</t
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="../splash.py" line="111"/>
+        <location filename="../splash.py" line="110"/>
         <source>Class Widgets 启动中...</source>
         <translation>Launching Class Widgets...</translation>
     </message>
     <message>
-        <location filename="../splash.py" line="162"/>
+        <location filename="../splash.py" line="161"/>
         <source>当前存在远端课表与本地不一致，是否使用远端课表？</source>
         <translation>Current remote schedule and local schedule are inconsistent. Use the remote schedule?</translation>
     </message>
@@ -5359,7 +5359,7 @@ Please update Class Widgets before trying to install this plugin.</translation>
 <context>
     <name>splash</name>
     <message>
-        <location filename="../splash.py" line="161"/>
+        <location filename="../splash.py" line="160"/>
         <source>检测到远端课表更新</source>
         <translation>Remote schedule update detected</translation>
     </message>

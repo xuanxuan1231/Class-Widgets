@@ -5022,12 +5022,12 @@ CSES 通用課程時間表交換文件(*.yaml)</translation>
         <translation>好</translation>
     </message>
     <message>
-        <location filename="../splash.py" line="111"/>
+        <location filename="../splash.py" line="110"/>
         <source>Class Widgets 启动中...</source>
         <translation>Class Widgets 啟動中...</translation>
     </message>
     <message>
-        <location filename="../splash.py" line="162"/>
+        <location filename="../splash.py" line="161"/>
         <source>当前存在远端课表与本地不一致，是否使用远端课表？</source>
         <translation>目前遠端課表與本地不一致，是否使用遠端課表？</translation>
     </message>
@@ -5362,7 +5362,7 @@ CSES 通用課程時間表交換文件(*.yaml)</translation>
 <context>
     <name>splash</name>
     <message>
-        <location filename="../splash.py" line="161"/>
+        <location filename="../splash.py" line="160"/>
         <source>检测到远端课表更新</source>
         <translation>偵測到遠端課表更新</translation>
     </message>
