@@ -14,6 +14,8 @@ from shutil import copy
 from typing import Any, Dict, List, Optional, Tuple, Union
 
 import psutil
+from loguru import logger
+from packaging.version import Version
 from PyQt5 import uic
 from PyQt5.QtCore import (
     QCoreApplication,
@@ -54,8 +56,6 @@ from PyQt5.QtWidgets import (
     QSystemTrayIcon,
     QWidget,
 )
-from loguru import logger
-from packaging.version import Version
 from qfluentwidgets import (
     Action,
     CheckBox,

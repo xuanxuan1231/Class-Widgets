@@ -326,7 +326,7 @@ class UnionUpdateTimer(QObject):
 
         executed_count = 0
         while self.task_heap and (self.task_heap[0][0] <= current_time):
-            _next_run, cb_id, callback, interval = heappop(self.task_heap)
+            _next_run, cb_id, _callback, interval = heappop(self.task_heap)
             if cb_id not in self._callback_refs or self._callback_refs[cb_id]() is None:
                 self._cleanup_dead_callback(cb_id)
                 continue

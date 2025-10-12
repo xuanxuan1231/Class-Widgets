@@ -2,6 +2,7 @@ import sys
 from collections import defaultdict
 from typing import Any, Dict, List, Optional, Tuple
 
+from loguru import logger
 from PyQt5 import uic
 from PyQt5.QtCore import (
     QEasingCurve,
@@ -15,7 +16,6 @@ from PyQt5.QtCore import (
 )
 from PyQt5.QtGui import QBrush, QColor, QPainter, QPixmap
 from PyQt5.QtWidgets import QApplication, QFrame, QGraphicsBlurEffect, QLabel, QWidget
-from loguru import logger
 from qfluentwidgets import setThemeColor
 
 import conf
