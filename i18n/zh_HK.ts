@@ -233,28 +233,28 @@
 <context>
     <name>Form</name>
     <message>
-        <location filename="../view/pp/plugin_detail.ui" line="20"/>
-        <location filename="../view/pp/search.ui" line="20"/>
-        <location filename="../view/pp/settings.ui" line="20"/>
-        <location filename="../view/pp/home.ui" line="20"/>
-        <location filename="../view/pp/latests.ui" line="20"/>
         <location filename="../view/extra_menu.ui" line="14"/>
-        <location filename="../view/widget-toast-bar.ui" line="26"/>
-        <location filename="../view/menu/help.ui" line="14"/>
-        <location filename="../view/menu/schedule_db_edit.ui" line="14"/>
-        <location filename="../view/menu/subject.ui" line="14"/>
-        <location filename="../view/menu/countdown_custom_edit.ui" line="14"/>
-        <location filename="../view/menu/custom.ui" line="20"/>
-        <location filename="../view/menu/sound.ui" line="20"/>
         <location filename="../view/menu/configs.ui" line="20"/>
-        <location filename="../view/menu/file_item.ui" line="14"/>
         <location filename="../view/menu/preview.ui" line="14"/>
-        <location filename="../view/menu/about.ui" line="14"/>
-        <location filename="../view/menu/timeline_edit.ui" line="14"/>
         <location filename="../view/menu/advance.ui" line="20"/>
-        <location filename="../view/menu/weather.ui" line="21"/>
-        <location filename="../view/menu/plugin_mgr.ui" line="14"/>
+        <location filename="../view/menu/help.ui" line="14"/>
+        <location filename="../view/menu/timeline_edit.ui" line="14"/>
+        <location filename="../view/menu/file_item.ui" line="14"/>
         <location filename="../view/menu/schedule_edit.ui" line="14"/>
+        <location filename="../view/menu/custom.ui" line="20"/>
+        <location filename="../view/menu/subject.ui" line="14"/>
+        <location filename="../view/menu/schedule_db_edit.ui" line="14"/>
+        <location filename="../view/menu/countdown_custom_edit.ui" line="14"/>
+        <location filename="../view/menu/weather.ui" line="21"/>
+        <location filename="../view/menu/about.ui" line="14"/>
+        <location filename="../view/menu/sound.ui" line="20"/>
+        <location filename="../view/menu/plugin_mgr.ui" line="14"/>
+        <location filename="../view/pp/search.ui" line="20"/>
+        <location filename="../view/pp/plugin_detail.ui" line="20"/>
+        <location filename="../view/pp/latests.ui" line="20"/>
+        <location filename="../view/pp/home.ui" line="20"/>
+        <location filename="../view/pp/settings.ui" line="20"/>
+        <location filename="../view/widget-toast-bar.ui" line="26"/>
         <source>Form</source>
         <translation>Form</translation>
     </message>
@@ -312,11 +312,11 @@
     </message>
     <message>
         <location filename="../view/extra_menu.ui" line="306"/>
-        <location filename="../view/menu/schedule_db_edit.ui" line="160"/>
-        <location filename="../view/menu/subject.ui" line="89"/>
-        <location filename="../view/menu/countdown_custom_edit.ui" line="229"/>
         <location filename="../view/menu/timeline_edit.ui" line="582"/>
         <location filename="../view/menu/schedule_edit.ui" line="378"/>
+        <location filename="../view/menu/subject.ui" line="89"/>
+        <location filename="../view/menu/schedule_db_edit.ui" line="160"/>
+        <location filename="../view/menu/countdown_custom_edit.ui" line="229"/>
         <source>保存</source>
         <translation>儲存</translation>
     </message>
@@ -433,14 +433,6 @@
         <translation>若啟用，Class Widgets 將於啟動時連綫檢查所選更新通道是否有最新版本更新。</translation>
     </message>
     <message>
-        <location filename="../view/pp/settings.ui" line="144"/>
-        <location filename="../view/menu/sound.ui" line="136"/>
-        <location filename="../view/menu/sound.ui" line="214"/>
-        <location filename="../view/menu/sound.ui" line="292"/>
-        <location filename="../view/menu/sound.ui" line="383"/>
-        <location filename="../view/menu/sound.ui" line="608"/>
-        <location filename="../view/menu/sound.ui" line="687"/>
-        <location filename="../view/menu/about.ui" line="693"/>
         <location filename="../view/menu/advance.ui" line="152"/>
         <location filename="../view/menu/advance.ui" line="715"/>
         <location filename="../view/menu/advance.ui" line="1227"/>
@@ -448,23 +440,31 @@
         <location filename="../view/menu/advance.ui" line="1747"/>
         <location filename="../view/menu/advance.ui" line="1845"/>
         <location filename="../view/menu/advance.ui" line="1926"/>
+        <location filename="../view/menu/about.ui" line="693"/>
+        <location filename="../view/menu/sound.ui" line="136"/>
+        <location filename="../view/menu/sound.ui" line="214"/>
+        <location filename="../view/menu/sound.ui" line="292"/>
+        <location filename="../view/menu/sound.ui" line="383"/>
+        <location filename="../view/menu/sound.ui" line="608"/>
+        <location filename="../view/menu/sound.ui" line="687"/>
+        <location filename="../view/pp/settings.ui" line="144"/>
         <source>启用</source>
         <translation>啟用</translation>
     </message>
     <message>
-        <location filename="../view/pp/settings.ui" line="147"/>
+        <location filename="../view/menu/advance.ui" line="1230"/>
+        <location filename="../view/menu/advance.ui" line="1404"/>
+        <location filename="../view/menu/advance.ui" line="1750"/>
+        <location filename="../view/menu/advance.ui" line="1848"/>
+        <location filename="../view/menu/advance.ui" line="1929"/>
+        <location filename="../view/menu/about.ui" line="696"/>
         <location filename="../view/menu/sound.ui" line="139"/>
         <location filename="../view/menu/sound.ui" line="217"/>
         <location filename="../view/menu/sound.ui" line="295"/>
         <location filename="../view/menu/sound.ui" line="386"/>
         <location filename="../view/menu/sound.ui" line="611"/>
         <location filename="../view/menu/sound.ui" line="690"/>
-        <location filename="../view/menu/about.ui" line="696"/>
-        <location filename="../view/menu/advance.ui" line="1230"/>
-        <location filename="../view/menu/advance.ui" line="1404"/>
-        <location filename="../view/menu/advance.ui" line="1750"/>
-        <location filename="../view/menu/advance.ui" line="1848"/>
-        <location filename="../view/menu/advance.ui" line="1929"/>
+        <location filename="../view/pp/settings.ui" line="147"/>
         <source>禁用</source>
         <translation>停用</translation>
     </message>
@@ -1368,8 +1368,8 @@
         <translation>Discord</translation>
     </message>
     <message>
-        <location filename="../view/pp/settings.ui" line="71"/>
         <location filename="../view/menu/plugin_mgr.ui" line="35"/>
+        <location filename="../view/pp/settings.ui" line="71"/>
         <source>插件</source>
         <translation>插件</translation>
     </message>
@@ -1484,8 +1484,8 @@
         <translation>當插件執行自動化操作時，需要等待的時間（單位：秒）</translation>
     </message>
     <message>
-        <location filename="../view/menu/sound.ui" line="742"/>
         <location filename="../view/menu/preview.ui" line="53"/>
+        <location filename="../view/menu/sound.ui" line="742"/>
         <source>预览</source>
         <translation>預覽</translation>
     </message>
