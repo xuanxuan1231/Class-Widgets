@@ -21,29 +21,52 @@ runs:
   using: composite
   steps:
     - name: Download manifest artifact
-      uses: actions/download-artifact@v5
+      uses: actions/download-artifact@v6
       with:
         name: ${{ inputs.manifest_artifact }}
         path: ./manifest
 
+    - name: Expand ZIP artifacts if present
+      shell: pwsh
+      run: |
+        $zipFiles = Get-ChildItem -Path ./manifest -Filter '*.zip' -Recurse -ErrorAction SilentlyContinue
+        if ($zipFiles -and $zipFiles.Count -gt 0) {
+          New-Item -ItemType Directory -Path ./manifest_extracted -Force | Out-Null
+          foreach ($zf in $zipFiles) {
+            try {
+              Expand-Archive -Path $zf.FullName -DestinationPath ./manifest_extracted -Force
+            } catch {
+              Write-Host "[DEBUG] ZIP 解压失败: $($zf.FullName) — $($_.Exception.Message)"
+            }
+          }
+        } else {
+          Write-Host "[DEBUG] 未发现 ZIP 工件，跳过解压"
+        }
+
     - name: Prepare file for signing
       shell: pwsh
       run: |
-        $exe = Get-ChildItem -Path ./manifest -Filter "${{ inputs.executable_name }}" -Recurse | Select-Object -First 1
-        if ($null -eq $exe) { Write-Error "未找到待签名文件"; exit 1 }
+        $exe = $null
+        if (Test-Path './manifest_extracted') {
+          $exe = Get-ChildItem -Path ./manifest_extracted -Filter "${{ inputs.executable_name }}" -Recurse -ErrorAction SilentlyContinue | Select-Object -First 1
+        }
+        if ($null -eq $exe) {
+          $exe = Get-ChildItem -Path ./manifest -Filter "${{ inputs.executable_name }}" -Recurse -ErrorAction SilentlyContinue | Select-Object -First 1
+        }
+        if ($null -eq $exe) { Write-Error "未找到待签名文件: ${{ inputs.executable_name }}"; exit 1 }
         New-Item -ItemType Directory -Path ./exe-for-signing -Force | Out-Null
         Copy-Item $exe.FullName -Destination "./exe-for-signing/${{ inputs.executable_name }}" -Force
 
     - name: Upload unsigned artifact
       id: upload-unsigned
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v5
       with:
-        name: ${{ inputs.executable_name }}-unsigned
+        name: ${{ inputs.executable_name }}-signed
         path: ./exe-for-signing
 
     - name: Submit signing request
       id: submit-sign
-      uses: signpath/github-action-submit-signing-request@v1
+      uses: signpath/github-action-submit-signing-request@v2
       with:
         api-token: ${{ inputs.signpath_api_token }}
         organization-id: 2e13633d-4e7d-4462-9091-27536751c84c
@@ -55,7 +78,7 @@ runs:
 
     - name: Upload signed artifact
       id: upload-signed
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v5
       with:
         name: ${{ inputs.executable_name }}-signed
         path: ./signed-output
