@@ -57,12 +57,12 @@ runs:
         New-Item -ItemType Directory -Path ./exe-for-signing -Force | Out-Null
         Copy-Item $exe.FullName -Destination "./exe-for-signing/${{ inputs.executable_name }}" -Force
 
-    - name: Upload unsigned artifact
-      id: upload-unsigned
-      uses: actions/upload-artifact@v5
-      with:
-        name: ${{ inputs.executable_name }}-signed
-        path: ./exe-for-signing
+    # - name: Upload unsigned artifact
+    #   id: upload-unsigned
+    #   uses: actions/upload-artifact@v5
+    #   with:
+    #     name: ${{ inputs.executable_name }}-signed
+    #     path: ./exe-for-signing
 
     - name: Submit signing request
       id: submit-sign
@@ -76,12 +76,12 @@ runs:
         wait-for-completion: true
         output-artifact-directory: ./signed-output
 
-    - name: Upload signed artifact
-      id: upload-signed
-      uses: actions/upload-artifact@v5
-      with:
-        name: ${{ inputs.executable_name }}-signed
-        path: ./signed-output
+    # - name: Upload signed artifact
+    #   id: upload-signed
+    #   uses: actions/upload-artifact@v5
+    #   with:
+    #     name: ${{ inputs.executable_name }}-signed
+    #     path: ./signed-output
 
     - name: Set outputs
       id: set-output
