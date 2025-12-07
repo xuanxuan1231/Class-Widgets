@@ -624,7 +624,7 @@ jobs:
           github-artifact-id: ${{ steps.upload_unsigned.outputs.artifact-id }}
           wait-for-completion: true
           output-artifact-directory: ./signed-output
-  
+
       - name: Extract original build ZIP to dist (Windows)
         if: startsWith(matrix.os, 'windows') && env.IS_SIGNING == 'true'
         shell: pwsh
@@ -659,7 +659,6 @@ jobs:
         with:
           name: windows-${{ matrix.arch }}-build-signed
           path: packages/ClassWidgets-Windows-${{ matrix.arch }}-signed.zip
-
 
   package:
     needs: [prepare, build]
