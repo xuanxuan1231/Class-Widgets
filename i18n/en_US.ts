@@ -4913,107 +4913,107 @@ If changing hiding status, we will change hiding mode to &quot;Flexible hiding&q
 Do you want to hide the widget?</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3812"/>
+        <location filename="../main.py" line="3815"/>
         <source>检查多开...</source>
         <translation>Checking for multiple instances...</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3827"/>
+        <location filename="../main.py" line="3830"/>
         <source>Class Widgets 正在运行</source>
         <translation>Class Widgets is running now</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3828"/>
+        <location filename="../main.py" line="3831"/>
         <source>Class Widgets 正在运行！请勿打开多个实例，否则将会出现不可预知的问题。
 (若您需要打开多个实例，请在“设置”-&gt;“高级选项”中启用“允许程序多开”)</source>
         <translation>Class Widgets is running now! Do not start multiple instance,or it will cause unknown problems.
 (If you need to start multiple instance,Please enable&quot;Allow multiple instances&quot; In &quot;Settings&quot; -&gt; &quot;Advanced Options&quot;)</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3852"/>
+        <location filename="../main.py" line="3855"/>
         <source>初始化颜色监视器...</source>
         <translation>Initializing color mode watcher...</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3862"/>
+        <location filename="../main.py" line="3865"/>
         <source>检查缩放...</source>
         <translation>Checking scaling...</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3868"/>
+        <location filename="../main.py" line="3871"/>
         <source>缩放系数过大</source>
         <translation>The scaling factor is too large</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3869"/>
+        <location filename="../main.py" line="3872"/>
         <source>当前缩放系数为 {scale_factor}%，可能导致显示异常。
 建议将缩放系数设置为 100% 到 180% 之间。</source>
         <translation>Current scaling factor is {scale_factor}% now, and it may cause display problems.
 It is recommended to set the scaling factor to a value between 100% and 180%.</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3881"/>
+        <location filename="../main.py" line="3884"/>
         <source>获取系统版本...</source>
         <translation>Retrieving system version...</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3924"/>
+        <location filename="../main.py" line="3927"/>
         <source>初始化窗口焦点监视器...</source>
         <translation>Initialize window focus monitor...</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3930"/>
+        <location filename="../main.py" line="3933"/>
         <source>初始化窗口管理器...</source>
         <translation>Initializing window manager...</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3937"/>
+        <location filename="../main.py" line="3940"/>
         <source>检查初次启动...</source>
         <translation>Checking first-time launch...</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3949"/>
+        <location filename="../main.py" line="3952"/>
         <source>初始化插件管理器...</source>
         <translation>Initializing plugin manager...</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3955"/>
+        <location filename="../main.py" line="3958"/>
         <source>检查临时课表...</source>
         <translation>Check the temporary class schedule</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3960"/>
+        <location filename="../main.py" line="3963"/>
         <source>存在临时课表</source>
         <translation>Temporary schedule exists</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3961"/>
+        <location filename="../main.py" line="3964"/>
         <source>当前存在临时课表，是否沿用</source>
         <translation>Is the current temporary schedule to be continued?</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3974"/>
+        <location filename="../main.py" line="3977"/>
         <source>加载窗口...</source>
         <translation>Loading window...</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3978"/>
+        <location filename="../main.py" line="3981"/>
         <source>加载课程...</source>
         <translation>Loading course...</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3985"/>
+        <location filename="../main.py" line="3988"/>
         <source>加载隐藏状态...</source>
         <translation>Loading hidden state...</translation>
     </message>
     <message>
-        <location filename="../main.py" line="4008"/>
+        <location filename="../main.py" line="4011"/>
         <source>检查更新...</source>
         <translation>Checking for updates...</translation>
     </message>
     <message>
-        <location filename="../main.py" line="3834"/>
-        <location filename="../main.py" line="3874"/>
+        <location filename="../main.py" line="3837"/>
+        <location filename="../main.py" line="3877"/>
         <source>好</source>
         <translation>OK</translation>
     </message>
