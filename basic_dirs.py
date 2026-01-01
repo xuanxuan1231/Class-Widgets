@@ -25,7 +25,9 @@ def _get_app_dir(
 ) -> Path:
     """获取应用目录的通用实现"""
     if IS_PORTABLE:
-        return _ensure_dir(CW_HOME / default_subdir)
+        # 处理 Linux 安装版路径
+        if not CW_HOME.as_posix().startswith("/opt/apps"):
+            return _ensure_dir(CW_HOME / default_subdir)
 
     # 处理自定义路径
     if custom := os.environ.get(f"CLASSWIDGETS_CUSTOM_{purpose.upper()}_HOME"):
