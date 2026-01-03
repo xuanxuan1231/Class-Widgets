@@ -581,7 +581,26 @@ jobs:
           else
             zip_name="Linux-x64_debug-${GITHUB_RUN_ID}"
           fi
+          rm deb/opt/apps/cn.rinlit.classwidgets/files/.gitkeep
+          cp dist/ClassWidgets/* deb/opt/apps/cn.rinlit.classwidgets/files/ -rvp
           cd dist && mv ClassWidgets "${zip_name}" && zip -r -q "../packages/${zip_name}.zip" "${zip_name}"/* && cd ..
+      
+      - name: Build .deb Package (Linux)
+        if: matrix.platform == 'linux-x64'
+        run: |
+          control_file="deb/debian/control"
+
+          # 计算 Installed-Size
+          installed_size=$(du -sk deb/opt deb/usr 2>/dev/null | awk '{s+=$1} END{print s}')
+
+          # 填入 control 文件中
+          sed -i "s/^Version:.*/Version: $RELEASE_VERSION/" "$control_file"
+          sed -i "s/^Installed-Size:.*/Installed-Size: ${installed_size}/" "$control_file"
+
+          # 更改 info 版本号
+          sed -i "s/\"version\": \".*\"/\"version\": \"$RELEASE_VERSION\"/" deb/opt/apps/cn.rinlit.classwidgets/info
+          
+          dpkg-deb -b deb dist/cn.rinlit.classwidgets_$RELEASE_VERSION_amd64.deb
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v5
