@@ -771,6 +771,7 @@ jobs:
               build_key="${platform}-build"
               if [[ -n "${artifact_cache[$build_key]:-}" ]]; then
                 echo "[DEBUG] 使用 ${platform} 构建版本"
+                # 处理 ZIP 包
                 for zip_file in "${artifact_cache[$build_key]}"/*.zip; do
                   if [[ -f "$zip_file" ]]; then
                     case "$platform_type" in
@@ -781,10 +782,21 @@ jobs:
                         target_name="ClassWidgets-Linux-${platform#linux-}_${run_id}.zip"
                         ;;
                     esac
-                    process_file "$zip_file" "$target_name" "$platform" "构建"
+                    process_file "$zip_file" "$target_name" "$platform" "构建ZIP"
                     break
                   fi
                 done
+
+                # 处理 .deb 包（仅 Linux）
+                if [[ "$platform_type" == "linux" ]]; then
+                  for deb_file in "${artifact_cache[$build_key]}"/*.deb; do
+                    if [[ -f "$deb_file" ]]; then
+                      target_name="ClassWidgets-Linux-${platform#linux-}_${run_id}.deb"
+                      process_file "$deb_file" "$target_name" "$platform" "构建DEB"
+                      break
+                    fi
+                  done
+                fi
               else
                 echo "[DEBUG] ${platform} 版本未找到"
               fi
@@ -821,7 +833,7 @@ jobs:
             echo "|--------|----------|-----|"
           } > final-packages/file-info.md
           shopt -s nullglob
-          files=(final-packages/*.zip)
+          files=(final-packages/*.zip final-packages/*.deb)
           if [ ${#files[@]} -eq 0 ]; then
             echo "未找到任何包文件" >> final-packages/file-info.md
           else
